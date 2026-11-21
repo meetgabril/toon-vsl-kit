@@ -1,0 +1,82 @@
+<!doctype html><html><head><meta charset="utf-8"><style>@font-face{font-family:"Bungee";src:url(fonts/bungee-latin-400-normal.woff2)}@font-face{font-family:"VT323";src:url(fonts/vt323-latin-400-normal.woff2)}@font-face{font-family:"Baloo 2";font-weight:800;src:url(fonts/baloo-2-latin-800-normal.woff2)} html,body{margin:0}</style></head><body><canvas id="c" width="2560" height="1440"></canvas>
+<script type="module">
+// Character reference sheets: ?p=tony | dex | extras
+import { init, frame, push, pop, translate, scale, g, text, shape, fillOnly, stroke, rr, rect, ell, INK } from './toon.js';
+import { loadPeeps, takePending } from './peeps.js'; import { peep, folk2, transformFig, DEXC, TONYC, CAST } from './chars2.js'; import './cast.custom.js';
+init(document.getElementById('c')); await loadPeeps(); for (const f of ['400 40px Bungee', '800 40px "Baloo 2"']) await document.fonts.load(f);
+const Q = new URLSearchParams(location.search), P = Q.get('p') || 'tony', FY = +(Q.get('fy') || 50), DY = +(Q.get('dy') || 350);
+const NAVY = '#25385c', ORANGE = '#ff6a2a', PAPER = '#f6efe2';
+const T = (s, x, y, o = {}) => text(s, x, y, { font: `400 ${o.size || 34}px "Bungee"`, fill: o.fill || NAVY, align: o.align || 'center' });
+const B = (s, x, y, o = {}) => text(s, x, y, { font: `800 ${o.size || 28}px "Baloo 2"`, fill: o.fill || '#4a4458', align: o.align || 'left' });
+function header(title, sub) {
+  fillOnly(rect(0, 0, 2560, 150), NAVY, { boil: 0 }); fillOnly(rect(0, 150, 2560, 10), ORANGE, { boil: 0 });
+  T(title, 60, 70, { size: 70, fill: '#fff6e0', align: 'left' }); B(sub, 62, 124, { size: 30, fill: '#c9d3ea' });
+  T('BUZZTORM TOON KIT · CHARACTER SHEET', 2500, 76, { size: 26, fill: '#ffd66b', align: 'right' });
+}
+function label(s, x, y) { const w = Math.max(220, s.length * 19 + 50); shape(rr(x - w / 2, y - 26, w, 52, 26), { fill: '#fff6e0', lw: 4 }); T(s, x, y + 2, { size: 24 }); }
+function swatches(x, y, list) { list.forEach(([n, c], i) => { shape(rr(x, y + i * 62, 50, 50, 10), { fill: c, lw: 4 }); B(`${n}  ${c}`, x + 66, y + i * 62 + 27, { size: 26, fill: INK }); }); }
+// head-only portrait: draws the full character and clips to a circle around the head
+function face(sp, x, y, mood, extra = {}) {
+  shape(ell(x, y, 105, 105, 40), { fill: '#fff6e0', lw: 5 });
+  g.save(); g.beginPath(); g.arc(x, y, 101, 0, Math.PI * 2); g.clip();
+  const s = 1.55, k = (sp === 'D' ? .27 : .275) * s;
+  if (sp === 'T') peep('T', { x, y: y + 2480 * k + FY, s, mood, t: 1, blinkOff: true, arms: 'down', noShadow: true, ...extra });
+  else peep('D', { x, y: y + DY, s: 1.35, mood, t: 1, blinkOff: true, pose: 'effigy/BlazerBlackTee', noShadow: true, ...extra });
+  g.restore(); B(mood, x, y + 135, { size: 26, align: 'center' });
+}
+function grid() { for (let i = 0; i < 6; i++) stroke([[60, 1270 - i * 200], [2500, 1270 - i * 200]], 1.5, { line: 'rgba(37,56,92,0.10)', boil: 0 }); }
+async function draw() {
+  frame(0.2, { amp: .9 }); g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = PAPER; g.fillRect(0, 0, 2560, 1440);
+  if (P === 'tony') {
+    header('TONY', 'Celebrity fitness coach · custom rig (tonyBody3) · same height as Dex · outfit identical in every scene');
+    const poses = [['down', {}], ['hips', {}], ['flex', {}], ['point', {}], ['phone', {}], ['runA', { legs: 'run', walkPh: 1.4 }], ['hips', { bare: true, acc: 'Sunglasses' }]];
+    poses.forEach(([a, o], i) => { const x = 170 + i * 255; peep('T', { x, y: 1250, s: .95, arms: a, mood: 'smile', t: 1, blinkOff: true, ...o }); label(o.bare ? 'beach' : a, x, 1320); });
+    stroke([[60, 1250], [1820, 1250]], 4, { line: 'rgba(37,56,92,0.35)', boil: 0 });
+    // expressions
+    T('EXPRESSIONS (mood)', 2180, 210, { size: 30 });
+    ['smile', 'happy', 'worried', 'fear', 'serious', 'cheeky'].forEach((m, i) => face('T', 2040 + (i % 2) * 280, 350 + Math.floor(i / 2) * 290, m));
+    T('PALETTE', 1990, 1110, { size: 26, align: 'left' });
+    swatches(1990, 1140, [['skin', TONYC.skin], ['hair', TONYC.hair], ['bandana / shorts', '#ff5b4d'], ['tank top', TONYC.top]]);
+    B('Rules: blond ShortFour hair + coral bandana · black tank "TF" · coral shorts w/ white stripe · black sneakers · gold chain', 60, 200, { size: 26 });
+    B('Shirtless only at the beach · masculine poses · hands: fists w/ fingers, thumb inside · no shoulder spikes · arms pump in front when running', 60, 236, { size: 26 });
+  } else if (P === 'dex') {
+    header('DEX', 'Narrator · Open Peeps "Pomp" hair + "Chin" beard · casual suit: navy jacket, dark tee, beige chinos');
+    peep('D', { x: 330, y: 1250, s: 1.25, mood: 'calm', t: 1, blinkOff: true, pose: 'standing/EasingColorPants' }); label('standing', 330, 1320);
+    peep('T', { x: 720, y: 1250, s: 1.25 * .27 / .275 * 1.0, mood: 'smile', t: 1, blinkOff: true, arms: 'hips' }); label('height check', 720, 1320);
+    peep('D', { x: 1180, y: 1330, s: 2.3, mood: 'smile', t: 1, blinkOff: true, pose: 'effigy/BlazerBlackTee', noShadow: true }); label('bust / close-up', 1180, 1380);
+    stroke([[60, 1250], [900, 1250]], 4, { line: 'rgba(37,56,92,0.35)', boil: 0 });
+    T('EXPRESSIONS (mood)', 2040, 210, { size: 30 });
+    ['calm', 'smile', 'happy', 'serious', 'worried', 'cheeky'].forEach((m, i) => face('D', 1760 + (i % 3) * 280, 360 + Math.floor(i / 3) * 300, m));
+    T('PALETTE', 1700, 990, { size: 26, align: 'left' });
+    swatches(1700, 1020, [['skin', DEXC.skin], ['jacket', DEXC.jacket], ['tee', DEXC.top], ['chinos', DEXC.pants], ['shoes', DEXC.shoes]]);
+    B('Rules: professional & masculine · speaks to camera in close-ups (bust) · lip-sync via lips.json · never cartoonish poses', 60, 200, { size: 26 });
+  } else if (P === 'cast') {
+    // generic sheet for any registered character: ?p=cast&sp=M
+    const sp = Q.get('sp'), C = CAST[sp], SH = C.sheet || {};
+    header(SH.title || C.name || sp, SH.sub || `Open Peeps ${C.head}${C.beard ? ' + ' + C.beard : ''}`);
+    const poses = SH.poses || [C.pose];
+    poses.forEach((ps, i) => { const x = 230 + i * 330; peep(sp, { x, y: 1250, s: 1.2, pose: ps, mood: 'smile', t: 1, blinkOff: true }); label(ps.split('/')[1].replace(/Color(Pants|Tee)$/, ''), x, 1320); });
+    const xh = 230 + poses.length * 330; peep('D', { x: xh, y: 1250, s: 1.2, mood: 'calm', t: 1, blinkOff: true }); label('height: Dex', xh, 1320);
+    stroke([[60, 1250], [xh + 160, 1250]], 4, { line: 'rgba(37,56,92,0.35)', boil: 0 });
+    T('EXPRESSIONS (mood)', 2180, 210, { size: 30 });
+    ['calm', 'smile', 'happy', 'serious', 'worried', 'cheeky'].forEach((m, i) => {
+      const x = 2040 + (i % 2) * 280, y = 350 + Math.floor(i / 2) * 290;
+      shape(ell(x, y, 105, 105, 40), { fill: '#fff6e0', lw: 5 }); g.save(); g.beginPath(); g.arc(x, y, 101, 0, Math.PI * 2); g.clip();
+      peep(sp, { x, y: y + DY, s: 1.35, mood: m, t: 1, blinkOff: true, bust: true, noShadow: true }); g.restore(); B(m, x, y + 135, { size: 26, align: 'center' }); });
+    if (SH.palette) { T('PALETTE', 1990, 1180, { size: 26, align: 'left' }); swatches(1990, 1210, SH.palette.slice(0, 3)); }
+    if (SH.rules) B('Rules: ' + SH.rules, 60, 200, { size: 26 });
+  } else {
+    header('EXTRAS · BEFORE / AFTER', 'folk2(x, y, s, i): clearly male or female, light skin, bright fitness tops · transformFig: client transformation');
+    for (let i = 0; i < 12; i++) { const x = 140 + i * 130; folk2(x, 760, .85, i, { t: 1 }); B('i=' + i, x, 800, { size: 24, align: 'center' }); }
+    for (let i = 0; i < 6; i++) { const x = 140 + i * 170; folk2(x, 1250, .85, i, { t: 1, walk: 1 + i, face: 1 }); }
+    label('walk: n', 560, 1320);
+    stroke([[60, 760], [1700, 760]], 4, { line: 'rgba(37,56,92,0.35)', boil: 0 }); stroke([[60, 1250], [1700, 1250]], 4, { line: 'rgba(37,56,92,0.35)', boil: 0 });
+    transformFig(1900, 1250, 1.25, false, 1); label('before', 1900, 1320);
+    transformFig(2140, 1250, 1.25, true, 1); label('after', 2140, 1320);
+    transformFig(2380, 1250, 1.25, true, 1, true); label('after sport', 2380, 1320);
+    B('Extras = members, leads, clients. Never ambiguous gender.', 60, 200, { size: 26 }); B('Before → after swaps with a poof + stars (≈0.3 s).', 1840, 200, { size: 26 });
+  }
+}
+for (let i = 0; i < 6; i++) { await draw(); const p = takePending(); if (!p.length) break; await Promise.all(p); }
+window.ready = true;
+</script></body></html>
