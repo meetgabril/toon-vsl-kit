@@ -18,18 +18,28 @@ Keep token use low: read only the docs a step needs, write beats rather than cod
 git clone https://github.com/meetgabril/toon-vsl-kit ~/toon-vsl-kit   # if it fails: add_repo(owner meetgabril, repo toon-vsl-kit, access push), then clone
 bash ~/toon-vsl-kit/kit/tools/setup.sh ~/toon/<slug> && cd ~/toon/<slug>
 ```
-Docs are in `kit/docs`, references in `kit/ref`. Always read **STYLE.md** (rules) and **STORY.md** (beat grammar). Read the others only when needed:
+Docs are in `kit/docs`, references in `kit/ref`. Always read **VIRAL.md** (hooks, send triggers, loops, scorecard), **STYLE.md** (rules) and **STORY.md** (beat grammar). Read the others only when needed:
+- STYLES.md: other finishes (oldfilm, paper, riso, noir, comic, pastel, dusk, freeze, vhs), per film or per beat.
 - CHARACTERS.md: new characters.
 - FORMATS.md: non-9:16 formats, stills, other video types.
 - MOTION.md / ref/CATALOG.md: recipes from the approved film.
 - AUDIO.md and SCENES.md.
 
 ## 1. Script for ElevenLabs (stop and wait for the upload)
-Write `script.md` (format: `kit/example/script_example.md`):
+The goal is **sends**, not views (VIRAL.md). Design each script:
+- a hook in 1–3 s, for example a verified, bizarre historical fact that pivots with a joke to the topic;
+- one archetype the viewer will send it to;
+- high-arousal payoffs (awe or a laugh);
+- a button joke;
+- a last line that loops into the first.
+
+Write `script.md` (format and a full viral example: `kit/example/script_example.md` + `story_example_viral.js`):
 - `lang:`, plus one `voice X:` line per speaker describing the voice.
 - One line per speech turn: `X: [emotion] text`.
 - **Tags** (Eleven v3): `[excited] [warm] [curious] [whispers] [sighs] [laughs] [sarcastic] [serious] [shouting]`, one or two per line.
 - **Wording**: numbers as words, short sentences, the hook in line 1.
+
+Run `python3 script.py check script.md`, which shows the hook length, long sentences and the loop join. Score it with the VIRAL.md scorecard and rewrite anything under 4/5. Facts used as hooks must be verified with a web search.
 
 Then run `python3 script.py el script.md` and give the user:
 - the contents of `work/elevenlabs_dialogue.txt` (in a code block);
@@ -57,7 +67,7 @@ Write `story.js`: one beat per sentence or punchline (STORY.md).
 2. Fix overlaps, empty frames and illogical moments.
 3. Send the sheet to the user.
 
-**The story must make literal sense on screen.** Every number and screen answers the line it illustrates.
+**The story must make literal sense on screen.** Every number and screen answers the line it illustrates. Use `style:` switches with meaning (`oldfilm` for the history hook, `freeze` + `label` for "yep, that's me"), and `loop: 0.4` for shorts.
 
 ## 5. Render and sound
 ```
@@ -67,7 +77,7 @@ bash finish.sh "<Brand>_<Piece>_v1" 916            # or 916,45 …; masters −1
 ```
 - Run renders over ~2 min in the background and poll.
 - The voice is never altered: only the high-pass and gentle compression done in ingest.
-- Deliver with SendUserFile, plus 3–5 lines on what's in it. Bump the version on every change.
+- Deliver with SendUserFile, plus 3–5 lines on what's in it and the packaging from VIRAL.md: cover text, a caption that invites a tag without asking, and 2–3 cut-down ideas. Bump the version on every change.
 
 ## 6. Stills (thumbnails, posts, banners)
 1. Add a `thumbXxx()` design at the end of `vsl.js` and wire it in `renderThumb`.

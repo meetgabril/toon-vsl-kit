@@ -6,6 +6,8 @@ export const STORY = {
     { at: 'This is Tony', set: 'studio', cam: 'pull', music: 'sitcom', cast: 'D L smile | T C hips happy', items: ['ba x=900 y=1640 @lose'] },
     { at: 'Twelve weeks', set: 'studio', cast: 'T cu flex happy', items: ['sign "12 WEEKS" bg=green UL', 'stars x=760 y=900'] },
   ],
+  loop: 0.4,            // last 0.4 s dissolves into frame 1 → seamless replay (VIRAL.md)
+  style: 'ink',         // default finish for every beat
   fns: { myMoment: (d, gt, A) => { /* hand-drawn extra; A = drawing API */ } },
 };
 ```
@@ -22,7 +24,8 @@ Each beat is one shot that lasts until the next beat starts. Everything is timed
 | `shake` | A word: 0.3 s camera shake on that word. |
 | `music` | `sitcom` · `happy` · `think` · `casino` · `aerobics` · `island` · `folk` · `tension` · `build` · `silence`. The style carries over to later beats until changed. |
 | `wipe` | `true`: the orange portal transition into this beat. Use it once per film. |
-| `sfx` | Extra sounds: `'boing@word'`, `['thud', 'creak@door']`. Names: pop click ding buzz stamp whoosh chaching cheer sparkle steps portal boing thud creak powerdown page waves gulp chalk. |
+| `style` | The finish for this beat: `ink oldfilm paper riso noir comic pastel dusk freeze vhs` (STYLES.md). `STORY.style` sets the default for the whole film. |
+| `sfx` | Extra sounds: `'boing@word'`, `['thud', 'creak@door']`. Names: pop click ding buzz stamp whoosh chaching cheer sparkle steps portal boing thud creak powerdown page waves gulp chalk scratch. |
 
 ## Cast grammar
 `WHO slot size pose mood flags…`
@@ -70,6 +73,8 @@ Actors face the centre automatically. Lip sync, blinks, breathing and head nods 
 | `confetti` / `stars` / `poof` / `flash` | `confetti mid @won` | effects |
 | `ba` | `ba x=900 y=1640 s=.95 sport @lose` | before → after transformation on the word |
 | `prop` | `prop ads R s=.8 price=$340 year=2026 off` | ads · door (`label= color= open=`) · clock (`h= label=`) · camera · phonerig · softbox · tripod · umbrella · mug · dumbbell · coin · bill |
+| `year` | `year "1518" "STRASBOURG"` | old paper date card for history hooks (pair with `style: 'oldfilm'`) |
+| `label` | `label "YEP. THAT'S ME." low` | freeze-frame caption (pair with `style: 'freeze'`; record-scratch sound) |
 | `fn` | `fn myMoment` | your own drawing code in `STORY.fns` |
 
 Every item gets its sound automatically: pop, stamp, ticks + ding, notification dings, cheer, buzz and so on. Add `silent` to mute one.

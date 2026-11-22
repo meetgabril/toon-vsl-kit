@@ -4,7 +4,7 @@ Kit for Claude's **toon-vsl** skill: every video and image (VSLs, shorts, ads, e
 
 ```
 SKILL.md            the skill's instructions (a copy of what is saved in claude.ai)
-kit/docs/           STORY (beat grammar) · STYLE · CHARACTERS · SCENES · MOTION · FORMATS · AUDIO
+kit/docs/           VIRAL (hooks, sends, loops) · STORY (beat grammar) · STYLES (10 finishes) · STYLE · CHARACTERS · SCENES · MOTION · FORMATS · AUDIO
 kit/engine/         toon.js engine, Open Peeps parts, cast, vsl.js (library + director), story.js (the film), pages, renderers
 kit/example/        buzztorm_vsl.js (the approved film, hand-written) · script_example.md
 kit/audio/          autoscore.py (music + SFX from the story) · score.py + instruments.py (synth) · mix.py · align.py

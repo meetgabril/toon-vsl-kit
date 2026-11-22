@@ -433,10 +433,12 @@ const ITEM = {
        door: () => door(0, 250, 220, 380, col(I.kv.color, '#a974e0'), I.kv.label || '', +(I.kv.open || 0)), tripod: () => tripod(0, 300, 420, 1), coin: () => coin(0, 0, 40), bill: () => bill(0, 0, -.2, 1.5), clockface: () => clock(0, 0, 120, 3, '') }[n] || (() => text(n, 0, 0, { font: '400 40px "Bungee"', fill: INK })))();
     pop();
   },
+  year(I, x, y, d) { const k = pk(d); if (!k) return; push(); translate(x, y); rotate(-.04); scale(k); shape(rr(-300, -150, 600, 300, 18), { fill: '#f3e6c8', lw: 8, shade: () => fillOnly(rect(-300, 90, 600, 60), '#e2cfa4') }); text(I.txt[0] || '1888', 0, -20, { font: '400 150px "Bungee"', fill: '#3b2a1a' }); if (I.txt[1]) text(I.txt[1], 0, 118, { font: '800 40px "Baloo 2"', fill: '#5a4630' }); pop(); },
+  label(I, x, y, d) { const k = pk(d, .2); if (!k) return; push(); translate(x, y); rotate(-.05); scale(k); const t = I.txt[0] || 'YEP. THAT\'S ME.', w = t.length * 30 + 80; shape(rr(-w / 2, -55, w, 110, 12), { fill: '#ffd66b', lw: 8 }); text(t, 0, 4, { font: '400 52px "Bungee"', fill: INK }); pop(); },
   fn(I, x, y, d) { const f = STORY.fns && STORY.fns[I.txt[0] || Object.keys(I.flags)[0]]; if (f && d >= 0) f(d, CUR_T, API); },
 };
-const DEFPOS = { title: 'top', sign: 'top', pill: 'high', sub: 'low', counter: 'mid', phone: 'R', card: 'high', stamp: 'mid', list: 'UR', check: 'R', x: 'R', crowd: 'mid', walkers: 'low', money: 'mid', confetti: 'mid', stars: 'mid', poof: 'mid', flash: 'mid', ba: 'R', prop: 'R', fn: 'mid', arrow: 'mid' };
-const SFX_OF = { title: 'pop', sign: 'pop', pill: 'pop', sub: 'click', counter: 'count', phone: 'notif', card: 'pop', stamp: 'stamp', list: 'pop', check: 'ding', x: 'buzz', crowd: 'pops', walkers: 'steps', money: 'chaching', confetti: 'cheer', stars: 'sparkle', poof: 'pop', flash: 'whoosh', ba: 'sparkle', prop: 'pop', arrow: 'whoosh' };
+const DEFPOS = { year: 'high', label: 'low', title: 'top', sign: 'top', pill: 'high', sub: 'low', counter: 'mid', phone: 'R', card: 'high', stamp: 'mid', list: 'UR', check: 'R', x: 'R', crowd: 'mid', walkers: 'low', money: 'mid', confetti: 'mid', stars: 'mid', poof: 'mid', flash: 'mid', ba: 'R', prop: 'R', fn: 'mid', arrow: 'mid' };
+const SFX_OF = { year: 'stamp', label: 'scratch', title: 'pop', sign: 'pop', pill: 'pop', sub: 'click', counter: 'count', phone: 'notif', card: 'pop', stamp: 'stamp', list: 'pop', check: 'ding', x: 'buzz', crowd: 'pops', walkers: 'steps', money: 'chaching', confetti: 'cheer', stars: 'sparkle', poof: 'pop', flash: 'whoosh', ba: 'sparkle', prop: 'pop', arrow: 'whoosh' };
 const API = { push, pop, translate, rotate, scale, shape, fillOnly, stroke, ell, arc, spline, rr, rect, text, dot, pill, sign, TONY, DEX, CHAR, folk, stars, poof, check, xMark, arrow, ss, eo, back, seg, lerp, clamp, COL };
 function compileStory() {
   if (!STORY || !STORY.beats || !TIMING) return;
@@ -469,7 +471,7 @@ function drawBeat(B, lt, gt) {
   const set = B.set || 'studio';
   if (SETFN[set]) SETFN[set](gt); else if (set.startsWith('#') || COL[set]) { fillOnly(rect(-600, -400, W + 1200, H + 800), col(set), { boil: 0 }); }
   const front = [];
-  B._items.forEach(I => { if (I.flags.front || ['title', 'sign', 'stamp', 'flash', 'confetti', 'sub', 'card'].includes(I.type)) front.push(I); else drawItem(I, gt); });
+  B._items.forEach(I => { if (I.flags.front || ['title', 'sign', 'stamp', 'flash', 'confetti', 'sub', 'card', 'year', 'label'].includes(I.type)) front.push(I); else drawItem(I, gt); });
   B._actors.forEach(a => { if (!a.at || gt >= a.t) drawActor(a, a.at ? gt - a.t : lt, gt, n); });
   front.forEach(I => drawItem(I, gt));
   camEnd();
@@ -479,7 +481,7 @@ function drawItem(I, gt) {
   const f = ITEM[I.type]; if (!f) return; if (I.kv.until && gt > anchor(I.kv.until, 0, 0).t) return;
   f(I, p[0], p[1], gt - I.t, I.ts);
 }
-export function storyEvents() { return { events: EVENTS.sort((a, b) => a.t - b.t), wipes: WIPES, dur: LIPS.N / FPS, beats: (STORY.beats || []).map(b => ({ t: b._t0, music: b.music || null, set: b.set || 'studio' })) }; }
+export function storyEvents() { return { events: EVENTS.sort((a, b) => a.t - b.t), wipes: WIPES, dur: LIPS.N / FPS, beats: (STORY.beats || []).map(b => ({ t: b._t0, music: b.music || null, set: b.set || 'studio', style: b.style || STORY.style || 'ink' })), loop: STORY.loop || 0 }; }
 
 // =================== render ===================
 const WIPE = null;   // legacy single wipe [start, end]; story beats use { wipe: true }
@@ -488,9 +490,10 @@ export async function renderFrame(f) {
   for (let pass = 0; pass < 6; pass++) { drawFrame(f); const p = takePending(); if (!p.length) break; await Promise.all(p); }
   return true;
 }
-function drawFrame(f) {
-  const gt = f / FPS; CUR_T = gt;
-  let i = 0; for (let k = 0; k < SH.length; k++) if (gt >= SH[k][0]) i = k;
+function drawCore(f) {
+  let gt = f / FPS; let i = 0; for (let k = 0; k < SH.length; k++) if (gt >= SH[k][0]) i = k;
+  const ST = styleAt(i); if (ST && ST.twos) { f -= f % 2; gt = f / FPS; }   // animate on twos (stop-motion / old film feel)
+  CUR_T = gt;
   const [t0, fn] = SH[i];
   applyAspect(i);
   frame(gt, { amp: 1.2 });
@@ -508,6 +511,19 @@ function drawFrame(f) {
   }
   captions(gt);
   post(f);
+  stylize(ST, f);
+}
+// —— loop ending: the last LOOP seconds dissolve into frame 0 so the video replays seamlessly (STORY.loop = 0.4) ——
+let LOOPBUF = null;
+function drawFrame(f) {
+  const L = (typeof STORY !== 'undefined' && STORY && STORY.loop) || 0, dur = LIPS ? LIPS.N / FPS : 0, gt = f / FPS;
+  drawCore(f);
+  if (L && dur && gt > dur - L) {
+    const k = ss(clamp((gt - (dur - L)) / L));
+    if (!LOOPBUF || LOOPBUF.width !== CW || LOOPBUF.height !== CH) LOOPBUF = new OffscreenCanvas(CW, CH);
+    const lb = LOOPBUF.getContext('2d'); lb.setTransform(1, 0, 0, 1, 0, 0); lb.clearRect(0, 0, CW, CH); lb.drawImage(g.canvas, 0, 0);
+    drawCore(0); g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1 - k; g.drawImage(LOOPBUF, 0, 0); g.globalAlpha = 1;
+  }
 }
 let GRAIN = null;
 function post(f) {
@@ -516,6 +532,63 @@ function post(f) {
   g.fillStyle = v; g.fillRect(0, 0, CW, CH);
   if (!GRAIN) { GRAIN = []; for (let n = 0; n < 4; n++) { const c = new OffscreenCanvas(256, 256), x = c.getContext('2d'), d = x.createImageData(256, 256); for (let p = 0; p < d.data.length; p += 4) { const r = Math.random() * 255; d.data[p] = d.data[p + 1] = d.data[p + 2] = r; d.data[p + 3] = 255; } x.putImageData(d, 0, 0); GRAIN.push(g.createPattern(c, 'repeat')); } }
   g.globalAlpha = .045; g.globalCompositeOperation = 'overlay'; g.fillStyle = GRAIN[Math.floor(f / 2) % 4]; g.fillRect(0, 0, CW, CH); g.globalCompositeOperation = 'source-over'; g.globalAlpha = 1;
+}
+
+// =================== STYLES: one cast, many looks ===================
+// story-wide `style:` or per-beat `style:`. ink = the house look. See docs/STYLES.md.
+const STYLES = {
+  ink: null,
+  oldfilm: { filter: 'sepia(1) saturate(.7) contrast(1.3) brightness(.86)', twos: true, jitter: 2, flicker: .07, scratches: true, edge: .55 },
+  paper: { twos: true, jitter: 3, paper: .45, filter: 'saturate(.92) contrast(1.05)', shadow: true },
+  riso: { riso: ['#ff4f7b', '#2a4bd7'], misreg: 7, paper: .2, halftone: .18 },
+  noir: { filter: 'grayscale(1) contrast(1.45) brightness(.92)', tint: 'rgba(30,50,110,0.20)', edge: .6, grainX: 2 },
+  comic: { filter: 'saturate(1.3) contrast(1.12)', halftone: .14, border: 18 },
+  pastel: { filter: 'saturate(.7) brightness(1.07) contrast(.95)', paper: .15 },
+  dusk: { filter: 'saturate(1.5) contrast(1.15) brightness(.88) hue-rotate(-10deg)', tint: 'rgba(110,0,170,0.18)', edge: .45 },
+  freeze: { filter: 'grayscale(.85) contrast(1.15)', tint: 'rgba(255,214,107,0.10)' },
+  vhs: { filter: 'saturate(1.25) contrast(1.05)', chroma: 5, scan: .12, jitter: 1 },
+};
+const STYLE_OVERRIDE = typeof location !== 'undefined' ? new URLSearchParams(location.search).get('style') : null;
+function styleAt(i) {
+  if (STYLE_OVERRIDE) return STYLES[STYLE_OVERRIDE] || null;
+  if (typeof STORY === 'undefined' || !STORY) return null;
+  const b = STORY.beats && STORY.beats[i], n = (b && b.style) || STORY.style; return n ? (typeof n === 'object' ? n : STYLES[n]) : null;
+}
+let SBUF = null, PATS = null;
+function pats() {
+  if (PATS) return PATS; PATS = {};
+  const mk = (w, h, fn) => { const c = new OffscreenCanvas(w, h), x = c.getContext('2d'); fn(x, w, h); return g.createPattern(c, 'repeat'); };
+  PATS.dots = mk(12, 12, (x) => { x.fillStyle = '#fff'; x.fillRect(0, 0, 12, 12); x.fillStyle = '#000'; x.beginPath(); x.arc(6, 6, 2.6, 0, TAU); x.fill(); });
+  PATS.paper = mk(512, 512, (x, w, h) => { const d = x.createImageData(w, h); for (let p = 0; p < d.data.length; p += 4) { const v = 225 + Math.random() * 30; d.data[p] = v; d.data[p + 1] = v - 4; d.data[p + 2] = v - 14; d.data[p + 3] = 255; } x.putImageData(d, 0, 0); x.strokeStyle = 'rgba(120,100,70,0.12)'; for (let i = 0; i < 260; i++) { x.beginPath(); const a = Math.random() * w, b = Math.random() * h; x.moveTo(a, b); x.lineTo(a + (Math.random() - .5) * 40, b + (Math.random() - .5) * 40); x.stroke(); } });
+  PATS.scan = mk(4, 4, (x) => { x.fillStyle = 'rgba(0,0,0,0)'; x.fillRect(0, 0, 4, 4); x.fillStyle = 'rgba(0,0,0,1)'; x.fillRect(0, 0, 4, 1); });
+  return PATS;
+}
+function stylize(S, f) {
+  if (!S) return; const P = pats();
+  if (!SBUF || SBUF.width !== CW || SBUF.height !== CH) SBUF = new OffscreenCanvas(CW, CH);
+  const b = SBUF.getContext('2d'); b.setTransform(1, 0, 0, 1, 0, 0); b.globalCompositeOperation = 'source-over'; b.filter = 'none'; b.clearRect(0, 0, CW, CH); b.drawImage(g.canvas, 0, 0);
+  const r = (n) => hash(Math.floor(f / 2) * 7.13 + n), jx = S.jitter ? (r(1) - .5) * 2 * S.jitter : 0, jy = S.jitter ? (r(2) - .5) * 2 * S.jitter : 0;
+  g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+  if (S.riso) {   // two-ink risograph: each ink is a tinted grayscale pass, slightly misregistered, multiplied on paper
+    g.fillStyle = '#f4ede0'; g.fillRect(0, 0, CW, CH);
+    S.riso.forEach((ink, k) => { const t = new OffscreenCanvas(CW, CH), x = t.getContext('2d'); x.filter = k ? 'grayscale(1) contrast(1.6) brightness(1.15)' : 'grayscale(1) contrast(1.1)'; x.drawImage(SBUF, 0, 0); x.filter = 'none'; x.globalCompositeOperation = 'screen'; x.fillStyle = ink; x.fillRect(0, 0, CW, CH);
+      g.globalCompositeOperation = 'multiply'; g.drawImage(t, (k ? 1 : -1) * S.misreg * (.6 + r(3 + k) * .8), (k ? -1 : 1) * S.misreg * .5); });
+    g.globalCompositeOperation = 'source-over';
+  } else {
+    g.filter = S.filter || 'none'; g.clearRect(0, 0, CW, CH);
+    if (S.chroma) { g.globalCompositeOperation = 'lighter'; ['rgba(255,0,0,1)', 'rgba(0,255,0,1)', 'rgba(0,0,255,1)'].forEach((c, k) => { const t = new OffscreenCanvas(CW, CH), x = t.getContext('2d'); x.drawImage(SBUF, 0, 0); x.globalCompositeOperation = 'multiply'; x.fillStyle = c; x.fillRect(0, 0, CW, CH); g.drawImage(t, (k - 1) * S.chroma + jx, jy); }); g.globalCompositeOperation = 'source-over'; }
+    else { if (S.jitter) { g.fillStyle = '#1b1422'; g.fillRect(0, 0, CW, CH); } g.drawImage(SBUF, jx, jy); }
+    g.filter = 'none';
+  }
+  if (S.tint) { g.globalCompositeOperation = 'multiply'; g.fillStyle = S.tint; g.fillRect(0, 0, CW, CH); g.globalCompositeOperation = 'source-over'; }
+  if (S.paper) { g.globalCompositeOperation = 'multiply'; g.globalAlpha = S.paper; g.fillStyle = P.paper; g.fillRect(0, 0, CW, CH); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; }
+  if (S.halftone) { g.globalCompositeOperation = 'multiply'; g.globalAlpha = S.halftone; g.fillStyle = P.dots; g.fillRect(0, 0, CW, CH); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; }
+  if (S.scan) { g.globalAlpha = S.scan; g.fillStyle = P.scan; g.fillRect(0, 0, CW, CH); g.globalAlpha = 1; }
+  if (S.flicker) { g.fillStyle = `rgba(20,12,0,${S.flicker * r(5)})`; g.fillRect(0, 0, CW, CH); }
+  if (S.scratches) { g.strokeStyle = 'rgba(255,248,230,0.55)'; for (let k = 0; k < 3; k++) if (r(10 + k) > .55) { const x = r(20 + k) * CW; g.lineWidth = 1 + r(30 + k) * 2; g.beginPath(); g.moveTo(x, 0); g.lineTo(x + (r(40 + k) - .5) * 30, CH); g.stroke(); }
+    g.fillStyle = 'rgba(30,20,10,0.6)'; for (let k = 0; k < 6; k++) if (r(50 + k) > .6) { g.beginPath(); g.arc(r(60 + k) * CW, r(70 + k) * CH, 2 + r(80 + k) * 5, 0, TAU); g.fill(); } }
+  if (S.edge) { const hd = Math.hypot(CW, CH), v = g.createRadialGradient(CW / 2, CH / 2, hd * .25, CW / 2, CH / 2, hd * .62); v.addColorStop(0, 'rgba(0,0,0,0)'); v.addColorStop(1, `rgba(10,5,0,${S.edge})`); g.fillStyle = v; g.fillRect(0, 0, CW, CH); }
+  if (S.border) { g.strokeStyle = '#17141c'; g.lineWidth = S.border * 2; g.strokeRect(0, 0, CW, CH); }
 }
 export { SH };
 // —— output formats ——  The film is composed once in 1080×1920 space; other formats look at it through a window.

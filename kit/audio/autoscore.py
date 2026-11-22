@@ -136,12 +136,17 @@ def click(): return hp(rng.standard_normal(int(.02 * SR)), 3000) * np.exp(-T(.02
 def sparkle(): x = np.zeros(int(.8 * SR)); [x.__setitem__(slice(int(k * .07 * SR), int(k * .07 * SR) + int(.4 * SR)), ding(96 + 3 * k, .4) * .5) for k in range(4)]; return x
 def whir(d): t = T(d); return lp(saw(np.cumsum(np.full(len(t), 55.)) / SR) + .4 * rng.standard_normal(len(t)), 700) * .4 * np.minimum(1, t * 5) * np.minimum(1, (d - t) * 5)
 def waves(d): t = T(d); return lp(rng.standard_normal(len(t)), 700) * (.5 + .5 * np.sin(2 * np.pi * .25 * t)) * np.minimum(1, t) * np.minimum(1, d - t)
+def scratch(): t = T(.35); f = 900 * np.exp(-t * 6) + 120; return (bp(rng.standard_normal(len(t)), 300, 4000) * .6 + np.sign(np.sin(2 * np.pi * np.cumsum(f) / SR)) * .25) * np.exp(-t * 5)
+def projector(d): t = T(d); x = np.zeros(len(t)); k = int(SR / 18); [x.__setitem__(slice(i, i + 200), hp(rng.standard_normal(200), 2000) * .5) for i in range(0, len(t) - 200, k)]; return x + lp(rng.standard_normal(len(t)), 300) * .15
 def gulp(): t = T(.2); return np.sin(2 * np.pi * np.cumsum(300 - 600 * t) / SR) * np.exp(-t * 12)
 
 M_ = {'pop': lambda: pop(), 'pops': lambda: pop(), 'click': lambda: click(), 'ding': lambda: ding(88, .6), 'buzz': lambda: buzz(.4), 'stamp': lambda: stamp(), 'whoosh': lambda: whoosh(.45),
       'chaching': lambda: chaching(), 'cheer': lambda: cheer(1.6), 'sparkle': lambda: sparkle(), 'steps': lambda: steps(1.8, 4), 'portal': lambda: portal(), 'boing': lambda: boing(),
-      'thud': lambda: thud(), 'creak': lambda: creak(), 'powerdown': lambda: powerdown(), 'page': lambda: page(), 'waves': lambda: waves(4.0), 'gulp': lambda: gulp(), 'chalk': lambda: chalk()}
+      'thud': lambda: thud(), 'creak': lambda: creak(), 'powerdown': lambda: powerdown(), 'page': lambda: page(), 'waves': lambda: waves(4.0), 'gulp': lambda: gulp(), 'chalk': lambda: chalk(), 'scratch': lambda: scratch()}
 cues = []
+bts = EV['beats'] + [{'t': EV['dur'], 'style': None}]
+for b0, b1 in zip(bts, bts[1:]):
+    if b0.get('style') == 'oldfilm': cues.append((b0['t'], projector(b1['t'] - b0['t']), .35))
 for e in EV['events']:
     t, k = e['t'], e['type']
     if k in ('cut', 'end'): continue

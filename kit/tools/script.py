@@ -14,6 +14,7 @@ Usage:
     python3 script.py el    script.md   → work/elevenlabs_dialogue.txt (Text-to-Dialogue / Studio, v3 tags kept)
                                           + work/el_<SP>.txt per voice + checklist on screen
     python3 script.py lines script.md   → work/lines.txt (SP|text without tags) for alignment
+    python3 script.py check script.md   → hook length, sentence lengths, duration and the LOOP JOIN (last line → first line)
 """
 import re, sys, os, json
 TAG = re.compile(r'\[[^\]]*\]')
@@ -54,4 +55,17 @@ def main():
         for sp, v in voices.items(): print(f'  voice {sp}: {v}')
         print('Export ONE file with all lines in order (mp3/wav/mp4). Then upload it here.')
 
-if __name__ == '__main__': main()
+def check(path):
+    meta, voices, lines = parse(path); txt = [clean(t) for _, t in lines]
+    words = sum(len(t.split()) for t in txt); first = re.split(r'(?<=[.!?])\s+', txt[0])[0] if txt else ''
+    print(f'{len(lines)} lines · {words} words · ~{words / 2.5:.0f}s')
+    print(f'HOOK ({len(first.split())} words, aim ≤ 12): {first}')
+    long = [s for t in txt for s in re.split(r'(?<=[.!?])\s+', t) if len(s.split()) > 15]
+    for s_ in long: print(f'  ⚠ long sentence ({len(s_.split())} words): {s_[:80]}')
+    last = re.split(r'(?<=[.!?])\s+', txt[-1])[-1] if txt else ''
+    print(f'LOOP JOIN — read aloud without pausing:\n  "…{last}" → "{first}"')
+    tags = re.findall(r'\[([^\]]+)\]', ' '.join(t for _, t in lines)); print('emotion tags:', ', '.join(sorted(set(tags))) or 'none (add some)')
+
+if __name__ == '__main__':
+    if sys.argv[1] == 'check': check(sys.argv[2])
+    else: main()
