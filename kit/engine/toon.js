@@ -5,8 +5,9 @@
 import { clamp, lerp, hash, vnoise, TAU } from '/core/lib.js';
 export const W = 1080, H = 1920;
 // output canvas (may differ from the 1080x1920 composition): composition point (x,y) lands at (x+OX, y+OY)
-export let CW = 1080, CH = 1920, OX = 0, OY = 0;
-export function setView(cw, ch, ox, oy) { CW = cw; CH = ch; OX = ox; OY = oy; }
+export let CW = 1080, CH = 1920, OX = 0, OY = 0, SC = 1;
+// canvas point = SC * composition point + (OX, OY)
+export function setView(cw, ch, ox, oy, sc = 1) { CW = cw; CH = ch; OX = ox; OY = oy; SC = sc; }
 export const INK = '#1b1422';
 export let g = null;
 let REAL = null;
@@ -31,7 +32,7 @@ export const setM = m => { M = m.slice(); };
 // —— global state (set every frame)——
 export const S = { boil: 0, amp: 1.7, sid: 0, lw: 7, lwScale: 1 };
 export function frame(t, { amp = 1.7 } = {}) {
-  S.boil = Math.floor(t * 12 + 1e-6) % 3; S.amp = amp; S.sid = 0; reset(); M = [1, 0, 0, 1, OX, OY];
+  S.boil = Math.floor(t * 12 + 1e-6) % 3; S.amp = amp; S.sid = 0; reset(); M = [SC, 0, 0, SC, OX, OY];
   g.setTransform(1, 0, 0, 1, 0, 0);
 }
 

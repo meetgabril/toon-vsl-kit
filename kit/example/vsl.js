@@ -1,6 +1,6 @@
 // vsl.js — "Coach Tony's Treadmill" · Buzztorm VSL in the sitcom-toon style (24 fps, 1080x1920)
 import { clamp, lerp, hash, seg, eo, ei, eio, back, spring, TAU } from '/core/lib.js';
-import { setDry, getM, INK, W, H, CW, CH, OX, OY, setView, frame, push, pop, translate, rotate, scale, shape, fillOnly, stroke, ell, arc, spline, rr, rect, noodle, quad, dot, text, bands, g, S } from './toon.js';
+import { setDry, getM, INK, W, H, CW, CH, OX, OY, SC, setView, frame, push, pop, translate, rotate, scale, shape, fillOnly, stroke, ell, arc, spline, rr, rect, noodle, quad, dot, text, bands, g, S } from './toon.js';
 import { C } from './cast.js';
 import { peep, folk2, bfaWoman, transformFig, ARMS } from './chars2.js';
 import { loadPeeps, takePending } from './peeps.js';
@@ -9,7 +9,20 @@ import './cast.custom.js';   // your own characters (addCast) — see CHARACTERS
 
 export const FPS = 24;
 let LIPS = null;
-export async function load() { LIPS = await (await fetch('/work/lips.json')).json(); await loadPeeps(); return LIPS.N; }
+let TIMING = null;
+export async function load() { LIPS = await (await fetch('/work/lips.json')).json(); try { TIMING = await (await fetch('/work/timing.json')).json(); } catch (e) {} await loadPeeps(); return LIPS.N; }
+// —— optional burned-in captions (shorts/reels/ads): 3-word chunks from timing.json, current word highlighted ——
+const CAPTIONS = { on: new URLSearchParams(location.search).get('cap') === '1', y: 1560, size: 84, chunk: 3, col: '#ffffff', hi: '#ffd66b' };
+function captions(gt) {
+  if (!CAPTIONS.on || !TIMING) return; const W_ = TIMING.words; let i = -1; for (let k = 0; k < W_.length && W_[k][1] - .05 <= gt; k++) i = k; if (i < 0) return;
+  const c0 = i - (i % CAPTIONS.chunk), chunk = W_.slice(c0, c0 + CAPTIONS.chunk); if (gt > chunk[chunk.length - 1][2] + .4) return;
+  const txt = chunk.map(w => w[0].toUpperCase()); let fs = CAPTIONS.size; g.setTransform(1, 0, 0, 1, 0, 0);
+  const meas = () => { g.font = `400 ${fs}px "Bungee"`; return txt.map(t => g.measureText(t).width + fs * .55); };
+  let ws = meas(), tot = ws.reduce((a, b) => a + b, 0); if (tot > 960) { fs *= 960 / tot; ws = meas(); tot = ws.reduce((a, b) => a + b, 0); }
+  const font = `400 ${fs}px "Bungee"`; let x = 540 - tot / 2;
+  txt.forEach((t, k) => { const on = c0 + k === i, sc = on ? 1 + .08 * (1 - Math.min(1, (gt - chunk[k][1]) / .12)) : 1;
+    push(); translate(x + ws[k] / 2, CAPTIONS.y); scale(sc); text(t, 0, 0, { font, fill: on ? CAPTIONS.hi : CAPTIONS.col, outlineW: 14, outlineCol: INK }); pop(); x += ws[k]; });
+}
 const lip = (sp, gt) => { const f = Math.floor(gt * FPS); return LIPS && LIPS.sp[f] === sp ? LIPS.open[f] : 0; };
 const mouthOf = (sp, gt, base = {}) => { const o = lip(sp, gt); const k = Math.floor(gt * 12); return { ...base, o: o > 0.06 ? o * (base.amp ?? 0.85) : 0, w: (base.w ?? 1) * (o > 0.06 ? 0.85 + 0.25 * hash(k * 1.7) : 1) }; };
 const blink = (gt, seed) => { const p = 2.6 + hash(seed) * 1.8, ph = (gt + hash(seed * 3) * p) % p; return ph < 0.12; };
@@ -89,7 +102,7 @@ function bgContent(gt, night = 0) {
 function bgOffice() { wall('#dfe7ef'); for (let i = -4; i < 14; i++) stroke([[i * 120, 0], [i * 120, 1300]], 3, { line: '#d2dce6', boil: 0 }); shape(rr(820, 1040, 160, 30, 8), { fill: '#a9744a', lw: 5 }); shape(ell(900, 990, 50, 60, 18), { fill: '#5aa857', lw: 5 }); fillOnly(rect(-600, 1300, W + 1200, 900), '#9fb3c8', { boil: 0 }); stroke([[-600, 1300], [W + 600, 1300]], 7); }
 function bgBoard() {
   // explainer backdrop: deep brand navy, soft key light, dot grid, faint rings
-  g.setTransform(1, 0, 0, 1, OX, OY); const gr = g.createRadialGradient(W * .5, H * .38, 60, W * .5, H * .5, H * .85); gr.addColorStop(0, '#2c4170'); gr.addColorStop(.55, '#1f2f55'); gr.addColorStop(1, '#141f3b'); g.fillStyle = gr; g.fillRect(-OX, -OY, CW, CH);
+  g.setTransform(SC, 0, 0, SC, OX, OY); const gr = g.createRadialGradient(W * .5, H * .38, 60, W * .5, H * .5, H * .85); gr.addColorStop(0, '#2c4170'); gr.addColorStop(.55, '#1f2f55'); gr.addColorStop(1, '#141f3b'); g.fillStyle = gr; g.fillRect(-OX / SC, -OY / SC, CW / SC, CH / SC);
   for (let j = -4; j < 26; j++) for (let i = -6; i < 18; i++) dot(i * 80 + 40, j * 80 + 40, 2.2, 'rgba(160,190,255,0.16)');
   for (let k = 0; k < 3; k++) stroke([...ell(540, 900, 300 + k * 190, 300 + k * 190, 96), ell(540, 900, 300 + k * 190, 300 + k * 190, 96)[0]], 2.5, { line: 'rgba(160,190,255,0.10)', boil: 0 });
 }
@@ -99,7 +112,7 @@ function bgCommunity() { bands(['#f3e7d3', '#efe0c8', '#eadabf'], -400, 1220); f
 function bgBeach(gt) { bands(['#7fd3ff', '#9fdcff', '#bfe8ff'], -400, 1000); shape(ell(860, 330, 90, 90, 30), { fill: '#ffd66b', lw: 6 }); fillOnly(rect(-600, 1000, W + 1200, 240), '#3aa7c9'); for (let i = 0; i < 8; i++) stroke(spline([[i * 160 - 100 + (gt * 30) % 160, 1060 + (i % 2) * 60], [i * 160 - 50 + (gt * 30) % 160, 1046 + (i % 2) * 60], [i * 160 + (gt * 30) % 160, 1060 + (i % 2) * 60]], false), 5, { line: '#ffffff' }); fillOnly(rect(-600, 1240, W + 1200, 900), '#f2d39b'); stroke([[-600, 1240], [W + 600, 1240]], 7); }
 function bgStage() {
   // Buzztorm studio set: warm slatted wall, orange LED strip, polished floor
-  g.setTransform(1, 0, 0, 1, OX, OY); const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, '#16213a'); gr.addColorStop(.6, '#22325a'); gr.addColorStop(1, '#16213a'); g.fillStyle = gr; g.fillRect(-OX, -OY, CW, CH);
+  g.setTransform(SC, 0, 0, SC, OX, OY); const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, '#16213a'); gr.addColorStop(.6, '#22325a'); gr.addColorStop(1, '#16213a'); g.fillStyle = gr; g.fillRect(-OX / SC, -OY / SC, CW / SC, CH / SC);
   fillOnly(rect(-600, 520, W + 1200, 800), '#5a3d2c', { boil: 0 });
   for (let i = -8; i < 22; i++) { fillOnly(rect(i * 70, 520, 46, 800), i % 2 ? '#7a5238' : '#6d4a33', { boil: 0 }); stroke([[i * 70, 520], [i * 70, 1320]], 2.5, { line: '#3f2a1e', boil: 0 }); }
   fillOnly(rect(-600, 500, W + 1200, 26), '#ff6a2a', { boil: 0 }); fillOnly(rect(-600, 470, W + 1200, 30), 'rgba(255,120,50,0.25)', { boil: 0 }); fillOnly(rect(-600, 526, W + 1200, 60), 'rgba(255,120,50,0.18)', { boil: 0 });
@@ -479,7 +492,7 @@ shot(73.3, (lt, gt) => {
 // 17. The busiest gym in town
 function gymFront(t) {
   // golden-hour sky + skyline
-  g.setTransform(1, 0, 0, 1, OX, OY); const sky = g.createLinearGradient(0, 0, 0, H * .7); sky.addColorStop(0, '#9ccfee'); sky.addColorStop(1, '#f6d9b0'); g.fillStyle = sky; g.fillRect(-OX, -OY, CW, CH);
+  g.setTransform(SC, 0, 0, SC, OX, OY); const sky = g.createLinearGradient(0, 0, 0, H * .7); sky.addColorStop(0, '#9ccfee'); sky.addColorStop(1, '#f6d9b0'); g.fillStyle = sky; g.fillRect(-OX / SC, -OY / SC, CW / SC, CH / SC);
   for (let i = 0; i < 9; i++) fillOnly(rect(-200 + i * 170, 380 - (i * 37 % 5) * 50, 150, 900), i % 2 ? '#b9c7d6' : '#a9b8c9', { boil: 0 });
   // facade: charcoal with a slatted wood panel
   shape(rect(40, 300, 1000, 960), { fill: '#2b2d36', lw: 8 });
@@ -713,7 +726,7 @@ function drawFrame(f) {
   const gt = f / FPS; CUR_T = gt;
   let i = 0; for (let k = 0; k < SH.length; k++) if (gt >= SH[k][0]) i = k;
   const [t0, fn] = SH[i];
-  if (ASPECT === '45') { const y0 = Y0[i] ?? 140; setView(1400, 1750, 160, -y0); }
+  applyAspect(i);
   frame(gt, { amp: 1.2 });
   g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = '#ffffff'; g.fillRect(0, 0, CW, CH);
   const t1 = i + 1 < SH.length ? SH[i + 1][0] : (LIPS ? LIPS.N / FPS : t0 + 5), zk = 1 + .035 * ss(clamp((gt - t0) / (t1 - t0)));
@@ -727,6 +740,7 @@ function drawFrame(f) {
     shape(ell(0, 0, r * .9, r, 60), { fill: '#ff5a1f', lw: 9, shade: () => { for (let i = 0; i < 5; i++) fillOnly(arc(0, 0, r * (.8 - i * .14), r * (.9 - i * .16), i * 1.3 + gt * 6, i * 1.3 + gt * 6 + 2.6, 24), ['#ff8a3d', '#ffb547', '#ffd88a', '#fff3d6', '#ffffff'][i], { boil: .5 }); } });
     pop();
   }
+  captions(gt);
   post(f);
 }
 let GRAIN = null;
@@ -738,9 +752,21 @@ function post(f) {
   g.globalAlpha = .045; g.globalCompositeOperation = 'overlay'; g.fillStyle = GRAIN[Math.floor(f / 2) % 4]; g.fillRect(0, 0, CW, CH); g.globalCompositeOperation = 'source-over'; g.globalAlpha = 1;
 }
 export { SH };
+// —— output formats ——  The film is composed once in 1080×1920 space; other formats look at it through a window.
+// '916' 1080×1920 (native) · '45' 1080×1350 (rendered 1400×1750, downscaled) · '11' 1080×1080 · '169' 1920×1080
+// Y0[fmt][shotIndex] = top of the window in composition y (tune per shot after a stills check)
 let ASPECT = '916';
-// 4:5 — top of the 1750-tall composition window, per shot index (default 140 → y 140..1890)
-const Y0 = { 5: 70, 7: 70, 20: 90, 29: 90 };
+export const FMT = {
+  '916': { cw: 1080, ch: 1920, sc: 1, y0: 0 },
+  '45': { cw: 1400, ch: 1750, sc: 1, y0: 140 },
+  '11': { cw: 1080, ch: 1080, sc: .72, y0: 400 },
+  '169': { cw: 1920, ch: 1080, sc: .84, y0: 520 },
+};
+const Y0 = { '45': { 5: 70, 7: 70, 20: 90, 29: 90 }, '11': {}, '169': {} };
+function applyAspect(i) {
+  const F = FMT[ASPECT]; const y0 = (Y0[ASPECT] || {})[i] ?? F.y0;
+  setView(F.cw, F.ch, F.cw / 2 - 540 * F.sc, -y0 * F.sc, F.sc);
+}
 export function setAspect(a) { ASPECT = a; }
 export { bgStudio, bgContent, bgBeach, bgStage, bgCommunity, beachSet, gymFront, bgBoard };
 
@@ -850,10 +876,86 @@ function thumbAcademy2(gt) {
   post(0);
 }
 let A2 = { win: [590, 910], stk: [955, 575], tony: [300, 2010, 2.3], cap: [300, 1252, -.06, .9], sparks: [[110, 560, .2, 1.1], [70, 1270, .1, 1], [1010, 1400, -.2, 1], [870, 1330, .3, .8], [960, 1700, -.2, 1.1]] };
+
+// =================== reference galleries (kit/ref) ===================
+// thumb.html?v=sets&i=N  → set N full frame · thumb.html?v=props&w=2160&h=2700 → every prop on one sheet
+export const SETS = [
+  ['bgStudio', 'coach studio + before/after poster', gt => bgStudio(gt)],
+  ['bgContent day', 'creator room (day)', gt => bgContent(gt, 0)],
+  ['bgContent night', 'creator room (night)', gt => bgContent(gt, 1)],
+  ['bgCasino + adsMachine', 'paid-ads world', gt => { bgCasino(gt); adsMachine(640, 1500, gt, { price: '$200', year: '2024' }); }],
+  ['bgBoard', 'navy explainer', gt => bgBoard()],
+  ['bgChalk', 'chalkboard', gt => bgChalk()],
+  ['bgStreet', 'street', gt => bgStreet()],
+  ['gymFront', 'PULSE gym front', gt => gymFront(gt)],
+  ['bgCommunity', 'warm community interior', gt => bgCommunity()],
+  ['bgBeach + beachSet', 'beach', gt => { bgBeach(gt); beachSet(gt, 0); }],
+  ['bgStage', 'Buzztorm studio', gt => bgStage()],
+  ['bgOffice', 'office', gt => bgOffice()],
+  ['twoDoors', 'two doors: ADS / CONTENT', gt => twoDoors(0, gt, 0, 0)],
+];
+function gallerySets(i) {
+  frame(1, { amp: 1.2 }); g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = '#ffffff'; g.fillRect(0, 0, CW, CH);
+  SETS[i][2](1.0); post(0);
+}
+function galleryProps() {
+  frame(1, { amp: 1.0 }); g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = '#f6efe2'; g.fillRect(0, 0, CW, CH);
+  // each entry draws around (0,0) = bottom-centre of its cell, scaled by sc; labels drawn last so nothing covers them
+  const P = [
+    ['sign()', 1, () => sign(0, -150, 300, 110, '#e8574a', 'SIGN', { font: '400 56px "Bungee"' })],
+    ['pill()', 1, () => pill(0, -150, 'PILL', '#5bc0be')],
+    ['panel()', 1, () => panel(0, -160, 280, 220)],
+    ['coin() / bill()', 1, () => { coin(-70, -150, 36); bill(50, -150, -.2, 1.3); }],
+    ['mug() + steam()', 1.3, () => { mug([0, -60]); steam(0, -140, 1); }],
+    ['phone(hp, scr, txt)', 1.2, () => phone([0, -60], '#7fd3ff', '+12')],
+    ['tablet() / chalk()', 1.1, () => { tablet([-50, -60]); chalk([80, -80]); }],
+    ['dumbbell()', 1.5, () => dumbbell([0, -100], -.2)],
+    ['clock()', .9, () => clock(0, -190, 120, 9, '9:00 AM')],
+    ['poof() / stars()', 1, () => { poof(-70, -150, .5); stars(70, -150, .5, 5, 70); }],
+    ['arrow()', 1, () => arrow([-130, -80], [130, -220], '#e8574a', 12, 1)],
+    ['xMark() / check()', 1, () => { xMark(-75, -150, .75, 1); check(80, -150, .75, 1); }],
+    ['door()', .8, () => door(0, 0, 200, 340, '#a974e0', 'ADS', .3)],
+    ['adsMachine()', .3, () => adsMachine(0, 0, 1, { price: '$200', year: '2024' })],
+    ['umbrella()', .45, () => umbrella(0, 0, 700)],
+    ['tripod() + recDot()', .7, () => { tripod(0, 0, 420, 1); recDot(0, -500, 0); }],
+    ['phoneRig()', .45, () => phoneRig(0, 0, 0, 'REC', 1)],
+    ['cameraRig()', .45, () => cameraRig(0, 0, 0, 1)],
+    ['softbox()', .42, () => softbox(0, 0, 1)],
+    ['ringStand()', .38, () => ringStand(0, 0, 1, 1, 0)],
+    ['treadBack/Front()', .42, () => { treadBack(0, -160, 1, 1, 1); treadFront(0, -160, 1, 'SPEED', '8.0'); }],
+    ['sweatDrop()', 3, () => sweatDrop(0, -40)],
+    ['folk() extras', .62, () => { for (let k = 0; k < 3; k++) folk(-150 + k * 150, 0, 1, k * 3 + 1, {}); }],
+    ['transformFig()', .55, () => { transformFig(-120, 0, 1, false, 1); transformFig(120, 0, 1, true, 1); }],
+  ];
+  const at = (k) => [180 + (k % 6) * 360, 470 + Math.floor(k / 6) * 540];
+  P.forEach(([n, sc, fn], k) => { const [x, y] = at(k); push(); translate(x, y); scale(sc); fn(); pop(); });
+  P.forEach(([n], k) => { const [x, y] = at(k); text(n, x, y + 50, { font: '800 30px "Baloo 2"', fill: '#25385c' }); });
+}
+function galleryStyle() {
+  frame(1, { amp: 1.0 }); g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = '#f6efe2'; g.fillRect(0, 0, CW, CH);
+  fillOnly(rect(0, 0, 2160, 150), '#25385c', { boil: 0 }); fillOnly(rect(0, 150, 2160, 10), '#ff6a2a', { boil: 0 });
+  text('STYLE CARD', 60, 75, { font: '400 72px "Bungee"', fill: '#fff6e0', align: 'left' });
+  text('flat colour · hard shade blocks · 7 px plum ink at 1080 · boil 12 fps · vignette + grain', 700, 80, { font: '800 34px "Baloo 2"', fill: '#ffd66b', align: 'left' });
+  const PAL = [['navy', '#25385c'], ['deep navy', '#16213a'], ['orange · CTA', '#ff6a2a'], ['gold', '#ffd66b'], ['cream', '#fff6e0'], ['paper', '#efe4d2'],
+    ['green · growth', '#2f8f4a'], ['red (loss)', '#e8574a'], ['teal', '#5bc0be'], ['violet', '#a974e0'], ['coral (Tony)', '#ff5b4d'], ['ink', '#17141c']];
+  PAL.forEach(([n, c], i) => { const x = 80 + (i % 6) * 340, y = 230 + Math.floor(i / 6) * 230; shape(rr(x, y, 300, 130, 22), { fill: c, lw: 6 }); text(n, x, y + 165, { font: '800 30px "Baloo 2"', fill: '#25385c', align: 'left' }); text(c, x + 300, y + 165, { font: '400 30px "VT323"', fill: '#5a5468', align: 'right' }); });
+  text('Bungee — TITLES, SIGNS, NUMBERS 123', 80, 760, { font: '400 72px "Bungee"', fill: '#25385c', align: 'left' });
+  text('Baloo 2 800 — labels, UI text, captions in cards', 80, 870, { font: '800 64px "Baloo 2"', fill: '#25385c', align: 'left' });
+  text('VT323 — SCREENS, COUNTERS  $200  1680', 80, 970, { font: '400 76px "VT323"', fill: '#2f8f4a', align: 'left' });
+  // shading + plate examples
+  shape(rr(80, 1060, 420, 300, 34), { fill: '#5bc0be', lw: 9, shade: () => fillOnly(rect(80, 1260, 420, 120), '#47a3a1', { boil: .5 }) }); text('fill + hard shade', 290, 1410, { font: '800 30px "Baloo 2"', fill: '#25385c' });
+  sign(800, 1200, 440, 150, '#ff6a2a', 'TITLE PLATE', { font: '400 58px "Bungee"' }); text('sign(): plate + drop shadow', 800, 1410, { font: '800 30px "Baloo 2"', fill: '#25385c' });
+  pill(1300, 1200, 'PILL', '#2f8f4a'); text('pill()', 1300, 1410, { font: '800 30px "Baloo 2"', fill: '#25385c' });
+  push(); translate(1760, 1210); shape(rr(-200, -150, 400, 300, 30), { fill: '#fff6e0', lw: 8, shade: () => { fillOnly(rr(-200, -150, 400, 70, 30), '#25385c'); fillOnly(rect(-200, -110, 400, 30), '#25385c', { boil: 0 }); } }); text('UI CARD', 0, -112, { font: '400 32px "Bungee"', fill: '#ffffff' }); text('+47', 0, 20, { font: '400 90px "Bungee"', fill: '#2f8f4a' }); pop(); text('UI card (cream + navy header)', 1760, 1410, { font: '800 30px "Baloo 2"', fill: '#25385c' });
+  [3, 5, 7, 10, 14].forEach((w, i) => { stroke([[100 + i * 200, 1520], [240 + i * 200, 1600]], w); text(w + ' px', 170 + i * 200, 1650, { font: '800 28px "Baloo 2"', fill: '#25385c' }); });
+  text('line weights: 4–6 UI · 7 default · 9–11 big plates · 14 caption outline', 1100, 1580, { font: '800 30px "Baloo 2"', fill: '#25385c', align: 'left' });
+  post(0);
+}
 let CAP = [575, 1075];
 export async function renderThumb(gt = 143.9) {
   const q = new URLSearchParams(location.search), v = q.get('v');
+  setView(+(q.get('w') || 1080), +(q.get('h') || 1920), +(q.get('ox') || 0), +(q.get('oy') || 0), +(q.get('sc') || 1));
   if (q.get('cap')) CAP = q.get('cap').split(',').map(Number);
-  for (let pass = 0; pass < 6; pass++) { if (q.get('a2')) A2 = { ...A2, ...JSON.parse(q.get('a2')) }; if (v === 'academy2') thumbAcademy2(gt); else if (v === 'academy') thumbAcademy(gt, q.get('lang') || 'en'); else thumbDraw(gt); const p = takePending(); if (!p.length) break; await Promise.all(p); }
+  for (let pass = 0; pass < 6; pass++) { if (q.get('a2')) A2 = { ...A2, ...JSON.parse(q.get('a2')) }; if (v === 'sets') gallerySets(+(q.get('i') || 0)); else if (v === 'props') galleryProps(); else if (v === 'style') galleryStyle(); else if (v === 'academy2') thumbAcademy2(gt); else if (v === 'academy') thumbAcademy(gt, q.get('lang') || 'en'); else thumbDraw(gt); const p = takePending(); if (!p.length) break; await Promise.all(p); }
   return true;
 }

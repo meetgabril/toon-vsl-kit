@@ -7,7 +7,7 @@ cp -r "$KIT"/engine/. "$P"/
 cp "$KIT"/example/vsl.js "$P"/vsl.js
 mkdir -p "$P"/audio && cp "$KIT"/audio/*.py "$P"/audio/
 cp "$KIT"/tools/*.py "$KIT"/tools/*.sh "$P"/ && rm -f "$P"/setup.sh
-cp "$KIT"/ref/* "$P"/ref/
+cp -r "$KIT"/ref/. "$P"/ref/
 # example timing/lips so the example renders before your own voice exists
 for f in "$KIT"/example/work/*; do [ -e "$P/work/$(basename "$f")" ] || cp "$f" "$P/work/"; done
 cd "$P"

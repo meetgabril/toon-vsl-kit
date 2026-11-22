@@ -5,7 +5,10 @@
 html,body{margin:0;background:#000}</style></head><body><canvas id="c" width="1080" height="1920"></canvas>
 <script type="module">
 import { init } from './toon.js'; import * as V from './vsl.js';
-init(document.getElementById('c'));
+// ?v=<design>&w=1080&h=1920 — any still size (posts 1080×1080, 1080×1350, banners 1920×1080, stories 1080×1920)
+const q = new URLSearchParams(location.search), c = document.getElementById('c');
+c.width = +(q.get('w') || 1080); c.height = +(q.get('h') || 1920);
+init(c);
 await Promise.all(['400 40px VT323','400 40px Bungee','800 40px "Baloo 2"'].map(f=>document.fonts.load(f)));
 window.N = await V.load(); window.renderFrame = V.renderThumb; window.ready = true;
 </script></body></html>

@@ -41,6 +41,10 @@ This is the look the client approved on "Coach Tony's Treadmill" (the Buzztorm V
 - Data must make story sense. If a line asks "did my leads disappear?", the screen answers it: it shows "checking…" and then +47 new leads. It never shows a "0" that reads as a statement.
 
 ## Formats
-- **9:16 master**: 1080×1920 at 24 fps, from `vsl.html`.
-- **4:5**: 1080×1350. Render `vsl45.html` (a 1400×1750 canvas with 160 px of extra world on each side) and downscale. Per-shot vertical framing goes in `Y0` (default 140, meaning composition y 140–1890). Lower it for shots with a sign near the top. Never crop the 9:16 frames, because that cuts titles and feet.
-- **Thumbnails**: 1080×1920 PNG, from `thumb.html` and `shoot_thumb.mjs`. See SCENES.md.
+All formats (9:16, 4:5, 1:1, 16:9 video; thumbnails, posts, carousels, banners and print stills) are covered in FORMATS.md. Visual references are in `ref/`:
+- `style_card.jpg`: palette, type, plates and line weights.
+- `sets_sheet.jpg` and `props_sheet.jpg`.
+- `sheet_*.jpg`: characters.
+- `CATALOG.md` + `scenes/`: every shot.
+- `motion/`: every movement.
+- `formats_916_45_11_169.jpg`, `thumb_*.jpg`, `storyboard_916.jpg`.

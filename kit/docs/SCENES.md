@@ -8,15 +8,15 @@
 | `chars2.js` | Cast: `peep`, `CAST`/`addCast`, Tony's rig (`ARMS`), `folk2`, `transformFig`. |
 | `cast.custom.js` | **Your** characters. |
 | `vsl.js` | **The film.** Helpers, backgrounds and props at the top, shots in the middle, render and thumbnails at the bottom. |
-| `vsl.html` / `vsl45.html` / `thumb.html` / `charsheet.html` | Pages for 9:16, 4:5, thumbnails and character sheets. |
-| `render.mjs` | Playwright renderer: `node render.mjs <outdir> "0-4125,5000" <workers>`; `HTML=vsl45.html` for 4:5; `RESUME=1` to continue. About 40–70 ms per frame. |
+| `vsl.html?ar=` / `thumb.html?v=&w=&h=` / `charsheet.html` | Video pages in any format, stills of any size, character sheets. |
+| `render.mjs` | Playwright renderer: `node render.mjs <outdir> "0-4125,5000" <workers>`. `AR=45|11|169` sets the format, `CAP=1` adds captions, `RESUME=1` continues. About 40–70 ms per frame. |
 | `work/lines.txt` | Script, one line per speech turn: `D|text…` or `T|text…`. |
 | `work/timing.json` | Word and line times (from `audio/align.py`). |
 | `work/lips.json` | Per-frame mouth openness and speaker (from `lips.py`). |
 
 ## Starting a new film from the example
 `vsl.js` is the finished Buzztorm film, used as a template.
-- **Keep** everything above `// =================== SHOTS ===================`: imports, camera, props, backgrounds, character wrappers, recording rigs and treadmill. Also keep everything from `// =================== render ===================` down, including the thumbnails.
+- **Keep** everything above `// =================== SHOTS ===================`: imports, camera, props, backgrounds, character wrappers, recording rigs and treadmill. Also keep everything from `// =================== render ===================` down, including the formats, captions, thumbnails and galleries.
 - **Replace** the shots. Delete the Buzztorm-specific shots and write yours. Set `WIPE` (portal transition) to your time or `null`, and reset `Y0 = {}` (4:5 framing).
 - Delete backgrounds and props you don't need only after the film renders. Unused ones cost nothing.
 
@@ -84,10 +84,17 @@ shot(31.0, (lt, gt) => {           // start time in seconds (from timing.json); 
 - **A lot of people**: a grid of `folk(x,y,s,i,{walk})` with different `i`. Each `i` is stable, so the same person keeps their look.
 - **A concept diagram** on `bgBoard`: nodes are folk or pills, edges are `arrow(…, k)` drawn on with staggered `k`, and labels go on top of everything else.
 
-## 4:5 version
-`vsl45.html` calls `setAspect('45')`. drawFrame then calls `setView(1400, 1750, 160, -Y0[i])` for each shot, so the composition is seen through a window 1400 wide and 1750 tall (160 px of extra world on each side, top at Y0, default 140). Render with `HTML=vsl45.html node render.mjs frames45 "0-N" 3`, and `finish.sh` scales it to 1080×1350.
-- Backgrounds already extend to x −600…1680. Any new full-screen fill must use `g.setTransform(1,0,0,1,OX,OY)` and `fillRect(-OX,-OY,CW,CH)`. Never use the raw `fillRect(0,0,W,H)`.
-- Check one still per shot (`python3 shot_stills.py` gives the frame list) and set `Y0[shotIndex]` lower (70–90) when a sign touches the top.
+## Other formats, captions and galleries
+- **Formats**: `AR=45|11|169 node render.mjs frames<fmt> …` renders the same film through a format window (`FMT` / `Y0` in vsl.js). Details and per-format layout rules are in FORMATS.md.
+  - Any new full-screen fill must use `g.setTransform(SC,0,0,SC,OX,OY)` + `fillRect(-OX/SC,-OY/SC,CW/SC,CH/SC)`. Never use a raw `fillRect(0,0,W,H)`.
+  - Backgrounds must extend to x −600…1680.
+- **Captions**: `CAP=1 node render.mjs …` burns in 3-word captions from timing.json, with the current word in gold. Style settings are in `CAPTIONS` in vsl.js.
+- **Reference galleries** (rebuild them after adding sets or props):
+  - `node shoot_thumb.mjs ref/style.png "?v=style&w=2160&h=1720"`
+  - `node shoot_thumb.mjs ref/props.png "?v=props&w=2160&h=2200"`
+  - `node shoot_thumb.mjs ref/set_N.png "?v=sets&i=N"`
+  - Register new sets in `SETS` and new props in `galleryProps()` so they show up.
+- **Scene catalog**: `python3 catalog.py frames ref` writes `ref/CATALOG.md` + `ref/scenes/NN.jpg` (four frames per shot).
 
 ## Thumbnails (thumb.html + shoot_thumb.mjs)
 `renderThumb()` in vsl.js picks a function by `?v=`. The examples are `thumbDraw` (Tony on the beach full of leads) and `thumbAcademy2` (FREE ACADEMY). `node shoot_thumb.mjs out/x.png "?v=academy2"` writes a 1080×1920 PNG.

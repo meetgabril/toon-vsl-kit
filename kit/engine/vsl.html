@@ -5,7 +5,10 @@
 html,body{margin:0;background:#000}</style></head><body><canvas id="c" width="1080" height="1920"></canvas>
 <script type="module">
 import { init } from './toon.js'; import * as V from './vsl.js';
-init(document.getElementById('c'));
+// ?ar=916 (default) | 45 | 11 | 169 — canvas size comes from the format table in vsl.js
+const ar = new URLSearchParams(location.search).get('ar') || '916', F = V.FMT[ar], c = document.getElementById('c');
+c.width = F.cw; c.height = F.ch; V.setAspect(ar);
+init(c);
 await Promise.all(['400 40px VT323','400 40px Bungee','800 40px "Baloo 2"'].map(f=>document.fonts.load(f)));
 window.N = await V.load(); window.renderFrame = V.renderFrame; window.ready = true;
 </script></body></html>
