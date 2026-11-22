@@ -26,6 +26,7 @@ function captions(gt) {
 const lip = (sp, gt) => { const f = Math.floor(gt * FPS); return LIPS && LIPS.sp[f] === sp ? LIPS.open[f] : 0; };
 const mouthOf = (sp, gt, base = {}) => { const o = lip(sp, gt); const k = Math.floor(gt * 12); return { ...base, o: o > 0.06 ? o * (base.amp ?? 0.85) : 0, w: (base.w ?? 1) * (o > 0.06 ? 0.85 + 0.25 * hash(k * 1.7) : 1) }; };
 const blink = (gt, seed) => { const p = 2.6 + hash(seed) * 1.8, ph = (gt + hash(seed * 3) * p) % p; return ph < 0.12; };
+const visOf = (sp, gt) => { const f = Math.floor(gt * FPS); return LIPS && LIPS.vis && LIPS.sp[f] === sp ? LIPS.vis[f] : undefined; };
 const nod = (sp, gt) => lip(sp, gt) * 0.035;
 const ss = (t) => { t = clamp(t); return t * t * (3 - 2 * t); };
 const pop1 = (lt, at, d = 0.35) => back(seg(lt, at, at + d), 2.2);
@@ -167,11 +168,11 @@ function ringStand(x, y, s, f, off) {   // ring light on a tripod behind the coa
 }
 const sweatDrop = (x, y) => shape(spline([[x, y - 16], [x + 9, y + 4], [x, y + 12], [x - 9, y + 4]]), { fill: '#bfe9ff', lw: 5 });
 const DEX = (gt, P) => {
-  const Q = { x: P.x, y: P.y, s: (P.s ?? 1), face: P.face ?? 1, t: gt, noShadow: P.bust, pose: P.pose || (P.bust ? 'effigy/BlazerBlackTee' : 'standing/EasingColorPants'), blinkOff: false, mood: moodOf(P, 'calm'), open: lip('D', gt), talk: talkEnergy('D', gt), tilt: P.tilt ?? (P.look ? P.look[1] * .05 : 0), faceName: P.faceName };
+  const Q = { x: P.x, y: P.y, s: (P.s ?? 1), face: P.face ?? 1, t: gt, noShadow: P.bust, pose: P.pose || (P.bust ? 'effigy/BlazerBlackTee' : 'standing/EasingColorPants'), blinkOff: false, mood: moodOf(P, 'calm'), open: lip('D', gt), vis: P.vis ?? visOf('D', gt), talk: talkEnergy('D', gt), tilt: P.tilt ?? (P.look ? P.look[1] * .05 : 0), faceName: P.faceName };
   peep('D', Q);
 };
 // Any registered character (cast.custom.js): CHAR('M', gt, { x, y, s, face, pose | bust:true, mood, tilt, acc, hold })
-const CHAR = (sp, gt, P) => peep(sp, { ...P, t: gt, noShadow: P.bust || P.noShadow, mood: moodOf(P, 'smile'), open: lip(sp, gt), talk: talkEnergy(sp, gt), tilt: P.tilt ?? 0 });
+const CHAR = (sp, gt, P) => peep(sp, { ...P, t: gt, noShadow: P.bust || P.noShadow, mood: moodOf(P, 'smile'), open: lip(sp, gt), vis: P.vis ?? visOf(sp, gt), talk: talkEnergy(sp, gt), tilt: P.tilt ?? 0 });
 // Tony is always shot from the waist up (medium shot): the bust is anchored to the frame bottom or hidden behind a prop.
 const frameBottomY = () => { const m = getM(); return (CH + 30 - m[5]) / m[3]; };
 // Tony v3: one consistent full body (tank + shorts; bare chest at the beach). bust:true = close-up framing of the same body.
@@ -182,7 +183,7 @@ const TONY = (gt, P) => {
   const run = P.run ? Math.abs(Math.sin(gt * 10)) * 30 * s : 0, sq = P.squat ? P.squat * 120 * s : 0;
   if (P.ringLight && !P.bust) ringStand(P.x, P.y, s, f, P.ringOff);
   peep('T', { x: P.x + jit, y: y - run + sq, s, face: f, t: gt, arms, legs: P.legs || (P.run ? 'run' : 'stand'), walkPh: gt * 10, bare: P.bare, noShadow: P.bust || P.noShadow, squat: P.squat ? P.squat * .9 : 0,
-    mood: moodOf(P, 'smile'), open: P.mouth && P.mouth.o === 0 ? 0 : lip('T', gt), talk: talkEnergy('T', gt), tilt: P.tilt ?? (P.headTilt || 0), acc: P.shades ? 'Sunglasses' : P.acc, faceName: P.faceName });
+    mood: moodOf(P, 'smile'), open: P.mouth && P.mouth.o === 0 ? 0 : lip('T', gt), vis: P.mouth && P.mouth.o === 0 ? 'X' : (P.vis ?? visOf('T', gt)), talk: talkEnergy('T', gt), tilt: P.tilt ?? (P.headTilt || 0), acc: P.shades ? 'Sunglasses' : P.acc, faceName: P.faceName });
   const W = ARMS[arms].R[2]; const hx = P.x + W[0] * k * f, hy = y - (2480 - W[1]) * k;
   if (P.holdR) P.holdR([hx, hy]);
   if (P.sweat) { sweatDrop(P.x + 150 * k / .25 * f * .25 * 4, y - 2780 * k); sweatDrop(P.x - 140 * k * f, y - 2700 * k + ((gt * 1.1) % 1) * 30); }
@@ -951,11 +952,19 @@ function galleryStyle() {
   text('line weights: 4–6 UI · 7 default · 9–11 big plates · 14 caption outline', 1100, 1580, { font: '800 30px "Baloo 2"', fill: '#25385c', align: 'left' });
   post(0);
 }
+function galleryMouths() {
+  frame(1, { amp: 1.0 }); g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = '#f6efe2'; g.fillRect(0, 0, CW, CH);
+  const S = ['X', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'], N = ['rest', 'M B P', 'K S T…', 'EH AE', 'AA', 'AO ER', 'UW OW W', 'F V', 'L'];
+  S.forEach((v, i) => { const x = 150 + i * 240;
+    g.save(); g.beginPath(); g.rect(x - 115, 60, 230, 420); g.clip(); DEX(1, { bust: true, x, y: 700, s: 1.6, mood: 'smile', vis: v, look: [0, 0] }); g.restore();
+    g.save(); g.beginPath(); g.rect(x - 115, 520, 230, 420); g.clip(); TONY(1, { bust: true, x, y: 1170, s: 1.55, mood: 'smile', vis: v, arms: 'down' }); g.restore();
+    text(v, x, 990, { font: '400 54px "Bungee"', fill: '#25385c' }); text(N[i], x, 1045, { font: '800 28px "Baloo 2"', fill: '#5a5468' }); });
+}
 let CAP = [575, 1075];
 export async function renderThumb(gt = 143.9) {
   const q = new URLSearchParams(location.search), v = q.get('v');
   setView(+(q.get('w') || 1080), +(q.get('h') || 1920), +(q.get('ox') || 0), +(q.get('oy') || 0), +(q.get('sc') || 1));
   if (q.get('cap')) CAP = q.get('cap').split(',').map(Number);
-  for (let pass = 0; pass < 6; pass++) { if (q.get('a2')) A2 = { ...A2, ...JSON.parse(q.get('a2')) }; if (v === 'sets') gallerySets(+(q.get('i') || 0)); else if (v === 'props') galleryProps(); else if (v === 'style') galleryStyle(); else if (v === 'academy2') thumbAcademy2(gt); else if (v === 'academy') thumbAcademy(gt, q.get('lang') || 'en'); else thumbDraw(gt); const p = takePending(); if (!p.length) break; await Promise.all(p); }
+  for (let pass = 0; pass < 6; pass++) { if (q.get('a2')) A2 = { ...A2, ...JSON.parse(q.get('a2')) }; if (v === 'sets') gallerySets(+(q.get('i') || 0)); else if (v === 'props') galleryProps(); else if (v === 'style') galleryStyle(); else if (v === 'mouths') galleryMouths(); else if (v === 'academy2') thumbAcademy2(gt); else if (v === 'academy') thumbAcademy(gt, q.get('lang') || 'en'); else thumbDraw(gt); const p = takePending(); if (!p.length) break; await Promise.all(p); }
   return true;
 }

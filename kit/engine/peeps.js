@@ -33,7 +33,8 @@ export function head(P, col) {
   if (P.face) {
     const fx = 531 - NECK_EFF[0], fy = 366 - NECK_EFF[1];
     draw('faceU/' + (P.blink ? 'EyesClosed' : P.face), col, fx, fy);
-    if ((P.mouthOpen || 0) > .08) viseme(fx, fy, P, col.outline || '#17141c');
+    if (P.vis && P.vis !== 'X' && P.talking) shapeMouth(fx, fy, P, col.outline || '#17141c');
+    else if (!P.vis && (P.mouthOpen || 0) > .08) viseme(fx, fy, P, col.outline || '#17141c');
     else draw('faceM/' + (P.restMouth || P.face), col, fx, fy);
   }
   if (P.beard) { const bo = xy(OFF.beard[P.beard]); draw('beard/' + P.beard, col, 495 + bo[0] - NECK_EFF[0], 518 + bo[1] - NECK_EFF[1]); }
@@ -57,4 +58,36 @@ function viseme(fx, fy, P, ink) {
   if (o > .45 && c > .2) { g.fillStyle = '#ffffff'; g.fillRect(cx - W * .32, cy - 16, W * .64, 12 + Hh * .12); }
   g.restore();
   g.lineWidth = 7; g.lineCap = 'round'; g.strokeStyle = ink; g.beginPath(); g.moveTo(L[0] - 4, L[1] - 2 * c); g.lineTo(L[0] + 2, L[1] + 2); g.stroke();
+}
+
+// —— phoneme mouth shapes (Hanna-Barbera / Rhubarb set) ——
+// A M/B/P lips pressed · B most consonants, clenched teeth · C EH/AE open · D AA wide open · E AO/ER rounded
+// F UW/OW/W pucker · G F/V teeth on lower lip · H L tongue up · X rest (the face's own mouth)
+const SHAPE = { A: [1.0, 0, 0, 0, 0], B: [1.0, .4, 0, 1, 0], C: [1.0, .62, 0, 1, .5], D: [1.15, 1.0, 0, 1, 1], E: [.78, .6, .55, 0, .4], F: [.5, .42, 1, 0, .2], G: [.95, .3, 0, 2, 0], H: [1.0, .7, 0, 1, 2] };
+function shapeMouth(fx, fy, P, ink) {
+  const mo = MOUTH[P.face] || [155, 230, 70, 30]; const sh = SHAPE[P.vis] || SHAPE.C, c = P.curve ?? .5;
+  const e = .8 + .4 * Math.min(1, P.mouthOpen || 0);          // energy breathes the size a little
+  const cx = fx + mo[0], cy = fy + Math.min(mo[1], 236), W = 118 * sh[0] * (P.mouthW ?? 1), Hh = 8 + 82 * sh[1] * e, rd = sh[2];
+  const m = getM(); g.setTransform(m[0], m[1], m[2], m[3], m[4], m[5]);
+  g.lineCap = 'round'; g.lineJoin = 'round'; g.strokeStyle = ink;
+  if (P.vis === 'A') {   // pressed lips: a firm line with tiny corners
+    g.lineWidth = 9; g.beginPath(); g.moveTo(cx - W * .42, cy - c * 8); g.quadraticCurveTo(cx, cy + 6 + c * 6, cx + W * .42, cy - c * 8); g.stroke();
+    g.lineWidth = 6; g.beginPath(); g.moveTo(cx - W * .42 - 4, cy - c * 8 - 6); g.lineTo(cx - W * .42 + 3, cy - c * 8 + 3); g.stroke(); return;
+  }
+  const L = [cx - W / 2, cy - c * 10 * (1 - rd)], R = [cx + W / 2, cy - c * 10 * (1 - rd)];
+  g.beginPath();
+  if (rd > .3) { g.ellipse(cx, cy + Hh * .35, W / 2, Hh * .62 + 6, 0, 0, Math.PI * 2); }
+  else {
+    g.moveTo(L[0], L[1]);
+    g.bezierCurveTo(cx - W * .2, cy - 6 + c * 4, cx + W * .2, cy - 6 + c * 4, R[0], R[1]);
+    g.bezierCurveTo(cx + W * .45, cy + Hh * (.9 + c * .2), cx - W * .45, cy + Hh * (.9 + c * .2), L[0], L[1]); g.closePath();
+  }
+  g.fillStyle = ink; g.fill(); g.save(); g.clip();
+  if (sh[4] >= 2) { g.fillStyle = '#EC7495'; g.beginPath(); g.ellipse(cx, cy + Hh * .2, W * .22, Hh * .4, 0, 0, Math.PI * 2); g.fill(); }        // L: tongue up
+  else if (sh[4] > 0) { g.fillStyle = '#EC7495'; g.beginPath(); g.ellipse(cx + W * .05, cy + Hh * .95, W * .3 * sh[4] + 8, Hh * .38, 0, 0, Math.PI * 2); g.fill(); }
+  if (sh[3] === 1) { g.fillStyle = '#ffffff'; g.fillRect(cx - W * .34, cy - 18, W * .68, 12 + Hh * .14); }
+  if (sh[3] === 2) { g.fillStyle = '#ffffff'; g.fillRect(cx - W * .3, cy - 18, W * .6, 10 + Hh * .5); }                                          // F/V: teeth over lip
+  g.restore();
+  if (sh[3] === 2) { g.lineWidth = 6; g.beginPath(); g.moveTo(cx - W * .32, cy + Hh * .55); g.lineTo(cx + W * .32, cy + Hh * .55); g.stroke(); }
+  if (rd <= .3) { g.lineWidth = 7; g.beginPath(); g.moveTo(L[0] - 4, L[1] - 2 * c); g.lineTo(L[0] + 2, L[1] + 2); g.stroke(); }
 }

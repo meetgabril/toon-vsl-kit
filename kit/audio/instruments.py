@@ -5,7 +5,7 @@ All cue times come from events.json (exported from story.js), so the first beat 
 Usage: python music/score.py"""
 import json, os, numpy as np, soundfile as sf
 from scipy.signal import butter, sosfilt, fftconvolve
-DUR = float(os.environ.get('DUR', 171.9))   # set DUR=<voice seconds> when running score.py
+DUR = float(os.environ.get('DUR') or (json.load(open('work/timing.json'))['dur'] + .05 if os.path.exists('work/timing.json') and 'dur' in json.load(open('work/timing.json')) else 171.9))   # film length: DUR env, else work/timing.json
 SR = 48000; N = int(DUR * SR); BEAT = .5
 rng = np.random.default_rng(11)
 

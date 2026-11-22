@@ -6,6 +6,14 @@ The user's ElevenLabs voiceover is the master clock and the star.
 - The only processing allowed is a 70 Hz high-pass plus a gentle 2:1 compressor (`prep_voice.sh` → `work/voice_clean.wav`, 48 kHz).
 - The picture is timed to the voice. When something doesn't fit, change the picture, never the audio.
 
+## 0. The fast path (normal use)
+```
+python3 script.py el script.md        # 1. ElevenLabs-ready text with emotion tags → user records and uploads ONE file
+python3 ingest.py <upload.mp4|mp3> script.md   # 2. audio + word/phoneme timing + mouth shapes (work/)
+node events.mjs && python3 audio/autoscore.py && python3 audio/mix.py   # 3. after story.js: score + SFX from the story, then mix
+```
+The sections below explain each part, and the manual route if you need it.
+
 ## 1. Script → lines.txt
 Write `work/lines.txt` with one speech turn per line: `SPEAKER|exact text as spoken`.
 ```
@@ -24,11 +32,16 @@ cd work && python3 ../audio/align.py      # pocketsphinx forced alignment → ti
 - Sanity-check by printing each line's t0–t1. Pauses should fall between lines.
 
 ## 3. Lip sync → lips.json
+`ingest.py` already writes `lips.json` with phoneme mouth shapes (`vis`: A–H, X) aligned per frame. `lips.py` is the older energy-only version.
+
 `python3 lips.py` reads the RMS of the clean voice per frame (24 fps). It normalises by the 92nd percentile of speech and closes the mouth in gaps between words longer than 0.12 s. The speaker per frame comes from the line times.
 - The characters' wrappers read it: a mouth opens only when `sp` equals that character.
 - Head nods follow the speech energy.
 
 ## 4. Score and SFX → music/music.wav, music/sfx.wav
+**Automatic**: `node events.mjs` exports every cut and item from story.js, then `python3 audio/autoscore.py` writes music (style per beat `music:`) and SFX (one per item type).
+
+**Manual** (`score.py`, as used for the Buzztorm film):
 `DUR=<seconds> python3 audio/score.py`. Everything is synthesised in numpy (`audio/instruments.py`, MIT-derived), so there are no samples and no licensing issues.
 
 ### Music

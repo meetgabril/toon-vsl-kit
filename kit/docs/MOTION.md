@@ -1,6 +1,6 @@
 # Motion library
 
-Every movement in the approved film, with a frame strip in `ref/motion/` (frame times in red) and the technique that makes it. Reuse these timings and techniques so every new video moves the same way. Line numbers refer to `example/vsl.js`. The full per-shot list is in `ref/CATALOG.md`, which has its own strips in `ref/scenes/`.
+Every movement in the approved film, with a frame strip in `ref/motion/` (frame times in red) and the technique that makes it. Reuse these timings and techniques so every new video moves the same way. Line numbers refer to `example/buzztorm_vsl.js`. The full per-shot list is in `ref/CATALOG.md`, which has its own strips in `ref/scenes/`.
 
 ## House timing (24 fps)
 | element | duration | curve |

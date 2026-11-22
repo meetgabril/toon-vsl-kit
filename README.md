@@ -4,15 +4,15 @@ Kit for Claude's **toon-vsl** skill: every video and image (VSLs, shorts, ads, e
 
 ```
 SKILL.md            the skill's instructions (a copy of what is saved in claude.ai)
-kit/docs/           STYLE · CHARACTERS · SCENES · MOTION · FORMATS · AUDIO
-kit/engine/         toon.js engine, Open Peeps parts, cast (chars2.js, cast.custom.js), pages, renderers
-kit/example/        vsl.js: the complete Buzztorm film ("Coach Tony's Treadmill"), plus its timing and lips
-kit/audio/          align.py (pocketsphinx), score.py + instruments.py (synth score/SFX), mix.py
-kit/tools/          setup.sh · prep_voice.sh · lips.py · shot_stills.py · sheet.py · catalog.py · finish.sh
+kit/docs/           STORY (beat grammar) · STYLE · CHARACTERS · SCENES · MOTION · FORMATS · AUDIO
+kit/engine/         toon.js engine, Open Peeps parts, cast, vsl.js (library + director), story.js (the film), pages, renderers
+kit/example/        buzztorm_vsl.js (the approved film, hand-written) · script_example.md
+kit/audio/          autoscore.py (music + SFX from the story) · score.py + instruments.py (synth) · mix.py · align.py
+kit/tools/          setup.sh · script.py (ElevenLabs script) · ingest.py (upload → timing + visemes) · shot_stills.py · sheet.py · catalog.py · finish.sh
 kit/ref/            style card, character sheets, sets and props sheets, CATALOG.md + scenes/ (every shot), motion/ (every movement), formats, thumbnails
 ```
 
-Quick start: `bash kit/tools/setup.sh ~/vsl/demo && cd ~/vsl/demo && node render.mjs stills/smoke "75,2000" 1`
+Flow: `script.py el script.md` → user records in ElevenLabs → `ingest.py upload.mp4 script.md` → write `story.js` → `render.mjs` → `events.mjs` + `autoscore.py` + `mix.py` → `finish.sh`
 
 Licences:
 - Open Peeps: CC0 (Pablo Stanley).

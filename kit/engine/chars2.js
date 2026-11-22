@@ -58,7 +58,7 @@ export function peep(sp, P) {
   const fm = FACES[P.mood || 'smile'] || FACES.smile;
   const bl = P.blinkOff ? false : ((t + seed * 1.7) % 3.4) < .11;
   const mw = .8 + .35 * hash(Math.floor(t * 9) * 1.3 + seed);
-  head({ ...HEADS[sp], face: P.faceName || fm[0], restMouth: P.faceName || fm[1], curve: fm[2], mouthOpen: P.open || 0, mouthW: mw, blink: bl, acc: P.acc || CI.acc }, col);
+  head({ ...HEADS[sp], face: P.faceName || fm[0], restMouth: P.faceName || fm[1], curve: fm[2], mouthOpen: P.open || 0, mouthW: mw, blink: bl, vis: P.vis, talking: !!P.vis && P.vis !== 'X', acc: P.acc || CI.acc }, col);
   if (CI.bandana && !P.noBandana) bandana(t);
   pop();
   if (P.hold) { if (full && P.handOut) P.hold(P.handOut[0], P.handOut[1] - m.bbox.y1); else { const a = ANCH[pose]; if (a) P.hold(a[0] - m.neck.x, a[1]); } }

@@ -7,18 +7,18 @@
 | `peeps.js` | Open Peeps parts loader and recolourer (async SVG images; `takePending` must be awaited). |
 | `chars2.js` | Cast: `peep`, `CAST`/`addCast`, Tony's rig (`ARMS`), `folk2`, `transformFig`. |
 | `cast.custom.js` | **Your** characters. |
-| `vsl.js` | **The film.** Helpers, backgrounds and props at the top, shots in the middle, render and thumbnails at the bottom. |
+| `vsl.js` | Engine and library: helpers, sets, props, cast wrappers, **director** (story.js → shots), render, formats, captions, galleries, thumbnails. |
+| `story.js` | **The film**: one beat per shot (STORY.md). |
 | `vsl.html?ar=` / `thumb.html?v=&w=&h=` / `charsheet.html` | Video pages in any format, stills of any size, character sheets. |
 | `render.mjs` | Playwright renderer: `node render.mjs <outdir> "0-4125,5000" <workers>`. `AR=45|11|169` sets the format, `CAP=1` adds captions, `RESUME=1` continues. About 40–70 ms per frame. |
 | `work/lines.txt` | Script, one line per speech turn: `D|text…` or `T|text…`. |
 | `work/timing.json` | Word and line times (from `audio/align.py`). |
 | `work/lips.json` | Per-frame mouth openness and speaker (from `lips.py`). |
 
-## Starting a new film from the example
-`vsl.js` is the finished Buzztorm film, used as a template.
-- **Keep** everything above `// =================== SHOTS ===================`: imports, camera, props, backgrounds, character wrappers, recording rigs and treadmill. Also keep everything from `// =================== render ===================` down, including the formats, captions, thumbnails and galleries.
-- **Replace** the shots. Delete the Buzztorm-specific shots and write yours. Set `WIPE` (portal transition) to your time or `null`, and reset `Y0 = {}` (4:5 framing).
-- Delete backgrounds and props you don't need only after the film renders. Unused ones cost nothing.
+## How a film is built
+A film is `vsl.js` (the engine: library, director, render) plus `story.js` (your beats, see STORY.md). Normally you only write `story.js`.
+- **Hand-written shots** still work. A `shot(t0, (lt, gt) => {...})` placed in `vsl.js` after the director overrides from t0, which is useful for one-off showpieces.
+- `example/buzztorm_vsl.js` is the full approved film written entirely by hand. Mine it for recipes: `ref/CATALOG.md` lists every shot with its line range.
 
 ## Shot anatomy
 ```js

@@ -9,7 +9,7 @@ G=$(python3 -c "print(round(-15-($I),2))"); echo "mix integrated $I LUFS -> gain
 ffmpeg -v error -y -i music/mix_raw.wav -af "volume=${G}dB,alimiter=limit=0.84:level=false" -ar 48000 music/master.wav
 enc() { # $1 frames dir  $2 vf  $3 out
   ffmpeg -v error -y -framerate 24 -i "$1"/f%05d.jpg -i music/master.wav -map 0:v -map 1:a -vf "$2" \
-    -c:v libx264 -preset veryfast -crf 19 -maxrate 14M -bufsize 28M -c:a aac -b:a 320k -movflags +faststart "$3"; }
+    -c:v libx264 -preset veryfast -crf 19 -maxrate 14M -bufsize 28M -c:a aac -b:a 320k -shortest -movflags +faststart "$3"; }
 for F in ${AR//,/ }; do
   case $F in
     916) enc frames "format=yuv420p" "out/${NAME}.mp4" ;;

@@ -4,7 +4,7 @@ set -e
 KIT="$(cd "$(dirname "$0")/.." && pwd)"; P="${1:?usage: setup.sh <project_dir>}"
 mkdir -p "$P"/{work,music,stills,out,ref}
 cp -r "$KIT"/engine/. "$P"/
-cp "$KIT"/example/vsl.js "$P"/vsl.js
+cp "$KIT"/example/buzztorm_vsl.js "$P"/example_buzztorm_vsl.js   # reference only; the film = vsl.js + story.js
 mkdir -p "$P"/audio && cp "$KIT"/audio/*.py "$P"/audio/
 cp "$KIT"/tools/*.py "$KIT"/tools/*.sh "$P"/ && rm -f "$P"/setup.sh
 cp -r "$KIT"/ref/. "$P"/ref/
