@@ -80,6 +80,31 @@ Layouts per format are in FORMATS.md. On-screen text is always in the deliverabl
 - Fix the root cause, then re-render only the affected frame ranges (`RESUME=1` or explicit ranges) and re-encode.
 - Never ship without looking at what changed.
 
-## After each project
+## After each project (grow the library)
 1. `python3 catalog.py frames ref`.
-2. Commit any new sets, props, characters, recipes and their reference images back to the kit, and push.
+2. Re-render the galleries (`?v=style`, `?v=props`, `?v=sets&i=N`, `?v=mouths`) when sets or props were added.
+3. Commit any new sets, props, characters (`cast.custom.js` + sheets), story recipes and their reference images back to the kit, and push to `meetgabril/toon-vsl-kit`.
+
+## Writing scripts
+- **VSL** (2.5–3 min, about 150 words per minute). The Buzztorm example for each step is in brackets:
+  1. **Hook**: a character the viewer recognises, with a result.
+  2. **Problem**: how they get clients today, made concrete with numbers (two doors, costs).
+  3. **Agitation**: what breaks (one week off, an algorithm change, a flagged account).
+  4. **Reframe**: a metaphor (the treadmill).
+  5. **Mechanism** (a free community, onboarding and a viral loop).
+  6. **Proof beat** (one month later).
+  7. **Offer**: what the agency builds and what the client keeps.
+  8. **Risk reversal**.
+  9. **CTA** (a free call, "leave with a plan").
+  10. **Closing joke**.
+- **Short** (15–60 s): the first line is the hook stated as fact, then 2–4 escalating beats, with the twist on the last word.
+- **Ad** (6–30 s): problem → solution → proof number → CTA.
+- **Explainer**: question → 3 steps → result → CTA.
+
+Use a narrator plus a hero who reacts in short lines. Write in plain spoken language, with numbers written as words, and never describe what the viewer already sees. Voices: one per speaker, speed 1.0–1.1, stability about 50 %, natural pauses between lines.
+
+## Licences
+- Open Peeps: CC0 (Pablo Stanley).
+- Fonts Bungee, Baloo 2 and VT323: SIL OFL.
+- Synth instruments: adapted from an MIT demo.
+- The engine and cast code are the user's.
