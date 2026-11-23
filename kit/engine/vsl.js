@@ -84,9 +84,9 @@ function adsMachine(x, y, gt, { price = '$200', year = '', on = 1 } = {}) {
   shape(rr(-210, -1130, 420, 170, 40), { fill: on ? '#e8574a' : '#6b4a4a', lw: 8 });
   text('ADS', 0, -1040, { font: '400 120px "Bungee"', fill: on ? '#fff3c4' : '#a89a8a', outlineW: 12 });
   shape(rr(-190, -900, 380, 300, 24), { fill: on ? '#2a1450' : '#1a1222', lw: 7 });
-  if (on) { text('COST PER CLIENT', 0, -850, { font: '400 44px "VT323"', fill: '#f5c842' }); text(price, 0, -760, { font: '400 120px "VT323"', fill: '#ff6b6b' }); if (year) text(year, 0, -660, { font: '400 52px "VT323"', fill: '#c9b8ff' }); }
+  if (on) { text((typeof STORY !== 'undefined' && STORY && STORY.ui && STORY.ui.cpc) || 'COST PER CLIENT', 0, -850, { font: '400 44px "VT323"', fill: '#f5c842' }); text(price, 0, -760, { font: '400 120px "VT323"', fill: '#ff6b6b' }); if (year) text(year, 0, -660, { font: '400 52px "VT323"', fill: '#c9b8ff' }); }
   shape(rr(-110, -520, 220, 44, 14), { fill: INK, lw: 4 });
-  text('INSERT $', 0, -560, { font: '400 30px "Bungee"', fill: on ? '#2a1450' : '#3a3030' });
+  text((typeof STORY !== 'undefined' && STORY && STORY.ui && STORY.ui.insert) || 'INSERT $', 0, -560, { font: '400 30px "Bungee"', fill: on ? '#2a1450' : '#3a3030' });
   shape(rr(-190, -300, 380, 170, 24), { fill: on ? '#d1931c' : '#6e6040', lw: 7, shade: () => fillOnly(rr(-170, -280, 340, 130, 16), '#1a1222') });
   stroke([[250, -760], [330, -760], [330, -960]], 22); stroke([[250, -760], [330, -760], [330, -960]], 12, { line: '#c9ccd2' });
   shape(ell(330, -990, 40, 40, 20), { fill: '#e8574a', lw: 7 });
@@ -392,7 +392,7 @@ const ITEM = {
   sub(I, x, y, d) { const k = pk(d, .25); if (!k) return; const t = I.txt[0] || ''; push(); translate(540, 1650); scale(k); shape(rr(-t.length * 15 - 50, -48, t.length * 30 + 100, 96, 26), { fill: '#25385c', lw: 7 }); text(t, 0, 3, { font: '800 46px "Baloo 2"', fill: '#ffffff' }); pop(); },
   counter(I, x, y, d) {
     const k = pk(d); if (!k) return; const [a, b] = I.range || [0, 100], dur = +(I.kv.dur || 1.6), v = Math.round(lerp(a, b, ss(clamp((d - .2) / dur))));
-    push(); translate(x, y); scale(k); text((I.kv.pre || '') + v.toLocaleString('en-US') + (I.kv.post || ''), 0, 0, { font: `400 ${I.kv.size || 150}px "Bungee"`, fill: col(I.kv.color, '#2f8f4a'), outlineW: 12, outlineCol: '#fff6e0' });
+    push(); translate(x, y); scale(k); text((I.kv.pre || '') + v.toLocaleString((STORY && STORY.ui && STORY.ui.locale) || 'en-US') + (I.kv.post || ''), 0, 0, { font: `400 ${I.kv.size || 150}px "Bungee"`, fill: col(I.kv.color, '#2f8f4a'), outlineW: 12, outlineCol: '#fff6e0' });
     if (I.txt[0]) text(I.txt[0], 0, 120, { font: '400 50px "Bungee"', fill: '#25385c', outlineW: 8, outlineCol: '#fff6e0' }); pop();
   },
   phone(I, x, y, d) {   // phone answering a question: checking… → buzz → counter + notification pills

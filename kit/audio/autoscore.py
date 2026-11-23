@@ -100,7 +100,7 @@ room, spr = ir(), spring_ir()
 send = {'drums': .08, 'bass': .0, 'lead': .28, 'harm': .22, 'fx': .2}
 music = sum(b.b for b in BUS.values()) + conv(sum(BUS[k].b * send[k] for k in ['drums', 'harm', 'fx']), room) * .9 + conv(BUS['lead'].b * send['lead'], spr)
 def hard_cut(a, b):
-    i, j = int(a * SR), int(b * SR); f = int(.01 * SR); music[i - f:i] *= np.linspace(1, 0, f)[:, None]; music[i:j] = 0
+    i, j = int(a * SR), int(b * SR); f = int(.01 * SR); (i >= f) and music.__setitem__(slice(i - f, i), music[i - f:i] * np.linspace(1, 0, f)[:, None]); music[i:j] = 0
 music = np.stack([hp(music[:, c], 30) for c in range(2)], 1)
 for (t0, m), (t1, _) in zip(secs, secs[1:]):
     if m in ('silence', 'none'): hard_cut(t0, t1)
