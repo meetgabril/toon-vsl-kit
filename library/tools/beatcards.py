@@ -12,6 +12,15 @@ subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', S['bait']['video'], '-vf', 
 # rename to 0-based
 for i in range(nb): os.rename(f'{tmp}/k{i + 1:05d}.jpg', f'{tmp}/b{i:05d}.jpg')
 for i in range(nb): os.rename(f'{tmp}/b{i:05d}.jpg', f'{tmp}/k{i:05d}.jpg')
+Hd = S['bait'].get('hold')
+if Hd:   # freeze one clean bait frame and push in slowly until the next card
+    src = Image.open(f"{tmp}/k{Hd['frame']:05d}.jpg").convert('RGB'); n_h = int(round(Hd['until'] * fps)) - nb
+    for k in range(n_h):
+        u = k / max(1, n_h - 1); z = Hd['zoom'][0] + (Hd['zoom'][1] - Hd['zoom'][0]) * (u * u * (3 - 2 * u))
+        w2, h2 = int(W * z), int(H * z); im = src.resize((w2, h2), Image.LANCZOS)
+        cy = int(H * Hd.get('center_y', 0.5) * z - H / 2); cy = max(0, min(h2 - H, cy))
+        im.crop(((w2 - W) // 2, cy, (w2 - W) // 2 + W, cy + H)).save(f'{tmp}/k{nb + k:05d}.jpg', quality=93)
+    nb += n_h
 cards = S['cards']; d0 = ImageDraw.Draw(Image.new('RGB', (8, 8))); px = {}
 for i, c in enumerate(cards):
     p = c['size']; z = max(c.get('zoom', [1, 1]))
