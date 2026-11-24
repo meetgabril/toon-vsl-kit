@@ -72,9 +72,9 @@ const FHEAD_W = ['LongHair', 'Bun', 'BunClip', 'MediumStraight', 'LongBangs', 'C
 const FSKIN = ['#f6d3b3', '#f2c9a0', '#efc19a', '#f8dcc2', '#ecbf98'];
 const FTOP = ['#ff5b6e', '#2ec4b6', '#b5e655', '#ff8fc7', '#3d7bff', '#ffffff', '#ffb02e', '#9b6bff'];
 const FPANTS = ['#22252e', '#3a3f4b', '#2b3a5c', '#22252e', '#4a3a5a'];
-export function folk2(x, y, s, i, { happy = 1, look = [0, 0], walk = 0, face = 1, sleep = false, t = 0, alpha } = {}) {
+export function folk2(x, y, s, i, { happy = 1, look = [0, 0], walk = 0, face = 1, sleep = false, t = 0, alpha, pose: forcePose } = {}) {
   const h = (n) => Math.floor(hash(i * 7.31 + n * 3.17) * 1e6);
-  const pose = walk ? FWALK[i % 2] : FPOSE[h(1) % FPOSE.length];
+  const pose = forcePose || (walk ? FWALK[i % 2] : FPOSE[h(1) % FPOSE.length]);
   const m = bodyInfo(pose); if (!m) return;
   const col = { skin: FSKIN[h(2) % FSKIN.length], top: FTOP[h(3) % FTOP.length], pants: FPANTS[h(4) % FPANTS.length], jacket: FTOP[h(5) % FTOP.length], shoes: ['#ffffff', '#ff5b6e', '#2ec4b6', '#ffffff'][h(11) % 4], outline: '#17141c', hair: ['#3a2418', '#7a4a26', '#d9a441', '#1b1422'][h(13) % 4] };
   const k = .125 * s; const fdir = walk ? face : (look[0] < -.3 ? -1 : look[0] > .3 ? 1 : (h(6) % 2 ? 1 : -1)) * (face < 0 && !walk ? -1 : 1);

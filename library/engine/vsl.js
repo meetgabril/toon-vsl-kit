@@ -478,7 +478,8 @@ const ITEM = {
 };
 const DEFPOS = { year: 'high', label: 'low', title: 'top', sign: 'top', pill: 'high', sub: 'low', counter: 'mid', phone: 'R', card: 'high', stamp: 'mid', list: 'UR', check: 'R', x: 'R', crowd: 'mid', walkers: 'low', money: 'mid', confetti: 'mid', stars: 'mid', poof: 'mid', flash: 'mid', ba: 'R', prop: 'R', fn: 'mid', arrow: 'mid' };
 const SFX_OF = { year: 'stamp', label: 'scratch', title: 'pop', sign: 'pop', pill: 'pop', sub: 'click', counter: 'count', phone: 'notif', card: 'pop', stamp: 'stamp', list: 'pop', check: 'ding', x: 'buzz', crowd: 'pops', walkers: 'steps', money: 'chaching', confetti: 'cheer', stars: 'sparkle', poof: 'pop', flash: 'whoosh', ba: 'sparkle', prop: 'pop', arrow: 'whoosh' };
-const API = { push, pop, translate, rotate, scale, shape, fillOnly, stroke, ell, arc, spline, rr, rect, text, dot, pill, sign, TONY, DEX, CHAR, folk, stars, poof, check, xMark, arrow, ss, eo, back, seg, lerp, clamp, COL };
+const clipCircle = (x, y, r) => { g.save(); g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.clip(); }, unclip = () => g.restore();   // screen-space round mask (reaction bubbles)
+const API = { clipCircle, unclip, push, pop, translate, rotate, scale, shape, fillOnly, stroke, ell, arc, spline, rr, rect, text, dot, pill, sign, TONY, DEX, CHAR, folk, stars, poof, check, xMark, arrow, ss, eo, back, seg, lerp, clamp, COL };
 function compileStory() {
   if (!STORY || !STORY.beats || !TIMING) return;
   SH.length = 0; let cur = 0; const dur = LIPS.N / FPS;
