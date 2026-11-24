@@ -147,6 +147,51 @@
      "synth": "portal",
      "prompt": "Portal / warp, single isolated sound effect, clean, no music, no voice, for a short social video",
      "search": "portal / warp"
+    },
+    {
+     "id": "ricochet-out",
+     "name": "Cartoon zip out",
+     "use": "Exit fast, run away",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Cartoon zip out",
+     "search": "cartoon zip out"
+    },
+    {
+     "id": "spin",
+     "name": "Cartoon spin snap",
+     "use": "Spin, twist, transform",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Cartoon spin snap",
+     "search": "cartoon spin snap"
+    },
+    {
+     "id": "skid",
+     "name": "Tyre skid",
+     "use": "Sudden stop, wait!",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Tyre skid",
+     "search": "tyre skid"
+    },
+    {
+     "id": "car-pass",
+     "name": "Cars passing",
+     "use": "Street, time passing",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Cars passing",
+     "search": "cars passing"
+    },
+    {
+     "id": "train-pass",
+     "name": "Train passes",
+     "use": "Travel, missed chance",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Train passes",
+     "search": "train passes"
     }
    ]
   },
@@ -161,24 +206,6 @@
      "synth": null,
      "prompt": "Deep boom, single isolated sound effect, clean, no music, no voice, for a short social video",
      "search": "deep boom"
-    },
-    {
-     "id": "sub-drop",
-     "name": "Sub bass drop",
-     "use": "Beat drop after silence, title slam",
-     "duration": 1.5,
-     "synth": null,
-     "prompt": "Sub bass drop, single isolated sound effect, clean, no music, no voice, for a short social video",
-     "search": "sub bass drop"
-    },
-    {
-     "id": "braam",
-     "name": "Cinematic braam",
-     "use": "Trailer-style hook, dramatic stake",
-     "duration": 2.5,
-     "synth": null,
-     "prompt": "Cinematic braam, single isolated sound effect, clean, no music, no voice, for a short social video",
-     "search": "cinematic braam"
     },
     {
      "id": "hit-cinematic",
@@ -260,6 +287,33 @@
      "synth": null,
      "prompt": "Single heartbeat thump, single isolated sound effect, clean, no music, no voice, for a short social video",
      "search": "single heartbeat thump"
+    },
+    {
+     "id": "egg-splat",
+     "name": "Egg splat",
+     "use": "Mess, failure lands",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Egg splat",
+     "search": "egg splat"
+    },
+    {
+     "id": "whip",
+     "name": "Whip crack",
+     "use": "Fast, hustle, discipline",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Whip crack",
+     "search": "whip crack"
+    },
+    {
+     "id": "cracker-bang",
+     "name": "Cracker bang",
+     "use": "Surprise pop, party",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Cracker bang",
+     "search": "cracker bang"
     }
    ]
   },
@@ -409,6 +463,33 @@
      "synth": "chalk",
      "prompt": "Chalk / marker writing, single isolated sound effect, clean, no music, no voice, for a short social video",
      "search": "chalk / marker writing"
+    },
+    {
+     "id": "cork-pop",
+     "name": "Cork pop",
+     "use": "Celebration, opening",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Cork pop",
+     "search": "cork pop"
+    },
+    {
+     "id": "typewriter-carriage",
+     "name": "Typewriter carriage",
+     "use": "New line, done",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Typewriter carriage",
+     "search": "typewriter carriage"
+    },
+    {
+     "id": "pops",
+     "name": "Cartoon pop burst",
+     "use": "Many things appear",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Cartoon pop burst",
+     "search": "cartoon pop burst"
     }
    ]
   },
@@ -495,6 +576,42 @@
      "synth": null,
      "prompt": "Bell 'ding ding', single isolated sound effect, clean, no music, no voice, for a short social video",
      "search": "bell 'ding ding'"
+    },
+    {
+     "id": "cards-shuffle",
+     "name": "Card shuffle",
+     "use": "Casino, gambling, strategy",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Card shuffle",
+     "search": "card shuffle"
+    },
+    {
+     "id": "cards-deal",
+     "name": "Card deal",
+     "use": "Dealing, offers",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Card deal",
+     "search": "card deal"
+    },
+    {
+     "id": "scratch-card",
+     "name": "Scratch card",
+     "use": "Lottery, luck, gamble",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Scratch card",
+     "search": "scratch card"
+    },
+    {
+     "id": "gift-open",
+     "name": "Gift unwrap",
+     "use": "Bonus, free gift, reveal",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Gift unwrap",
+     "search": "gift unwrap"
     }
    ]
   },
@@ -671,6 +788,105 @@
      "synth": "boing",
      "prompt": "Spring 'doing', single isolated sound effect, clean, no music, no voice, for a short social video",
      "search": "spring 'doing'"
+    },
+    {
+     "id": "raspberry",
+     "name": "Raspberry",
+     "use": "Mockery, \"pfft\", bad idea",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Raspberry",
+     "search": "raspberry"
+    },
+    {
+     "id": "kazoo-wobble",
+     "name": "Kazoo wobble",
+     "use": "Wobbly, unsure, silly",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Kazoo wobble",
+     "search": "kazoo wobble"
+    },
+    {
+     "id": "slip",
+     "name": "Slip and fall",
+     "use": "Banana-peel moment",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Slip and fall",
+     "search": "slip and fall"
+    },
+    {
+     "id": "rubber-chicken",
+     "name": "Rubber chicken",
+     "use": "Absurd, silly gag",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Rubber chicken",
+     "search": "rubber chicken"
+    },
+    {
+     "id": "confetti",
+     "name": "Confetti whoosh",
+     "use": "Celebration burst",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Confetti whoosh",
+     "search": "confetti whoosh"
+    },
+    {
+     "id": "cartoon-dizzy",
+     "name": "Cartoon dizzy",
+     "use": "Confused, seeing stars",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Cartoon dizzy",
+     "search": "cartoon dizzy"
+    },
+    {
+     "id": "bird-flute",
+     "name": "Bird whistle",
+     "use": "Tweet, cute, small idea",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Bird whistle",
+     "search": "bird whistle"
+    },
+    {
+     "id": "flush",
+     "name": "Toilet flush",
+     "use": "Money down the drain",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Toilet flush",
+     "search": "toilet flush"
+    },
+    {
+     "id": "fireworks",
+     "name": "Fireworks",
+     "use": "Big win, launch, New Year",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Fireworks",
+     "search": "fireworks"
+    },
+    {
+     "id": "chair-creak",
+     "name": "Creaky seat",
+     "use": "Sit down, awkward",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Creaky seat",
+     "search": "creaky seat"
+    },
+    {
+     "id": "mouse-squeak",
+     "name": "Mouse squeak",
+     "use": "Tiny, cute, sneaky",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Mouse squeak",
+     "search": "mouse squeak"
     }
    ]
   },
@@ -775,6 +991,24 @@
      "synth": null,
      "prompt": "Phone keyboard taps, single isolated sound effect, clean, no music, no voice, for a short social video",
      "search": "phone keyboard taps"
+    },
+    {
+     "id": "phone-rotary",
+     "name": "Rotary phone dial",
+     "use": "Old phone, calling",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Rotary phone dial",
+     "search": "rotary phone dial"
+    },
+    {
+     "id": "phone-pickup",
+     "name": "Phone pick up",
+     "use": "Answering, hanging up",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Phone pick up",
+     "search": "phone pick up"
     }
    ]
   },
@@ -891,6 +1125,15 @@
      "prompt": "Room tone (silence), single isolated sound effect, clean, no music, no voice, for a short social video",
      "search": "room tone",
      "loop": true
+    },
+    {
+     "id": "thunder",
+     "name": "Thunder",
+     "use": "Bad news, drama",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Thunder",
+     "search": "thunder"
     }
    ]
   },
@@ -977,6 +1220,42 @@
      "synth": "click",
      "prompt": "Lightbulb click on, single isolated sound effect, clean, no music, no voice, for a short social video",
      "search": "lightbulb click on"
+    },
+    {
+     "id": "music-box",
+     "name": "Music box",
+     "use": "Childhood, nostalgia, sweet",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Music box",
+     "search": "music box"
+    },
+    {
+     "id": "music-box-wind",
+     "name": "Music box wind-up",
+     "use": "Getting ready, cute",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Music box wind-up",
+     "search": "music box wind-up"
+    },
+    {
+     "id": "kalimba-up",
+     "name": "Kalimba up",
+     "use": "Gentle success",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Kalimba up",
+     "search": "kalimba up"
+    },
+    {
+     "id": "church-bells",
+     "name": "Church bells",
+     "use": "Big announcement, wedding",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Church bells",
+     "search": "church bells"
     }
    ]
   },
@@ -1090,6 +1369,87 @@
      "synth": "gulp",
      "prompt": "Gulp, single isolated sound effect, clean, no music, no words, for a short social video",
      "search": "gulp"
+    },
+    {
+     "id": "car-horn",
+     "name": "Horn",
+     "use": "Traffic, hurry, attention",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Horn",
+     "search": "horn"
+    },
+    {
+     "id": "car-door",
+     "name": "Car door",
+     "use": "Arrive, leave",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Car door",
+     "search": "car door"
+    },
+    {
+     "id": "velcro",
+     "name": "Velcro rip",
+     "use": "Rip off, reveal, strap in",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Velcro rip",
+     "search": "velcro rip"
+    },
+    {
+     "id": "sweep",
+     "name": "Broom sweep",
+     "use": "Clean up, clear the mess",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Broom sweep",
+     "search": "broom sweep"
+    },
+    {
+     "id": "snip",
+     "name": "Scissor snips",
+     "use": "Cut costs, trim",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Scissor snips",
+     "search": "scissor snips"
+    },
+    {
+     "id": "spray",
+     "name": "Spray bottle",
+     "use": "Clean, fresh start",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Spray bottle",
+     "search": "spray bottle"
+    },
+    {
+     "id": "suitcase",
+     "name": "Suitcase open/close",
+     "use": "Travel, pack up",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Suitcase open/close",
+     "search": "suitcase open/close"
+    },
+    {
+     "id": "board-pieces",
+     "name": "Board game pieces",
+     "use": "Strategy, planning, game",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Board game pieces",
+     "search": "board game pieces"
+    },
+    {
+     "id": "cloth",
+     "name": "Cloth movement",
+     "use": "Character moves, grabs",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Cloth movement",
+     "search": "cloth movement"
     }
    ]
   },
@@ -1224,6 +1584,136 @@
      "synth": null,
      "prompt": "Cozy living room tone, clock ticking softly, distant TV, seamless loop",
      "search": "living room",
+     "loop": true
+    },
+    {
+     "id": "amb-park",
+     "name": "Park",
+     "use": "Outside, nature, walk",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Park",
+     "search": "park",
+     "loop": true
+    },
+    {
+     "id": "amb-morning",
+     "name": "Morning birds",
+     "use": "Early morning, new day",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Morning birds",
+     "search": "morning birds",
+     "loop": true
+    },
+    {
+     "id": "amb-station",
+     "name": "Train station hall",
+     "use": "Commute, travel",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Train station hall",
+     "search": "train station hall",
+     "loop": true
+    },
+    {
+     "id": "amb-car",
+     "name": "Car interior",
+     "use": "Driving, commute",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Car interior",
+     "search": "car interior",
+     "loop": true
+    },
+    {
+     "id": "amb-plane",
+     "name": "Plane cabin",
+     "use": "Travel, flight",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Plane cabin",
+     "search": "plane cabin",
+     "loop": true
+    },
+    {
+     "id": "amb-factory",
+     "name": "Busy factory",
+     "use": "Hustle, production line",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Busy factory",
+     "search": "busy factory",
+     "loop": true
+    },
+    {
+     "id": "amb-construction",
+     "name": "Construction site",
+     "use": "Building, work in progress",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Construction site",
+     "search": "construction site",
+     "loop": true
+    },
+    {
+     "id": "amb-city-night",
+     "name": "City nightlife",
+     "use": "Night out, city lights",
+     "duration": 2,
+     "synth": null,
+     "prompt": "City nightlife",
+     "search": "city nightlife",
+     "loop": true
+    },
+    {
+     "id": "amb-courtyard",
+     "name": "Quiet courtyard",
+     "use": "Neighbourhood, calm street",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Quiet courtyard",
+     "search": "quiet courtyard",
+     "loop": true
+    },
+    {
+     "id": "amb-fire",
+     "name": "Campfire",
+     "use": "Cosy, story time, night",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Campfire",
+     "search": "campfire",
+     "loop": true
+    },
+    {
+     "id": "amb-storm",
+     "name": "Storm outside",
+     "use": "Drama, bad news, night",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Storm outside",
+     "search": "storm outside",
+     "loop": true
+    },
+    {
+     "id": "amb-mall",
+     "name": "Mall hall",
+     "use": "Shopping, consumers",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Mall hall",
+     "search": "mall hall",
+     "loop": true
+    },
+    {
+     "id": "projector",
+     "name": "Film projector",
+     "use": "Old film style bed (autoscore loops it)",
+     "duration": 6,
+     "synth": null,
+     "prompt": "film projector",
+     "search": "projector",
      "loop": true
     }
    ]
@@ -1422,6 +1912,26 @@
      "prompt": "Group of people whispering and gossiping, close and secretive, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
      "search": "whispering crowd",
      "loop": true
+    },
+    {
+     "id": "walla-bar",
+     "name": "Bar crowd",
+     "use": "Night out, bar, social",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Bar crowd",
+     "search": "bar crowd",
+     "loop": true
+    },
+    {
+     "id": "walla-mall",
+     "name": "Shopping mall",
+     "use": "Shopping, consumers, busy public",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Shopping mall",
+     "search": "shopping mall",
+     "loop": true
     }
    ]
   },
@@ -1508,9 +2018,194 @@
      "synth": null,
      "prompt": "Small dog barking twice, cartoon timing, isolated",
      "search": "extra: small dog bark"
+    },
+    {
+     "id": "extra-cry",
+     "name": "Extra: crying",
+     "use": "Sad, comic sob",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: crying",
+     "search": "extra: crying"
+    },
+    {
+     "id": "extra-whistle",
+     "name": "Extra: impressed whistle",
+     "use": "Wow, impressive",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: impressed whistle",
+     "search": "extra: impressed whistle"
+    },
+    {
+     "id": "extra-cough",
+     "name": "Extra: cough",
+     "use": "Awkward, interrupt",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: cough",
+     "search": "extra: cough"
+    },
+    {
+     "id": "extra-announcer-laugh",
+     "name": "Announcer evil laugh",
+     "use": "Villain, scheme",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Announcer evil laugh",
+     "search": "announcer evil laugh"
+    }
+   ]
+  },
+  "orchestra_foley": {
+   "what": "Real percussion from the studio orchestra (VSCO 2 CE, CC0): classic cartoon foley",
+   "effects": [
+    {
+     "id": "flexatone",
+     "name": "Flexatone wobble",
+     "use": "Cartoon wobble, boing, dizzy",
+     "duration": 1.2,
+     "synth": null,
+     "prompt": "Flexatone wobble",
+     "search": "flexatone wobble"
+    },
+    {
+     "id": "slapstick",
+     "name": "Slapstick crack",
+     "use": "Slap, hit, sudden gag",
+     "duration": 0.5,
+     "synth": null,
+     "prompt": "Slapstick crack",
+     "search": "slapstick crack"
+    },
+    {
+     "id": "woodblock",
+     "name": "Woodblock tok",
+     "use": "Tick, step, comic timing",
+     "duration": 0.3,
+     "synth": null,
+     "prompt": "Woodblock tok",
+     "search": "woodblock tok"
+    },
+    {
+     "id": "ratchet",
+     "name": "Ratchet",
+     "use": "Winding up, cranking, scheming",
+     "duration": 1.2,
+     "synth": null,
+     "prompt": "Ratchet",
+     "search": "ratchet"
+    },
+    {
+     "id": "vibraslap",
+     "name": "Vibraslap",
+     "use": "Rattle, surprise, \"what?!\"",
+     "duration": 1.2,
+     "synth": null,
+     "prompt": "Vibraslap",
+     "search": "vibraslap"
+    },
+    {
+     "id": "cowbell",
+     "name": "Cowbell",
+     "use": "Rhythm gag, \"more cowbell\"",
+     "duration": 0.6,
+     "synth": null,
+     "prompt": "Cowbell",
+     "search": "cowbell"
+    },
+    {
+     "id": "triangle",
+     "name": "Triangle ding",
+     "use": "Small idea, delicate reveal",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Triangle ding",
+     "search": "triangle ding"
+    },
+    {
+     "id": "bell-tree",
+     "name": "Bell tree",
+     "use": "Magic, transformation, sparkle",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Bell tree",
+     "search": "bell tree"
+    },
+    {
+     "id": "wind-chimes",
+     "name": "Wind chimes",
+     "use": "Dreamy, memory, calm",
+     "duration": 3.0,
+     "synth": null,
+     "prompt": "Wind chimes",
+     "search": "wind chimes"
+    },
+    {
+     "id": "sleigh-bells",
+     "name": "Sleigh bells shake",
+     "use": "Festive, gift, bonus",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Sleigh bells shake",
+     "search": "sleigh bells shake"
+    },
+    {
+     "id": "guiro",
+     "name": "Guiro scrape",
+     "use": "Scratchy, sneaky, comic texture",
+     "duration": 0.6,
+     "synth": null,
+     "prompt": "Guiro scrape",
+     "search": "guiro scrape"
+    },
+    {
+     "id": "cymbal-crash",
+     "name": "Cymbal crash",
+     "use": "Big hit, end of a build",
+     "duration": 2.5,
+     "synth": null,
+     "prompt": "Cymbal crash",
+     "search": "cymbal crash"
+    },
+    {
+     "id": "timpani-hit",
+     "name": "Timpani boom",
+     "use": "Heavy realisation, \"DUN\"",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Timpani boom",
+     "search": "timpani boom"
+    },
+    {
+     "id": "timpani-roll",
+     "name": "Timpani roll",
+     "use": "Tension under a reveal",
+     "duration": 3.0,
+     "synth": null,
+     "prompt": "Timpani roll",
+     "search": "timpani roll"
+    },
+    {
+     "id": "snare-roll",
+     "name": "Snare/bass drum roll",
+     "use": "Before a reveal",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Snare/bass drum roll",
+     "search": "snare/bass drum roll"
+    },
+    {
+     "id": "agogo",
+     "name": "Agogo bells",
+     "use": "Playful, tropical, money tinkle",
+     "duration": 0.8,
+     "synth": null,
+     "prompt": "Agogo bells",
+     "search": "agogo bells"
     }
    ]
   }
  },
- "count": 157
+ "count": 232
 }

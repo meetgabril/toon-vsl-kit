@@ -21,7 +21,8 @@ cp -r "$KIT"/ref/. "$P"/ref/
 for f in "$KIT"/example/work/*; do [ -e "$P/work/$(basename "$f")" ] || cp "$f" "$P/work/"; done
 
 # —— the brand ——
-cp "$B"/brand-profile.json "$P"/brand/; cp "$B"/sound-identity.json "$P"/brand/ 2>/dev/null || cp "$ROOT"/brands/_template/sound-identity.json "$P"/brand/; cp "$B"/sound-signature.json "$P"/brand/ 2>/dev/null || true
+cp "$B"/brand-profile.json "$P"/brand/
+[ -f "$B/sound-identity.json" ] && cp "$B/sound-identity.json" "$P"/brand/ || true   # normally absent: every brand uses library/sound (SOUND.md)
 for f in brand-rules.md series-guide.md hooks.md; do [ -f "$B/$f" ] && cp "$B/$f" "$P"/brand/; done
 cp -r "$B"/brain "$P"/brand/ 2>/dev/null || true
 [ -f "$B/characters/cast.custom.js" ] && cp "$B/characters/cast.custom.js" "$P"/cast.custom.js

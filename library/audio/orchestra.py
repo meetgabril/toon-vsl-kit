@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """orchestra.py — the studio's real orchestra. Plays music with recorded instruments (VS Chamber Orchestra CE, CC0) instead of synthesis.
 Every note is a real recording: nearest sampled pitch, the velocity layer that fits, round-robin takes, human timing and dynamics, one shared room.
-  python3 orchestra.py kit <brand>                 render the brand's music kit (8 moods, leitmotifs, stings, musical SFX) into brands/<b>/music
+  python3 orchestra.py kit                         render THE studio music kit (8 moods, leitmotifs by role, stings, musical gags) into library/sound/music (.wav; keep .ogg in git)
   python3 orchestra.py section <brand> <mood> <seconds> <out.wav>   one bed of any length (autoscore uses render_section)
   python3 orchestra.py audition <brand>            render every theme in identity['theme_candidates'] as logo + 8 bars, to choose the brand's theme
-The brand's theme, key, tempo and instruments come from brands/<b>/sound-identity.json (see brands/_template)."""
+The theme, key, tempo and instruments come from library/sound/identity.json, shared by every brand."""
 import os, sys, json, functools
 import numpy as np, soundfile as sf
 from scipy.signal import fftconvolve, butter, sosfilt
@@ -28,7 +28,8 @@ def load(inst, f):
 class Band:
     """A take: a stereo buffer plus a round-robin memory, so repeated notes never use the same recording twice in a row."""
     def __init__(s, dur, tight=.012):
-        s.N = int(dur * SR) + SR * 4; s.b = np.zeros((s.N, 2), np.float32); s.rr = {}; s.tight = tight
+        s.N = int(dur * SR) + SR * 4; s.bed = np.zeros((s.N, 2), np.float32); s.lead_ = np.zeros((s.N, 2), np.float32); s.b = s.bed; s.rr = {}; s.tight = tight
+        s.range = {}; s.perc = 1.
     def _pick(s, inst, m, vel):
         ent = [e for e in MAP[inst] if e['note'] is not None]
         near = min(abs(e['note'] - m) for e in ent); ent = [e for e in ent if abs(e['note'] - m) == near]
@@ -41,7 +42,12 @@ class Band:
         l, r = np.cos((pan + 1) * np.pi / 4) * 1.414, np.sin((pan + 1) * np.pi / 4) * 1.414
         s.b[i:j] += x[:j - i] * np.array([l, r], np.float32) * g * 10 ** (rng.normal(0, 1.2) / 20)
     def note(s, inst, n, t, dur=None, vel=.6, g=1., pan=0., rel=.09):
-        m = M(n); e = s._pick(inst, m, vel); x = load(inst, e['file'])
+        m = M(n)
+        if inst not in s.range: ns = [e['note'] for e in MAP[inst] if e['note'] is not None]; s.range[inst] = (min(ns), max(ns))
+        lo, hi = s.range[inst]
+        while m < lo - 3: m += 12      # never stretch a recording far below/above what the player recorded: move the octave
+        while m > hi + 3: m -= 12
+        e = s._pick(inst, m, vel); x = load(inst, e['file'])
         if e['note'] != m:   # small transposition by resampling (a real player's pitch, not a synth)
             q = 2 ** ((m - e['note']) / 12); idx = np.arange(0, len(x) - 1, q); x = np.stack([np.interp(idx, np.arange(len(x)), x[:, c]) for c in range(2)], 1).astype(np.float32)
         if dur is not None:
@@ -51,11 +57,15 @@ class Band:
     def hit(s, inst, tag, t, g=1., pan=0.):
         ent = [e for e in MAP[inst] if tag in e['tag'] or tag in e['file'].lower()]
         if not ent: raise KeyError(f'{inst}:{tag}')
-        k = (inst, tag); i = s.rr.get(k, 0); s.rr[k] = i + 1; s.put(load(inst, ent[i % len(ent)]['file']), t, g, pan)
+        k = (inst, tag); i = s.rr.get(k, 0); s.rr[k] = i + 1; s.put(load(inst, ent[i % len(ent)]['file']), t, g * s.perc, pan)
     def chord(s, inst, notes, t, dur=None, vel=.5, g=1., pan=0., spread=.012):
         for k, n in enumerate(notes): s.note(inst, n, t + k * spread * rng.random(), dur, vel, g / np.sqrt(len(notes)), pan)
     def lead(s, short, long_, notes, t0, beat, vel=.65, g=1., pan=0., oct_=0, cut=.5):
-        """Theme on a real instrument: staccato samples for short notes, sustained samples for long ones."""
+        """Theme on a real instrument: staccato samples for short notes, sustained samples for long ones (written to the lead stem)."""
+        s.b = s.lead_
+        try: s._lead(short, long_, notes, t0, beat, vel, g, pan, oct_, cut)
+        finally: s.b = s.bed
+    def _lead(s, short, long_, notes, t0, beat, vel, g, pan, oct_, cut):
         for b, d, n in notes:
             m = M(n) + oct_; dd = d * beat
             if long_ and dd >= cut: s.note(long_, m, t0 + b * beat, dd * .95, vel, g, pan, .18)
@@ -65,17 +75,27 @@ def ir(d=1.6, decay=.38, lpf=6500):
     n = int(d * SR); t = np.arange(n) / SR; lp = butter(2, lpf, 'low', fs=SR, output='sos')
     h = np.stack([sosfilt(lp, rng.standard_normal(n)) * np.exp(-t / decay) for _ in range(2)], 1); h[:int(.018 * SR)] = 0; return h / np.sqrt((h ** 2).sum(0))
 ROOM = ir()
-def finish(band, dur, loop=False, wet=.16):
-    x = band.b; y = x + np.stack([fftconvolve(x[:, c], ROOM[:, c])[:len(x)] for c in range(2)], 1) * wet
+def finish(band, dur, loop=False, wet=.16, stems=False):
+    if stems:   # (bed, lead) with the same room and the same gain, so they sum back to the full mix
+        full = finish(band, dur, loop, wet); band.b = band.lead_; ld = _room(band, dur, loop, wet); band.b = band.bed
+        bd = _room(band, dur, loop, wet); k = np.abs(full).max() / (np.abs(bd + ld).max() + 1e-9); return (bd * k).astype(np.float32), (ld * k).astype(np.float32)
+    x = band.bed + band.lead_; y = x + np.stack([fftconvolve(x[:, c], ROOM[:, c])[:len(x)] for c in range(2)], 1) * wet
     n = int(dur * SR); out = y[:n].copy()
     if loop: tail = y[n:n + 2 * SR]; out[:len(tail)] += tail; f = int(.006 * SR); out[:f] *= np.linspace(0, 1, f)[:, None]; out[-f:] *= np.linspace(1, 0, f)[:, None]
     else: f = int(.05 * SR); out[-f:] *= np.linspace(1, 0, f)[:, None]
     out = np.tanh(1.15 * out / (np.abs(out).max() + 1e-9)) ; return (out / (np.abs(out).max() + 1e-9) * .8).astype(np.float32)
 
+def _room(band, dur, loop, wet):
+    x = band.b; y = x + np.stack([fftconvolve(x[:, c], ROOM[:, c])[:len(x)] for c in range(2)], 1) * wet
+    n = int(dur * SR); out = y[:n].copy()
+    if loop: tail = y[n:n + 2 * SR]; out[:len(tail)] += tail
+    return out
+
 # ---------------- harmony helpers ----------------
-def identity(brand):
-    p = os.path.join(ROOT, 'brands', brand, 'sound-identity.json')
-    return json.load(open(p if os.path.exists(p) else os.path.join(ROOT, 'brands', '_template', 'sound-identity.json')))
+STUDIO = os.path.join(ROOT, 'library', 'sound')
+def identity(brand=None):
+    p = os.path.join(ROOT, 'brands', brand, 'sound-identity.json') if brand else ''
+    return json.load(open(p if p and os.path.exists(p) else os.path.join(STUDIO, 'identity.json')))   # every brand shares the studio sound
 def tr(n, k): return M(n) + k
 def to_major(theme):   # the minor theme brightened: b3 → 3, b6 → 6 (relative to the key)
     return [(b, d, n) for b, d, n in theme]
@@ -93,6 +113,7 @@ def section(I, mood, dur, t0=0.):
     TH = [tuple(x) for x in I['theme']]; THM = [tuple(x) for x in I.get('theme_major', I['theme'])]
     mi, ma = progs(I); band = Band(dur); bars = int(np.ceil(dur / BAR)); sw = .12 * B
     for k in range(bars):
+        band.perc = .45 if (k // 8) % 3 == 1 else 1.   # B blocks breathe: lighter percussion, no tune (room for the voice)
         t = t0 + k * BAR; c = (mi if mood not in ('folk', 'happy') else ma)[k % 4]; nx = (mi if mood not in ('folk', 'happy') else ma)[(k + 1) % 4]; root = c[0] - 12
         if mood == 'sitcom':
             for q, n in enumerate(walk(root, nx[0] - 12, k)): band.note('bass_pizz', n, t + q * B, None, .55 + .1 * (q == 0), .9, -.1)
@@ -134,15 +155,19 @@ def section(I, mood, dur, t0=0.):
     if lead:
         th = THM if mood in ('folk', 'happy') else TH
         if mood == 'tension': th = [(b * 2, d * 2, n) for b, d, n in th if b < 8]
+        ALT = I.get('alt_leads', {}).get(mood)
         for rep in range(int(np.ceil(dur / (8 * BAR)))):
-            band.lead(lead[0], lead[1], th, t0 + rep * 8 * BAR, B, .62, lead[2] if len(lead) > 2 else 1., .05, lead[3] if len(lead) > 3 else 0)
+            v = rep % 3   # theme and variations: A (lead) · B (no tune) · A' (the theme on the alternate instrument)
+            if v == 1: continue
+            L_ = ALT if (v == 2 and ALT) else lead
+            band.lead(L_[0], L_[1], th, t0 + rep * 8 * BAR, B, .62 if v == 0 else .58, L_[2] if len(L_) > 2 else 1., .05 if v == 0 else -.1, L_[3] if len(L_) > 3 else 0)
     return band, 8 * BAR
 
 def render_section(brand, mood, dur, I=None):
     I = I or identity(brand); band, _ = section(I, mood, dur); return finish(band, dur)
 
-def kit(brand):
-    I = identity(brand); out = os.path.join(ROOT, 'brands', brand, 'music'); os.makedirs(out, exist_ok=True); idx = {'cues': [], 'leitmotifs': [], 'stings': [], 'musical_sfx': []}
+def kit(brand=None):
+    I = identity(brand); out = os.path.join(ROOT, 'brands', brand, 'music') if brand and os.path.exists(os.path.join(ROOT, 'brands', brand, 'sound-identity.json')) else os.path.join(STUDIO, 'music'); os.makedirs(out, exist_ok=True); idx = {'cues': [], 'leitmotifs': [], 'stings': [], 'musical_sfx': []}
     for mood in I['moods']:
         _, L = section(I, mood, 0); band, L = section(I, mood, L); sf.write(f'{out}/{mood}.wav', finish(band, L, loop=True), SR); idx['cues'].append({'id': mood, 'seconds': round(L, 2)})
     B = 60 / I.get('bpm', 120); head = [tuple(x) for x in I['theme'] if x[0] < 4]; headM = [tuple(x) for x in I.get('theme_major', I['theme']) if x[0] < 4]
@@ -192,7 +217,7 @@ def kit(brand):
 if __name__ == '__main__':
     a = sys.argv[1:]
     if not a: print(__doc__)
-    elif a[0] == 'kit': kit(a[1])
+    elif a[0] == 'kit': kit(a[1] if len(a) > 1 else None)
     elif a[0] == 'audition':
         I = identity(a[1]); out = os.path.join(ROOT, 'brands', a[1], 'music', 'audition'); os.makedirs(out, exist_ok=True)
         for n, c in enumerate(I.get('theme_candidates', []), 1):

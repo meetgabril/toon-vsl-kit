@@ -41,7 +41,8 @@
    "name": "The Designer's Choice: CARTOON (Nicholas Judy, itch.io)",
    "url": "https://nicholasjudy567.itch.io/the-designers-choice-cartoon",
    "status": "ok",
-   "notes": "Royalty-free, commercial incl. advertising, credit optional. Don't resell or redistribute the raw files; keep them out of public repos. Not for government/law-enforcement/hate-group projects."
+   "notes": "Royalty-free, commercial incl. advertising, credit optional. Don't resell or redistribute the raw files; keep them out of public repos. Not for government/law-enforcement/hate-group projects.",
+   "private": true
   },
   {
    "id": "mixkit",
@@ -55,7 +56,8 @@
    "name": "Sonniss GDC Game Audio Bundle (2015\u20132026)",
    "url": "https://sonniss.com/gameaudiogdc/",
    "status": "ok",
-   "notes": "Royalty-free, commercial, no credit. Not for AI training."
+   "notes": "Royalty-free, commercial, no credit. Media production only, never AI training. Do not redistribute the raw files: private storage only (files-licensed/).",
+   "private": true
   },
   {
    "id": "freesound-cc0",

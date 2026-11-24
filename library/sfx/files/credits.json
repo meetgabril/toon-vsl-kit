@@ -24,27 +24,31 @@
   "credit": null
  },
  "tick": {
-  "source": "kenney",
+  "source": "vsco",
   "status": "ok",
-  "original": "kenney/interface/tick_001.wav",
+  "private": false,
+  "original": "tick.wav",
   "credit": null
  },
  "check": {
-  "source": "kenney",
+  "source": "vsco",
   "status": "ok",
-  "original": "kenney/interface/confirmation_001.wav",
+  "private": false,
+  "original": "check.wav",
   "credit": null
  },
  "wrong": {
-  "source": "kenney",
+  "source": "vsco",
   "status": "ok",
-  "original": "kenney/interface/error_006.wav",
+  "private": false,
+  "original": "wrong.wav",
   "credit": null
  },
  "error": {
-  "source": "kenney",
+  "source": "vsco",
   "status": "ok",
-  "original": "kenney/interface/error_003.wav",
+  "private": false,
+  "original": "error.wav",
   "credit": null
  },
  "level-up": {
@@ -66,15 +70,17 @@
   "credit": null
  },
  "highlight": {
-  "source": "kenney",
+  "source": "vsco",
   "status": "ok",
-  "original": "kenney/interface/maximize_004.wav",
+  "private": false,
+  "original": "highlight.wav",
   "credit": null
  },
  "counter": {
-  "source": "kenney",
+  "source": "vsco",
   "status": "ok",
-  "original": "kenney/interface/select_001.wav",
+  "private": false,
+  "original": "counter.wav",
   "credit": null
  },
  "glitch": {
@@ -84,9 +90,10 @@
   "credit": null
  },
  "portal": {
-  "source": "kenney",
+  "source": "vsco",
   "status": "ok",
-  "original": "kenney/scifi/force_field_000.ogg",
+  "private": false,
+  "original": "portal.wav",
   "credit": null
  },
  "page-flip": {
@@ -126,9 +133,10 @@
   "credit": null
  },
  "stamp": {
-  "source": "kenney",
+  "source": "vsco",
   "status": "ok",
-  "original": "kenney/impact/impact_plank_medium_000.ogg",
+  "private": false,
+  "original": "stamp.wav",
   "credit": null
  },
  "stomp": {
@@ -141,12 +149,6 @@
   "source": "kenney",
   "status": "ok",
   "original": "kenney/scifi/low_frequency_explosion_000.ogg",
-  "credit": null
- },
- "sub-drop": {
-  "source": "kenney",
-  "status": "ok",
-  "original": "kenney/scifi/low_frequency_explosion_001.ogg",
   "credit": null
  },
  "coin": {
@@ -162,9 +164,10 @@
   "credit": null
  },
  "payment-success": {
-  "source": "kenney",
+  "source": "vsco",
   "status": "ok",
-  "original": "kenney/interface/confirmation_004.wav",
+  "private": false,
+  "original": "payment-success.wav",
   "credit": null
  },
  "bonk": {
@@ -174,9 +177,10 @@
   "credit": null
  },
  "power-up": {
-  "source": "kenney",
+  "source": "vsco",
   "status": "ok",
-  "original": "kenney/digital/power_up_1.ogg",
+  "private": false,
+  "original": "power-up.wav",
   "credit": null
  },
  "chime": {
@@ -186,9 +190,10 @@
   "credit": null
  },
  "magic-wand": {
-  "source": "kenney",
+  "source": "vsco",
   "status": "ok",
-  "original": "kenney/digital/pep_sound_1.ogg",
+  "private": false,
+  "original": "magic-wand.wav",
   "credit": null
  },
  "creak": {
@@ -204,21 +209,24 @@
   "credit": null
  },
  "like-tap": {
-  "source": "kenney",
+  "source": "vsco",
   "status": "ok",
-  "original": "kenney/interface/select_002.wav",
+  "private": false,
+  "original": "like-tap.wav",
   "credit": null
  },
  "message-sent": {
-  "source": "kenney",
+  "source": "vsco",
   "status": "ok",
-  "original": "kenney/interface/maximize_008.wav",
+  "private": false,
+  "original": "message-sent.wav",
   "credit": null
  },
  "dm-ping": {
-  "source": "kenney",
+  "source": "vsco",
   "status": "ok",
-  "original": "kenney/interface/glass_001.wav",
+  "private": false,
+  "original": "dm-ping.wav",
   "credit": null
  },
  "unlock": {
@@ -242,7 +250,295 @@
  "cha-ching": {
   "source": "studio-foley",
   "status": "ok",
+  "private": false,
   "original": "cha-ching.wav",
+  "credit": null
+ },
+ "flexatone": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "flexatone.wav",
+  "credit": null
+ },
+ "slapstick": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "slapstick.wav",
+  "credit": null
+ },
+ "woodblock": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "woodblock.wav",
+  "credit": null
+ },
+ "ratchet": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "ratchet.wav",
+  "credit": null
+ },
+ "vibraslap": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "vibraslap.wav",
+  "credit": null
+ },
+ "cowbell": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "cowbell.wav",
+  "credit": null
+ },
+ "triangle": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "triangle.wav",
+  "credit": null
+ },
+ "bell-tree": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "bell-tree.wav",
+  "credit": null
+ },
+ "wind-chimes": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "wind-chimes.wav",
+  "credit": null
+ },
+ "sleigh-bells": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "sleigh-bells.wav",
+  "credit": null
+ },
+ "guiro": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "guiro.wav",
+  "credit": null
+ },
+ "cymbal-crash": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "cymbal-crash.wav",
+  "credit": null
+ },
+ "timpani-hit": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "timpani-hit.wav",
+  "credit": null
+ },
+ "timpani-roll": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "timpani-roll.wav",
+  "credit": null
+ },
+ "snare-roll": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "snare-roll.wav",
+  "credit": null
+ },
+ "agogo": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "agogo.wav",
+  "credit": null
+ },
+ "swipe": {
+  "source": "kenney",
+  "status": "ok",
+  "private": false,
+  "original": "kenney/rpg/cloth_2.ogg",
+  "credit": null
+ },
+ "auction-bell": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "auction-bell.wav",
+  "credit": null
+ },
+ "drone": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "drone.wav",
+  "credit": null
+ },
+ "elevator-ding": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "elevator-ding.wav",
+  "credit": null
+ },
+ "heartbeat-thump": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "heartbeat-thump.wav",
+  "credit": null
+ },
+ "heartbeat": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "heartbeat.wav",
+  "credit": null
+ },
+ "hit-cinematic": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "hit-cinematic.wav",
+  "credit": null
+ },
+ "lightbulb": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "lightbulb.wav",
+  "credit": null
+ },
+ "notif-stack": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "notif-stack.wav",
+  "credit": null
+ },
+ "notification-sale": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "notification-sale.wav",
+  "credit": null
+ },
+ "reveal-swell": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "reveal-swell.wav",
+  "credit": null
+ },
+ "reverse-cymbal": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "reverse-cymbal.wav",
+  "credit": null
+ },
+ "riser-long": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "riser-long.wav",
+  "credit": null
+ },
+ "riser-short": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "riser-short.wav",
+  "credit": null
+ },
+ "sonar": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "sonar.wav",
+  "credit": null
+ },
+ "suspense-rise": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "suspense-rise.wav",
+  "credit": null
+ },
+ "tiny-violin": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "tiny-violin.wav",
+  "credit": null
+ },
+ "rimshot": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "rimshot.ogg",
+  "credit": null
+ },
+ "dramatic-sting": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "dramatic-sting.ogg",
+  "credit": null
+ },
+ "sad-trombone": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "sad-trombone.ogg",
+  "credit": null
+ },
+ "harp-gliss": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "harp-gliss.ogg",
+  "credit": null
+ },
+ "logo-sting": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "logo-sting.ogg",
+  "credit": null
+ },
+ "outro": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "outro.ogg",
+  "credit": null
+ },
+ "series-bump": {
+  "source": "vsco",
+  "status": "ok",
+  "private": false,
+  "original": "series-bump.ogg",
+  "credit": null
+ },
+ "register-drawer": {
+  "source": "kenney",
+  "status": "ok",
+  "private": false,
+  "original": "kenney/rpg/metal_latch.ogg",
   "credit": null
  }
 }

@@ -95,24 +95,26 @@ secs.append([EV['dur'], None])
 ORCH, OM = None, None
 try:
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import orchestra as OM
-    ORCH = json.load(open('brand/sound-identity.json')) if os.path.exists('brand/sound-identity.json') else OM.identity(json.load(open('brand/brand-profile.json'))['id'])
+    ORCH = json.load(open('brand/sound-identity.json')) if os.path.exists('brand/sound-identity.json') else OM.identity()   # the studio sound, shared by every brand
 except Exception as ex: print('autoscore: WARNING real orchestra unavailable, synth fallback:', ex)
 ALIAS = {'happy': 'happy', 'island': 'folk', 'build': 'tension'}
-orch = np.zeros((N, 2))
+orch = np.zeros((N, 2)); orch_lead = np.zeros((N, 2)); TAIL = .8   # the bed and the melody are separate stems: mix.py tucks the melody further under speech
+def place(buf, y, t):
+    i = int(t * SR); j = min(N, i + len(y))
+    if j > i: buf[i:j] += y[:j - i]
 for (t0, m), (t1, _) in zip(secs, secs[1:]):
     if m in ('silence', 'none'): continue
     mm = ALIAS.get(m, m)
     if ORCH and mm in ORCH['moods']:
-        y = OM.finish(OM.section(ORCH, mm, t1 - t0)[0], t1 - t0) * .6
-        if m == 'build': band = OM.Band(4); band.hit('timpani', 'roll', 0, .6); r = OM.finish(band, 3); y[-len(r):] += r[-len(y):] * .5
-        i = int(t0 * SR); orch[i:i + len(y)] += y[:N - i]; continue
+        d = t1 - t0; band = OM.section(ORCH, mm, d + TAIL)[0]
+        if m == 'build': band.hit('timpani', 'roll', max(0, d - 3), .6)
+        bed, ld = OM.finish(band, d + TAIL, stems=True); f = int(TAIL * SR); w = np.linspace(1, 0, f)[:, None] ** 2   # the room rings into the next scene
+        bed[-f:] *= w; ld[-f:] *= w; place(orch, bed * .6, t0); place(orch_lead, ld * .6, t0); continue
     if m == 'tension': Hm.add(strings_trem(t1 - t0, [M('D3'), M('A3')], .25), t0); continue
     if m == 'build': Hm.add(strings_trem(t1 - t0, [M('A2'), M('D3'), M('F3')], .3, rise=t1 - t0 - .5), t0); FX.add(noise_riser(min(3, t1 - t0), .35), max(t0, t1 - 3)); continue
     st, ch, br, mel = STY.get(m, STY['sitcom'])
     groove(t0, t1 - .05, ch, br, st, 1.0)
     if mel and t1 - t0 > 8: melody(THEME_MAJ if ch[0] is DM else THEME, t0, .25)
-for e in EV['events']:
-    if e['type'] == 'portal': D.add(crash(.5), e['t'] + .5)
 # ---------------- reverb + cuts ----------------
 room, spr = ir(), spring_ir()
 send = {'drums': .08, 'bass': .0, 'lead': .28, 'harm': .22, 'fx': .2}
@@ -120,17 +122,24 @@ music = orch + sum(b.b for b in BUS.values()) + conv(sum(BUS[k].b * send[k] for 
 def hard_cut(a, b):
     i, j = int(a * SR), int(b * SR); f = int(.01 * SR); (i >= f) and music.__setitem__(slice(i - f, i), music[i - f:i] * np.linspace(1, 0, f)[:, None]); music[i:j] = 0
 music = np.stack([hp(music[:, c], 30) for c in range(2)], 1)
+orch_lead = np.stack([hp(orch_lead[:, c], 30) for c in range(2)], 1)
 for (t0, m), (t1, _) in zip(secs, secs[1:]):
-    if m in ('silence', 'none'): hard_cut(t0, t1)
-sf.write('music/music.wav', (music / np.abs(music).max() * .8).astype(np.float32), SR)
+    if m in ('silence', 'none'):
+        hard_cut(t0, t1); i, j = int(t0 * SR), int(t1 * SR); orch_lead[i:j] = 0
+kk = .8 / (np.abs(music + orch_lead).max() + 1e-9)
+sf.write('music/music.wav', (music * kk).astype(np.float32), SR); sf.write('music/lead.wav', (orch_lead * kk).astype(np.float32), SR)
 
 
 # ---------------- SFX ----------------
 fx = np.zeros((N, 2))
-def put(x, t, g=1., pan=0.):
+def loud(x):   # short-term loudness (max 50 ms RMS) so a click and a boing at the same level SOUND equally loud
+    m = x if x.ndim == 1 else x.mean(1); w = int(.05 * SR)
+    if len(m) < w: return np.sqrt((m ** 2).mean()) + 1e-9
+    k = len(m) // w; return np.sqrt((m[:k * w].reshape(k, w) ** 2).mean(1)).max() + 1e-9
+def put(x, t, g=1., pan=0., buf=None):
     if x.ndim == 1: x = np.stack([x * (1 - max(0, pan)), x * (1 + min(0, pan))], 1)
-    i = int(t * SR); j = min(N, i + len(x));
-    if j > i: fx[i:j] += x[:j - i] * g / (np.abs(x).max() + 1e-9)
+    buf = fx if buf is None else buf; i = int(t * SR); j = min(N, i + len(x))
+    if j > i: k = min(.25 / loud(x), .95 / (np.abs(x).max() + 1e-9)); buf[i:j] += x[:j - i] * g * k
 T = lambda d: np.arange(int(d * SR)) / SR
 def pop(): t = T(.12); return np.sin(2 * np.pi * np.cumsum(500 + 900 * np.exp(-t * 60)) / SR) * np.exp(-t * 35)
 def boing(): t = T(.5); return np.sin(2 * np.pi * np.cumsum(220 + 120 * np.sin(2 * np.pi * 10 * t) * np.exp(-t * 5)) / SR) * np.exp(-t * 6)
@@ -162,6 +171,13 @@ M_ = {'pop': lambda: pop(), 'pops': lambda: pop(), 'click': lambda: click(), 'di
       'chaching': lambda: chaching(), 'cheer': lambda: cheer(1.6), 'sparkle': lambda: sparkle(), 'steps': lambda: steps(1.8, 4), 'portal': lambda: portal(), 'boing': lambda: boing(),
       'thud': lambda: thud(), 'creak': lambda: creak(), 'powerdown': lambda: powerdown(), 'page': lambda: page(), 'waves': lambda: waves(4.0), 'gulp': lambda: gulp(), 'chalk': lambda: chalk(), 'scratch': lambda: scratch()}
 cues = []
+SEEN = set(); ROLE = {}
+try:
+    for kk_, c_ in json.load(open('brand/brand-profile.json')).get('characters', {}).items():
+        r_ = {'narrator': 'narrator', 'hero': 'hero'}.get(c_.get('role'), 'supporting'); ROLE[kk_.lower()] = r_; ROLE[c_['name'].lower()] = r_
+        for w_ in c_['name'].lower().replace("'s", '').split(): ROLE.setdefault(w_, r_)
+except Exception: pass
+def in_silence(t): return any(m in ('silence', 'none') and a <= t < b for (a, m), (b, _) in zip(secs, secs[1:]))
 # 'Sound boil' (Studio Standard): like the 3-drawing line boil, a repeated sound is never identical.
 # Round-robin through sfx/<k>.wav, sfx/<k>~2.wav, sfx/<k>~3.wav… and nudge pitch ±35 cents and level ±1.2 dB on every hit.
 _rr = {}
@@ -184,7 +200,10 @@ for e in EV['events']:
         d = e.get('dur', 1.6); cues += ([(t + .2 + d * q / 8, boil(take('tick')), .25) for q in range(8)] if os.path.exists('sfx/tick.wav') else []) + ([(t + .2 + d, take('ding'), .55)] if os.path.exists('sfx/ding.wav') else [])
     elif k == 'notif':
         h = e.get('hit', .9); cues += [(t + h + i * .18, boil(take('dm-ping' if os.path.exists('sfx/dm-ping.wav') else 'ding')), .35) for i in range(4) if os.path.exists('sfx/dm-ping.wav') or os.path.exists('sfx/ding.wav')]
-    elif k == 'pops': cues += [(t + i * .08, boil(take('pop')), .5) for i in range(5)] if os.path.exists('sfx/pop.wav') else []
+    elif k == 'pops': cues += [(t, take('pops'), .6)] if os.path.exists('sfx/pops.wav') else [(t + i * .08, boil(take('pop')), .5) for i in range(5)] if os.path.exists('sfx/pop.wav') else []
+    elif k == 'enter':   # leitmotif on a character's first appearance (by role: narrator, hero, supporting)
+        role = ROLE.get(str(e.get('who', '')).lower())
+        if role and role not in SEEN and os.path.exists(f'sfx/motif-{role}.wav') and not in_silence(t): SEEN.add(role); cues.append((t, take(f'motif-{role}'), .55))
     elif os.path.exists(f'sfx/{k}.wav'):   # file from sfx.py (library / AI) wins over the synth
         y = take(k); lvl = .12 if k.startswith('walla-') else .07 if k.startswith('amb-') else 1. if k.startswith('voice-') else .7   # mix ladder (SOUND.md)
         cues.append((t, boil(y) if lvl == .7 else y, lvl * 10 ** (rng.uniform(-1.2, 1.2) / 20)))
@@ -192,4 +211,25 @@ for e in EV['events']:
     elif k in M_: SKIPPED.append(k)
 for t, x, g in cues: put(x, t, g)
 sf.write('music/sfx.wav', (fx / (np.abs(fx).max() + 1e-9) * .8).astype(np.float32), SR)
-print('autoscore:', len(secs) - 1, 'music sections ·', len(cues), 'sfx cues' + (f' · no real file for: {sorted(set(SKIPPED))} (silent; run sfx.py kit)' if SKIPPED else ''))
+# ---------------- places: room tone + walla under every scene, changing on the cut (immersion) ----------------
+PL = json.load(open('sfx/places.json'))['places'] if os.path.exists('sfx/places.json') else {}
+amb, walla = np.zeros((N, 2)), np.zeros((N, 2)); XF = .35
+runs = []
+for b in EV['beats']:
+    if not runs or runs[-1][1] != b.get('set'): runs.append([b['t'], b.get('set')])
+runs.append([EV['dur'], None])
+def bed(name, t0, t1, buf):
+    y, _ = sf.read(name); y = y if y.ndim > 1 else np.stack([y, y], 1); n = int((t1 - t0 + XF) * SR)
+    off = int(rng.uniform(0, max(1, len(y) - SR)))   # start somewhere new each time, like a real location
+    z = np.concatenate([y[off:], y[:off]] * (n // len(y) + 2))[:n]
+    f = int(XF * SR); z[:f] *= np.linspace(0, 1, f)[:, None]; z[-f:] *= np.linspace(1, 0, f)[:, None]
+    i = int(t0 * SR); j = min(N, i + n); buf[i:j] += z[:j - i] / (loud(z) / .25)
+for (t0, st), (t1, _) in zip(runs, runs[1:]):
+    layers = PL.get(st) if st in PL else PL.get('default', [])
+    key = st if st in PL else 'default'
+    for layer in layers:
+        p = f'sfx/place-{key}-{layer}.wav'
+        if os.path.exists(p): bed(p, t0, t1, amb if layer == 'amb' else walla)
+if PL:
+    sf.write('music/amb.wav', amb.astype(np.float32), SR); sf.write('music/walla.wav', walla.astype(np.float32), SR)
+print('autoscore:', len(secs) - 1, 'music sections ·', len(cues), 'sfx cues ·', len(runs) - 1, 'places' + (f' · no real file for: {sorted(set(SKIPPED))} (silent; run sfx.py kit)' if SKIPPED else ''))

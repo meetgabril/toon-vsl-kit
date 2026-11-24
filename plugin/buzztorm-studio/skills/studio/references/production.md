@@ -26,7 +26,7 @@ Social post layout (carousel, post): `AR=45`, screen-space items `slidehead` (sa
 ## 3. Render, sound, finish
 ```
 QA=1 node render.mjs frames "0-<N-1>" 3          # AR=45|11|169 for other sizes; CAP=1 when Subtitles is ON
-python3 sfx.py kit --brand <brand>                 # brand sound signature into sfx/ (see sound.md)
+python3 sfx.py kit                                  # THE studio sound into sfx/: signature, gags, leitmotifs, places (see library/docs/SOUND.md)
 node events.mjs && python3 audio/autoscore.py
 STYLE=<visual style> python3 audio/stylize.py      # the style's sound on music + SFX (voice untouched); see library/docs/SOUND.md
 python3 audio/mix.py

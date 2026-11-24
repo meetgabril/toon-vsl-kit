@@ -6,8 +6,8 @@
   add <id> <file> --source <source-id> [--dur S] register a downloaded file in the shared library
   sources                              approved / not approved sources
   browse <words>                       search every raw file in the packs (packs/index.json)
-  kit --brand <brand>                  put the brand's signature sounds in sfx/ (same sounds in every video)
-  signature <brand>                    show the brand's signature sounds
+  kit [--brand <b>]                    put THE studio signature (every brand) in sfx/: events, gags, stings, places
+  signature                            show the studio signature
   addall <folder> --source <id>        add every <id>.mp3/.wav in a folder whose name matches a catalog id
   session [category]                   ElevenLabs Sound Effects sheet for every slot still without a file (generate once, then add)
 Files live in ~/buzztorm-studio/library/sfx/files/<id>.wav (+ files/credits.json). autoscore.py and kinetic.py use
@@ -16,7 +16,7 @@ import json, os, sys, subprocess, shutil, urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 LIB = next((p for p in [os.path.expanduser('~/buzztorm-studio/library/sfx'), HERE] if os.path.exists(os.path.join(p, 'catalog.json'))), HERE)
 CAT = json.load(open(os.path.join(LIB, 'catalog.json'))); SRC = json.load(open(os.path.join(LIB, 'sources.json')))['sources']
-FILES = os.path.join(LIB, 'files'); CRED = os.path.join(FILES, 'credits.json'); PACKS = os.path.join(LIB, 'packs')
+FILES = os.path.join(LIB, 'files'); CRED = os.path.join(FILES, 'credits.json'); LFILES = os.path.join(LIB, 'files-licensed'); LCRED = os.path.join(LFILES, 'credits.json'); PACKS = os.path.join(LIB, 'packs')
 BRANDS = os.path.join(LIB, '..', '..', 'brands')
 ALL = {e['id']: dict(e, category=c) for c, v in CAT['categories'].items() for e in v['effects']}
 
@@ -25,7 +25,14 @@ def to_wav(src, dst, dur=None):
     subprocess.run(cmd, check=True)
 
 def credits():
-    return json.load(open(CRED)) if os.path.exists(CRED) else {}
+    c = json.load(open(CRED)) if os.path.exists(CRED) else {}
+    if os.path.exists(LCRED): c.update(json.load(open(LCRED)))
+    return c
+def path_of(i):   # licensed (private, better) first, then the public CC0/studio file
+    for d in (LFILES, FILES):
+        f = os.path.join(d, f'{i}.wav')
+        if os.path.exists(f): return f
+    return None
 
 def gen_ai(e, dst, dur):
     key = os.environ.get('ELEVENLABS_API_KEY')
@@ -56,8 +63,8 @@ def gen_synth(e, dst):
 def get(i, dur=None):
     e = ALL.get(i) or sys.exit(f'unknown effect {i!r}; try: sfx.py find {i}')
     os.makedirs('sfx', exist_ok=True); dst = os.path.join('sfx', f'{i}.wav')
-    lib = os.path.join(FILES, f'{i}.wav')
-    if os.path.exists(lib):
+    lib = path_of(i)
+    if lib:
         shutil.copy(lib, dst); c = credits().get(i, {}); how = 'library (' + c.get('source', '?') + ')'
     elif gen_ai(e, dst, dur): how = 'AI generated (ElevenLabs)'
     elif gen_synth(e, dst): how = 'built-in synth'
@@ -69,42 +76,58 @@ def get(i, dur=None):
     if lic.get('status') == 'credit': print(f"CREDIT REQUIRED in caption: {lic.get('credit')}", file=sys.stderr)
     print(json.dumps({'id': i, 'file': dst, 'how': how}))
 
-def sig(brand):
-    p = os.path.join(BRANDS, brand, 'sound-signature.json')
-    return json.load(open(p)) if os.path.exists(p) else sys.exit(f'no sound-signature.json for {brand!r}')
+SOUND = os.path.join(LIB, '..', 'sound')   # library/sound: the studio identity, signature and music (every brand)
+def sig(brand=None):
+    p = os.path.join(BRANDS, brand, 'sound-signature.json') if brand else ''
+    return json.load(open(p if p and os.path.exists(p) else os.path.join(SOUND, 'signature.json'))), (os.path.join(BRANDS, brand) if p and os.path.exists(p) else SOUND)
 
-def kit(brand):
-    s = sig(brand); os.makedirs('sfx', exist_ok=True); out = []
+def _first(ids):
+    for i in (ids if isinstance(ids, list) else [ids]):
+        f = path_of(i)
+        if f: return i, f
+    return (ids if isinstance(ids, list) else [ids])[0], None
+
+def kit(brand=None):
+    s, base = sig(brand); os.makedirs('sfx', exist_ok=True); out = []
     for ev, r in s['events'].items():
-        own = r.get('file') and os.path.join(BRANDS, brand, r['file'])
-        lib = os.path.join(FILES, f"{r['id']}.wav")
-        src = own if own and os.path.exists(own) else (lib if os.path.exists(lib) else None)
-        if src: to_wav(src, os.path.join('sfx', f'{ev}.wav')); out.append((ev, r['id'], 'brand' if src == own else 'library'))
-        else: out.append((ev, r['id'], 'MISSING (silent; no synth is delivered)'))
+        i, src = _first(r['id'])
+        if src: to_wav(src, os.path.join('sfx', f'{ev}.wav')); out.append((ev, i, 'library'))
+        else: out.append((ev, i, 'MISSING (silent; no synth is delivered)'))
         for n, alt in enumerate(r.get('alts', []), 2):   # round-robin takes for the 'sound boil'
             a = os.path.join(PACKS, alt)
             if os.path.exists(a): to_wav(a, os.path.join('sfx', f'{ev}~{n}.wav'))
     for group in ('signature', 'musical'):
         for i, r in s.get(group, {}).items():
-            base = os.path.join(BRANDS, brand, r['file']) if r.get('file') else None
-            own = next((base + e for e in ('', '.ogg', '.wav') if base and os.path.isfile(base + e)), None)
-            if own: to_wav(own, os.path.join('sfx', f'{i}.wav')); out.append((i, i, f"brand {group} {r.get('status', '')}".strip()))
-            else: out.append((i, i, 'MISSING (run: orchestra.py kit ' + brand + ')'))
-    for ev, i, how in out: print(f'  {ev:<14} {i:<18} {how}')
+            p = os.path.join(base, r['file'])
+            own = next((p + e for e in ('', '.ogg', '.wav') if os.path.isfile(p + e)), None)
+            if own: to_wav(own, os.path.join('sfx', f'{i}.wav')); out.append((i, i, f"studio {group}"))
+            else: out.append((i, i, 'MISSING (run: orchestra.py kit)'))
+    places = {}
+    for setname, r in s.get('places', {}).items():   # room tone + walla per background (autoscore lays them under each scene)
+        got = []
+        for layer in ('amb', 'walla'):
+            if not r.get(layer): continue
+            i, src = _first(r[layer])
+            if src: to_wav(src, os.path.join('sfx', f'place-{setname}-{layer}.wav')); got.append(layer)
+        places[setname] = got; out.append((f'place:{setname}', '+'.join(got) or '-', 'library' if got else 'MISSING (no room tone yet)'))
+    json.dump({'places': places, 'roles': s.get('roles', {})}, open(os.path.join('sfx', 'places.json'), 'w'))
+    for ev, i, how in out: print(f'  {ev:<22} {str(i):<22} {how}')
     miss = [ev for ev, i, how in out if how.startswith('MISSING')]
-    if miss: print(f'  {len(miss)} sound(s) missing: ' + ', '.join(miss))
+    if miss: print(f'  {len(miss)} missing: ' + ', '.join(miss))
 
 def add(i, f, source, dur=None):
     if not os.path.exists(f) and os.path.exists(os.path.join(PACKS, f)): f = os.path.join(PACKS, f)
     if i not in ALL: sys.exit(f'unknown effect {i!r} (add it to catalog.json first)')
     s = next((s for s in SRC if s['id'] == source), None) or sys.exit('unknown source; see: sfx.py sources')
     if s['status'] == 'no': sys.exit(f"REFUSED: {s['name']} — {s['notes']}")
-    os.makedirs(FILES, exist_ok=True); dst = os.path.join(FILES, f'{i}.wav')
+    priv = bool(s.get('private')); d = LFILES if priv else FILES; cp = LCRED if priv else CRED
+    os.makedirs(d, exist_ok=True); dst = os.path.join(d, f'{i}.wav')
     if dur: subprocess.run(['ffmpeg', '-v', 'error', '-nostdin', '-y', '-i', f, '-t', str(dur), '-af', f'afade=t=out:st={max(0, dur - .15):.2f}:d=0.15', '-ar', '48000', '-ac', '2', dst], check=True)
     else: to_wav(f, dst)
-    c = credits(); c[i] = {'source': source, 'status': s['status'], 'original': os.path.relpath(f, PACKS) if f.startswith(PACKS) else os.path.basename(f),
-                           'credit': 'Sound effects from zapsplat.com' if source == 'zapsplat-free' else None}
-    json.dump(c, open(CRED, 'w'), indent=1); print(json.dumps({'added': i, 'status': s['status']}))
+    c = json.load(open(cp)) if os.path.exists(cp) else {}
+    c[i] = {'source': source, 'status': s['status'], 'private': priv, 'original': os.path.relpath(f, PACKS) if f.startswith(PACKS) else os.path.basename(f),
+            'credit': 'Sound effects from zapsplat.com' if source == 'zapsplat-free' else None}
+    json.dump(c, open(cp, 'w'), indent=1); print(json.dumps({'added': i, 'status': s['status'], 'private': priv}))
 
 a = sys.argv[1:]
 if not a or a[0] == 'list':
@@ -112,7 +135,7 @@ if not a or a[0] == 'list':
         if len(a) > 1 and a[1] != c: continue
         print(f"\n{c.upper()} — {v['what']}")
         for e in v['effects']:
-            have = 'file' if os.path.exists(os.path.join(FILES, e['id'] + '.wav')) else ('synth' if e['synth'] else 'ai')
+            have = ('file*' if os.path.exists(os.path.join(LFILES, e['id'] + '.wav')) else 'file') if path_of(e['id']) else 'missing'
             print(f"  {e['id']:<20} {e['name']:<32} [{have}] {e['use']}")
 elif a[0] == 'find':
     q = ' '.join(a[1:]).lower()
@@ -137,14 +160,14 @@ elif a[0] == 'session':
     n = 0
     for c, v in CAT['categories'].items():
         if len(a) > 1 and a[1] != c: continue
-        miss = [e for e in v['effects'] if not os.path.exists(os.path.join(FILES, e['id'] + '.wav'))]
+        miss = [e for e in v['effects'] if not path_of(e['id'])]
         if not miss: continue
         print(f"\n## {c} — {v['what']}")
         for e in miss: n += 1; print(f"{e['id']} | {e['duration']}s{' | loop' if e.get('loop') else ''} | {e['prompt']}")
     print(f"\n{n} sounds. Generate each in ElevenLabs Sound Effects (duration as shown), name the file <id>.mp3, upload them all; then: sfx.py add <id> <file> --source elevenlabs")
-elif a[0] == 'kit': kit(a[a.index('--brand') + 1] if '--brand' in a else os.environ.get('BRAND') or sys.exit('--brand required'))
+elif a[0] == 'kit': kit(a[a.index('--brand') + 1] if '--brand' in a else None)
 elif a[0] == 'signature':
-    s = sig(a[1]); print(s.get('_about', ''))
-    for ev, r in s['events'].items(): print(f"  {ev:<14} → {r['id']:<18} {r.get('why', '')}")
+    s, _ = sig(a[1] if len(a) > 1 else None); print(s.get('_about', ''))
+    for ev, r in s['events'].items(): print(f"  {ev:<14} → {str(r['id']):<30} {r.get('why', '')}")
     for i, r in s.get('signature', {}).items(): print(f"  {i:<14} → {r.get('file') or '(not made yet)':<30} {r.get('status', '')}")
 else: print(__doc__)

@@ -1,6 +1,6 @@
 # SOUND: the house sound (Studio Standard)
 
-Every brand shares this sound the way it shares the drawing style. A brand owns its theme, its instruments per character and its stings (`sound-identity.json`, `sound-signature.json`); it never changes the rules below. Read this before scoring, picking a sound or adding a brand.
+**Every brand uses the same sound** (decision 24 Nov 2026), exactly like the drawing style: one theme, one orchestra, one signature, one library, in `library/sound/` (`identity.json`, `signature.json`, `music/`). Characters get their leitmotif from their role (narrator, hero, supporting). Read this before scoring or picking a sound.
 
 ## 0. Non-negotiable: everything is a real recording
 - **Music** is performed by a real recorded orchestra: VS Chamber Orchestra Community Edition (Versilian Studios, CC0), curated in `library/instruments/vsco/` (pizzicato strings and bass, tuba, clarinet, bassoon, flute, piccolo, trumpet incl. harmon mute, trombone, horn, xylophone, glockenspiel, marimba, harp, upright piano, timpani, snare, bass drum, woodblocks, slapstick, ratchet, vibraslap, cymbals, triangle, bells). `orchestra.py` picks the right recorded note, velocity layer and round-robin take, adds human timing and dynamics and one shared room. Pitches in `map.json` are measured (VSCO names use C3 = middle C).
@@ -24,8 +24,8 @@ Our films look hand-made: flat colour, one plum ink, hard shade, a boiling line,
 Lead colours: clarinet, bassoon (sneaky), muted trumpet (wah), tuba (oom-pah), flute, glockenspiel and xylophone. Rhythm: pizzicato double bass (walking), upright piano comping, woodblock, snare, light cymbal. Drama: tremolo strings, timpani, horn.
 **Banned:** synth pads and leads, cinematic braams and sub drops, EDM risers, trap hats, "corporate ukulele", meme sounds baked into the file (add those in the app), other companies' sonic logos.
 
-## 3. Brands: one theme, many moods
-Each brand has ONE 16-beat theme (`sound-identity.json` → `theme`) in a key of its own. Bar 1 (4 or 5 notes) is the **sonic logo** and must be singable alone. Minor for the problem; `theme_major` for the solution. The orchestra plays the same theme in every mood, on the lead the identity assigns:
+## 3. One theme, many moods
+The studio has ONE 16-beat theme (`library/sound/identity.json` → `theme`) in D. Bar 1 (D-F-E-D) is the **sonic logo**. Minor for the problem; `theme_major` for the solution. The orchestra plays the same theme in every mood, on the lead the identity assigns. Long sections develop every 8 bars: **A** (lead) → **B** (lighter percussion, no tune: room for the voice) → **A'** (the theme on `alt_leads`):
 
 | Mood (`music:` in story.js) | When | Default lead |
 |---|---|---|
@@ -39,10 +39,10 @@ Each brand has ONE 16-beat theme (`sound-identity.json` → `theme`) in a key of
 | `happy` | community, the win, the CTA | trumpet over a tuba march |
 | `silence` | before every punchline | nothing (room tone stays) |
 
-**Adding a brand** (references/brands.md step 6): write 3 different themes into `theme_candidates`, `orchestra.py audition <brand>`, the user picks one; give each main character a different instrument; `orchestra.py kit <brand>` renders into `brands/<b>/music/`: 8 moods, `motif-<character>`, `logo-sting`, `series-bump`, `outro`, `button`, and the musical gags (`sad-trombone`, `xylo-climb`, `xylo-fall`, `harp-gliss`, `dramatic-sting`, `rimshot`, `tiptoe-pizz`, `drumroll`, `wah-trumpet`, `tuba-plonk`), all in the brand's key. Store as .ogg (brand .wav files are git-ignored).
+`orchestra.py kit` renders into `library/sound/music/` (.ogg): 8 moods, `motif-narrator|hero|supporting`, `logo-sting`, `series-bump`, `outro`, `button`, and the musical gags (`sad-trombone`, `xylo-climb`, `xylo-fall`, `harp-gliss`, `dramatic-sting`, `rimshot`, `tiptoe-pizz`, `drumroll`, `wah-trumpet`, `tuba-plonk`). `orchestra.py audition` renders `theme_candidates` if the studio ever changes its theme.
 
 ## 4. The signature: one sound per idea
-`sound-signature.json`: `events` (studio library sound for each engine event: pop, ding, stamp, whoosh, boing…), `musical` (the gags and leitmotifs above, used as event types in story.js), `signature` (stings). `sfx.py kit --brand <b>` copies them all into the project. Never pick a different sound for an event inside one video; change the signature instead.
+`library/sound/signature.json`: `events` (studio library sound for each engine event: pop, ding, stamp, whoosh, boing…), `musical` (the gags and leitmotifs above, used as event types in story.js), `signature` (stings). `places` maps every background set to a room tone + walla (default: room tone). `sfx.py kit` copies all of it into the project; each event id is a list, so a public CC0 sound takes over when the private licensed one is absent. The interface itself is played by the orchestra, in key (check = glock up, wrong = bassoon bwomp, sent = pizz, like = woodblock, portal = harp + slapstick). Never pick a different sound for an event inside one video; change the signature instead.
 
 ## 5. Voices that are not the script
 - Main characters react in **their own voice**: 32 reactions recorded once in ElevenLabs v3/v4 with audio tags (`reactions.py script` → one take → `reactions.py split`). Events `voice-<char>-<id>`, mixed as dialogue.
@@ -50,17 +50,21 @@ Each brand has ONE 16-beat theme (`sound-identity.json` → `theme`) in a key of
 - Walla is unintelligible, 20 to 24 dB under the voice, low-cut at about 200 Hz, wide. Sitcom audience laughs: organic posts only, once per film at most.
 
 ## 6. Places, styles, mix
-- Every background has a room tone (`amb-*`), changing on the cut like the picture.
+- **Immersion is automatic.** autoscore reads each beat's `set` and lays that place's room tone and walla under the scene, starting at a random point of the recording, crossfading 0.35 s on the cut. A character's first appearance (`enter` event from vsl.js) plays the leitmotif of their role once.
 - Visual style → `STYLE=<style> python3 stylize.py` on music + SFX only (ink, oldfilm, paper, riso, noir, comic, pastel, dusk, freeze, vhs). The voice is never processed.
-- Mix ladder vs the voice: reactions ≈ 0 · SFX −8 to −12 · music −11 in gaps, ≈ −19 under speech · walla −20 to −24 · ambience −30 · room tone ≈ −40. Master −15 LUFS, ≈ −1 dBTP.
+- Mix ladder vs the voice (measured on a test scene): reactions ≈ 0 · SFX −10, 3 dB lower while someone talks · music: bed −11 in gaps / −19 under speech, melody stem −27 under speech (a tune fights words) · walla −22 · ambience −30. SFX are levelled by short-term loudness, not peak. The orchestra's room rings 0.8 s into the next scene. Master −15 LUFS, ≈ −1 dBTP.
 
 ## 7. Pipeline
 ```
-python3 sfx.py kit --brand <brand>               # signature, gags, stings, takes → sfx/ (reports anything missing)
+python3 sfx.py kit                               # signature, gags, stings, takes → sfx/ (reports anything missing)
 node events.mjs && python3 audio/autoscore.py   # real-orchestra score in the brand's theme + SFX + sound boil + ladder
 STYLE=<visual style> python3 audio/stylize.py   # the style's sound on music + SFX
 python3 audio/mix.py && bash finish.sh "<name>" 916
 ```
 
-## 8. Growing the library
+## 8. Public and private library
+- `library/sfx/files/` (git): CC0 and studio-made sounds (Kenney, VSCO orchestra, studio layers). Always present.
+- `library/sfx/files-licensed/` + `packs/designers-choice/` + `packs/sonniss-gdc/` (git-ignored): The Designer's Choice CARTOON and Sonniss GDC 2026/2020 picks (walla, ambiences, reactions, cartoon foley). Licences allow commercial use with no credit but forbid redistribution. Rebuild in any session: stage `~/Downloads/buzztorm-cartoon-ogg.tar` and `~/Downloads/buzztorm-gdc/buzztorm-gdc-picks.tar` from Gabriel's Mac, then `python3 library/sfx/import_licensed.py <tars>`. sfx.py prefers the licensed file and falls back to the public one.
+
+## 9. Growing the library
 `sfx.py session [category]` prints what still has no file (with ElevenLabs prompts, but prefer recorded libraries first); `sfx.py addall <folder> --source <id>` registers a batch; `sfx.py browse <words>` searches the raw packs. Licences in `library/sfx/sources.json`. The Designer's Choice files never sit in a public repo.

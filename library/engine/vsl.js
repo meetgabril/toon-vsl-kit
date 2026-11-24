@@ -492,7 +492,7 @@ function compileStory() {
     EVENTS.push({ t: t0, type: 'cut', music: B.music || null, beat: bi });
     if (B.wipe) { WIPES.push([t0 - .55, t0 + .55]); EVENTS.push({ t: t0 - .5, type: 'portal' }); }
     items.forEach(I => { const e = SFX_OF[I.type]; if (e && !I.flags.silent) EVENTS.push({ t: I.t, type: e, dur: +(I.kv.dur || 1.6), hit: +(I.kv.hit || .9) }); if (I.ts) I.ts.forEach(t => EVENTS.push({ t, type: 'pop' })); });
-    actors.forEach(a => { if (a.enter) EVENTS.push({ t: t0, type: 'whoosh' }); });
+    actors.forEach(a => { if (a.enter) EVENTS.push({ t: t0, type: 'whoosh' }); EVENTS.push({ t: a.t != null ? a.t : t0, type: 'enter', who: a.who }); });   // 'enter' → autoscore plays the role's leitmotif on a character's first appearance
     if (B.sfx) (Array.isArray(B.sfx) ? B.sfx : [B.sfx]).forEach(s => { const [n, w] = s.split('@'); EVENTS.push({ t: w ? anchor(w.replace(/_/g, ' '), A.idx, t0).t : t0, type: n }); });
     SH.push([t0, (lt, gt) => drawBeat(B, lt, gt)]);
   });

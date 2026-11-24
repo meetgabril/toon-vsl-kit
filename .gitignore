@@ -14,3 +14,8 @@ brands/**/*.gif
 !library/hooks/*/source.mp4
 # The Designer's Choice CARTOON: no redistribution. Remove these lines only after the repo is PRIVATE.
 library/sfx/packs/designers-choice/
+
+# Licensed sounds (no redistribution): private storage only. Rebuild with library/sfx/import_licensed.py
+library/sfx/files-licensed/
+library/sfx/packs/designers-choice/
+library/sfx/packs/sonniss-gdc/

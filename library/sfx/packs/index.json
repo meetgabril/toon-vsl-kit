@@ -1,6 +1,6 @@
 {
 "_about": "Every raw sound in library/sfx/packs. Search with: python3 sfx.py browse <words>. Promote one to a catalog slot with: python3 sfx.py add <id> packs/<file> --source <source>.",
-"count": 552,
+"count": 1016,
 "files": [
 {
 "file": "kenney/digital/high_down.ogg",
@@ -6568,6 +6568,7266 @@
 "duration": 0.26,
 "license": "CC0",
 "source": "kenney"
+},
+{
+"file": "designers-choice/pop/comical.ogg",
+"pack": "designers-choice",
+"duration": 0.35,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"pop",
+"comical"
+]
+},
+{
+"file": "designers-choice/pop/cork-big-squeak-pop.ogg",
+"pack": "designers-choice",
+"duration": 1.19,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"pop",
+"cork",
+"big",
+"squeak",
+"pop"
+]
+},
+{
+"file": "designers-choice/pop/cork-big-squeaks-pops.ogg",
+"pack": "designers-choice",
+"duration": 35.57,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"pop",
+"cork",
+"big",
+"squeaks",
+"pops"
+]
+},
+{
+"file": "designers-choice/pop/pop-guns.ogg",
+"pack": "designers-choice",
+"duration": 36.11,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"pop",
+"pop",
+"guns"
+]
+},
+{
+"file": "designers-choice/pop/pops-bubble-wrap-funny-comedic.ogg",
+"pack": "designers-choice",
+"duration": 205.11,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"pop",
+"pops",
+"bubble",
+"wrap",
+"funny",
+"comedic"
+]
+},
+{
+"file": "designers-choice/pop/suction.ogg",
+"pack": "designers-choice",
+"duration": 52.75,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"pop",
+"suction"
+]
+},
+{
+"file": "designers-choice/pop/thump-several.ogg",
+"pack": "designers-choice",
+"duration": 75.86,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"pop",
+"thump",
+"several"
+]
+},
+{
+"file": "designers-choice/pop/vocal.ogg",
+"pack": "designers-choice",
+"duration": 94.99,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"pop",
+"vocal"
+]
+},
+{
+"file": "designers-choice/pop/whizz-comical-zing-out.ogg",
+"pack": "designers-choice",
+"duration": 1.28,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"pop",
+"whizz",
+"comical",
+"zing",
+"out"
+]
+},
+{
+"file": "designers-choice/pop/wine-tester-s-convention-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 6.56,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"pop",
+"wine",
+"tester",
+"s",
+"convention",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/whistle/bomb-or-firework-whistle-falling-wail-old-recording.ogg",
+"pack": "designers-choice",
+"duration": 8.92,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"bomb",
+"or",
+"firework",
+"whistle",
+"falling",
+"wail",
+"old",
+"recording"
+]
+},
+{
+"file": "designers-choice/whistle/cuckoo-whistle.ogg",
+"pack": "designers-choice",
+"duration": 34.06,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"cuckoo",
+"whistle"
+]
+},
+{
+"file": "designers-choice/whistle/fart-whistle-or-low-pitched-party-horn.ogg",
+"pack": "designers-choice",
+"duration": 79.12,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"fart",
+"whistle",
+"or",
+"low",
+"pitched",
+"party",
+"horn"
+]
+},
+{
+"file": "designers-choice/whistle/slide-down-01.ogg",
+"pack": "designers-choice",
+"duration": 0.72,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"down"
+]
+},
+{
+"file": "designers-choice/whistle/slide-down-02.ogg",
+"pack": "designers-choice",
+"duration": 0.65,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"down"
+]
+},
+{
+"file": "designers-choice/whistle/slide-down-03.ogg",
+"pack": "designers-choice",
+"duration": 0.83,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"down"
+]
+},
+{
+"file": "designers-choice/whistle/slide-down-up.ogg",
+"pack": "designers-choice",
+"duration": 10.31,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"down",
+"up"
+]
+},
+{
+"file": "designers-choice/whistle/slide-long-ascending.ogg",
+"pack": "designers-choice",
+"duration": 3.65,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"long",
+"ascending"
+]
+},
+{
+"file": "designers-choice/whistle/slide-long-descending.ogg",
+"pack": "designers-choice",
+"duration": 3.53,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"long",
+"descending"
+]
+},
+{
+"file": "designers-choice/whistle/slide-reverberant.ogg",
+"pack": "designers-choice",
+"duration": 6.28,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"reverberant"
+]
+},
+{
+"file": "designers-choice/whistle/slide-spedup.ogg",
+"pack": "designers-choice",
+"duration": 42.47,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"spedup"
+]
+},
+{
+"file": "designers-choice/whistle/slide-up-01.ogg",
+"pack": "designers-choice",
+"duration": 0.74,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"up"
+]
+},
+{
+"file": "designers-choice/whistle/slide-up-02.ogg",
+"pack": "designers-choice",
+"duration": 0.63,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"up"
+]
+},
+{
+"file": "designers-choice/whistle/slide-up-03.ogg",
+"pack": "designers-choice",
+"duration": 0.7,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"up"
+]
+},
+{
+"file": "designers-choice/whistle/slide-up-down.ogg",
+"pack": "designers-choice",
+"duration": 13.91,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"up",
+"down"
+]
+},
+{
+"file": "designers-choice/whistle/slide-whirl-up-repeating.ogg",
+"pack": "designers-choice",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"whirl",
+"up",
+"repeating"
+]
+},
+{
+"file": "designers-choice/whistle/slide-whirling-rise-up.ogg",
+"pack": "designers-choice",
+"duration": 5.93,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"whirling",
+"rise",
+"up"
+]
+},
+{
+"file": "designers-choice/whistle/slide-whistle-fx-roostersounds-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 84.42,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"whistle",
+"fx",
+"roostersounds",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/whistle/slide-whistle-ghostly-effect.ogg",
+"pack": "designers-choice",
+"duration": 8.79,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"whistle",
+"ghostly",
+"effect"
+]
+},
+{
+"file": "designers-choice/whistle/slide-whistle-twirl-reverberant.ogg",
+"pack": "designers-choice",
+"duration": 3.85,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"slide",
+"whistle",
+"twirl",
+"reverberant"
+]
+},
+{
+"file": "designers-choice/whistle/train-whistle-toots.ogg",
+"pack": "designers-choice",
+"duration": 9.47,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"train",
+"whistle",
+"toots"
+]
+},
+{
+"file": "designers-choice/whistle/whistle-cuckoo-comedic.ogg",
+"pack": "designers-choice",
+"duration": 0.63,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"whistle",
+"cuckoo",
+"comedic"
+]
+},
+{
+"file": "designers-choice/whistle/whistle-shepherd-falling-tone-hb.ogg",
+"pack": "designers-choice",
+"duration": 8.94,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"whistle",
+"shepherd",
+"falling",
+"tone",
+"hb"
+]
+},
+{
+"file": "designers-choice/whistle/whoopee-take-off.ogg",
+"pack": "designers-choice",
+"duration": 3.1,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"whoopee",
+"take",
+"off"
+]
+},
+{
+"file": "designers-choice/whistle/whoopee-whistle-long-zing.ogg",
+"pack": "designers-choice",
+"duration": 3.32,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"whoopee",
+"whistle",
+"long",
+"zing"
+]
+},
+{
+"file": "designers-choice/whistle/whoopee-whistle-quick-zing-01.ogg",
+"pack": "designers-choice",
+"duration": 2.33,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"whoopee",
+"whistle",
+"quick",
+"zing"
+]
+},
+{
+"file": "designers-choice/whistle/whoopee-whistle-quick-zing-02.ogg",
+"pack": "designers-choice",
+"duration": 2.07,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"whoopee",
+"whistle",
+"quick",
+"zing"
+]
+},
+{
+"file": "designers-choice/whistle/whoopee-whistle-short-zing-01.ogg",
+"pack": "designers-choice",
+"duration": 2.3,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"whoopee",
+"whistle",
+"short",
+"zing"
+]
+},
+{
+"file": "designers-choice/whistle/whoopee-whistle-short-zing-02.ogg",
+"pack": "designers-choice",
+"duration": 3.62,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"whoopee",
+"whistle",
+"short",
+"zing"
+]
+},
+{
+"file": "designers-choice/whistle/whoopee-whistle-sweep.ogg",
+"pack": "designers-choice",
+"duration": 7.59,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"whoopee",
+"whistle",
+"sweep"
+]
+},
+{
+"file": "designers-choice/whistle/wooden-train-whistle-british-guard-s-whistle.ogg",
+"pack": "designers-choice",
+"duration": 99.65,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"whistle",
+"wooden",
+"train",
+"whistle",
+"british",
+"guard",
+"s",
+"whistle"
+]
+},
+{
+"file": "designers-choice/horn/bicycle-bulb-honking.ogg",
+"pack": "designers-choice",
+"duration": 124.32,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"horn",
+"bicycle",
+"bulb",
+"honking"
+]
+},
+{
+"file": "designers-choice/shake/chia-seed-packet.ogg",
+"pack": "designers-choice",
+"duration": 11.82,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"chia",
+"seed",
+"packet"
+]
+},
+{
+"file": "designers-choice/shake/flexitone-comedic.ogg",
+"pack": "designers-choice",
+"duration": 1.15,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"flexitone",
+"comedic"
+]
+},
+{
+"file": "designers-choice/shake/flexitone.ogg",
+"pack": "designers-choice",
+"duration": 34.02,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"flexitone"
+]
+},
+{
+"file": "designers-choice/shake/lunchbox-metal-handle-fumbles.ogg",
+"pack": "designers-choice",
+"duration": 41.21,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"lunchbox",
+"metal",
+"handle",
+"fumbles"
+]
+},
+{
+"file": "designers-choice/shake/pencil-box.ogg",
+"pack": "designers-choice",
+"duration": 17.63,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"pencil",
+"box"
+]
+},
+{
+"file": "designers-choice/shake/pill-bottle-01.ogg",
+"pack": "designers-choice",
+"duration": 24.85,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"pill",
+"bottle"
+]
+},
+{
+"file": "designers-choice/shake/pill-bottle-02.ogg",
+"pack": "designers-choice",
+"duration": 26.67,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"pill",
+"bottle"
+]
+},
+{
+"file": "designers-choice/shake/pill-bottle-03.ogg",
+"pack": "designers-choice",
+"duration": 16.47,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"pill",
+"bottle"
+]
+},
+{
+"file": "designers-choice/shake/popcorn-bottle-full-of-kernels-long-fast-shake.ogg",
+"pack": "designers-choice",
+"duration": 3.98,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"popcorn",
+"bottle",
+"full",
+"of",
+"kernels",
+"long",
+"fast",
+"shake"
+]
+},
+{
+"file": "designers-choice/shake/popcorn-bottle-full-of-kernels-long-shake.ogg",
+"pack": "designers-choice",
+"duration": 7.6,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"popcorn",
+"bottle",
+"full",
+"of",
+"kernels",
+"long",
+"shake"
+]
+},
+{
+"file": "designers-choice/shake/popcorn-bottle-full-of-kernels-medium.ogg",
+"pack": "designers-choice",
+"duration": 4.38,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"popcorn",
+"bottle",
+"full",
+"of",
+"kernels",
+"medium"
+]
+},
+{
+"file": "designers-choice/shake/popcorn-bottle-full-of-kernels-short-fast.ogg",
+"pack": "designers-choice",
+"duration": 1.9,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"popcorn",
+"bottle",
+"full",
+"of",
+"kernels",
+"short",
+"fast"
+]
+},
+{
+"file": "designers-choice/shake/popcorn-bottle-full-of-kernels-short.ogg",
+"pack": "designers-choice",
+"duration": 1.92,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"popcorn",
+"bottle",
+"full",
+"of",
+"kernels",
+"short"
+]
+},
+{
+"file": "designers-choice/shake/salt-shaker.ogg",
+"pack": "designers-choice",
+"duration": 15.28,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"salt",
+"shaker"
+]
+},
+{
+"file": "designers-choice/shake/spray-can.ogg",
+"pack": "designers-choice",
+"duration": 79.91,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"spray",
+"can"
+]
+},
+{
+"file": "designers-choice/shake/teeth-chattering.ogg",
+"pack": "designers-choice",
+"duration": 22.64,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"teeth",
+"chattering"
+]
+},
+{
+"file": "designers-choice/shake/tic-tac-container-full-of-tic-tacs.ogg",
+"pack": "designers-choice",
+"duration": 23.35,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"tic",
+"tac",
+"container",
+"full",
+"of",
+"tic",
+"tacs"
+]
+},
+{
+"file": "designers-choice/shake/toy.ogg",
+"pack": "designers-choice",
+"duration": 7.36,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"toy"
+]
+},
+{
+"file": "designers-choice/shake/xylophone-toy-head.ogg",
+"pack": "designers-choice",
+"duration": 1.39,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"shake",
+"xylophone",
+"toy",
+"head"
+]
+},
+{
+"file": "designers-choice/swish/twirling-swishes-fast.ogg",
+"pack": "designers-choice",
+"duration": 28.68,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"swish",
+"twirling",
+"swishes",
+"fast"
+]
+},
+{
+"file": "designers-choice/swish/twirling-swishes-medium-slow.ogg",
+"pack": "designers-choice",
+"duration": 69.15,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"swish",
+"twirling",
+"swishes",
+"medium",
+"slow"
+]
+},
+{
+"file": "designers-choice/swish/twirling-swishes-simulated-spinning-top.ogg",
+"pack": "designers-choice",
+"duration": 13.07,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"swish",
+"twirling",
+"swishes",
+"simulated",
+"spinning",
+"top"
+]
+},
+{
+"file": "designers-choice/swish/twirling-swishes-slow-looped.ogg",
+"pack": "designers-choice",
+"duration": 3.37,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"swish",
+"twirling",
+"swishes",
+"slow",
+"looped"
+]
+},
+{
+"file": "designers-choice/swish/windy-swooshes-01.ogg",
+"pack": "designers-choice",
+"duration": 3.82,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"swish",
+"windy",
+"swooshes"
+]
+},
+{
+"file": "designers-choice/swish/windy-swooshes-02.ogg",
+"pack": "designers-choice",
+"duration": 4.11,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"swish",
+"windy",
+"swooshes"
+]
+},
+{
+"file": "designers-choice/pluck/high-pitch.ogg",
+"pack": "designers-choice",
+"duration": 0.61,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"pluck",
+"high",
+"pitch"
+]
+},
+{
+"file": "designers-choice/pluck/ukelele-string.ogg",
+"pack": "designers-choice",
+"duration": 0.69,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"pluck",
+"ukelele",
+"string"
+]
+},
+{
+"file": "designers-choice/machine/anime-electric-shock-machine-electrical-zaps-theremin-buzzing-power-do.ogg",
+"pack": "designers-choice",
+"duration": 24.93,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"machine",
+"anime",
+"electric",
+"shock",
+"machine",
+"electrical",
+"zaps",
+"theremin",
+"buzzing",
+"power",
+"do"
+]
+},
+{
+"file": "designers-choice/machine/bike-pump.ogg",
+"pack": "designers-choice",
+"duration": 17.07,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"machine",
+"bike",
+"pump"
+]
+},
+{
+"file": "designers-choice/machine/cartoon-machine-01.ogg",
+"pack": "designers-choice",
+"duration": 21.13,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"machine",
+"cartoon",
+"machine"
+]
+},
+{
+"file": "designers-choice/machine/cartoon-machine-02.ogg",
+"pack": "designers-choice",
+"duration": 6.52,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"machine",
+"cartoon",
+"machine"
+]
+},
+{
+"file": "designers-choice/machine/crazy-inventor-looped.ogg",
+"pack": "designers-choice",
+"duration": 4.47,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"machine",
+"crazy",
+"inventor",
+"looped"
+]
+},
+{
+"file": "designers-choice/machine/dustin-mizer-comedic-vehicle.ogg",
+"pack": "designers-choice",
+"duration": 103.85,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"machine",
+"dustin",
+"mizer",
+"comedic",
+"vehicle"
+]
+},
+{
+"file": "designers-choice/machine/laboratory-electronic-classic.ogg",
+"pack": "designers-choice",
+"duration": 64.23,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"machine",
+"laboratory",
+"electronic",
+"classic"
+]
+},
+{
+"file": "designers-choice/machine/retro-cartoon-machines-phone-dial-beeps-duckies-gunshots.ogg",
+"pack": "designers-choice",
+"duration": 11.96,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"machine",
+"retro",
+"cartoon",
+"machines",
+"phone",
+"dial",
+"beeps",
+"duckies",
+"gunshots"
+]
+},
+{
+"file": "designers-choice/machine/the-money-making-machine-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 15.55,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"machine",
+"the",
+"money",
+"making",
+"machine",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/machine/wooden-machine-or-film-projector-running.ogg",
+"pack": "designers-choice",
+"duration": 13.79,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"machine",
+"wooden",
+"machine",
+"or",
+"film",
+"projector",
+"running"
+]
+},
+{
+"file": "designers-choice/twang/credit-card.ogg",
+"pack": "designers-choice",
+"duration": 162.21,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"twang",
+"credit",
+"card"
+]
+},
+{
+"file": "designers-choice/twang/glass-ruler-vibrating.ogg",
+"pack": "designers-choice",
+"duration": 40.61,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"twang",
+"glass",
+"ruler",
+"vibrating"
+]
+},
+{
+"file": "designers-choice/twang/guitar-acoustic-boings-twangs-the-designer-s-choice-gnrl3.ogg",
+"pack": "designers-choice",
+"duration": 97.87,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"twang",
+"guitar",
+"acoustic",
+"boings",
+"twangs",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/twang/knife.ogg",
+"pack": "designers-choice",
+"duration": 24.27,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"twang",
+"knife"
+]
+},
+{
+"file": "designers-choice/twang/metronome-flick.ogg",
+"pack": "designers-choice",
+"duration": 1.44,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"twang",
+"metronome",
+"flick"
+]
+},
+{
+"file": "designers-choice/twang/ruler-glass-resonant.ogg",
+"pack": "designers-choice",
+"duration": 16.94,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"twang",
+"ruler",
+"glass",
+"resonant"
+]
+},
+{
+"file": "designers-choice/twang/spoon-various.ogg",
+"pack": "designers-choice",
+"duration": 36.35,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"twang",
+"spoon",
+"various"
+]
+},
+{
+"file": "designers-choice/twang/springboard.ogg",
+"pack": "designers-choice",
+"duration": 45.37,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"twang",
+"springboard"
+]
+},
+{
+"file": "designers-choice/twang/springy.ogg",
+"pack": "designers-choice",
+"duration": 59.54,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"twang",
+"springy"
+]
+},
+{
+"file": "designers-choice/twang/wooden-ruler-the-designer-s-choice-gnrl2.ogg",
+"pack": "designers-choice",
+"duration": 66.01,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"twang",
+"wooden",
+"ruler",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/impact/bangs-repeating.ogg",
+"pack": "designers-choice",
+"duration": 6.1,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"bangs",
+"repeating"
+]
+},
+{
+"file": "designers-choice/impact/boink-buggy.ogg",
+"pack": "designers-choice",
+"duration": 0.24,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"boink",
+"buggy"
+]
+},
+{
+"file": "designers-choice/impact/boink-vocal-doit.ogg",
+"pack": "designers-choice",
+"duration": 0.38,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"boink",
+"vocal",
+"doit"
+]
+},
+{
+"file": "designers-choice/impact/bonk-metal.ogg",
+"pack": "designers-choice",
+"duration": 1.23,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"bonk",
+"metal"
+]
+},
+{
+"file": "designers-choice/impact/bow-shoots-arrow-through-balloon.ogg",
+"pack": "designers-choice",
+"duration": 1.14,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"bow",
+"shoots",
+"arrow",
+"through",
+"balloon"
+]
+},
+{
+"file": "designers-choice/impact/bow-shoots-arrow-through-glass.ogg",
+"pack": "designers-choice",
+"duration": 3.05,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"bow",
+"shoots",
+"arrow",
+"through",
+"glass"
+]
+},
+{
+"file": "designers-choice/impact/bow-shoots-arrow-through-metal-shield.ogg",
+"pack": "designers-choice",
+"duration": 1.79,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"bow",
+"shoots",
+"arrow",
+"through",
+"metal",
+"shield"
+]
+},
+{
+"file": "designers-choice/impact/comical-bow-and-arrow-sequence-different-twang.ogg",
+"pack": "designers-choice",
+"duration": 2.5,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"comical",
+"bow",
+"and",
+"arrow",
+"sequence",
+"different",
+"twang"
+]
+},
+{
+"file": "designers-choice/impact/comical-bow-and-arrow-single.ogg",
+"pack": "designers-choice",
+"duration": 5.94,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"comical",
+"bow",
+"and",
+"arrow",
+"single"
+]
+},
+{
+"file": "designers-choice/impact/comical-bow-and-arrow.ogg",
+"pack": "designers-choice",
+"duration": 67.57,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"comical",
+"bow",
+"and",
+"arrow"
+]
+},
+{
+"file": "designers-choice/impact/explosion-tremendous-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 6.29,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"explosion",
+"tremendous",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/impact/flexitone-hit-comedic.ogg",
+"pack": "designers-choice",
+"duration": 0.9,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"flexitone",
+"hit",
+"comedic"
+]
+},
+{
+"file": "designers-choice/impact/flexitone-hit-wood-bonk-fall.ogg",
+"pack": "designers-choice",
+"duration": 0.86,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"flexitone",
+"hit",
+"wood",
+"bonk",
+"fall"
+]
+},
+{
+"file": "designers-choice/impact/guitar-hit-kabong.ogg",
+"pack": "designers-choice",
+"duration": 4.5,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"guitar",
+"hit",
+"kabong"
+]
+},
+{
+"file": "designers-choice/impact/hit-on-the-noggin-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 0.48,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"hit",
+"on",
+"the",
+"noggin",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/impact/honk-bang-fall.ogg",
+"pack": "designers-choice",
+"duration": 2.18,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"honk",
+"bang",
+"fall"
+]
+},
+{
+"file": "designers-choice/impact/klonk.ogg",
+"pack": "designers-choice",
+"duration": 0.57,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"klonk"
+]
+},
+{
+"file": "designers-choice/impact/look-out-it-s-robin-hood-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 5.47,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"look",
+"out",
+"it",
+"s",
+"robin",
+"hood",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/impact/pop-boink.ogg",
+"pack": "designers-choice",
+"duration": 0.39,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"pop",
+"boink"
+]
+},
+{
+"file": "designers-choice/impact/rubber-chicken-squeaks-punch.ogg",
+"pack": "designers-choice",
+"duration": 2.64,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"rubber",
+"chicken",
+"squeaks",
+"punch"
+]
+},
+{
+"file": "designers-choice/impact/slap-snap-metallic-reverb.ogg",
+"pack": "designers-choice",
+"duration": 6.96,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"slap",
+"snap",
+"metallic",
+"reverb"
+]
+},
+{
+"file": "designers-choice/impact/slapstick-slap-human-slap-whip-real.ogg",
+"pack": "designers-choice",
+"duration": 22.34,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"slapstick",
+"slap",
+"human",
+"slap",
+"whip",
+"real"
+]
+},
+{
+"file": "designers-choice/impact/slip-and-fall-01.ogg",
+"pack": "designers-choice",
+"duration": 1.17,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"slip",
+"and",
+"fall"
+]
+},
+{
+"file": "designers-choice/impact/slip-and-fall-02.ogg",
+"pack": "designers-choice",
+"duration": 0.87,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"slip",
+"and",
+"fall"
+]
+},
+{
+"file": "designers-choice/impact/small-cowbell-donk.ogg",
+"pack": "designers-choice",
+"duration": 0.56,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"small",
+"cowbell",
+"donk"
+]
+},
+{
+"file": "designers-choice/impact/waterphone-clang.ogg",
+"pack": "designers-choice",
+"duration": 1.98,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"waterphone",
+"clang"
+]
+},
+{
+"file": "designers-choice/impact/wood-bonks-humorous.ogg",
+"pack": "designers-choice",
+"duration": 40.81,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"wood",
+"bonks",
+"humorous"
+]
+},
+{
+"file": "designers-choice/impact/woodpecker-hits.ogg",
+"pack": "designers-choice",
+"duration": 2.54,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"woodpecker",
+"hits"
+]
+},
+{
+"file": "designers-choice/impact/woodpecker-long-hits-teeth-chatter.ogg",
+"pack": "designers-choice",
+"duration": 26.99,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"impact",
+"woodpecker",
+"long",
+"hits",
+"teeth",
+"chatter"
+]
+},
+{
+"file": "designers-choice/vocal/burp-wiggly-bubbles-the-designer-s-choice-gnrl3.ogg",
+"pack": "designers-choice",
+"duration": 1.47,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"burp",
+"wiggly",
+"bubbles",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/vocal/chewing-gulping.ogg",
+"pack": "designers-choice",
+"duration": 42.06,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"chewing",
+"gulping"
+]
+},
+{
+"file": "designers-choice/vocal/chomp.ogg",
+"pack": "designers-choice",
+"duration": 1.43,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"chomp"
+]
+},
+{
+"file": "designers-choice/vocal/duck-snoring.ogg",
+"pack": "designers-choice",
+"duration": 27.86,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"duck",
+"snoring"
+]
+},
+{
+"file": "designers-choice/vocal/gulp-comedic-01.ogg",
+"pack": "designers-choice",
+"duration": 0.64,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"gulp",
+"comedic"
+]
+},
+{
+"file": "designers-choice/vocal/gulp-comedic-02.ogg",
+"pack": "designers-choice",
+"duration": 0.72,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"gulp",
+"comedic"
+]
+},
+{
+"file": "designers-choice/vocal/gulp-comedic-03.ogg",
+"pack": "designers-choice",
+"duration": 0.69,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"gulp",
+"comedic"
+]
+},
+{
+"file": "designers-choice/vocal/gulp-comedic-the-designer-s-choice-gnrl2.ogg",
+"pack": "designers-choice",
+"duration": 0.46,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"gulp",
+"comedic",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/vocal/hiccup-baby.ogg",
+"pack": "designers-choice",
+"duration": 0.44,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"hiccup",
+"baby"
+]
+},
+{
+"file": "designers-choice/vocal/hiccups-deep.ogg",
+"pack": "designers-choice",
+"duration": 62.29,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"hiccups",
+"deep"
+]
+},
+{
+"file": "designers-choice/vocal/ice-cream-sequence-three-fall-into-cone-enjoying-licking.ogg",
+"pack": "designers-choice",
+"duration": 9.35,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"ice",
+"cream",
+"sequence",
+"three",
+"fall",
+"into",
+"cone",
+"enjoying",
+"licking"
+]
+},
+{
+"file": "designers-choice/vocal/indian-war-whoop.ogg",
+"pack": "designers-choice",
+"duration": 3.8,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"indian",
+"war",
+"whoop"
+]
+},
+{
+"file": "designers-choice/vocal/laugh-bag-electronic-01.ogg",
+"pack": "designers-choice",
+"duration": 7.7,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"laugh",
+"bag",
+"electronic"
+]
+},
+{
+"file": "designers-choice/vocal/laugh-bag-electronic-02-roostersounds-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 21.14,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"laugh",
+"bag",
+"electronic",
+"roostersounds",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/vocal/laughing-duck.ogg",
+"pack": "designers-choice",
+"duration": 8.0,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"laughing",
+"duck"
+]
+},
+{
+"file": "designers-choice/vocal/laughing-train.ogg",
+"pack": "designers-choice",
+"duration": 3.13,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"laughing",
+"train"
+]
+},
+{
+"file": "designers-choice/vocal/mouth-click-simulated-clock-cartoon-looped.ogg",
+"pack": "designers-choice",
+"duration": 2.08,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"mouth",
+"click",
+"simulated",
+"clock",
+"cartoon",
+"looped"
+]
+},
+{
+"file": "designers-choice/vocal/mouth-click-simulated-clock-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 6.95,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"mouth",
+"click",
+"simulated",
+"clock",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/vocal/raspberry-buzzing.ogg",
+"pack": "designers-choice",
+"duration": 2.94,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"raspberry",
+"buzzing"
+]
+},
+{
+"file": "designers-choice/vocal/recorder-imitation-woman-scream.ogg",
+"pack": "designers-choice",
+"duration": 91.78,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"recorder",
+"imitation",
+"woman",
+"scream"
+]
+},
+{
+"file": "designers-choice/vocal/santa-ho-ho-ho-merry-christmas.ogg",
+"pack": "designers-choice",
+"duration": 5.68,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"santa",
+"ho",
+"ho",
+"ho",
+"merry",
+"christmas"
+]
+},
+{
+"file": "designers-choice/vocal/santa-ho-ho-ho.ogg",
+"pack": "designers-choice",
+"duration": 2.73,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"santa",
+"ho",
+"ho",
+"ho"
+]
+},
+{
+"file": "designers-choice/vocal/scary-halloween-toy-laughter-01.ogg",
+"pack": "designers-choice",
+"duration": 3.63,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"scary",
+"halloween",
+"toy",
+"laughter"
+]
+},
+{
+"file": "designers-choice/vocal/scary-halloween-toy-laughter-02.ogg",
+"pack": "designers-choice",
+"duration": 3.53,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"scary",
+"halloween",
+"toy",
+"laughter"
+]
+},
+{
+"file": "designers-choice/vocal/snoring-snake.ogg",
+"pack": "designers-choice",
+"duration": 59.2,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"snoring",
+"snake"
+]
+},
+{
+"file": "designers-choice/vocal/snoring-train.ogg",
+"pack": "designers-choice",
+"duration": 33.88,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"snoring",
+"train"
+]
+},
+{
+"file": "designers-choice/vocal/spit-bork-zork.ogg",
+"pack": "designers-choice",
+"duration": 35.48,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"spit",
+"bork",
+"zork"
+]
+},
+{
+"file": "designers-choice/vocal/vocal-buzzer-raspy.ogg",
+"pack": "designers-choice",
+"duration": 0.75,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"vocal",
+"buzzer",
+"raspy"
+]
+},
+{
+"file": "designers-choice/vocal/vocal-buzzer-tonal.ogg",
+"pack": "designers-choice",
+"duration": 0.71,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"vocal",
+"buzzer",
+"tonal"
+]
+},
+{
+"file": "designers-choice/vocal/vocal-buzzer.ogg",
+"pack": "designers-choice",
+"duration": 0.91,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"vocal",
+"buzzer"
+]
+},
+{
+"file": "designers-choice/vocal/vocal-head-shake-blubbering.ogg",
+"pack": "designers-choice",
+"duration": 2.72,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"vocal",
+"head",
+"shake",
+"blubbering"
+]
+},
+{
+"file": "designers-choice/vocal/vocal-head-shake-comical.ogg",
+"pack": "designers-choice",
+"duration": 2.72,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"vocal",
+"head",
+"shake",
+"comical"
+]
+},
+{
+"file": "designers-choice/vocal/vocal-head-shake-tongue-blabber.ogg",
+"pack": "designers-choice",
+"duration": 1.88,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"vocal",
+"head",
+"shake",
+"tongue",
+"blabber"
+]
+},
+{
+"file": "designers-choice/vocal/vomiting-comedy.ogg",
+"pack": "designers-choice",
+"duration": 6.44,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"vomiting",
+"comedy"
+]
+},
+{
+"file": "designers-choice/vocal/weird-talking-devices.ogg",
+"pack": "designers-choice",
+"duration": 145.68,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"weird",
+"talking",
+"devices"
+]
+},
+{
+"file": "designers-choice/vocal/yell-timber.ogg",
+"pack": "designers-choice",
+"duration": 2.89,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vocal",
+"yell",
+"timber"
+]
+},
+{
+"file": "designers-choice/misc/agogo-bell-riot-looped.ogg",
+"pack": "designers-choice",
+"duration": 30.51,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"agogo",
+"bell",
+"riot",
+"looped"
+]
+},
+{
+"file": "designers-choice/misc/air-various-hisses-releases-human-imitation.ogg",
+"pack": "designers-choice",
+"duration": 36.79,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"air",
+"various",
+"hisses",
+"releases",
+"human",
+"imitation"
+]
+},
+{
+"file": "designers-choice/misc/alarm-clock-ring-slowly-rattling-weak-fire-alarm.ogg",
+"pack": "designers-choice",
+"duration": 42.05,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"alarm",
+"clock",
+"ring",
+"slowly",
+"rattling",
+"weak",
+"fire",
+"alarm"
+]
+},
+{
+"file": "designers-choice/misc/ascending-slide-whistle-hit-01.ogg",
+"pack": "designers-choice",
+"duration": 4.04,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"ascending",
+"slide",
+"whistle",
+"hit"
+]
+},
+{
+"file": "designers-choice/misc/ascending-slide-whistle-hit-02.ogg",
+"pack": "designers-choice",
+"duration": 3.18,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"ascending",
+"slide",
+"whistle",
+"hit"
+]
+},
+{
+"file": "designers-choice/misc/balloon-popping-deflating-comedic.ogg",
+"pack": "designers-choice",
+"duration": 7.07,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"balloon",
+"popping",
+"deflating",
+"comedic"
+]
+},
+{
+"file": "designers-choice/misc/bells-and-whistles.ogg",
+"pack": "designers-choice",
+"duration": 9.43,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"bells",
+"and",
+"whistles"
+]
+},
+{
+"file": "designers-choice/misc/bite-bone-crunch.ogg",
+"pack": "designers-choice",
+"duration": 0.58,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"bite",
+"bone",
+"crunch"
+]
+},
+{
+"file": "designers-choice/misc/busy-modern-housewife-at-work-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 27.51,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"busy",
+"modern",
+"housewife",
+"at",
+"work",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/misc/camera-movie-hand-crank-start-run-stop-comical.ogg",
+"pack": "designers-choice",
+"duration": 15.87,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"camera",
+"movie",
+"hand",
+"crank",
+"start",
+"run",
+"stop",
+"comical"
+]
+},
+{
+"file": "designers-choice/misc/clock-tick-bell-resonance-simulated-guitar-hits.ogg",
+"pack": "designers-choice",
+"duration": 8.98,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"clock",
+"tick",
+"bell",
+"resonance",
+"simulated",
+"guitar",
+"hits"
+]
+},
+{
+"file": "designers-choice/misc/comedic-madhouse-montage-boings-whizzes-pops-clanks-grinds-plunks.ogg",
+"pack": "designers-choice",
+"duration": 50.09,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"comedic",
+"madhouse",
+"montage",
+"boings",
+"whizzes",
+"pops",
+"clanks",
+"grinds",
+"plunks"
+]
+},
+{
+"file": "designers-choice/misc/comedy-madhouse-collage.ogg",
+"pack": "designers-choice",
+"duration": 74.56,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"comedy",
+"madhouse",
+"collage"
+]
+},
+{
+"file": "designers-choice/misc/crumbling.ogg",
+"pack": "designers-choice",
+"duration": 17.44,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"crumbling"
+]
+},
+{
+"file": "designers-choice/misc/descending-slide-whistle-hit-01.ogg",
+"pack": "designers-choice",
+"duration": 1.35,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"descending",
+"slide",
+"whistle",
+"hit"
+]
+},
+{
+"file": "designers-choice/misc/descending-slide-whistle-hit-02.ogg",
+"pack": "designers-choice",
+"duration": 2.11,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"descending",
+"slide",
+"whistle",
+"hit"
+]
+},
+{
+"file": "designers-choice/misc/drum-ocean-splash-water-imitation.ogg",
+"pack": "designers-choice",
+"duration": 1.22,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"drum",
+"ocean",
+"splash",
+"water",
+"imitation"
+]
+},
+{
+"file": "designers-choice/misc/early-morning-starter-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 22.38,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"early",
+"morning",
+"starter",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/misc/electronic-toy-whirl.ogg",
+"pack": "designers-choice",
+"duration": 2.21,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"electronic",
+"toy",
+"whirl"
+]
+},
+{
+"file": "designers-choice/misc/falling-whistle-explosion.ogg",
+"pack": "designers-choice",
+"duration": 8.98,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"falling",
+"whistle",
+"explosion"
+]
+},
+{
+"file": "designers-choice/misc/falling-whistle-scream.ogg",
+"pack": "designers-choice",
+"duration": 6.02,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"falling",
+"whistle",
+"scream"
+]
+},
+{
+"file": "designers-choice/misc/falling-whistle-woman-scream.ogg",
+"pack": "designers-choice",
+"duration": 4.39,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"falling",
+"whistle",
+"woman",
+"scream"
+]
+},
+{
+"file": "designers-choice/misc/fingernails-on-chalkboard-the-designer-s-choice-gnrl3.ogg",
+"pack": "designers-choice",
+"duration": 19.59,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"fingernails",
+"on",
+"chalkboard",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/misc/flintstone-run-looped.ogg",
+"pack": "designers-choice",
+"duration": 12.21,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"flintstone",
+"run",
+"looped"
+]
+},
+{
+"file": "designers-choice/misc/going-crazy-anime.ogg",
+"pack": "designers-choice",
+"duration": 51.42,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"going",
+"crazy",
+"anime"
+]
+},
+{
+"file": "designers-choice/misc/going-crazy-comedic-also-anime.ogg",
+"pack": "designers-choice",
+"duration": 21.72,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"going",
+"crazy",
+"comedic",
+"also",
+"anime"
+]
+},
+{
+"file": "designers-choice/misc/gun-cartoon-cocking.ogg",
+"pack": "designers-choice",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"gun",
+"cartoon",
+"cocking"
+]
+},
+{
+"file": "designers-choice/misc/gun-cartoon-loading.ogg",
+"pack": "designers-choice",
+"duration": 12.61,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"gun",
+"cartoon",
+"loading"
+]
+},
+{
+"file": "designers-choice/misc/gun-cocking-firing-comical-roostersounds.ogg",
+"pack": "designers-choice",
+"duration": 32.52,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"gun",
+"cocking",
+"firing",
+"comical",
+"roostersounds"
+]
+},
+{
+"file": "designers-choice/misc/hand-buzzer.ogg",
+"pack": "designers-choice",
+"duration": 0.47,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"hand",
+"buzzer"
+]
+},
+{
+"file": "designers-choice/misc/hb-tiptoeing-simulated-rapid-clinking.ogg",
+"pack": "designers-choice",
+"duration": 37.63,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"hb",
+"tiptoeing",
+"simulated",
+"rapid",
+"clinking"
+]
+},
+{
+"file": "designers-choice/misc/hb-winch-recreation-looped.ogg",
+"pack": "designers-choice",
+"duration": 1.47,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"hb",
+"winch",
+"recreation",
+"looped"
+]
+},
+{
+"file": "designers-choice/misc/is-your-stomach-upset-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 15.02,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"is",
+"your",
+"stomach",
+"upset",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/misc/jack-in-the-box-distorted-music-box-insane-laughter.ogg",
+"pack": "designers-choice",
+"duration": 14.26,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"jack",
+"in",
+"the",
+"box",
+"distorted",
+"music",
+"box",
+"insane",
+"laughter"
+]
+},
+{
+"file": "designers-choice/misc/jewelry-box-musical-going-crazy.ogg",
+"pack": "designers-choice",
+"duration": 4.24,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"jewelry",
+"box",
+"musical",
+"going",
+"crazy"
+]
+},
+{
+"file": "designers-choice/misc/kid-touch-camera-turn-on-cartoon-alarm-looped.ogg",
+"pack": "designers-choice",
+"duration": 12.69,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"kid",
+"touch",
+"camera",
+"turn",
+"on",
+"cartoon",
+"alarm",
+"looped"
+]
+},
+{
+"file": "designers-choice/misc/look-out-for-that-banana-peel-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 5.99,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"look",
+"out",
+"for",
+"that",
+"banana",
+"peel",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/misc/look-out-for-that-portable-hole-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 6.02,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"look",
+"out",
+"for",
+"that",
+"portable",
+"hole",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/misc/magnet-snap-into-place.ogg",
+"pack": "designers-choice",
+"duration": 0.29,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"magnet",
+"snap",
+"into",
+"place"
+]
+},
+{
+"file": "designers-choice/misc/mouth-clicks.ogg",
+"pack": "designers-choice",
+"duration": 52.15,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"mouth",
+"clicks"
+]
+},
+{
+"file": "designers-choice/misc/noisemaker-ratchet.ogg",
+"pack": "designers-choice",
+"duration": 11.1,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"noisemaker",
+"ratchet"
+]
+},
+{
+"file": "designers-choice/misc/oops-you-tilted-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 30.48,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"oops",
+"you",
+"tilted",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/misc/pie-in-face-sequence-clown-throws-pie-in-victim-s-face-kids-laughing.ogg",
+"pack": "designers-choice",
+"duration": 3.98,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"pie",
+"in",
+"face",
+"sequence",
+"clown",
+"throws",
+"pie",
+"in",
+"victim",
+"s",
+"face",
+"kids",
+"laughing"
+]
+},
+{
+"file": "designers-choice/misc/plucked-pinfeathers-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 5.86,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"plucked",
+"pinfeathers",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/misc/pops-munches-comedic.ogg",
+"pack": "designers-choice",
+"duration": 34.35,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"pops",
+"munches",
+"comedic"
+]
+},
+{
+"file": "designers-choice/misc/railroad-crossing-bell-ringing-looped.ogg",
+"pack": "designers-choice",
+"duration": 13.47,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"railroad",
+"crossing",
+"bell",
+"ringing",
+"looped"
+]
+},
+{
+"file": "designers-choice/misc/rapid-collage.ogg",
+"pack": "designers-choice",
+"duration": 3.74,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"rapid",
+"collage"
+]
+},
+{
+"file": "designers-choice/misc/run-up-ding.ogg",
+"pack": "designers-choice",
+"duration": 3.58,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"run",
+"up",
+"ding"
+]
+},
+{
+"file": "designers-choice/misc/saw-hand-sawing-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 30.41,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"saw",
+"hand",
+"sawing",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/misc/sfx-demonstration-everything-including-the-kitchen-sink.ogg",
+"pack": "designers-choice",
+"duration": 168.71,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"sfx",
+"demonstration",
+"everything",
+"including",
+"the",
+"kitchen",
+"sink"
+]
+},
+{
+"file": "designers-choice/misc/slime-inflate-resonant.ogg",
+"pack": "designers-choice",
+"duration": 5.01,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"slime",
+"inflate",
+"resonant"
+]
+},
+{
+"file": "designers-choice/misc/slime.ogg",
+"pack": "designers-choice",
+"duration": 32.41,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"slime"
+]
+},
+{
+"file": "designers-choice/misc/snake-pops-out-of-a-mixed-nuts-can.ogg",
+"pack": "designers-choice",
+"duration": 1.71,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"snake",
+"pops",
+"out",
+"of",
+"a",
+"mixed",
+"nuts",
+"can"
+]
+},
+{
+"file": "designers-choice/misc/spin-slide-whistle-windy-swooshes.ogg",
+"pack": "designers-choice",
+"duration": 5.97,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"spin",
+"slide",
+"whistle",
+"windy",
+"swooshes"
+]
+},
+{
+"file": "designers-choice/misc/squeaks-pops-munches-comedic.ogg",
+"pack": "designers-choice",
+"duration": 84.72,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"squeaks",
+"pops",
+"munches",
+"comedic"
+]
+},
+{
+"file": "designers-choice/misc/squeaky-wheels-turning.ogg",
+"pack": "designers-choice",
+"duration": 24.29,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"squeaky",
+"wheels",
+"turning"
+]
+},
+{
+"file": "designers-choice/misc/stretch-plunk.ogg",
+"pack": "designers-choice",
+"duration": 1.55,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"stretch",
+"plunk"
+]
+},
+{
+"file": "designers-choice/misc/strike-match-fuse-sizzles-bomb-explodes.ogg",
+"pack": "designers-choice",
+"duration": 17.8,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"strike",
+"match",
+"fuse",
+"sizzles",
+"bomb",
+"explodes"
+]
+},
+{
+"file": "designers-choice/misc/the-fuse-bomb-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 18.73,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"the",
+"fuse",
+"bomb",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/misc/the-time-bomb-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 9.03,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"the",
+"time",
+"bomb",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/misc/toot-bonk.ogg",
+"pack": "designers-choice",
+"duration": 0.72,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"toot",
+"bonk"
+]
+},
+{
+"file": "designers-choice/misc/umbrella-open-slide-whistle-poof.ogg",
+"pack": "designers-choice",
+"duration": 0.71,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"umbrella",
+"open",
+"slide",
+"whistle",
+"poof"
+]
+},
+{
+"file": "designers-choice/misc/when-you-gonna-fix-this-road-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 14.67,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"when",
+"you",
+"gonna",
+"fix",
+"this",
+"road",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/misc/whip-cream-blast-comical.ogg",
+"pack": "designers-choice",
+"duration": 4.62,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"whip",
+"cream",
+"blast",
+"comical"
+]
+},
+{
+"file": "designers-choice/misc/whizz-bonk.ogg",
+"pack": "designers-choice",
+"duration": 1.35,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"whizz",
+"bonk"
+]
+},
+{
+"file": "designers-choice/misc/wobble-arrow-in-twang.ogg",
+"pack": "designers-choice",
+"duration": 3.23,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"wobble",
+"arrow",
+"in",
+"twang"
+]
+},
+{
+"file": "designers-choice/misc/zip-bang.ogg",
+"pack": "designers-choice",
+"duration": 1.94,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"zip",
+"bang"
+]
+},
+{
+"file": "designers-choice/misc/zip-ding.ogg",
+"pack": "designers-choice",
+"duration": 1.34,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"misc",
+"zip",
+"ding"
+]
+},
+{
+"file": "designers-choice/boing/bouncing-springs.ogg",
+"pack": "designers-choice",
+"duration": 60.21,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"bouncing",
+"springs"
+]
+},
+{
+"file": "designers-choice/boing/electronic.ogg",
+"pack": "designers-choice",
+"duration": 1.02,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"electronic"
+]
+},
+{
+"file": "designers-choice/boing/flexitone-pings.ogg",
+"pack": "designers-choice",
+"duration": 54.01,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"flexitone",
+"pings"
+]
+},
+{
+"file": "designers-choice/boing/guitar-boing-down.ogg",
+"pack": "designers-choice",
+"duration": 5.22,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"guitar",
+"boing",
+"down"
+]
+},
+{
+"file": "designers-choice/boing/guitar-boing-up-long.ogg",
+"pack": "designers-choice",
+"duration": 5.93,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"guitar",
+"boing",
+"up",
+"long"
+]
+},
+{
+"file": "designers-choice/boing/guitar-boing-up.ogg",
+"pack": "designers-choice",
+"duration": 5.22,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"guitar",
+"boing",
+"up"
+]
+},
+{
+"file": "designers-choice/boing/guitar-boings-low-pitch.ogg",
+"pack": "designers-choice",
+"duration": 6.41,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"guitar",
+"boings",
+"low",
+"pitch"
+]
+},
+{
+"file": "designers-choice/boing/hey-your-suspenders-are-caught-on-something-the-designer-s-choice-funf.ogg",
+"pack": "designers-choice",
+"duration": 1.33,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"hey",
+"your",
+"suspenders",
+"are",
+"caught",
+"on",
+"something",
+"the",
+"designer",
+"s",
+"choice",
+"funf"
+]
+},
+{
+"file": "designers-choice/boing/large-springy-bounces.ogg",
+"pack": "designers-choice",
+"duration": 46.53,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"large",
+"springy",
+"bounces"
+]
+},
+{
+"file": "designers-choice/boing/large-string-snaps-with-a-twang.ogg",
+"pack": "designers-choice",
+"duration": 133.9,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"large",
+"string",
+"snaps",
+"with",
+"a",
+"twang"
+]
+},
+{
+"file": "designers-choice/boing/please-turn-off-the-faucet-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 8.56,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"please",
+"turn",
+"off",
+"the",
+"faucet",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/boing/spring.ogg",
+"pack": "designers-choice",
+"duration": 2.3,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"spring"
+]
+},
+{
+"file": "designers-choice/boing/sproing-classic.ogg",
+"pack": "designers-choice",
+"duration": 2.51,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"sproing",
+"classic"
+]
+},
+{
+"file": "designers-choice/boing/sproing-slowed-down.ogg",
+"pack": "designers-choice",
+"duration": 3.88,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"sproing",
+"slowed",
+"down"
+]
+},
+{
+"file": "designers-choice/boing/sproing.ogg",
+"pack": "designers-choice",
+"duration": 4.32,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"sproing"
+]
+},
+{
+"file": "designers-choice/boing/vocal-doying.ogg",
+"pack": "designers-choice",
+"duration": 2.51,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"vocal",
+"doying"
+]
+},
+{
+"file": "designers-choice/boing/when-you-gonna-fix-this-old-sofa-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 8.56,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"boing",
+"when",
+"you",
+"gonna",
+"fix",
+"this",
+"old",
+"sofa",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/warble/kazoo-siren-wobble.ogg",
+"pack": "designers-choice",
+"duration": 3.08,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"warble",
+"kazoo",
+"siren",
+"wobble"
+]
+},
+{
+"file": "designers-choice/warble/kazoo-wobble-slow.ogg",
+"pack": "designers-choice",
+"duration": 5.57,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"warble",
+"kazoo",
+"wobble",
+"slow"
+]
+},
+{
+"file": "designers-choice/warble/large-plastic-sheet-longer-tightrope.ogg",
+"pack": "designers-choice",
+"duration": 80.43,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"warble",
+"large",
+"plastic",
+"sheet",
+"longer",
+"tightrope"
+]
+},
+{
+"file": "designers-choice/warble/large-plastic-sheet.ogg",
+"pack": "designers-choice",
+"duration": 9.06,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"warble",
+"large",
+"plastic",
+"sheet"
+]
+},
+{
+"file": "designers-choice/warble/paper-warble.ogg",
+"pack": "designers-choice",
+"duration": 14.49,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"warble",
+"paper",
+"warble"
+]
+},
+{
+"file": "designers-choice/warble/vinyl-record-warble.ogg",
+"pack": "designers-choice",
+"duration": 49.55,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"warble",
+"vinyl",
+"record",
+"warble"
+]
+},
+{
+"file": "designers-choice/warble/warble-squishy-watery.ogg",
+"pack": "designers-choice",
+"duration": 12.27,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"warble",
+"warble",
+"squishy",
+"watery"
+]
+},
+{
+"file": "designers-choice/warble/wobbling-comedic-anime.ogg",
+"pack": "designers-choice",
+"duration": 68.45,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"warble",
+"wobbling",
+"comedic",
+"anime"
+]
+},
+{
+"file": "designers-choice/splat/egg-drop-splat.ogg",
+"pack": "designers-choice",
+"duration": 0.9,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"splat",
+"egg",
+"drop",
+"splat"
+]
+},
+{
+"file": "designers-choice/splat/splats-squishes-oozes-vocal.ogg",
+"pack": "designers-choice",
+"duration": 29.83,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"splat",
+"splats",
+"squishes",
+"oozes",
+"vocal"
+]
+},
+{
+"file": "designers-choice/splat/squirt-ketchup-bottle.ogg",
+"pack": "designers-choice",
+"duration": 0.73,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"splat",
+"squirt",
+"ketchup",
+"bottle"
+]
+},
+{
+"file": "designers-choice/animal/bird-call-bobwhite-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 54.05,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"bird",
+"call",
+"bobwhite",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/animal/bird-call-canary-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 59.42,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"bird",
+"call",
+"canary",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/animal/bird-call-red-cardinal-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 66.94,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"bird",
+"call",
+"red",
+"cardinal",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/animal/bird-call-robin-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 62.52,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"bird",
+"call",
+"robin",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/animal/bird-whistle-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 104.81,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"bird",
+"whistle",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/canada-goose-honk-human-imitation-comedic.ogg",
+"pack": "designers-choice",
+"duration": 13.96,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"canada",
+"goose",
+"honk",
+"human",
+"imitation",
+"comedic"
+]
+},
+{
+"file": "designers-choice/animal/cat-angry-human-imitation-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 28.02,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"cat",
+"angry",
+"human",
+"imitation",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/animal/cat-grimalkin-human-imitation-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 6.87,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"cat",
+"grimalkin",
+"human",
+"imitation",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/animal/cat-meow-human-imitation.ogg",
+"pack": "designers-choice",
+"duration": 8.06,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"cat",
+"meow",
+"human",
+"imitation"
+]
+},
+{
+"file": "designers-choice/animal/cat-purring-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 5.28,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"cat",
+"purring",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/cat-scared-human-imitation-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 42.85,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"cat",
+"scared",
+"human",
+"imitation",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/animal/cat-screech-human-imitation-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 19.15,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"cat",
+"screech",
+"human",
+"imitation",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/animal/chick-peeping-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 20.03,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"chick",
+"peeping",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/chicken-comedic-cluck-human-imitation.ogg",
+"pack": "designers-choice",
+"duration": 15.26,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"chicken",
+"comedic",
+"cluck",
+"human",
+"imitation"
+]
+},
+{
+"file": "designers-choice/animal/comedy-humpback-whale-moan-human-imitation.ogg",
+"pack": "designers-choice",
+"duration": 4.98,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"comedy",
+"humpback",
+"whale",
+"moan",
+"human",
+"imitation"
+]
+},
+{
+"file": "designers-choice/animal/cow-moo-snort-at-end.ogg",
+"pack": "designers-choice",
+"duration": 6.91,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"cow",
+"moo",
+"snort",
+"at",
+"end"
+]
+},
+{
+"file": "designers-choice/animal/cow-mooing-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 6.85,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"cow",
+"mooing",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/coyote-howl-human-imitation.ogg",
+"pack": "designers-choice",
+"duration": 3.2,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"coyote",
+"howl",
+"human",
+"imitation"
+]
+},
+{
+"file": "designers-choice/animal/cricket-chirp-quiet-night-awkward-silence.ogg",
+"pack": "designers-choice",
+"duration": 29.78,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"cricket",
+"chirp",
+"quiet",
+"night",
+"awkward",
+"silence"
+]
+},
+{
+"file": "designers-choice/animal/dog-barking-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 65.45,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"dog",
+"barking",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/dog-whining-human-imitation-cartoon-almost-sounds-real.ogg",
+"pack": "designers-choice",
+"duration": 21.01,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"dog",
+"whining",
+"human",
+"imitation",
+"cartoon",
+"almost",
+"sounds",
+"real"
+]
+},
+{
+"file": "designers-choice/animal/donkey-braying-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 16.18,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"donkey",
+"braying",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/duck-laughing.ogg",
+"pack": "designers-choice",
+"duration": 1.66,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"duck",
+"laughing"
+]
+},
+{
+"file": "designers-choice/animal/duck-whistle-comedic.ogg",
+"pack": "designers-choice",
+"duration": 0.58,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"duck",
+"whistle",
+"comedic"
+]
+},
+{
+"file": "designers-choice/animal/duck-whistle-quacking.ogg",
+"pack": "designers-choice",
+"duration": 6.86,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"duck",
+"whistle",
+"quacking"
+]
+},
+{
+"file": "designers-choice/animal/duck-whistle-single-quack-01.ogg",
+"pack": "designers-choice",
+"duration": 0.42,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"duck",
+"whistle",
+"single",
+"quack"
+]
+},
+{
+"file": "designers-choice/animal/duck-whistle-single-quack-02.ogg",
+"pack": "designers-choice",
+"duration": 0.36,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"duck",
+"whistle",
+"single",
+"quack"
+]
+},
+{
+"file": "designers-choice/animal/duck-whistle-single-squawk-01.ogg",
+"pack": "designers-choice",
+"duration": 0.98,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"duck",
+"whistle",
+"single",
+"squawk"
+]
+},
+{
+"file": "designers-choice/animal/duck-whistle-single-squawk-02.ogg",
+"pack": "designers-choice",
+"duration": 0.92,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"duck",
+"whistle",
+"single",
+"squawk"
+]
+},
+{
+"file": "designers-choice/animal/fox-howl-human-imitation-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 33.65,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"fox",
+"howl",
+"human",
+"imitation",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/animal/frog-ribbit-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 17.68,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"frog",
+"ribbit",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/goat-baby-kid-bleat-human-imitation.ogg",
+"pack": "designers-choice",
+"duration": 17.1,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"goat",
+"baby",
+"kid",
+"bleat",
+"human",
+"imitation"
+]
+},
+{
+"file": "designers-choice/animal/goat-screaming-comedic.ogg",
+"pack": "designers-choice",
+"duration": 1.38,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"goat",
+"screaming",
+"comedic"
+]
+},
+{
+"file": "designers-choice/animal/gull-laughing-call-sounds-real.ogg",
+"pack": "designers-choice",
+"duration": 68.0,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"gull",
+"laughing",
+"call",
+"sounds",
+"real"
+]
+},
+{
+"file": "designers-choice/animal/hedgehog-calling-human-imitation-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 20.2,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"hedgehog",
+"calling",
+"human",
+"imitation",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/animal/horse-neigh-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 4.96,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"horse",
+"neigh",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/horse-whinny-frightened-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 1.74,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"horse",
+"whinny",
+"frightened",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/animal/kazoo-imitation-cow-moo.ogg",
+"pack": "designers-choice",
+"duration": 15.38,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"kazoo",
+"imitation",
+"cow",
+"moo"
+]
+},
+{
+"file": "designers-choice/animal/kazoo-imitation-crow-call.ogg",
+"pack": "designers-choice",
+"duration": 15.9,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"kazoo",
+"imitation",
+"crow",
+"call"
+]
+},
+{
+"file": "designers-choice/animal/kazoo-imitation-rooster-crow.ogg",
+"pack": "designers-choice",
+"duration": 2.68,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"kazoo",
+"imitation",
+"rooster",
+"crow"
+]
+},
+{
+"file": "designers-choice/animal/lamb-baa-human-imitation-cartoon-sounds-real.ogg",
+"pack": "designers-choice",
+"duration": 17.3,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"lamb",
+"baa",
+"human",
+"imitation",
+"cartoon",
+"sounds",
+"real"
+]
+},
+{
+"file": "designers-choice/animal/loon-calling-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 6.29,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"loon",
+"calling",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/low-frog-ribbit-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 40.46,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"low",
+"frog",
+"ribbit",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/monkey-chatter-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 61.58,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"monkey",
+"chatter",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/mosquito-buzzing.ogg",
+"pack": "designers-choice",
+"duration": 6.4,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"mosquito",
+"buzzing"
+]
+},
+{
+"file": "designers-choice/animal/mouse-squeaking-human-imitation-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 38.8,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"mouse",
+"squeaking",
+"human",
+"imitation",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/animal/owl-screech-human-imitation-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 19.68,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"owl",
+"screech",
+"human",
+"imitation",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/animal/owl-whistle-tawny.ogg",
+"pack": "designers-choice",
+"duration": 4.71,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"owl",
+"whistle",
+"tawny"
+]
+},
+{
+"file": "designers-choice/animal/pig-snort-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 45.35,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"pig",
+"snort",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/pig-squeal-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 1.52,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"pig",
+"squeal",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/puppy-barking-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 31.79,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"puppy",
+"barking",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/recorder-imitation-bird-of-prey-screeching.ogg",
+"pack": "designers-choice",
+"duration": 35.5,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"recorder",
+"imitation",
+"bird",
+"of",
+"prey",
+"screeching"
+]
+},
+{
+"file": "designers-choice/animal/rooster-cluck.ogg",
+"pack": "designers-choice",
+"duration": 1.57,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"rooster",
+"cluck"
+]
+},
+{
+"file": "designers-choice/animal/rooster-crow.ogg",
+"pack": "designers-choice",
+"duration": 3.77,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"rooster",
+"crow"
+]
+},
+{
+"file": "designers-choice/animal/seal-barking-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 22.48,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"seal",
+"barking",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/tawny-owl-hoot-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 5.63,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"tawny",
+"owl",
+"hoot",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/turkey-gobble-comedic-vocal.ogg",
+"pack": "designers-choice",
+"duration": 1.37,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"turkey",
+"gobble",
+"comedic",
+"vocal"
+]
+},
+{
+"file": "designers-choice/animal/whipporwill-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 110.85,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"whipporwill",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/animal/wild-animal-growl-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 3.71,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"wild",
+"animal",
+"growl",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/animal/wild-animal-roaring-human-imitation-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 21.31,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"animal",
+"wild",
+"animal",
+"roaring",
+"human",
+"imitation",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/musical/accordion-squeezing-up-down-comical-looped.ogg",
+"pack": "designers-choice",
+"duration": 17.69,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"musical",
+"accordion",
+"squeezing",
+"up",
+"down",
+"comical",
+"looped"
+]
+},
+{
+"file": "designers-choice/musical/accordion-up-down-looped.ogg",
+"pack": "designers-choice",
+"duration": 21.06,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"musical",
+"accordion",
+"up",
+"down",
+"looped"
+]
+},
+{
+"file": "designers-choice/musical/bongo-run.ogg",
+"pack": "designers-choice",
+"duration": 8.71,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"musical",
+"bongo",
+"run"
+]
+},
+{
+"file": "designers-choice/musical/bugle-calls-bad.ogg",
+"pack": "designers-choice",
+"duration": 100.47,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"musical",
+"bugle",
+"calls",
+"bad"
+]
+},
+{
+"file": "designers-choice/musical/cowbell-ringing.ogg",
+"pack": "designers-choice",
+"duration": 64.09,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"musical",
+"cowbell",
+"ringing"
+]
+},
+{
+"file": "designers-choice/musical/drum-imitation-heartbeat.ogg",
+"pack": "designers-choice",
+"duration": 5.51,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"musical",
+"drum",
+"imitation",
+"heartbeat"
+]
+},
+{
+"file": "designers-choice/musical/flute-and-drum-musical-tag-1930s-cartoon.ogg",
+"pack": "designers-choice",
+"duration": 15.51,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"musical",
+"flute",
+"and",
+"drum",
+"musical",
+"tag",
+"s",
+"cartoon"
+]
+},
+{
+"file": "designers-choice/musical/kazoo-foghorn-imitation-comedic.ogg",
+"pack": "designers-choice",
+"duration": 9.54,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"musical",
+"kazoo",
+"foghorn",
+"imitation",
+"comedic"
+]
+},
+{
+"file": "designers-choice/musical/kazoo-morse-code.ogg",
+"pack": "designers-choice",
+"duration": 22.03,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"musical",
+"kazoo",
+"morse",
+"code"
+]
+},
+{
+"file": "designers-choice/musical/kazoo-siren-wail-imitation.ogg",
+"pack": "designers-choice",
+"duration": 8.35,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"musical",
+"kazoo",
+"siren",
+"wail",
+"imitation"
+]
+},
+{
+"file": "designers-choice/musical/synth-fall-down-musical-bubbling.ogg",
+"pack": "designers-choice",
+"duration": 66.91,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"musical",
+"synth",
+"fall",
+"down",
+"musical",
+"bubbling"
+]
+},
+{
+"file": "designers-choice/musical/xylophone-teakwood-thai-eye-blink.ogg",
+"pack": "designers-choice",
+"duration": 0.29,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"musical",
+"xylophone",
+"teakwood",
+"thai",
+"eye",
+"blink"
+]
+},
+{
+"file": "designers-choice/vehicle/3-2-1-blast-off-ooops-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 11.86,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"blast",
+"off",
+"ooops",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/vehicle/cartoon-helicopter-element-rope-twirling-swishes-looped.ogg",
+"pack": "designers-choice",
+"duration": 4.96,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"cartoon",
+"helicopter",
+"element",
+"rope",
+"twirling",
+"swishes",
+"looped"
+]
+},
+{
+"file": "designers-choice/vehicle/clown-car-try-to-start-backfires.ogg",
+"pack": "designers-choice",
+"duration": 13.53,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"clown",
+"car",
+"try",
+"to",
+"start",
+"backfires"
+]
+},
+{
+"file": "designers-choice/vehicle/engine-comical-running-chuggs-horn.ogg",
+"pack": "designers-choice",
+"duration": 149.88,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"engine",
+"comical",
+"running",
+"chuggs",
+"horn"
+]
+},
+{
+"file": "designers-choice/vehicle/jalopy-approach-stop-comedic.ogg",
+"pack": "designers-choice",
+"duration": 9.85,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"jalopy",
+"approach",
+"stop",
+"comedic"
+]
+},
+{
+"file": "designers-choice/vehicle/jalopy-comedic.ogg",
+"pack": "designers-choice",
+"duration": 45.05,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"jalopy",
+"comedic"
+]
+},
+{
+"file": "designers-choice/vehicle/jalopy-start-away-comedic.ogg",
+"pack": "designers-choice",
+"duration": 13.93,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"jalopy",
+"start",
+"away",
+"comedic"
+]
+},
+{
+"file": "designers-choice/vehicle/kazoo-imitation-prop-plane-pass-by.ogg",
+"pack": "designers-choice",
+"duration": 7.3,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"kazoo",
+"imitation",
+"prop",
+"plane",
+"pass",
+"by"
+]
+},
+{
+"file": "designers-choice/vehicle/kazoo-imitation-race-car-engine-rev.ogg",
+"pack": "designers-choice",
+"duration": 16.94,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"kazoo",
+"imitation",
+"race",
+"car",
+"engine",
+"rev"
+]
+},
+{
+"file": "designers-choice/vehicle/race-car-zoom-by.ogg",
+"pack": "designers-choice",
+"duration": 4.46,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"race",
+"car",
+"zoom",
+"by"
+]
+},
+{
+"file": "designers-choice/vehicle/say-this-flying-car-needs-work-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 21.92,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"say",
+"this",
+"flying",
+"car",
+"needs",
+"work",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/vehicle/say-this-toy-car-needs-work-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 12.22,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"say",
+"this",
+"toy",
+"car",
+"needs",
+"work",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/vehicle/skid-broken-the-designer-s-choice-gnrl1.ogg",
+"pack": "designers-choice",
+"duration": 3.44,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"skid",
+"broken",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/vehicle/steam-train-approach-stop.ogg",
+"pack": "designers-choice",
+"duration": 6.55,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"steam",
+"train",
+"approach",
+"stop"
+]
+},
+{
+"file": "designers-choice/vehicle/steam-train-pass-by.ogg",
+"pack": "designers-choice",
+"duration": 5.45,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"steam",
+"train",
+"pass",
+"by"
+]
+},
+{
+"file": "designers-choice/vehicle/steam-train-pull-away.ogg",
+"pack": "designers-choice",
+"duration": 10.63,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"vehicle",
+"steam",
+"train",
+"pull",
+"away"
+]
+},
+{
+"file": "designers-choice/squeak/comical-squeaky-anime.ogg",
+"pack": "designers-choice",
+"duration": 0.11,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"squeak",
+"comical",
+"squeaky",
+"anime"
+]
+},
+{
+"file": "designers-choice/squeak/groan-tube-high-tone.ogg",
+"pack": "designers-choice",
+"duration": 0.32,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"squeak",
+"groan",
+"tube",
+"high",
+"tone"
+]
+},
+{
+"file": "designers-choice/squeak/groan-tube-low-tone.ogg",
+"pack": "designers-choice",
+"duration": 0.37,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"squeak",
+"groan",
+"tube",
+"low",
+"tone"
+]
+},
+{
+"file": "designers-choice/squeak/horn-wb-esque.ogg",
+"pack": "designers-choice",
+"duration": 1.12,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"squeak",
+"horn",
+"wb",
+"esque"
+]
+},
+{
+"file": "designers-choice/squeak/little-squerk-anime.ogg",
+"pack": "designers-choice",
+"duration": 0.49,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"squeak",
+"little",
+"squerk",
+"anime"
+]
+},
+{
+"file": "designers-choice/squeak/rubber-chicken-squeaks-muted.ogg",
+"pack": "designers-choice",
+"duration": 24.61,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"squeak",
+"rubber",
+"chicken",
+"squeaks",
+"muted"
+]
+},
+{
+"file": "designers-choice/squeak/rubber-chicken-squeaks.ogg",
+"pack": "designers-choice",
+"duration": 220.5,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"squeak",
+"rubber",
+"chicken",
+"squeaks"
+]
+},
+{
+"file": "designers-choice/squeak/squeaking-jabbering-the-designer-s-choice-gnrl2.ogg",
+"pack": "designers-choice",
+"duration": 192.78,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"squeak",
+"squeaking",
+"jabbering",
+"the",
+"designer",
+"s",
+"choice",
+"gnrl"
+]
+},
+{
+"file": "designers-choice/squeak/squeaks-comical-from-grab-handle-of-car.ogg",
+"pack": "designers-choice",
+"duration": 167.57,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"squeak",
+"squeaks",
+"comical",
+"from",
+"grab",
+"handle",
+"of",
+"car"
+]
+},
+{
+"file": "designers-choice/squeak/squeaky-toy-foot-torture-looped.ogg",
+"pack": "designers-choice",
+"duration": 5.81,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"squeak",
+"squeaky",
+"toy",
+"foot",
+"torture",
+"looped"
+]
+},
+{
+"file": "designers-choice/squeak/squeaky-toy-ring-being-stepped-on.ogg",
+"pack": "designers-choice",
+"duration": 49.47,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"squeak",
+"squeaky",
+"toy",
+"ring",
+"being",
+"stepped",
+"on"
+]
+},
+{
+"file": "designers-choice/zip/anime-take-off-comical.ogg",
+"pack": "designers-choice",
+"duration": 1.75,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"zip",
+"anime",
+"take",
+"off",
+"comical"
+]
+},
+{
+"file": "designers-choice/zip/down-quick.ogg",
+"pack": "designers-choice",
+"duration": 0.37,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"zip",
+"down",
+"quick"
+]
+},
+{
+"file": "designers-choice/zip/down.ogg",
+"pack": "designers-choice",
+"duration": 0.45,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"zip",
+"down"
+]
+},
+{
+"file": "designers-choice/zip/record-scratch-quick-comedic.ogg",
+"pack": "designers-choice",
+"duration": 0.15,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"zip",
+"record",
+"scratch",
+"quick",
+"comedic"
+]
+},
+{
+"file": "designers-choice/zip/ricco-out-01.ogg",
+"pack": "designers-choice",
+"duration": 0.63,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"zip",
+"ricco",
+"out"
+]
+},
+{
+"file": "designers-choice/zip/ricco-out-02.ogg",
+"pack": "designers-choice",
+"duration": 0.64,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"zip",
+"ricco",
+"out"
+]
+},
+{
+"file": "designers-choice/zip/ricco-reverse-01.ogg",
+"pack": "designers-choice",
+"duration": 0.63,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"zip",
+"ricco",
+"reverse"
+]
+},
+{
+"file": "designers-choice/zip/ricco-reverse-02.ogg",
+"pack": "designers-choice",
+"duration": 0.64,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"zip",
+"ricco",
+"reverse"
+]
+},
+{
+"file": "designers-choice/zip/ricochet-car-combination.ogg",
+"pack": "designers-choice",
+"duration": 3.29,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"zip",
+"ricochet",
+"car",
+"combination"
+]
+},
+{
+"file": "designers-choice/zip/sped-up-ricochet.ogg",
+"pack": "designers-choice",
+"duration": 1.15,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"zip",
+"sped",
+"up",
+"ricochet"
+]
+},
+{
+"file": "designers-choice/zip/up.ogg",
+"pack": "designers-choice",
+"duration": 0.45,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"zip",
+"up"
+]
+},
+{
+"file": "designers-choice/zip/where-d-he-go-the-designer-s-choice-funfx.ogg",
+"pack": "designers-choice",
+"duration": 0.71,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"zip",
+"where",
+"d",
+"he",
+"go",
+"the",
+"designer",
+"s",
+"choice",
+"funfx"
+]
+},
+{
+"file": "designers-choice/zip/whizz-in.ogg",
+"pack": "designers-choice",
+"duration": 0.91,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"zip",
+"whizz",
+"in"
+]
+},
+{
+"file": "designers-choice/zip/whizz-out.ogg",
+"pack": "designers-choice",
+"duration": 0.91,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"zip",
+"whizz",
+"out"
+]
+},
+{
+"file": "designers-choice/zip/zip-up-take-off.ogg",
+"pack": "designers-choice",
+"duration": 1.89,
+"license": "royalty-free, private",
+"source": "designers-choice",
+"category": "cartoon",
+"tags": [
+"cartoon",
+"zip",
+"zip",
+"up",
+"take",
+"off"
+]
+},
+{
+"file": "sonniss-gdc/amb-beach.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-beach",
+"beach",
+"holiday dream"
+]
+},
+{
+"file": "sonniss-gdc/amb-cafe.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-cafe",
+"caf\u00e9",
+"coffee chat"
+]
+},
+{
+"file": "sonniss-gdc/amb-car.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-car",
+"driving",
+"commute"
+]
+},
+{
+"file": "sonniss-gdc/amb-city-night.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-city-night",
+"night out",
+"city lights"
+]
+},
+{
+"file": "sonniss-gdc/amb-construction.ogg",
+"pack": "sonniss-gdc",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-construction",
+"building",
+"work in progress"
+]
+},
+{
+"file": "sonniss-gdc/amb-courtyard.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-courtyard",
+"neighbourhood",
+"calm street"
+]
+},
+{
+"file": "sonniss-gdc/amb-factory.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-factory",
+"hustle",
+"production line"
+]
+},
+{
+"file": "sonniss-gdc/amb-fire.ogg",
+"pack": "sonniss-gdc",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-fire",
+"cosy",
+"story time",
+"night"
+]
+},
+{
+"file": "sonniss-gdc/amb-kitchen.ogg",
+"pack": "sonniss-gdc",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-kitchen",
+"kitchen",
+"home",
+"night snack"
+]
+},
+{
+"file": "sonniss-gdc/amb-mall.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-mall",
+"shopping",
+"consumers"
+]
+},
+{
+"file": "sonniss-gdc/amb-morning.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-morning",
+"early morning",
+"new day"
+]
+},
+{
+"file": "sonniss-gdc/amb-night.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-night",
+"night",
+"evening",
+"late work"
+]
+},
+{
+"file": "sonniss-gdc/amb-office.ogg",
+"pack": "sonniss-gdc",
+"duration": 36.09,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-office",
+"office building",
+"corporate"
+]
+},
+{
+"file": "sonniss-gdc/amb-park.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-park",
+"outside",
+"nature",
+"walk"
+]
+},
+{
+"file": "sonniss-gdc/amb-plane.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-plane",
+"travel",
+"flight"
+]
+},
+{
+"file": "sonniss-gdc/amb-rain.ogg",
+"pack": "sonniss-gdc",
+"duration": 30.72,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-rain",
+"rainy day",
+"sad",
+"cosy"
+]
+},
+{
+"file": "sonniss-gdc/amb-station.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-station",
+"commute",
+"travel"
+]
+},
+{
+"file": "sonniss-gdc/amb-storm.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-storm",
+"drama",
+"bad news",
+"night"
+]
+},
+{
+"file": "sonniss-gdc/amb-street.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-street",
+"street",
+"city",
+"outside"
+]
+},
+{
+"file": "sonniss-gdc/amb-studio.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"amb-studio",
+"desk",
+"home studio",
+"any interior"
+]
+},
+{
+"file": "sonniss-gdc/applause.ogg",
+"pack": "sonniss-gdc",
+"duration": 6.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "comedy_reaction",
+"tags": [
+"applause",
+"end of a demo",
+"cta",
+"win"
+]
+},
+{
+"file": "sonniss-gdc/bird-flute.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.03,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "comedy_reaction",
+"tags": [
+"bird-flute",
+"tweet",
+"cute",
+"small idea"
+]
+},
+{
+"file": "sonniss-gdc/board-pieces.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.11,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "office_creator",
+"tags": [
+"board-pieces",
+"strategy",
+"planning",
+"game"
+]
+},
+{
+"file": "sonniss-gdc/boom.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.48,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "impacts",
+"tags": [
+"boom",
+"big comic blast"
+]
+},
+{
+"file": "sonniss-gdc/breath.ogg",
+"pack": "sonniss-gdc",
+"duration": 4.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "tension_hook",
+"tags": [
+"breath",
+"out of breath",
+"exhausted"
+]
+},
+{
+"file": "sonniss-gdc/bubble-pop.ogg",
+"pack": "sonniss-gdc",
+"duration": 0.88,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "text_ui",
+"tags": [
+"bubble-pop",
+"speech bubble",
+"fizz"
+]
+},
+{
+"file": "sonniss-gdc/car-door.ogg",
+"pack": "sonniss-gdc",
+"duration": 2.95,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "office_creator",
+"tags": [
+"car-door",
+"arrive",
+"leave"
+]
+},
+{
+"file": "sonniss-gdc/car-horn.ogg",
+"pack": "sonniss-gdc",
+"duration": 0.39,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "office_creator",
+"tags": [
+"car-horn",
+"traffic",
+"hurry",
+"attention"
+]
+},
+{
+"file": "sonniss-gdc/car-pass.ogg",
+"pack": "sonniss-gdc",
+"duration": 5.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "transitions",
+"tags": [
+"car-pass",
+"street",
+"time passing"
+]
+},
+{
+"file": "sonniss-gdc/cards-deal.ogg",
+"pack": "sonniss-gdc",
+"duration": 2.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "money_sales",
+"tags": [
+"cards-deal",
+"dealing",
+"offers"
+]
+},
+{
+"file": "sonniss-gdc/cards-shuffle.ogg",
+"pack": "sonniss-gdc",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "money_sales",
+"tags": [
+"cards-shuffle",
+"casino",
+"gambling",
+"strategy"
+]
+},
+{
+"file": "sonniss-gdc/cartoon-dizzy.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "comedy_reaction",
+"tags": [
+"cartoon-dizzy",
+"confused",
+"seeing stars"
+]
+},
+{
+"file": "sonniss-gdc/chair-creak.ogg",
+"pack": "sonniss-gdc",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "comedy_reaction",
+"tags": [
+"chair-creak",
+"sit down",
+"awkward"
+]
+},
+{
+"file": "sonniss-gdc/cheer.ogg",
+"pack": "sonniss-gdc",
+"duration": 4.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "comedy_reaction",
+"tags": [
+"cheer",
+"win",
+"community moment"
+]
+},
+{
+"file": "sonniss-gdc/church-bells.ogg",
+"pack": "sonniss-gdc",
+"duration": 8.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "magic_reveal",
+"tags": [
+"church-bells",
+"big announcement",
+"wedding"
+]
+},
+{
+"file": "sonniss-gdc/clock-tick.ogg",
+"pack": "sonniss-gdc",
+"duration": 8.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "tension_hook",
+"tags": [
+"clock-tick",
+"time passing",
+"deadline"
+]
+},
+{
+"file": "sonniss-gdc/cloth.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "office_creator",
+"tags": [
+"cloth",
+"character moves",
+"grabs"
+]
+},
+{
+"file": "sonniss-gdc/coin.ogg",
+"pack": "sonniss-gdc",
+"duration": 0.94,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "money_sales",
+"tags": [
+"coin",
+"one coin",
+"small win"
+]
+},
+{
+"file": "sonniss-gdc/coins-drop.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.1,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "money_sales",
+"tags": [
+"coins-drop",
+"money comes in"
+]
+},
+{
+"file": "sonniss-gdc/confetti.ogg",
+"pack": "sonniss-gdc",
+"duration": 2.54,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "comedy_reaction",
+"tags": [
+"confetti",
+"celebration burst"
+]
+},
+{
+"file": "sonniss-gdc/countdown.ogg",
+"pack": "sonniss-gdc",
+"duration": 8.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "tension_hook",
+"tags": [
+"countdown",
+"countdown",
+"urgency"
+]
+},
+{
+"file": "sonniss-gdc/cracker-bang.ogg",
+"pack": "sonniss-gdc",
+"duration": 0.53,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "impacts",
+"tags": [
+"cracker-bang",
+"surprise pop",
+"party"
+]
+},
+{
+"file": "sonniss-gdc/door-knock.ogg",
+"pack": "sonniss-gdc",
+"duration": 2.33,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "office_creator",
+"tags": [
+"door-knock",
+"opportunity knocks",
+"visitor"
+]
+},
+{
+"file": "sonniss-gdc/downlifter.ogg",
+"pack": "sonniss-gdc",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "transitions",
+"tags": [
+"downlifter",
+"falling mood",
+"oh no"
+]
+},
+{
+"file": "sonniss-gdc/extra-announcer-laugh.ogg",
+"pack": "sonniss-gdc",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "reactions",
+"tags": [
+"extra-announcer-laugh",
+"villain",
+"scheme"
+]
+},
+{
+"file": "sonniss-gdc/extra-cough.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.38,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "reactions",
+"tags": [
+"extra-cough",
+"awkward",
+"interrupt"
+]
+},
+{
+"file": "sonniss-gdc/extra-cry.ogg",
+"pack": "sonniss-gdc",
+"duration": 4.27,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "reactions",
+"tags": [
+"extra-cry",
+"sad",
+"comic sob"
+]
+},
+{
+"file": "sonniss-gdc/extra-dog-bark.ogg",
+"pack": "sonniss-gdc",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "reactions",
+"tags": [
+"extra-dog-bark",
+"comic interruption"
+]
+},
+{
+"file": "sonniss-gdc/extra-man-laugh.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.73,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "reactions",
+"tags": [
+"extra-man-laugh",
+"background character laughs"
+]
+},
+{
+"file": "sonniss-gdc/extra-sigh.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.04,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "reactions",
+"tags": [
+"extra-sigh",
+"bored",
+"annoyed"
+]
+},
+{
+"file": "sonniss-gdc/extra-surprised-gasp.ogg",
+"pack": "sonniss-gdc",
+"duration": 0.46,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "reactions",
+"tags": [
+"extra-surprised-gasp",
+"background reaction"
+]
+},
+{
+"file": "sonniss-gdc/extra-whistle.ogg",
+"pack": "sonniss-gdc",
+"duration": 2.44,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "reactions",
+"tags": [
+"extra-whistle",
+"wow",
+"impressive"
+]
+},
+{
+"file": "sonniss-gdc/extra-woman-laugh.ogg",
+"pack": "sonniss-gdc",
+"duration": 0.71,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "reactions",
+"tags": [
+"extra-woman-laugh",
+"background character laughs"
+]
+},
+{
+"file": "sonniss-gdc/fireworks.ogg",
+"pack": "sonniss-gdc",
+"duration": 6.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "comedy_reaction",
+"tags": [
+"fireworks",
+"big win",
+"launch",
+"new year"
+]
+},
+{
+"file": "sonniss-gdc/flush.ogg",
+"pack": "sonniss-gdc",
+"duration": 6.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "comedy_reaction",
+"tags": [
+"flush",
+"money down the drain"
+]
+},
+{
+"file": "sonniss-gdc/gift-open.ogg",
+"pack": "sonniss-gdc",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "money_sales",
+"tags": [
+"gift-open",
+"bonus",
+"free gift",
+"reveal"
+]
+},
+{
+"file": "sonniss-gdc/glitch.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "transitions",
+"tags": [
+"glitch",
+"error",
+"algorithm",
+"chaos"
+]
+},
+{
+"file": "sonniss-gdc/kalimba-up.ogg",
+"pack": "sonniss-gdc",
+"duration": 0.55,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "magic_reveal",
+"tags": [
+"kalimba-up",
+"gentle success"
+]
+},
+{
+"file": "sonniss-gdc/level-up.ogg",
+"pack": "sonniss-gdc",
+"duration": 0.88,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "text_ui",
+"tags": [
+"level-up",
+"level up",
+"unlock",
+"success"
+]
+},
+{
+"file": "sonniss-gdc/mouse-squeak.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "comedy_reaction",
+"tags": [
+"mouse-squeak",
+"tiny",
+"cute",
+"sneaky"
+]
+},
+{
+"file": "sonniss-gdc/music-box-wind.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.59,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "magic_reveal",
+"tags": [
+"music-box-wind",
+"getting ready",
+"cute"
+]
+},
+{
+"file": "sonniss-gdc/music-box.ogg",
+"pack": "sonniss-gdc",
+"duration": 2.84,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "magic_reveal",
+"tags": [
+"music-box",
+"childhood",
+"nostalgia",
+"sweet"
+]
+},
+{
+"file": "sonniss-gdc/page-flip.ogg",
+"pack": "sonniss-gdc",
+"duration": 2.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "transitions",
+"tags": [
+"page-flip",
+"book",
+"plan",
+"next chapter"
+]
+},
+{
+"file": "sonniss-gdc/paper-crumple.ogg",
+"pack": "sonniss-gdc",
+"duration": 2.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "office_creator",
+"tags": [
+"paper-crumple",
+"throw away the plan"
+]
+},
+{
+"file": "sonniss-gdc/phone-pickup.ogg",
+"pack": "sonniss-gdc",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "phone_social",
+"tags": [
+"phone-pickup",
+"answering",
+"hanging up"
+]
+},
+{
+"file": "sonniss-gdc/phone-rotary.ogg",
+"pack": "sonniss-gdc",
+"duration": 2.45,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "phone_social",
+"tags": [
+"phone-rotary",
+"old phone",
+"calling"
+]
+},
+{
+"file": "sonniss-gdc/pops.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.4,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "text_ui",
+"tags": [
+"pops",
+"many things appear"
+]
+},
+{
+"file": "sonniss-gdc/punch.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.06,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "impacts",
+"tags": [
+"punch",
+"comic hit"
+]
+},
+{
+"file": "sonniss-gdc/ring-light-click.ogg",
+"pack": "sonniss-gdc",
+"duration": 0.26,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "office_creator",
+"tags": [
+"ring-light-click",
+"lights on",
+"idea"
+]
+},
+{
+"file": "sonniss-gdc/ringtone.ogg",
+"pack": "sonniss-gdc",
+"duration": 4.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "phone_social",
+"tags": [
+"ringtone",
+"phone rings"
+]
+},
+{
+"file": "sonniss-gdc/room-tone.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"room-tone",
+"under every interior: never digital silence"
+]
+},
+{
+"file": "sonniss-gdc/rumble.ogg",
+"pack": "sonniss-gdc",
+"duration": 5.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "tension_hook",
+"tags": [
+"rumble",
+"something is coming"
+]
+},
+{
+"file": "sonniss-gdc/scratch-card.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.14,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "money_sales",
+"tags": [
+"scratch-card",
+"lottery",
+"luck",
+"gamble"
+]
+},
+{
+"file": "sonniss-gdc/shimmer.ogg",
+"pack": "sonniss-gdc",
+"duration": 4.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "magic_reveal",
+"tags": [
+"shimmer",
+"wish",
+"magic moment"
+]
+},
+{
+"file": "sonniss-gdc/skid.ogg",
+"pack": "sonniss-gdc",
+"duration": 2.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "transitions",
+"tags": [
+"skid",
+"sudden stop",
+"wait!"
+]
+},
+{
+"file": "sonniss-gdc/snip.ogg",
+"pack": "sonniss-gdc",
+"duration": 2.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "office_creator",
+"tags": [
+"snip",
+"cut costs",
+"trim"
+]
+},
+{
+"file": "sonniss-gdc/spin.ogg",
+"pack": "sonniss-gdc",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "transitions",
+"tags": [
+"spin",
+"spin",
+"twist",
+"transform"
+]
+},
+{
+"file": "sonniss-gdc/spray.ogg",
+"pack": "sonniss-gdc",
+"duration": 0.52,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "office_creator",
+"tags": [
+"spray",
+"clean",
+"fresh start"
+]
+},
+{
+"file": "sonniss-gdc/static.ogg",
+"pack": "sonniss-gdc",
+"duration": 4.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "tension_hook",
+"tags": [
+"static",
+"bad signal",
+"old radio"
+]
+},
+{
+"file": "sonniss-gdc/suitcase.ogg",
+"pack": "sonniss-gdc",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "office_creator",
+"tags": [
+"suitcase",
+"travel",
+"pack up"
+]
+},
+{
+"file": "sonniss-gdc/sweep.ogg",
+"pack": "sonniss-gdc",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "office_creator",
+"tags": [
+"sweep",
+"clean up",
+"clear the mess"
+]
+},
+{
+"file": "sonniss-gdc/swipe.ogg",
+"pack": "sonniss-gdc",
+"duration": 2.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "transitions",
+"tags": [
+"swipe",
+"swipe",
+"pull",
+"slide in"
+]
+},
+{
+"file": "sonniss-gdc/swish.ogg",
+"pack": "sonniss-gdc",
+"duration": 0.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "transitions",
+"tags": [
+"swish",
+"text slides in"
+]
+},
+{
+"file": "sonniss-gdc/thunder.ogg",
+"pack": "sonniss-gdc",
+"duration": 6.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "tension_hook",
+"tags": [
+"thunder",
+"bad news",
+"drama"
+]
+},
+{
+"file": "sonniss-gdc/train-pass.ogg",
+"pack": "sonniss-gdc",
+"duration": 8.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "transitions",
+"tags": [
+"train-pass",
+"travel",
+"missed chance"
+]
+},
+{
+"file": "sonniss-gdc/typewriter-carriage.ogg",
+"pack": "sonniss-gdc",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "text_ui",
+"tags": [
+"typewriter-carriage",
+"new line",
+"done"
+]
+},
+{
+"file": "sonniss-gdc/typewriter.ogg",
+"pack": "sonniss-gdc",
+"duration": 0.54,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "text_ui",
+"tags": [
+"typewriter",
+"writing a script",
+"old school"
+]
+},
+{
+"file": "sonniss-gdc/velcro.ogg",
+"pack": "sonniss-gdc",
+"duration": 0.41,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "office_creator",
+"tags": [
+"velcro",
+"rip off",
+"reveal",
+"strap in"
+]
+},
+{
+"file": "sonniss-gdc/walla-bar.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "walla",
+"tags": [
+"walla-bar",
+"night out",
+"bar",
+"social"
+]
+},
+{
+"file": "sonniss-gdc/walla-cafe.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "walla",
+"tags": [
+"walla-cafe",
+"caf\u00e9",
+"restaurant",
+"meeting"
+]
+},
+{
+"file": "sonniss-gdc/walla-cheer.ogg",
+"pack": "sonniss-gdc",
+"duration": 8.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "walla",
+"tags": [
+"walla-cheer",
+"win",
+"launch",
+"sale goes off"
+]
+},
+{
+"file": "sonniss-gdc/walla-classroom.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "walla",
+"tags": [
+"walla-classroom",
+"webinar",
+"class",
+"live event",
+"stage"
+]
+},
+{
+"file": "sonniss-gdc/walla-crowd-excited.ogg",
+"pack": "sonniss-gdc",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "walla",
+"tags": [
+"walla-crowd-excited",
+"hype before a reveal"
+]
+},
+{
+"file": "sonniss-gdc/walla-gym.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "walla",
+"tags": [
+"walla-gym",
+"gym",
+"sports",
+"competition"
+]
+},
+{
+"file": "sonniss-gdc/walla-kids.ogg",
+"pack": "sonniss-gdc",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "walla",
+"tags": [
+"walla-kids",
+"park",
+"school",
+"family"
+]
+},
+{
+"file": "sonniss-gdc/walla-mall.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "walla",
+"tags": [
+"walla-mall",
+"shopping",
+"consumers",
+"busy public"
+]
+},
+{
+"file": "sonniss-gdc/walla-office.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "walla",
+"tags": [
+"walla-office",
+"busy workplace",
+"team working"
+]
+},
+{
+"file": "sonniss-gdc/walla-party.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "walla",
+"tags": [
+"walla-party",
+"party",
+"launch",
+"celebration dinner"
+]
+},
+{
+"file": "sonniss-gdc/waves.ogg",
+"pack": "sonniss-gdc",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "ambience",
+"tags": [
+"waves",
+"sea",
+"calm"
+]
+},
+{
+"file": "sonniss-gdc/whip.ogg",
+"pack": "sonniss-gdc",
+"duration": 1.47,
+"license": "royalty-free, private",
+"source": "sonniss-gdc",
+"category": "impacts",
+"tags": [
+"whip",
+"fast",
+"hustle",
+"discipline"
+]
 }
 ]
 }

@@ -63,8 +63,9 @@ if __name__ == '__main__':
         x, sr = sf.read(a[1]); assert sr == SR, 'needs 48 kHz'; sf.write(a[2], run(a[0], x, 'music').astype(np.float32), SR); sys.exit()
     st = (a[0] if a else os.environ.get('STYLE') or 'ink').replace('standard', 'ink')
     if st not in STYLES: sys.exit(f'unknown style {st}; one of {list(STYLES)}')
-    for bus in ('music', 'sfx'):
+    for bus in ('music', 'lead', 'sfx', 'amb', 'walla'):
         p, dry = f'music/{bus}.wav', f'music/{bus}_dry.wav'
+        if not os.path.exists(p) and not os.path.exists(dry): continue
         if not os.path.exists(dry): shutil.copy(p, dry)
-        x, sr = sf.read(dry); sf.write(p, run(st, x, bus).astype(np.float32), SR)
+        x, sr = sf.read(dry); y = run(st, x, 'music' if bus in ('music', 'amb') else bus); k = (np.abs(x).max() + 1e-9) / (np.abs(y).max() + 1e-9) if bus in ('music', 'lead', 'amb', 'walla') else 1; sf.write(p, (y * k).astype(np.float32), SR)
     print(f'stylize: {st} — {STYLES[st][0]}')

@@ -1,0 +1,395 @@
+{
+ "_about": "THE studio sound signature, shared by every brand: one REAL sound per idea. events = library sounds per engine event (first available in the list is used, so public CC0 fallbacks keep working when licensed packs are absent); musical = orchestra gags + leitmotifs by role (library/sound/music); signature = stings; places = room tone + walla per background set. sfx.py kit copies everything into a project's sfx/. Missing = silent and reported, never synth.",
+ "palette": "Sitcom: dry, warm, wooden and plucky. No cinematic braams, no meme sounds baked in. One hit per idea; silence before the punchline.",
+ "events": {
+  "pop": {
+   "id": [
+    "pop",
+    "bubble-pop"
+   ],
+   "why": "Every element that appears (text, sticker, prop)"
+  },
+  "pops": {
+   "id": [
+    "pops"
+   ],
+   "why": "A burst of items"
+  },
+  "click": {
+   "id": [
+    "click"
+   ],
+   "why": "Buttons, phone taps",
+   "alts": [
+    "kenney/ui/click2.wav",
+    "kenney/ui/click3.wav"
+   ]
+  },
+  "ding": {
+   "id": [
+    "chime",
+    "triangle"
+   ],
+   "why": "Idea, reveal, correct answer"
+  },
+  "buzz": {
+   "id": [
+    "wrong"
+   ],
+   "why": "Wrong answer, myth, bad idea"
+  },
+  "stamp": {
+   "id": [
+    "stamp"
+   ],
+   "why": "Verdict stamps (MYTH / FACT)",
+   "alts": [
+    "kenney/impact/impact_plank_medium_001.ogg"
+   ]
+  },
+  "whoosh": {
+   "id": [
+    "whoosh-fast",
+    "swish",
+    "swipe"
+   ],
+   "why": "Big moves and scene changes",
+   "alts": [
+    "designers-choice/zip/down-quick.ogg"
+   ]
+  },
+  "chaching": {
+   "id": [
+    "cha-ching"
+   ],
+   "why": "Money, sale, growth"
+  },
+  "cheer": {
+   "id": [
+    "cheer",
+    "applause"
+   ],
+   "why": "Win, community moment"
+  },
+  "sparkle": {
+   "id": [
+    "magic-wand",
+    "bell-tree"
+   ],
+   "why": "Transformation, the after"
+  },
+  "steps": {
+   "id": [
+    "steps"
+   ],
+   "why": "Character walks in",
+   "alts": [
+    "kenney/impact/footstep_concrete_001.ogg",
+    "kenney/impact/footstep_concrete_002.ogg"
+   ]
+  },
+  "portal": {
+   "id": [
+    "portal"
+   ],
+   "why": "Jump in time or place (the one stylised transition)"
+  },
+  "boing": {
+   "id": [
+    "boing",
+    "flexatone"
+   ],
+   "why": "Comic bounce, fail"
+  },
+  "thud": {
+   "id": [
+    "thud"
+   ],
+   "why": "Something lands, reality check",
+   "alts": [
+    "kenney/impact/impact_soft_heavy_001.ogg",
+    "kenney/impact/impact_soft_heavy_003.ogg"
+   ]
+  },
+  "creak": {
+   "id": [
+    "creak",
+    "chair-creak"
+   ],
+   "why": "Awkward pause, door"
+  },
+  "page": {
+   "id": [
+    "page-flip"
+   ],
+   "why": "Book, plan, calendar",
+   "alts": [
+    "kenney/rpg/book_flip_2.ogg",
+    "kenney/rpg/book_flip_3.ogg"
+   ]
+  },
+  "gulp": {
+   "id": [
+    "gulp"
+   ],
+   "why": "Nervous reaction",
+   "alts": [
+    "designers-choice/vocal/gulp-comedic-02.ogg",
+    "designers-choice/vocal/gulp-comedic-03.ogg"
+   ]
+  },
+  "scratch": {
+   "id": [
+    "record-scratch",
+    "tape-stop"
+   ],
+   "why": "Hard stop, wait, what?"
+  },
+  "chalk": {
+   "id": [
+    "chalk",
+    "guiro"
+   ],
+   "why": "Writing on the board"
+  },
+  "tick": {
+   "id": [
+    "tick",
+    "woodblock"
+   ],
+   "why": "Counters ticking up"
+  },
+  "dm-ping": {
+   "id": [
+    "dm-ping"
+   ],
+   "why": "Notification, new DM"
+  },
+  "projector": {
+   "id": [
+    "projector"
+   ],
+   "why": "Old film style bed"
+  }
+ },
+ "signature": {
+  "logo-sting": {
+   "file": "music/logo-sting",
+   "status": "candidate",
+   "from": "orchestra.py (theme head, real instruments)",
+   "use": "Brand appears / logo"
+  },
+  "series-bump": {
+   "file": "music/series-bump",
+   "status": "candidate",
+   "from": "orchestra.py (theme head, real instruments)",
+   "use": "Opening of a series episode and the ONE stylised transition"
+  },
+  "outro": {
+   "file": "music/outro",
+   "status": "candidate",
+   "from": "orchestra.py (theme head, real instruments)",
+   "use": "CTA / end card"
+  },
+  "button": {
+   "file": "music/button",
+   "status": "candidate",
+   "from": "orchestra.py (theme head, real instruments)",
+   "use": "Last joke lands"
+  }
+ },
+ "music": {
+  "kit": "music/index.json",
+  "rule": "Every cue is the same theme. story.js `music:` uses these mood names: sitcom, think, aerobics, casino, tiptoe, tension, folk, happy, build, silence."
+ },
+ "musical": {
+  "sad-trombone": {
+   "file": "music/sad-trombone",
+   "why": "Fail, the plan collapses"
+  },
+  "xylo-climb": {
+   "file": "music/xylo-climb",
+   "why": "Rising, climbing, an idea grows"
+  },
+  "xylo-fall": {
+   "file": "music/xylo-fall",
+   "why": "Falling, losing"
+  },
+  "harp-gliss": {
+   "file": "music/harp-gliss",
+   "why": "Dream, flashback, imagination"
+  },
+  "dramatic-sting": {
+   "file": "music/dramatic-sting",
+   "why": "Shock reveal"
+  },
+  "rimshot": {
+   "file": "music/rimshot",
+   "why": "After a pun"
+  },
+  "tiptoe-pizz": {
+   "file": "music/tiptoe-pizz",
+   "why": "Sneaking"
+  },
+  "drumroll": {
+   "file": "music/drumroll",
+   "why": "Before a reveal"
+  },
+  "wah-trumpet": {
+   "file": "music/wah-trumpet",
+   "why": "Disappointment"
+  },
+  "tuba-plonk": {
+   "file": "music/tuba-plonk",
+   "why": "Something heavy and dumb lands"
+  },
+  "motif-narrator": {
+   "file": "music/motif-narrator",
+   "why": "Narrator's first appearance"
+  },
+  "motif-hero": {
+   "file": "music/motif-hero",
+   "why": "Hero's first appearance"
+  },
+  "motif-supporting": {
+   "file": "music/motif-supporting",
+   "why": "Supporting character's first appearance"
+  }
+ },
+ "places": {
+  "studio": {
+   "amb": [
+    "amb-studio",
+    "room-tone"
+   ],
+   "why": "Creator desk: quiet room"
+  },
+  "content": {
+   "amb": [
+    "amb-studio",
+    "room-tone"
+   ]
+  },
+  "night": {
+   "amb": [
+    "amb-city-night",
+    "amb-night"
+   ]
+  },
+  "casino": {
+   "amb": [
+    "amb-mall"
+   ],
+   "walla": [
+    "walla-bar"
+   ]
+  },
+  "board": {
+   "amb": [
+    "room-tone"
+   ]
+  },
+  "chalk": {
+   "amb": [
+    "amb-classroom",
+    "room-tone"
+   ]
+  },
+  "street": {
+   "amb": [
+    "amb-street",
+    "amb-courtyard"
+   ]
+  },
+  "gym": {
+   "amb": [
+    "room-tone"
+   ],
+   "walla": [
+    "walla-gym"
+   ]
+  },
+  "community": {
+   "amb": [
+    "room-tone"
+   ],
+   "walla": [
+    "walla-party"
+   ]
+  },
+  "beach": {
+   "amb": [
+    "amb-beach",
+    "waves"
+   ]
+  },
+  "sea": {
+   "amb": [
+    "waves",
+    "amb-beach"
+   ]
+  },
+  "stage": {
+   "amb": [
+    "room-tone"
+   ],
+   "walla": [
+    "walla-classroom"
+   ]
+  },
+  "office": {
+   "amb": [
+    "amb-office"
+   ],
+   "walla": [
+    "walla-office"
+   ]
+  },
+  "doors": {
+   "amb": [
+    "room-tone"
+   ]
+  },
+  "clinic": {
+   "amb": [
+    "room-tone"
+   ]
+  },
+  "cafe": {
+   "amb": [
+    "amb-cafe"
+   ],
+   "walla": [
+    "walla-cafe"
+   ]
+  },
+  "park": {
+   "amb": [
+    "amb-park",
+    "amb-morning"
+   ]
+  },
+  "kitchen": {
+   "amb": [
+    "amb-kitchen"
+   ]
+  },
+  "home": {
+   "amb": [
+    "amb-living-room",
+    "room-tone"
+   ]
+  },
+  "default": {
+   "amb": [
+    "room-tone"
+   ],
+   "why": "Any other background: room tone, never digital silence"
+  }
+ },
+ "roles": {
+  "narrator": "motif-narrator",
+  "hero": "motif-hero",
+  "supporting": "motif-supporting"
+ }
+}
