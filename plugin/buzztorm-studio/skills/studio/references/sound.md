@@ -3,8 +3,8 @@
 Catalog: `~/buzztorm-studio/library/sfx/catalog.json` (128 effects in 11 categories). Approved sources: `library/sfx/sources.json`. Tool: `sfx.py` (copied into every project).
 
 ## Library contents
-- `library/sfx/files/<id>.wav`: the chosen file for a catalog slot (40 of 128 filled from Kenney CC0; `credits.json` records the source and original file).
-- `library/sfx/packs/`: raw packs kept whole for alternates (Kenney Interface, UI, Digital, Impact, RPG, Sci-fi, Music Jingles: 552 files, CC0). `packs/index.json` lists every file with tags and duration.
+- `library/sfx/files/<id>.wav`: the chosen file for a catalog slot (54 of 128: Kenney CC0 + The Designer's Choice CARTOON; `credits.json` records the source and original file).
+- `library/sfx/packs/`: raw packs kept whole for alternates (Kenney Interface, UI, Digital, Impact, RPG, Sci-fi, Music Jingles: 552 files, CC0). `packs/designers-choice/`: 364 cartoon sounds (boings, slide whistles, zips, bonks, squeaks, gulps, vocal FX, vehicles), royalty-free for commercial use and ads, never redistribute the raw files (this repo must stay private). `packs/index.json` lists all 916 files with tags and duration.
 - `brands/<brand>/sound-signature.json`: the brand's fixed sound for each engine event (pop, ding, whoosh, stamp…) plus its 3 stings in `brands/<brand>/sfx/`.
 
 ## Signature first (every video)

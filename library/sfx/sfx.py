@@ -3,7 +3,7 @@
   list [category]                      show the catalog
   find <words>                         search by id/name/use
   get <id> [--dur S]                   put sfx/<id>.wav in the current project (library file → AI → synth)
-  add <id> <file> --source <source-id> register a downloaded file in the shared library
+  add <id> <file> --source <source-id> [--dur S] register a downloaded file in the shared library
   sources                              approved / not approved sources
   browse <words>                       search every raw file in the packs (packs/index.json)
   kit --brand <brand>                  put the brand's signature sounds in sfx/ (same sounds in every video)
@@ -84,12 +84,14 @@ def kit(brand):
         if own and os.path.exists(own): shutil.copy(own, os.path.join('sfx', f'{i}.wav')); out.append((i, i, 'brand ' + r.get('status', '')))
     for ev, i, how in out: print(f'  {ev:<14} {i:<18} {how}')
 
-def add(i, f, source):
+def add(i, f, source, dur=None):
     if not os.path.exists(f) and os.path.exists(os.path.join(PACKS, f)): f = os.path.join(PACKS, f)
     if i not in ALL: sys.exit(f'unknown effect {i!r} (add it to catalog.json first)')
     s = next((s for s in SRC if s['id'] == source), None) or sys.exit('unknown source; see: sfx.py sources')
     if s['status'] == 'no': sys.exit(f"REFUSED: {s['name']} — {s['notes']}")
-    os.makedirs(FILES, exist_ok=True); to_wav(f, os.path.join(FILES, f'{i}.wav'))
+    os.makedirs(FILES, exist_ok=True); dst = os.path.join(FILES, f'{i}.wav')
+    if dur: subprocess.run(['ffmpeg', '-v', 'error', '-nostdin', '-y', '-i', f, '-t', str(dur), '-af', f'afade=t=out:st={max(0, dur - .15):.2f}:d=0.15', '-ar', '48000', '-ac', '2', dst], check=True)
+    else: to_wav(f, dst)
     c = credits(); c[i] = {'source': source, 'status': s['status'], 'original': os.path.relpath(f, PACKS) if f.startswith(PACKS) else os.path.basename(f),
                            'credit': 'Sound effects from zapsplat.com' if source == 'zapsplat-free' else None}
     json.dump(c, open(CRED, 'w'), indent=1); print(json.dumps({'added': i, 'status': s['status']}))
@@ -107,7 +109,7 @@ elif a[0] == 'find':
     for e in ALL.values():
         if q in (e['id'] + ' ' + e['name'] + ' ' + e['use']).lower(): print(f"{e['id']:<20} {e['name']:<32} {e['use']}")
 elif a[0] == 'get': get(a[1], float(a[a.index('--dur') + 1]) if '--dur' in a else None)
-elif a[0] == 'add': add(a[1], a[2], a[a.index('--source') + 1] if '--source' in a else sys.exit('--source required'))
+elif a[0] == 'add': add(a[1], a[2], a[a.index('--source') + 1] if '--source' in a else sys.exit('--source required'), float(a[a.index('--dur') + 1]) if '--dur' in a else None)
 elif a[0] == 'sources':
     for s in SRC: print(f"{s['status']:<8} {s['name']:<45} {s['notes']}")
 elif a[0] == 'browse':
