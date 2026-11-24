@@ -5,7 +5,7 @@
   "family": "social",
   "goal": "teach",
   "offer": "buzztorm-academy",
-  "status": "Waiting for voiceover",
+  "status": "Ready for approval",
   "version": 1,
   "created": "2026-11-24",
   "updated": "2026-11-24",
@@ -24,6 +24,27 @@
       "to": "Waiting for voiceover",
       "version": 1,
       "note": "script v1 approved"
+    },
+    {
+      "date": "2026-11-24",
+      "from": "Waiting for voiceover",
+      "to": "Storyboard review",
+      "version": 1,
+      "note": "12 scenes, layout OK"
+    },
+    {
+      "date": "2026-11-24",
+      "from": "Storyboard review",
+      "to": "Rendering",
+      "version": 1,
+      "note": ""
+    },
+    {
+      "date": "2026-11-24",
+      "from": "Rendering",
+      "to": "Ready for approval",
+      "version": 1,
+      "note": "v1 preview sent; final gate 5/6, layout fails only on 1-frame entrance animations (user chose to preview)"
     }
   ]
 }
