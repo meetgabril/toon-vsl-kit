@@ -192,6 +192,24 @@
      "synth": null,
      "prompt": "Train passes",
      "search": "train passes"
+    },
+    {
+     "id": "vinyl-needle-scratch",
+     "name": "Vinyl needle scratch",
+     "use": "Hard stop on a record",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Vinyl needle scratch",
+     "search": "vinyl needle scratch"
+    },
+    {
+     "id": "magazine-page",
+     "name": "Magazine page turn",
+     "use": "Flip through, scroll the feed",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Magazine page turn",
+     "search": "magazine page turn"
     }
    ]
   },
@@ -314,6 +332,33 @@
      "synth": null,
      "prompt": "Cracker bang",
      "search": "cracker bang"
+    },
+    {
+     "id": "bulb-shatter",
+     "name": "Light bulb shatter",
+     "use": "Idea breaks, failure",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Light bulb shatter",
+     "search": "light bulb shatter"
+    },
+    {
+     "id": "pool-ball-pocket",
+     "name": "Pool ball drops in pocket",
+     "use": "Nailed it, perfect shot",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Pool ball drops in pocket",
+     "search": "pool ball drops in pocket"
+    },
+    {
+     "id": "electric-zap",
+     "name": "Electric arc zap",
+     "use": "Shocked, idea short-circuits",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Electric arc zap",
+     "search": "electric arc zap"
     }
    ]
   },
@@ -612,6 +657,15 @@
      "synth": null,
      "prompt": "Gift unwrap",
      "search": "gift unwrap"
+    },
+    {
+     "id": "wallet",
+     "name": "Wallet grab",
+     "use": "Pay, money out",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Wallet grab",
+     "search": "wallet grab"
     }
    ]
   },
@@ -887,6 +941,96 @@
      "synth": null,
      "prompt": "Mouse squeak",
      "search": "mouse squeak"
+    },
+    {
+     "id": "cartoon-goofy-laugh",
+     "name": "Cartoon goofy laugh",
+     "use": "Silly character laughs",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Cartoon goofy laugh",
+     "search": "cartoon goofy laugh"
+    },
+    {
+     "id": "cartoon-caveman-laugh",
+     "name": "Cartoon caveman laugh",
+     "use": "Dumb idea is funny",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Cartoon caveman laugh",
+     "search": "cartoon caveman laugh"
+    },
+    {
+     "id": "cartoon-wee",
+     "name": "Cartoon \"wee!\"",
+     "use": "Flying, sliding, joy ride",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Cartoon \"wee!\"",
+     "search": "cartoon \"wee!\""
+    },
+    {
+     "id": "evil-laugh",
+     "name": "Evil laugh \"mwa ha ha\"",
+     "use": "Villain plan, scheming",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Evil laugh \"mwa ha ha\"",
+     "search": "evil laugh \"mwa ha ha\""
+    },
+    {
+     "id": "cartoon-monster-gibberish",
+     "name": "Cartoon monster gibberish",
+     "use": "Silly creature talking",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Cartoon monster gibberish",
+     "search": "cartoon monster gibberish"
+    },
+    {
+     "id": "cartoon-flexatone-laugh",
+     "name": "Flexatone \"laugh\"",
+     "use": "Goofy cartoon laugh, silly",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Flexatone \"laugh\"",
+     "search": "flexatone \"laugh\""
+    },
+    {
+     "id": "cartoon-flexatone-really",
+     "name": "Flexatone \"really?\"",
+     "use": "Sarcastic \"really?\" beat",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Flexatone \"really?\"",
+     "search": "flexatone \"really?\""
+    },
+    {
+     "id": "cartoon-nibble",
+     "name": "Chipmunk nibbling",
+     "use": "Snacking, nervous munching",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Chipmunk nibbling",
+     "search": "chipmunk nibbling"
+    },
+    {
+     "id": "cartoon-creature-growl",
+     "name": "Funny creature growl",
+     "use": "Hangry, grumpy monster tummy",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Funny creature growl",
+     "search": "funny creature growl"
+    },
+    {
+     "id": "whistle-finger",
+     "name": "Finger whistle",
+     "use": "Hey! attention, wow",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Finger whistle",
+     "search": "finger whistle"
     }
    ]
   },
@@ -1009,6 +1153,33 @@
      "synth": null,
      "prompt": "Phone pick up",
      "search": "phone pick up"
+    },
+    {
+     "id": "cartoon-phone-babble",
+     "name": "Cartoon phone gibberish",
+     "use": "Someone talking on the phone, unintelligible",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Cartoon phone gibberish",
+     "search": "cartoon phone gibberish"
+    },
+    {
+     "id": "keypad-beeps",
+     "name": "Keypad beeps",
+     "use": "Typing a code, dialling",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Keypad beeps",
+     "search": "keypad beeps"
+    },
+    {
+     "id": "phone-dial",
+     "name": "Speakerphone dialing",
+     "use": "Calling someone, call joins",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Speakerphone dialing",
+     "search": "speakerphone dialing"
     }
    ]
   },
@@ -1134,6 +1305,34 @@
      "synth": null,
      "prompt": "Thunder",
      "search": "thunder"
+    },
+    {
+     "id": "ghost-whisper",
+     "name": "Ghostly whisper",
+     "use": "Secret, creepy, the algorithm whispers",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Ghostly whisper",
+     "search": "ghostly whisper"
+    },
+    {
+     "id": "clock-tension",
+     "name": "Tension clock ticking",
+     "use": "Deadline, countdown, pressure",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Tension clock ticking",
+     "search": "tension clock ticking",
+     "loop": true
+    },
+    {
+     "id": "alarm-beep",
+     "name": "Digital alarm clock beeping",
+     "use": "Wake up call, deadline",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Digital alarm clock beeping",
+     "search": "digital alarm clock beeping"
     }
    ]
   },
@@ -1256,6 +1455,24 @@
      "synth": null,
      "prompt": "Church bells",
      "search": "church bells"
+    },
+    {
+     "id": "piano-gliss-up",
+     "name": "Piano strings gliss up",
+     "use": "Magic rise, realisation",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Piano strings gliss up",
+     "search": "piano strings gliss up"
+    },
+    {
+     "id": "piano-gliss-down",
+     "name": "Piano strings gliss down",
+     "use": "Magic fall, dream ends",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Piano strings gliss down",
+     "search": "piano strings gliss down"
     }
    ]
   },
@@ -1450,6 +1667,105 @@
      "synth": null,
      "prompt": "Cloth movement",
      "search": "cloth movement"
+    },
+    {
+     "id": "bag-grab",
+     "name": "Bag grab",
+     "use": "Grab your stuff, leave",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Bag grab",
+     "search": "bag grab"
+    },
+    {
+     "id": "book-open",
+     "name": "Book opens",
+     "use": "Open the playbook, lesson",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Book opens",
+     "search": "book opens"
+    },
+    {
+     "id": "coffee-grinder",
+     "name": "Coffee grinder",
+     "use": "Morning routine, creator desk",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Coffee grinder",
+     "search": "coffee grinder"
+    },
+    {
+     "id": "ice-drink",
+     "name": "Ice in a glass",
+     "use": "Chill, celebration drink",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Ice in a glass",
+     "search": "ice in a glass"
+    },
+    {
+     "id": "briefcase",
+     "name": "Briefcase latch",
+     "use": "Business, deal, meeting",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Briefcase latch",
+     "search": "briefcase latch"
+    },
+    {
+     "id": "toilet-flush",
+     "name": "Toilet flush",
+     "use": "Money down the drain, idea flushed",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Toilet flush",
+     "search": "toilet flush"
+    },
+    {
+     "id": "floor-creak",
+     "name": "Wood floor creak",
+     "use": "Sneaking, suspense, old house",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Wood floor creak",
+     "search": "wood floor creak"
+    },
+    {
+     "id": "door-bang",
+     "name": "Door bang (broken)",
+     "use": "Barging in, angry exit",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Door bang (broken)",
+     "search": "door bang (broken)"
+    },
+    {
+     "id": "china-rattle",
+     "name": "China rattle",
+     "use": "Shaky, nervous, tremor",
+     "duration": 2,
+     "synth": null,
+     "prompt": "China rattle",
+     "search": "china rattle"
+    },
+    {
+     "id": "sip-slurp",
+     "name": "Sip and slurp",
+     "use": "Tea time, calm sip, smug",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Sip and slurp",
+     "search": "sip and slurp"
+    },
+    {
+     "id": "tea-pour",
+     "name": "Pour tea into mug",
+     "use": "Morning ritual, calm",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Pour tea into mug",
+     "search": "pour tea into mug"
     }
    ]
   },
@@ -1715,6 +2031,146 @@
      "prompt": "film projector",
      "search": "projector",
      "loop": true
+    },
+    {
+     "id": "amb-fair",
+     "name": "Fair food court",
+     "use": "Event, busy public, fair",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Fair food court",
+     "search": "fair food court",
+     "loop": true
+    },
+    {
+     "id": "amb-cafe-busy",
+     "name": "Busy caf\u00e9",
+     "use": "Busy caf\u00e9, coworking",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Busy caf\u00e9",
+     "search": "busy caf\u00e9",
+     "loop": true
+    },
+    {
+     "id": "amb-park-busy",
+     "name": "Park: voices, birds, tennis",
+     "use": "Sunny park, outdoor lesson, weekend",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Park: voices, birds, tennis",
+     "search": "park: voices, birds, tennis",
+     "loop": true
+    },
+    {
+     "id": "amb-beach-busy",
+     "name": "Beach: waves, people, frisbee",
+     "use": "Busy beach day, vacation",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Beach: waves, people, frisbee",
+     "search": "beach: waves, people, frisbee",
+     "loop": true
+    },
+    {
+     "id": "amb-boardwalk",
+     "name": "Boardwalk: gulls, bikes, crowd",
+     "use": "Seaside promenade, summer",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Boardwalk: gulls, bikes, crowd",
+     "search": "boardwalk: gulls, bikes, crowd",
+     "loop": true
+    },
+    {
+     "id": "amb-skatepark",
+     "name": "Skatepark",
+     "use": "Youth, street culture, outdoor hangout",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Skatepark",
+     "search": "skatepark",
+     "loop": true
+    },
+    {
+     "id": "amb-city-dusk",
+     "name": "Rooftop city at sunset",
+     "use": "Evening reflection, distant city",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Rooftop city at sunset",
+     "search": "rooftop city at sunset",
+     "loop": true
+    },
+    {
+     "id": "amb-tunnel-traffic",
+     "name": "Tunnel traffic with horns",
+     "use": "Commute, rush, stuck in traffic",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Tunnel traffic with horns",
+     "search": "tunnel traffic with horns",
+     "loop": true
+    },
+    {
+     "id": "wind-strong",
+     "name": "Strong town wind",
+     "use": "Storm coming, lonely, dramatic exterior",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Strong town wind",
+     "search": "strong town wind",
+     "loop": true
+    },
+    {
+     "id": "amb-airplane-cabin",
+     "name": "Airplane cabin in flight",
+     "use": "On a trip, flying, business travel",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Airplane cabin in flight",
+     "search": "airplane cabin in flight",
+     "loop": true
+    },
+    {
+     "id": "amb-beach-calm",
+     "name": "Calm beach, gentle waves",
+     "use": "Relax, vacation calm",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Calm beach, gentle waves",
+     "search": "calm beach, gentle waves",
+     "loop": true
+    },
+    {
+     "id": "amb-playground",
+     "name": "Park with kids playing",
+     "use": "Family, school break, childhood",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Park with kids playing",
+     "search": "park with kids playing",
+     "loop": true
+    },
+    {
+     "id": "amb-night-crickets",
+     "name": "City night with crickets",
+     "use": "Late night, can't sleep, quiet thought",
+     "duration": 2,
+     "synth": null,
+     "prompt": "City night with crickets",
+     "search": "city night with crickets",
+     "loop": true
+    },
+    {
+     "id": "amb-rain-car",
+     "name": "Rain on parked car",
+     "use": "Waiting, thinking alone, commute",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Rain on parked car",
+     "search": "rain on parked car",
+     "loop": true
     }
    ]
   },
@@ -1932,6 +2388,46 @@
      "prompt": "Shopping mall",
      "search": "shopping mall",
      "loop": true
+    },
+    {
+     "id": "walla-hall",
+     "name": "Community hall",
+     "use": "Meetup, community event",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Community hall",
+     "search": "community hall",
+     "loop": true
+    },
+    {
+     "id": "walla-supermarket",
+     "name": "Supermarket checkout",
+     "use": "Buying, checkout, consumers",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Supermarket checkout",
+     "search": "supermarket checkout",
+     "loop": true
+    },
+    {
+     "id": "amb-rollercoaster-crowd",
+     "name": "Roller coaster crowd screams",
+     "use": "Thrill, rollercoaster of emotions",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Roller coaster crowd screams",
+     "search": "roller coaster crowd screams",
+     "loop": true
+    },
+    {
+     "id": "walla-airport",
+     "name": "Airport terminal walla",
+     "use": "Travel, rush, waiting",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Airport terminal walla",
+     "search": "airport terminal walla",
+     "loop": true
     }
    ]
   },
@@ -2054,6 +2550,141 @@
      "synth": null,
      "prompt": "Announcer evil laugh",
      "search": "announcer evil laugh"
+    },
+    {
+     "id": "extra-woman-angry",
+     "name": "Extra: angry grunt (woman)",
+     "use": "Frustrated woman",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: angry grunt (woman)",
+     "search": "extra: angry grunt (woman)"
+    },
+    {
+     "id": "extra-kid-shout",
+     "name": "Extra: kid battle cry",
+     "use": "Kid, playful fight",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: kid battle cry",
+     "search": "extra: kid battle cry"
+    },
+    {
+     "id": "extra-scream",
+     "name": "Extra: scream",
+     "use": "Comic panic, horror gag",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: scream",
+     "search": "extra: scream"
+    },
+    {
+     "id": "extra-woman-laugh-2",
+     "name": "Extra: woman laughs (2)",
+     "use": "Background laugh, variety",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: woman laughs (2)",
+     "search": "extra: woman laughs (2)"
+    },
+    {
+     "id": "extra-pain",
+     "name": "Extra: ouch (woman)",
+     "use": "Comic pain",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: ouch (woman)",
+     "search": "extra: ouch (woman)"
+    },
+    {
+     "id": "dog-big-bark",
+     "name": "Big dog barks",
+     "use": "Threat, chase, comic scare",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Big dog barks",
+     "search": "big dog barks"
+    },
+    {
+     "id": "extra-baby-cry",
+     "name": "Extra: baby cries",
+     "use": "Chaos at home, tantrum",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: baby cries",
+     "search": "extra: baby cries"
+    },
+    {
+     "id": "extra-panic-scream",
+     "name": "Extra: panic scream (man)",
+     "use": "Panic, comic horror",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: panic scream (man)",
+     "search": "extra: panic scream (man)"
+    },
+    {
+     "id": "extra-curious",
+     "name": "Extra: curious \"hm?\"",
+     "use": "Curiosity, intrigue",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: curious \"hm?\"",
+     "search": "extra: curious \"hm?\""
+    },
+    {
+     "id": "extra-kid-wow",
+     "name": "Extra: kid admiration",
+     "use": "Wow, impressed kid",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: kid admiration",
+     "search": "extra: kid admiration"
+    },
+    {
+     "id": "extra-laugh-aww",
+     "name": "Extra: warm laugh \"aww\"",
+     "use": "Cute moment, sweet surprise",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: warm laugh \"aww\"",
+     "search": "extra: warm laugh \"aww\""
+    },
+    {
+     "id": "extra-titter",
+     "name": "Extra: titter with squeal",
+     "use": "Embarrassed giggle, cheeky",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: titter with squeal",
+     "search": "extra: titter with squeal"
+    },
+    {
+     "id": "extra-old-chuckle",
+     "name": "Extra: grandma \"ooh\" chuckle",
+     "use": "Charmed, old-timer approves",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: grandma \"ooh\" chuckle",
+     "search": "extra: grandma \"ooh\" chuckle"
+    },
+    {
+     "id": "extra-man-chuckle",
+     "name": "Extra: restrained man chuckle",
+     "use": "Knowing laugh, insider joke",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: restrained man chuckle",
+     "search": "extra: restrained man chuckle"
+    },
+    {
+     "id": "extra-baby-fuss",
+     "name": "Extra: baby fussing",
+     "use": "Unhappy, tiny tantrum",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Extra: baby fussing",
+     "search": "extra: baby fussing"
     }
    ]
   },
@@ -2207,5 +2838,5 @@
    ]
   }
  },
- "count": 232
+ "count": 300
 }

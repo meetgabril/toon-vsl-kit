@@ -1,6 +1,6 @@
 {
 "_about": "Every raw sound in library/sfx/packs. Search with: python3 sfx.py browse <words>. Promote one to a catalog slot with: python3 sfx.py add <id> packs/<file> --source <source>.",
-"count": 1016,
+"count": 1098,
 "files": [
 {
 "file": "kenney/digital/high_down.ogg",
@@ -13827,6 +13827,1092 @@
 "fast",
 "hustle",
 "discipline"
+]
+},
+{
+"file": "sonniss-gdc2/alarm-beep.ogg",
+"pack": "sonniss-gdc2",
+"duration": 4.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "time",
+"tags": [
+"alarm-beep",
+"wake up call",
+"deadline"
+]
+},
+{
+"file": "sonniss-gdc2/amb-airplane-cabin.ogg",
+"pack": "sonniss-gdc2",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"amb-airplane-cabin",
+"on a trip",
+"flying",
+"business travel"
+]
+},
+{
+"file": "sonniss-gdc2/amb-beach-busy.ogg",
+"pack": "sonniss-gdc2",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"amb-beach-busy",
+"busy beach day",
+"vacation"
+]
+},
+{
+"file": "sonniss-gdc2/amb-beach-calm.ogg",
+"pack": "sonniss-gdc2",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"amb-beach-calm",
+"relax",
+"vacation calm"
+]
+},
+{
+"file": "sonniss-gdc2/amb-boardwalk.ogg",
+"pack": "sonniss-gdc2",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"amb-boardwalk",
+"seaside promenade",
+"summer"
+]
+},
+{
+"file": "sonniss-gdc2/amb-cafe-busy.ogg",
+"pack": "sonniss-gdc2",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"amb-cafe-busy",
+"busy caf\u00e9",
+"coworking"
+]
+},
+{
+"file": "sonniss-gdc2/amb-city-dusk.ogg",
+"pack": "sonniss-gdc2",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"amb-city-dusk",
+"evening reflection",
+"distant city"
+]
+},
+{
+"file": "sonniss-gdc2/amb-fair.ogg",
+"pack": "sonniss-gdc2",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"amb-fair",
+"event",
+"busy public",
+"fair"
+]
+},
+{
+"file": "sonniss-gdc2/amb-night-crickets.ogg",
+"pack": "sonniss-gdc2",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"amb-night-crickets",
+"late night",
+"can't sleep",
+"quiet thought"
+]
+},
+{
+"file": "sonniss-gdc2/amb-park-busy.ogg",
+"pack": "sonniss-gdc2",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"amb-park-busy",
+"sunny park",
+"outdoor lesson",
+"weekend"
+]
+},
+{
+"file": "sonniss-gdc2/amb-playground.ogg",
+"pack": "sonniss-gdc2",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"amb-playground",
+"family",
+"school break",
+"childhood"
+]
+},
+{
+"file": "sonniss-gdc2/amb-rain-car.ogg",
+"pack": "sonniss-gdc2",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"amb-rain-car",
+"waiting",
+"thinking alone",
+"commute"
+]
+},
+{
+"file": "sonniss-gdc2/amb-rain.ogg",
+"pack": "sonniss-gdc2",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"amb-rain",
+"gloomy day",
+"sad moment",
+"cozy inside"
+]
+},
+{
+"file": "sonniss-gdc2/amb-rollercoaster-crowd.ogg",
+"pack": "sonniss-gdc2",
+"duration": 20.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "walla",
+"tags": [
+"amb-rollercoaster-crowd",
+"thrill",
+"rollercoaster of emotions"
+]
+},
+{
+"file": "sonniss-gdc2/amb-skatepark.ogg",
+"pack": "sonniss-gdc2",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"amb-skatepark",
+"youth",
+"street culture",
+"outdoor hangout"
+]
+},
+{
+"file": "sonniss-gdc2/amb-tunnel-traffic.ogg",
+"pack": "sonniss-gdc2",
+"duration": 25.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"amb-tunnel-traffic",
+"commute",
+"rush",
+"stuck in traffic"
+]
+},
+{
+"file": "sonniss-gdc2/bag-grab.ogg",
+"pack": "sonniss-gdc2",
+"duration": 1.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "office_creator",
+"tags": [
+"bag-grab",
+"grab your stuff",
+"leave"
+]
+},
+{
+"file": "sonniss-gdc2/book-open.ogg",
+"pack": "sonniss-gdc2",
+"duration": 1.46,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "office_creator",
+"tags": [
+"book-open",
+"open the playbook",
+"lesson"
+]
+},
+{
+"file": "sonniss-gdc2/briefcase.ogg",
+"pack": "sonniss-gdc2",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "office_creator",
+"tags": [
+"briefcase",
+"business",
+"deal",
+"meeting"
+]
+},
+{
+"file": "sonniss-gdc2/bulb-shatter.ogg",
+"pack": "sonniss-gdc2",
+"duration": 2.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "impacts",
+"tags": [
+"bulb-shatter",
+"idea breaks",
+"failure"
+]
+},
+{
+"file": "sonniss-gdc2/cartoon-caveman-laugh.ogg",
+"pack": "sonniss-gdc2",
+"duration": 2.01,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "comedy_reaction",
+"tags": [
+"cartoon-caveman-laugh",
+"dumb idea is funny"
+]
+},
+{
+"file": "sonniss-gdc2/cartoon-creature-growl.ogg",
+"pack": "sonniss-gdc2",
+"duration": 2.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "comedy_reaction",
+"tags": [
+"cartoon-creature-growl",
+"hangry",
+"grumpy monster tummy"
+]
+},
+{
+"file": "sonniss-gdc2/cartoon-flexatone-laugh.ogg",
+"pack": "sonniss-gdc2",
+"duration": 2.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "comedy_reaction",
+"tags": [
+"cartoon-flexatone-laugh",
+"goofy cartoon laugh",
+"silly"
+]
+},
+{
+"file": "sonniss-gdc2/cartoon-flexatone-really.ogg",
+"pack": "sonniss-gdc2",
+"duration": 0.78,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "comedy_reaction",
+"tags": [
+"cartoon-flexatone-really",
+"sarcastic \"really?\" beat"
+]
+},
+{
+"file": "sonniss-gdc2/cartoon-goofy-laugh.ogg",
+"pack": "sonniss-gdc2",
+"duration": 3.4,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "comedy_reaction",
+"tags": [
+"cartoon-goofy-laugh",
+"silly character laughs"
+]
+},
+{
+"file": "sonniss-gdc2/cartoon-monster-gibberish.ogg",
+"pack": "sonniss-gdc2",
+"duration": 3.2,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "comedy_reaction",
+"tags": [
+"cartoon-monster-gibberish",
+"silly creature talking"
+]
+},
+{
+"file": "sonniss-gdc2/cartoon-nibble.ogg",
+"pack": "sonniss-gdc2",
+"duration": 2.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "comedy_reaction",
+"tags": [
+"cartoon-nibble",
+"snacking",
+"nervous munching"
+]
+},
+{
+"file": "sonniss-gdc2/cartoon-phone-babble.ogg",
+"pack": "sonniss-gdc2",
+"duration": 5.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "phone_social",
+"tags": [
+"cartoon-phone-babble",
+"someone talking on the phone",
+"unintelligible"
+]
+},
+{
+"file": "sonniss-gdc2/cartoon-wee.ogg",
+"pack": "sonniss-gdc2",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "comedy_reaction",
+"tags": [
+"cartoon-wee",
+"flying",
+"sliding",
+"joy ride"
+]
+},
+{
+"file": "sonniss-gdc2/chalk.ogg",
+"pack": "sonniss-gdc2",
+"duration": 2.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "office_work",
+"tags": [
+"chalk",
+"writing on the board",
+"a lesson"
+]
+},
+{
+"file": "sonniss-gdc2/china-rattle.ogg",
+"pack": "sonniss-gdc2",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "home",
+"tags": [
+"china-rattle",
+"shaky",
+"nervous",
+"tremor"
+]
+},
+{
+"file": "sonniss-gdc2/choir-aah.ogg",
+"pack": "sonniss-gdc2",
+"duration": 2.99,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "musical",
+"tags": [
+"choir-aah",
+"revelation",
+"heavenly moment",
+"holy grail"
+]
+},
+{
+"file": "sonniss-gdc2/clock-tension.ogg",
+"pack": "sonniss-gdc2",
+"duration": 6.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "time",
+"tags": [
+"clock-tension",
+"deadline",
+"countdown",
+"pressure"
+]
+},
+{
+"file": "sonniss-gdc2/coffee-grinder.ogg",
+"pack": "sonniss-gdc2",
+"duration": 4.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "office_creator",
+"tags": [
+"coffee-grinder",
+"morning routine",
+"creator desk"
+]
+},
+{
+"file": "sonniss-gdc2/coffee-pour.ogg",
+"pack": "sonniss-gdc2",
+"duration": 4.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "office_creator",
+"tags": [
+"coffee-pour",
+"coffee",
+"drink",
+"break"
+]
+},
+{
+"file": "sonniss-gdc2/crowd-aww.ogg",
+"pack": "sonniss-gdc2",
+"duration": 5.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "comedy_reaction",
+"tags": [
+"crowd-aww",
+"disappointed crowd",
+"cute-sad moment"
+]
+},
+{
+"file": "sonniss-gdc2/dog-big-bark.ogg",
+"pack": "sonniss-gdc2",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"dog-big-bark",
+"threat",
+"chase",
+"comic scare"
+]
+},
+{
+"file": "sonniss-gdc2/door-bang.ogg",
+"pack": "sonniss-gdc2",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "home",
+"tags": [
+"door-bang",
+"barging in",
+"angry exit"
+]
+},
+{
+"file": "sonniss-gdc2/electric-zap.ogg",
+"pack": "sonniss-gdc2",
+"duration": 2.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "cartoon_impact",
+"tags": [
+"electric-zap",
+"shocked",
+"idea short-circuits"
+]
+},
+{
+"file": "sonniss-gdc2/evil-laugh.ogg",
+"pack": "sonniss-gdc2",
+"duration": 4.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "comedy_reaction",
+"tags": [
+"evil-laugh",
+"villain plan",
+"scheming"
+]
+},
+{
+"file": "sonniss-gdc2/extra-angry-grumble.ogg",
+"pack": "sonniss-gdc2",
+"duration": 1.56,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-angry-grumble",
+"annoyed client",
+"rage"
+]
+},
+{
+"file": "sonniss-gdc2/extra-baby-cry.ogg",
+"pack": "sonniss-gdc2",
+"duration": 4.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-baby-cry",
+"chaos at home",
+"tantrum"
+]
+},
+{
+"file": "sonniss-gdc2/extra-baby-fuss.ogg",
+"pack": "sonniss-gdc2",
+"duration": 4.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-baby-fuss",
+"unhappy",
+"tiny tantrum"
+]
+},
+{
+"file": "sonniss-gdc2/extra-curious.ogg",
+"pack": "sonniss-gdc2",
+"duration": 1.52,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-curious",
+"curiosity",
+"intrigue"
+]
+},
+{
+"file": "sonniss-gdc2/extra-effort-grunt.ogg",
+"pack": "sonniss-gdc2",
+"duration": 0.6,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-effort-grunt",
+"lifting",
+"pushing",
+"gym"
+]
+},
+{
+"file": "sonniss-gdc2/extra-kid-shout.ogg",
+"pack": "sonniss-gdc2",
+"duration": 1.89,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-kid-shout",
+"kid",
+"playful fight"
+]
+},
+{
+"file": "sonniss-gdc2/extra-kid-wow.ogg",
+"pack": "sonniss-gdc2",
+"duration": 1.81,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-kid-wow",
+"wow",
+"impressed kid"
+]
+},
+{
+"file": "sonniss-gdc2/extra-laugh-aww.ogg",
+"pack": "sonniss-gdc2",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-laugh-aww",
+"cute moment",
+"sweet surprise"
+]
+},
+{
+"file": "sonniss-gdc2/extra-man-chuckle.ogg",
+"pack": "sonniss-gdc2",
+"duration": 2.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-man-chuckle",
+"knowing laugh",
+"insider joke"
+]
+},
+{
+"file": "sonniss-gdc2/extra-old-chuckle.ogg",
+"pack": "sonniss-gdc2",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-old-chuckle",
+"charmed",
+"old-timer approves"
+]
+},
+{
+"file": "sonniss-gdc2/extra-pain.ogg",
+"pack": "sonniss-gdc2",
+"duration": 0.76,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-pain",
+"comic pain"
+]
+},
+{
+"file": "sonniss-gdc2/extra-panic-scream.ogg",
+"pack": "sonniss-gdc2",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-panic-scream",
+"panic",
+"comic horror"
+]
+},
+{
+"file": "sonniss-gdc2/extra-scream.ogg",
+"pack": "sonniss-gdc2",
+"duration": 2.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-scream",
+"comic panic",
+"horror gag"
+]
+},
+{
+"file": "sonniss-gdc2/extra-titter.ogg",
+"pack": "sonniss-gdc2",
+"duration": 1.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-titter",
+"embarrassed giggle",
+"cheeky"
+]
+},
+{
+"file": "sonniss-gdc2/extra-woman-angry.ogg",
+"pack": "sonniss-gdc2",
+"duration": 0.73,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-woman-angry",
+"frustrated woman"
+]
+},
+{
+"file": "sonniss-gdc2/extra-woman-laugh-2.ogg",
+"pack": "sonniss-gdc2",
+"duration": 1.86,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "reactions",
+"tags": [
+"extra-woman-laugh-2",
+"background laugh",
+"variety"
+]
+},
+{
+"file": "sonniss-gdc2/floor-creak.ogg",
+"pack": "sonniss-gdc2",
+"duration": 2.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "home",
+"tags": [
+"floor-creak",
+"sneaking",
+"suspense",
+"old house"
+]
+},
+{
+"file": "sonniss-gdc2/ghost-whisper.ogg",
+"pack": "sonniss-gdc2",
+"duration": 1.88,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "tension_hook",
+"tags": [
+"ghost-whisper",
+"secret",
+"creepy",
+"the algorithm whispers"
+]
+},
+{
+"file": "sonniss-gdc2/ice-drink.ogg",
+"pack": "sonniss-gdc2",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "office_creator",
+"tags": [
+"ice-drink",
+"chill",
+"celebration drink"
+]
+},
+{
+"file": "sonniss-gdc2/keypad-beeps.ogg",
+"pack": "sonniss-gdc2",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "phone_social",
+"tags": [
+"keypad-beeps",
+"typing a code",
+"dialling"
+]
+},
+{
+"file": "sonniss-gdc2/magazine-page.ogg",
+"pack": "sonniss-gdc2",
+"duration": 0.93,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "transitions",
+"tags": [
+"magazine-page",
+"flip through",
+"scroll the feed"
+]
+},
+{
+"file": "sonniss-gdc2/phone-dial.ogg",
+"pack": "sonniss-gdc2",
+"duration": 4.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "phone_digital",
+"tags": [
+"phone-dial",
+"calling someone",
+"call joins"
+]
+},
+{
+"file": "sonniss-gdc2/piano-gliss-down.ogg",
+"pack": "sonniss-gdc2",
+"duration": 2.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "musical",
+"tags": [
+"piano-gliss-down",
+"magic fall",
+"dream ends"
+]
+},
+{
+"file": "sonniss-gdc2/piano-gliss-up.ogg",
+"pack": "sonniss-gdc2",
+"duration": 2.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "musical",
+"tags": [
+"piano-gliss-up",
+"magic rise",
+"realisation"
+]
+},
+{
+"file": "sonniss-gdc2/pool-ball-pocket.ogg",
+"pack": "sonniss-gdc2",
+"duration": 0.75,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "impacts",
+"tags": [
+"pool-ball-pocket",
+"nailed it",
+"perfect shot"
+]
+},
+{
+"file": "sonniss-gdc2/receipt.ogg",
+"pack": "sonniss-gdc2",
+"duration": 0.79,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "money_sales",
+"tags": [
+"receipt",
+"pay",
+"receipt",
+"the bill"
+]
+},
+{
+"file": "sonniss-gdc2/sip-slurp.ogg",
+"pack": "sonniss-gdc2",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "food",
+"tags": [
+"sip-slurp",
+"tea time",
+"calm sip",
+"smug"
+]
+},
+{
+"file": "sonniss-gdc2/spray.ogg",
+"pack": "sonniss-gdc2",
+"duration": 1.2,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "home",
+"tags": [
+"spray",
+"clean up",
+"freshen",
+"fix"
+]
+},
+{
+"file": "sonniss-gdc2/tea-pour.ogg",
+"pack": "sonniss-gdc2",
+"duration": 3.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "food",
+"tags": [
+"tea-pour",
+"morning ritual",
+"calm"
+]
+},
+{
+"file": "sonniss-gdc2/thunder.ogg",
+"pack": "sonniss-gdc2",
+"duration": 6.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "nature",
+"tags": [
+"thunder",
+"dramatic news",
+"storm"
+]
+},
+{
+"file": "sonniss-gdc2/toilet-flush.ogg",
+"pack": "sonniss-gdc2",
+"duration": 5.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "home",
+"tags": [
+"toilet-flush",
+"money down the drain",
+"idea flushed"
+]
+},
+{
+"file": "sonniss-gdc2/vibrate.ogg",
+"pack": "sonniss-gdc2",
+"duration": 2.2,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "phone_digital",
+"tags": [
+"vibrate",
+"new message",
+"notification buzz"
+]
+},
+{
+"file": "sonniss-gdc2/vinyl-crackle.ogg",
+"pack": "sonniss-gdc2",
+"duration": 8.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"vinyl-crackle",
+"nostalgia",
+"old film",
+"flashback"
+]
+},
+{
+"file": "sonniss-gdc2/vinyl-needle-scratch.ogg",
+"pack": "sonniss-gdc2",
+"duration": 1.03,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "transitions",
+"tags": [
+"vinyl-needle-scratch",
+"hard stop on a record"
+]
+},
+{
+"file": "sonniss-gdc2/walla-airport.ogg",
+"pack": "sonniss-gdc2",
+"duration": 30.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "walla",
+"tags": [
+"walla-airport",
+"travel",
+"rush",
+"waiting"
+]
+},
+{
+"file": "sonniss-gdc2/walla-crowd-boo.ogg",
+"pack": "sonniss-gdc2",
+"duration": 5.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "walla",
+"tags": [
+"walla-crowd-boo",
+"bad idea",
+"friendly disappointment"
+]
+},
+{
+"file": "sonniss-gdc2/walla-hall.ogg",
+"pack": "sonniss-gdc2",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "walla",
+"tags": [
+"walla-hall",
+"meetup",
+"community event"
+]
+},
+{
+"file": "sonniss-gdc2/walla-supermarket.ogg",
+"pack": "sonniss-gdc2",
+"duration": 40.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "walla",
+"tags": [
+"walla-supermarket",
+"buying",
+"checkout",
+"consumers"
+]
+},
+{
+"file": "sonniss-gdc2/wallet.ogg",
+"pack": "sonniss-gdc2",
+"duration": 1.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "money_sales",
+"tags": [
+"wallet",
+"pay",
+"money out"
+]
+},
+{
+"file": "sonniss-gdc2/whistle-finger.ogg",
+"pack": "sonniss-gdc2",
+"duration": 1.5,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "comedy_reaction",
+"tags": [
+"whistle-finger",
+"hey! attention",
+"wow"
+]
+},
+{
+"file": "sonniss-gdc2/wind-chimes.ogg",
+"pack": "sonniss-gdc2",
+"duration": 6.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "musical",
+"tags": [
+"wind-chimes",
+"dream",
+"calm",
+"magic memory"
+]
+},
+{
+"file": "sonniss-gdc2/wind-strong.ogg",
+"pack": "sonniss-gdc2",
+"duration": 25.0,
+"license": "royalty-free, private",
+"source": "sonniss-gdc2",
+"category": "ambience",
+"tags": [
+"wind-strong",
+"storm coming",
+"lonely",
+"dramatic exterior"
 ]
 }
 ]

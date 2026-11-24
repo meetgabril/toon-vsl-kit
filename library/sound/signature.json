@@ -272,6 +272,7 @@
   },
   "night": {
    "amb": [
+    "amb-night-crickets",
     "amb-city-night",
     "amb-night"
    ]
@@ -314,11 +315,13 @@
     "room-tone"
    ],
    "walla": [
+    "walla-hall",
     "walla-party"
    ]
   },
   "beach": {
    "amb": [
+    "amb-beach-busy",
     "amb-beach",
     "waves"
    ]
@@ -357,6 +360,7 @@
   },
   "cafe": {
    "amb": [
+    "amb-cafe-busy",
     "amb-cafe"
    ],
    "walla": [
@@ -365,6 +369,7 @@
   },
   "park": {
    "amb": [
+    "amb-park-busy",
     "amb-park",
     "amb-morning"
    ]
@@ -378,6 +383,53 @@
    "amb": [
     "amb-living-room",
     "room-tone"
+   ]
+  },
+  "playground": {
+   "amb": [
+    "amb-playground"
+   ],
+   "walla": [
+    "walla-kids"
+   ]
+  },
+  "airport": {
+   "amb": [
+    "amb-station"
+   ],
+   "walla": [
+    "walla-airport"
+   ]
+  },
+  "plane": {
+   "amb": [
+    "amb-airplane-cabin",
+    "amb-plane"
+   ]
+  },
+  "rain": {
+   "amb": [
+    "amb-rain",
+    "amb-rain-car"
+   ]
+  },
+  "rooftop": {
+   "amb": [
+    "amb-city-dusk"
+   ]
+  },
+  "traffic": {
+   "amb": [
+    "amb-tunnel-traffic",
+    "amb-street"
+   ]
+  },
+  "market": {
+   "amb": [
+    "amb-mall"
+   ],
+   "walla": [
+    "walla-supermarket"
    ]
   },
   "default": {

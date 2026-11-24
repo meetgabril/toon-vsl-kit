@@ -2,6 +2,7 @@
 """import_licensed.py — rebuild the PRIVATE part of the sound library from archives kept on Gabriel's Mac (~/Downloads):
   buzztorm-cartoon-ogg.tar                       The Designer's Choice CARTOON (364 files) → packs/designers-choice + 16 slots
   buzztorm-gdc/buzztorm-gdc-picks.tar            Sonniss GDC 2026 + 2020 picks (100 files: walla, ambiences, reactions, foley) → packs/sonniss-gdc + slots
+  buzztorm-gdc/buzztorm-gdc-picks2.tar           Sonniss GDC 2018 + 2019 picks (sel2/ + picks*.json) → packs/sonniss-gdc2 + slots
 Usage: python3 import_licensed.py <tar> [<tar> ...]   (stage the tars from the Mac first)
 Both licences allow commercial use with no credit but forbid redistributing the files, so they land in git-ignored folders
 (files-licensed/, packs/designers-choice/, packs/sonniss-gdc/). sfx.py always prefers a licensed file and falls back to the public one."""
@@ -30,6 +31,23 @@ DC_NEW = {'raspberry': ('comedy_reaction', 'Raspberry', 'Mockery, "pfft", bad id
           'slip': ('comedy_reaction', 'Slip and fall', 'Banana-peel moment'), 'egg-splat': ('impacts', 'Egg splat', 'Mess, failure lands'),
           'rubber-chicken': ('comedy_reaction', 'Rubber chicken', 'Absurd, silly gag'), 'cork-pop': ('text_ui', 'Cork pop', 'Celebration, opening'),
           'ricochet-out': ('transitions', 'Cartoon zip out', 'Exit fast, run away')}
+
+ALIASES2 = [('keyboard-phone', 'keypad-beeps'), ('call-join', 'phone-dial')]
+ALIASES_ANY = [('walla-crowd-aww', 'crowd-aww'), ('walla-crowd-gasp', 'gasp')]   # same recording under its walla name
+# Small groups built the way walla editors do it: real single-person takes stacked with offsets and stereo spread
+STACKS = {'crowd-laugh': ['extra-man-laugh', 'extra-woman-laugh', 'extra-woman-laugh-2', 'extra-man-chuckle', 'extra-laugh-aww', 'extra-old-chuckle', 'extra-titter'],
+          'walla-angry-mob': ['walla-crowd-boo', 'extra-angry-grumble', 'extra-woman-angry', 'extra-angry-grumble', 'extra-woman-angry', 'walla-bar']}
+def path_of(i):   # same lookup as sfx.path_of (licensed first)
+    for d in ('files-licensed', 'files'):
+        f = os.path.join(HERE, d, f'{i}.wav')
+        if os.path.exists(f): return f
+def stack(i, ids, seed):
+    import random; r = random.Random(seed); srcs = [p for p in (path_of(x) for x in ids) if p]
+    if len(srcs) < 3: return False
+    fc = ''.join(f'[{k}]adelay={int(r.uniform(0, 350)) if k else 0}|{int(r.uniform(0, 350)) if k else 0},volume={r.uniform(.55, .9):.2f},stereotools=balance_out={r.uniform(-.6, .6):.2f}[s{k}];' for k in range(len(srcs)))
+    out = os.path.join(tempfile.mkdtemp(), i + '.wav')
+    subprocess.run(['ffmpeg', '-v', 'error', '-nostdin', '-y'] + sum([['-i', p] for p in srcs], []) + ['-filter_complex', fc + ''.join(f'[s{k}]' for k in range(len(srcs))) + f'amix=inputs={len(srcs)}:duration=longest:normalize=0,alimiter=limit=0.8,afade=t=out:st=2.6:d=0.8', '-t', '3.4', '-ar', '48000', out], check=True)
+    add(i, out, 'sonniss-gdc'); return True
 
 def ensure_catalog(entries):
     p = os.path.join(HERE, 'catalog.json'); c = json.load(open(p)); ids = {e['id'] for v in c['categories'].values() for e in v['effects']}
@@ -63,3 +81,21 @@ for tar in sys.argv[1:]:
         meta = {p[0]: p for p in picks}
         index_pack('sonniss-gdc', dst, lambda p: {'category': meta.get(os.path.basename(p)[:-4], [0, 'misc'])[1], 'tags': [os.path.basename(p)[:-4]] + meta.get(os.path.basename(p)[:-4], [0, 0, '', ''])[3].lower().split(', ')})
         print('sonniss-gdc:', n, 'slots')
+    if os.path.isdir(os.path.join(tmp, 'sel2')):
+        picks = [p for f in sorted(os.listdir(tmp)) if re.match(r'picks\d+\.json$', f) for p in json.load(open(os.path.join(tmp, f)))]
+        dst = os.path.join(PACKS, 'sonniss-gdc2'); shutil.rmtree(dst, ignore_errors=True); shutil.copytree(os.path.join(tmp, 'sel2'), dst)
+        ensure_catalog({i: (cat, name, use, kind == 'loop') for i, cat, name, use, sub, st, du, kind in picks})
+        n = 0
+        for i, cat, name, use, sub, st, du, kind in picks:
+            f = os.path.join(dst, f'{i}.ogg')
+            if os.path.exists(f): add(i, f, 'sonniss-gdc'); n += 1
+        for i, f in ALIASES2:   # existing catalog slots that one of these recordings fills
+            if os.path.exists(os.path.join(dst, f + '.ogg')): add(i, os.path.join(dst, f + '.ogg'), 'sonniss-gdc'); n += 1
+        for i, f in ALIASES_ANY:
+            src = path_of(f)
+            if src: add(i, src, 'sonniss-gdc'); n += 1
+        for i, ids in STACKS.items(): n += stack(i, ids, i)
+        if path_of('crowd-laugh'): add('walla-crowd-laugh', path_of('crowd-laugh'), 'sonniss-gdc'); n += 1
+        meta = {p[0]: p for p in picks}
+        index_pack('sonniss-gdc2', dst, lambda p: {'category': meta.get(os.path.basename(p)[:-4], [0, 'misc'])[1], 'tags': [os.path.basename(p)[:-4]] + meta.get(os.path.basename(p)[:-4], [0, 0, '', ''])[3].lower().split(', ')})
+        print('sonniss-gdc2:', n, 'slots')
