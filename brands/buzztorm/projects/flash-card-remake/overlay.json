@@ -1,0 +1,6 @@
+{"src":"work/example.mp4","fps":24,"size":[1080,1920],"fit":"blurfill","font_path":"/root/buzztorm-studio/library/engine/fonts/ttf/baloo-2-latin-800-normal.ttf","roles":{"primary": "#25385c", "primary_dark": "#16213a", "accent": "#ff6a2a", "highlight": "#ffd66b", "paper": "#fff6e0", "paper_dark": "#efe4d2", "positive": "#2f8f4a", "negative": "#e8574a", "secondary": "#5bc0be", "tertiary": "#a974e0", "white": "#ffffff"},
+ "out":"delivery/buzztorm_reel_flash-card-remake_v1_9x16.mp4",
+ "overlays":[{"f0":194,"text_from":196,"kind":"card","bg":"white","pop":true,
+   "lines":[{"text":"fully loaded","size":168,"fg":"primary_dark","y":0.43},
+            {"text":"community.","size":168,"fg":"primary_dark","y":0.52},
+            {"text":"DM \"PLAN\"","size":120,"fg":"accent","y":0.63}]}]}
