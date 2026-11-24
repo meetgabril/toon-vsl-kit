@@ -94,15 +94,16 @@
       "example": {
         "brand": "buzztorm",
         "project": "egg-drop-remake",
-        "version": 3,
+        "version": 4,
         "texts": [
-          "need a community?",
-          "engaged.",
-          "loyal.",
-          "renewing.",
-          "coaches, DM PLAN."
+          "coach, need a community?",
+          "built.",
+          "launched.",
+          "selling.",
+          "DM \"PLAN\""
         ],
-        "branding": "ONE font for every card (brand label font), lowercase like the original; ONLY two colour pairs: light = paper bg + primary_dark text, dark = primary_dark bg + accent text; question and CTA on light cards (bookends); the 3 words describe the thing asked in the question"
+        "branding": "ONE font for every card (brand label font), lowercase like the original; ONLY two colour pairs: light = paper bg + primary_dark text, dark = primary_dark bg + accent text; question and CTA on light cards (bookends); the 3 words describe the thing asked in the question",
+        "copy_rule": "Question names the audience and the thing; the three words say what the brand DOES (done-for-you steps), not vague adjectives; CTA is only the DM keyword."
       }
     },
     "own_version": {
