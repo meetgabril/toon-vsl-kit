@@ -267,16 +267,17 @@ function fist(Wp, dir, sk, mode) {
   const z = zoom(), L = 13 * z, l2 = 7 * z;
   push(); translate(Wp[0], Wp[1]); rotate(Math.atan2(dir[1], dir[0])); scale(1.25);
   const side = dir[0] < 0 ? -1 : 1;   // keep the thumb on the camera side
-  shape(spline([[-12, -50], [60, -58], [96, -50], [104, 0], [96, 50], [60, 58], [-12, 52]]), { fill: sk, lw: L, boil: .15 });   // back of hand
-  if (mode && mode.startsWith('grip')) {
-    const n = +mode.slice(4);
-    for (let j = 3; j >= 0; j--) { const y = side * (42 - 28 * j);                                   // j 0 = index (thumb side) … 3 = pinky
-      if (j < n) { shape(rr(84, y - 14, 40, 28, 13), { fill: sk, lw: L, boil: .15 }); stroke([[110, y - 8], [110, y + 8]], l2, { boil: .15 }); }   // holding: hooked over the ledge (wrist + 100 = the edge)
-      else shape(rr(78, y - 12, 26, 24, 11), { fill: sk, lw: L, boil: .15 }); }                        // let go: folded into the palm
-    stroke([[56, -36], [56, 36]], l2, { boil: .15 });                                                    // knuckle line
-    shape(spline([[30, 18 * side], [80, 22 * side], [92, 38 * side], [80, 54 * side], [30, 50 * side]]), { fill: sk, lw: L, boil: .15 });   // thumb
+  if (mode && mode.startsWith('grip')) {   // hanging from a ledge at local x≈100: back of the hand to camera, held fingers hook over the ledge, let-go ones curl into the palm, thumb hidden under the ledge
+    const n = +mode.slice(4), inner = Wp[0] < 0 ? 1 : -1, LEN = [80, 88, 84, 68];
+    for (let j = 0; j < 4; j++) { const y = inner * (43 - 28.7 * j);                     // j 0 = index (inner side) … 3 = pinky (outer): the pinky lets go first
+      if (j < n) { shape(rr(70, y - 14, LEN[j] + 26, 28, 14), { fill: sk, lw: L, boil: .15 });          // finger bent over the ledge: crease right at the ledge, nail on the tip
+        stroke([[100, y - 9], [100, y + 9]], l2, { boil: .15 }); shape(rr(70 + LEN[j] - 4, y - 8, 22, 16, 7), { fill: '#f6d2b8', lw: l2, boil: .15 }); }
+      else shape(rr(78, y - 13, 24, 26, 11), { fill: sk, lw: L, boil: .15 }); }
+    shape(rr(-12, -58, 108, 116, 40), { fill: sk, lw: L, boil: .15 });
     pop(); return;
   }
+  shape(spline([[-12, -50], [60, -58], [96, -50], [104, 0], [96, 50], [60, 58], [-12, 52]]), { fill: sk, lw: L, boil: .15 });   // back of hand
+
   if (mode === 'point') {
     shape(spline([[86, -22 * side], [200, -26 * side], [214, -10 * side], [200, 6 * side], [86, 10 * side]]), { fill: sk, lw: L, boil: .15 });    // index finger
     shape(spline([[84, 8 * side], [128, 12 * side], [132, 44 * side], [98, 54 * side], [80, 40 * side]]), { fill: sk, lw: L, boil: .15 });       // curled fingers
@@ -358,13 +359,16 @@ function tonyBody3(P) {
 
 // arm2: a natural arm for any character (Tony's tapered arm + Peeps-style hand), e.g. a helper reaching down to grab a wrist.
 // x,y = shoulder (world px), W = hand point (world px), k = rig scale (.275 * s), sleeve = shirt colour over the upper arm, mode = 'fist' | 'gripN' | 'none'
-export function arm2(x, y, W, k, sk, sleeve, mode = 'fist', bend = 1) {
+export function arm2(x, y, W, k, sk, sleeve, mode = 'fist', bend = 1, slen = .42) {
   const w = [(W[0] - x) / k, (W[1] - y) / k], L = Math.hypot(w[0], w[1]) || 1, n = [-w[1] / L, w[0] / L];
   const e = [w[0] / 2 + n[0] * L * .12 * bend, w[1] / 2 + n[1] * L * .12 * bend];
   push(); translate(x, y); scale(k, k);
   const P = armShape([0, 0], e, w, sk);
-  if (sleeve) { const z = zoom(), a = P(0), b = P(.42); const pts = []; for (let i = 0; i <= 10; i++) pts.push(P(i / 10 * .42));
+  if (sleeve) { const z = zoom(), a = P(0), b = P(.42); const pts = []; for (let i = 0; i <= 10; i++) pts.push(P(i / 10 * slen));
     stroke(spline(pts, false), 200 * z, { line: '#17141c', boil: 0 }); stroke(spline(pts, false), 200 * z - 15 * z, { line: sleeve, boil: .15 }); }   // widths scale with the rig, like the arm outline
   const a = P(.94), b = P(1); if (mode !== 'none') fist(b, [b[0] - a[0], b[1] - a[1]], sk, mode);
   pop();
 }
+
+// folkLook: the colours folk2 gives crowd member i (so an extra arm drawn for them matches their shirt and skin)
+export function folkLook(i) { const h = (n) => Math.floor(hash(i * 7.31 + n * 3.17) * 1e6); return { skin: FSKIN[h(2) % FSKIN.length], top: FTOP[h(3) % FTOP.length], jacket: FTOP[h(5) % FTOP.length], pose: FPOSE[h(1) % FPOSE.length] }; }
