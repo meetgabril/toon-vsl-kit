@@ -1,0 +1,43 @@
+{
+  "title": "ring-light-bait",
+  "brand": "buzztorm",
+  "recipe": "reel",
+  "family": "social",
+  "goal": "sell",
+  "offer": "community-build",
+  "status": "Ready for approval",
+  "version": 1,
+  "created": "2026-11-24",
+  "updated": "2026-11-24",
+  "parent": null,
+  "history": [
+    {
+      "date": "2026-11-24",
+      "from": "Brief",
+      "to": "Script review",
+      "version": 1,
+      "note": ""
+    },
+    {
+      "date": "2026-11-24",
+      "from": "Script review",
+      "to": "Storyboard review",
+      "version": 1,
+      "note": ""
+    },
+    {
+      "date": "2026-11-24",
+      "from": "Storyboard review",
+      "to": "Rendering",
+      "version": 1,
+      "note": ""
+    },
+    {
+      "date": "2026-11-24",
+      "from": "Rendering",
+      "to": "Ready for approval",
+      "version": 1,
+      "note": ""
+    }
+  ]
+}

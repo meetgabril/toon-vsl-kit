@@ -36,6 +36,9 @@ Visual styles (`STYLE=`): Standard `ink` · Old film `oldfilm` · Paper cut-out 
 ## Stills (post, carousel, story, covers, thumbnails)
 Render beats as stills (`QA=1 AR=45 node render.mjs stills/x "<frames>" 3`), or a `thumbXxx()` design with `shoot_thumb.mjs`. Downscale 4:5 renders (1400×1750) to 1080×1350 when exporting.
 
+## Bait + kinetic text reels (Hook Library)
+`python3 kinetic.py kinetic.json`: bait frames (engine or a team clip) + one-word cards in the brand colours and font, pop-in, one hit per card, silent tail for the loop; writes the layout capture per card. See `hooks.md`.
+
 ## Hook test (Trial reels)
 Render the full reel with hook A; write `story_b.js`/`story_c.js` that differ only until the hook ends; render only that range for each and splice with the shared body. Deliver 3 videos and 3 post copies for non-followers. After 72 h: Projects → Log results → graduate the winner and add its hook to "Proven" in `hooks.md`.
 

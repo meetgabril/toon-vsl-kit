@@ -120,7 +120,8 @@ def check_claims(R, pdir, P, brain, recipe):
                     lvl = 'ERROR' if (is_ad or money or brain.get('claims', {}).get('risk_level') == 'high') else 'WARN'
                     R.add('claims', lvl, f'{src}:{i} {label}: "{line.strip()[:90]}"'); found += 1
     cl = brain.get('claims', {})
-    if is_ad and cl.get('ad_disclaimer'):
+    paid = recipe.get('family') == 'ads' or P.get('script_type') == 'ad'   # the disclaimer is for paid ads, not organic Sell posts
+    if paid and cl.get('ad_disclaimer'):
         post = ''.join(s for src, s in texts_of(pdir) if src.endswith('post.md'))
         if post and cl['ad_disclaimer'].lower()[:20] not in post.lower(): R.add('claims', 'ERROR', f'ad copy is missing the brand disclaimer: "{cl["ad_disclaimer"]}"')
     if not found: R.ok('claims')

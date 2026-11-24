@@ -1,0 +1,11 @@
+{"fps": 24, "size": [1080, 1920], "end": 7.15,
+ "bait": {"frames": "frames", "until": 2.13},
+ "font": "inter",
+ "cards": [
+  {"t": 2.13, "text": "need clients that stay?", "bg": "paper", "fg": "primary", "size": 76},
+  {"t": 2.87, "text": "community.", "bg": "primary", "fg": "paper", "size": 190},
+  {"t": 3.73, "text": "onboarding.", "bg": "paper", "fg": "primary", "size": 190},
+  {"t": 4.57, "text": "referrals.", "bg": "primary", "fg": "paper", "size": 190},
+  {"t": 5.43, "text": "Comment PLAN to start.", "bg": "paper", "fg": "primary", "size": 76}],
+ "brand": "brand/brand-profile.json",
+ "out": "delivery/buzztorm_reel_ring-light-bait_v1_9x16.mp4"}

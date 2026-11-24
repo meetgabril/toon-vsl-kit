@@ -40,7 +40,7 @@ Follow-ups only when the recipe has a count (ask together with screen 4 in one c
 - "How should it sound?" only for video: Voiceover ★ · Music and on-screen text. If the Brand Profile has voice ids for every character and ELEVENLABS_API_KEY is set, the label is "Voiceover (recorded for you)".
 
 ### 5 — "Which hook?"
-Three hooks of different kinds, each with its score (`scripts.md`). Hook A ★ · Hook B · Hook C · Write my own. Trial reels: "Use these 3 hooks?" Approve ★ · Replace one · Write my own. Skipped for formats with no hook (emoji/stickers/sounds, welcome kit, presentation loop).
+Hooks of different kinds, each with its score (`scripts.md`): up to 2 brand-written hooks + up to 2 from the Hook Library that fit the goal ("Library: <name> (<duration>)", `hooks.md`). Hook A ★ · … · Write my own. Trial reels: "Use these 3 hooks?" Approve ★ · Replace one · Write my own. Skipped for formats with no hook (emoji/stickers/sounds, welcome kit, presentation loop).
 
 ## Script review (or Outline review for learning formats) — "Approve the script?"
 Only after `studio.py check --stage script` passes. Card:
@@ -72,7 +72,7 @@ Log results → plain-number questions one at a time are allowed here (sends, 3-
 ## Brand Brain — "What do you want to update?"
 Offers ★ · Audience · Facts & proof · More (Voice, CTAs, Series, Ideas, Claims policy, Colors & logo, Voices).
 ## Studio Library — "What do you want to see?"
-Formats · Script types · Meme formats · Visual styles & audio.
+Hook Library ★ · Meme templates · Formats · More (Script types, Visual styles & audio, Add a hook example, Add a meme template).
 ## Admin — `admin.md`.
 
 ## Revisions (rules)

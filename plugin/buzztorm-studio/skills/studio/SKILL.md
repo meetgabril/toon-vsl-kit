@@ -1,8 +1,8 @@
 ---
 name: studio
-description: 'Buzztorm Studio, the agency''s menu-driven content studio for its own infoproduct brands and its client brands. This skill should be used when the user types "/studio" (optionally followed by a brand name), or asks to "create content", "make a reel", "make trial reels", "make a carousel", "make a post", "make a story", "make a meme", "make an ad", "make a lesson", "make a course", "make a playbook", "make an ebook", "make a checklist", "make a worksheet", "make a cheat sheet", "make a YouTube video", "make a sales page video", "make a Discord announcement", "plan the week", "add a brand", "add a character", "add a background", "continue a project" or "log results", or anything else about producing content for a Buzztorm brand.'
+description: 'Buzztorm Studio, the agency''s menu-driven content studio for its own infoproduct brands and its client brands. This skill should be used when the user types "/studio" (optionally followed by a brand name), or asks to "create content", "make a reel", "make trial reels", "make a carousel", "make a post", "make a story", "make a meme", "make an ad", "make a lesson", "make a course", "make a playbook", "make an ebook", "make a checklist", "make a worksheet", "make a cheat sheet", "make a YouTube video", "make a sales page video", "make a Discord announcement", "replicate this viral hook", "add this example to the hook library", "plan the week", "add a brand", "add a character", "add a background", "continue a project" or "log results", or anything else about producing content for a Buzztorm brand.'
 metadata:
-  version: "0.2.2"
+  version: "0.3.0"
 ---
 
 # Buzztorm Studio
@@ -46,6 +46,7 @@ Follow `references/menus.md` exactly, then the reference for the format's family
 | Video and image production, hook test | `references/production.md` |
 | Lessons, courses, playbooks, e-books, checklists, worksheets, cheat sheets | `references/learning.md` |
 | Memes | `references/memes.md` |
+| Viral hooks to replicate (Hook Library), adding examples | `references/hooks.md` |
 | Ads | `references/ads.md` |
 | Discord | `references/discord.md` |
 | Delivery package, post copy, hashtags, file names | `references/delivery.md` |

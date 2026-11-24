@@ -1,0 +1,102 @@
+{
+  "id": "egg-drop-bait",
+  "name": "Egg drop bait",
+  "category": "bait + kinetic text (open loop)",
+  "added": "2026-11-24",
+  "source": {
+    "file": "Need_a_website Clean. Modern. Advanced. DM me to start (web design reel)",
+    "notes": "Team-supplied example; deconstructed with deconstruct.py"
+  },
+  "duration_s": 7.15,
+  "size": "9x16",
+  "goals": [
+    "sell",
+    "grow"
+  ],
+  "best_for": "A service or offer you can say in 3 words; direct CTA",
+  "timeline": [
+    {
+      "t0": 0.0,
+      "t1": 2.13,
+      "role": "bait",
+      "visual": "One everyday object creeping toward danger (an egg rolling to the edge of a counter). Plain, quiet, real or simple scene. No text, no person.",
+      "sound": "room tone only"
+    },
+    {
+      "t0": 2.13,
+      "t1": 2.87,
+      "role": "question",
+      "visual": "Hard cut BEFORE the outcome. Small text, centred, light background: a question to the buyer ('need a website?').",
+      "sound": "first hit"
+    },
+    {
+      "t0": 2.87,
+      "t1": 3.73,
+      "role": "word 1",
+      "visual": "One giant word with a full stop, dark background, light text.",
+      "sound": "hit"
+    },
+    {
+      "t0": 3.73,
+      "t1": 4.57,
+      "role": "word 2",
+      "visual": "Same size, colours inverted (light background).",
+      "sound": "hit"
+    },
+    {
+      "t0": 4.57,
+      "t1": 5.43,
+      "role": "word 3",
+      "visual": "Colours inverted again.",
+      "sound": "hit"
+    },
+    {
+      "t0": 5.43,
+      "t1": 7.15,
+      "role": "cta",
+      "visual": "Small text, light background, held ~1.7 s: the CTA ('DM me to start.').",
+      "sound": "silence, so the loop back to the bait is seamless"
+    }
+  ],
+  "rhythm": "cuts every ~0.85 s after the bait; bait \u2248 30 % of the video; CTA held twice as long as a word",
+  "why_it_works": [
+    "Open loop: the brain waits to see the object fall; the video never shows it \u2192 rewatches and longer watch time",
+    "Pattern interrupt: real-world calm footage, then a hard cut to bold type",
+    "Three one-word benefits are readable in under a second each, even muted",
+    "Silent tail makes the loop feel continuous; people watch twice before noticing"
+  ],
+  "variables": {
+    "bait_object": "Something from the brand's world creeping to the edge (Buzztorm: the ring light on a desk). Must never fall.",
+    "question": "The buyer's need as a question, 3\u20135 words",
+    "words": "Exactly 3 one-word benefits ending with a full stop",
+    "cta": "From the brand CTA library, \u2264 5 words"
+  },
+  "rules": [
+    "Never resolve the bait",
+    "Bait \u2264 2.2 s, no text on it",
+    "Words: one per card, same size, alternating primary/paper",
+    "Question and CTA at about 40 % of the word size",
+    "No voiceover, no music bed; one hit per card",
+    "CTA must be from cta.json; claims check applies"
+  ],
+  "build": {
+    "bait": "Engine: one beat with a custom fn that moves the object slowly with ease-out and a growing wobble (see story.js); render frames 0\u201351 at 24 fps with QA=1. Or a team-supplied real clip (kinetic.json bait.video).",
+    "cards": "kinetic.py with kinetic.json (brand colours and font; side margins for Reels)"
+  },
+  "example": {
+    "brand": "buzztorm",
+    "project": "ring-light-bait",
+    "texts": [
+      "need clients that stay?",
+      "community.",
+      "onboarding.",
+      "referrals.",
+      "Comment PLAN to start."
+    ]
+  },
+  "variations": [
+    "Bait objects: a coffee cup sliding, a phone vibrating toward the edge, a domino about to tip, a full glass on a moving table",
+    "Swap the 3 words for 3 outcomes or 3 steps",
+    "Use a brand character reaching for the object (cut before they catch it)"
+  ]
+}
