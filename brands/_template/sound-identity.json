@@ -1,0 +1,257 @@
+{
+ "_about": "TEMPLATE. Copy to brands/<brand>/sound-identity.json when adding a brand, then: write the brand's own 16-beat theme (or keep this one only for tests), pick the lead instrument for each mood from library/instruments/vsco/map.json and give each main character an instrument. Render with: python3 library/audio/orchestra.py kit <brand>.",
+ "key": "D",
+ "bpm": 120,
+ "tempo": {
+  "aerobics": 132,
+  "tiptoe": 104,
+  "tension": 96,
+  "think": 108
+ },
+ "theme": [
+  [
+   0,
+   1,
+   "D5"
+  ],
+  [
+   1,
+   0.5,
+   "F5"
+  ],
+  [
+   1.5,
+   0.5,
+   "E5"
+  ],
+  [
+   2,
+   1,
+   "D5"
+  ],
+  [
+   3,
+   1,
+   "A4"
+  ],
+  [
+   4,
+   1.5,
+   "A#4"
+  ],
+  [
+   5.5,
+   0.5,
+   "A4"
+  ],
+  [
+   6,
+   2,
+   "G4"
+  ],
+  [
+   8,
+   1,
+   "D5"
+  ],
+  [
+   9,
+   0.5,
+   "F5"
+  ],
+  [
+   9.5,
+   0.5,
+   "G5"
+  ],
+  [
+   10,
+   1,
+   "A5"
+  ],
+  [
+   11,
+   1,
+   "F5"
+  ],
+  [
+   12,
+   1.5,
+   "E5"
+  ],
+  [
+   13.5,
+   0.5,
+   "C#5"
+  ],
+  [
+   14,
+   2,
+   "D5"
+  ]
+ ],
+ "theme_major": [
+  [
+   0,
+   1,
+   "D5"
+  ],
+  [
+   1,
+   0.5,
+   "F#5"
+  ],
+  [
+   1.5,
+   0.5,
+   "E5"
+  ],
+  [
+   2,
+   1,
+   "D5"
+  ],
+  [
+   3,
+   1,
+   "A4"
+  ],
+  [
+   4,
+   1.5,
+   "B4"
+  ],
+  [
+   5.5,
+   0.5,
+   "A4"
+  ],
+  [
+   6,
+   2,
+   "G4"
+  ],
+  [
+   8,
+   1,
+   "D5"
+  ],
+  [
+   9,
+   0.5,
+   "F#5"
+  ],
+  [
+   9.5,
+   0.5,
+   "G5"
+  ],
+  [
+   10,
+   1,
+   "A5"
+  ],
+  [
+   11,
+   1,
+   "F#5"
+  ],
+  [
+   12,
+   1.5,
+   "E5"
+  ],
+  [
+   13.5,
+   0.5,
+   "C#5"
+  ],
+  [
+   14,
+   2,
+   "D5"
+  ]
+ ],
+ "theme_rules": "16 beats. Bar 1 (the first 4-5 notes) is the sonic logo, so it must be singable alone. Stay inside one octave and a half. Minor for the problem, the major version for the solution.",
+ "moods": [
+  "sitcom",
+  "think",
+  "aerobics",
+  "casino",
+  "tiptoe",
+  "tension",
+  "folk",
+  "happy"
+ ],
+ "leads": {
+  "sitcom": [
+   "clarinet_stac",
+   "clarinet_sus",
+   1.0,
+   0
+  ],
+  "think": [
+   "glock",
+   null,
+   0.55,
+   12
+  ],
+  "aerobics": [
+   "xylo",
+   null,
+   0.7,
+   12
+  ],
+  "casino": [
+   "trumpet_harmon",
+   "trumpet_harmon",
+   0.9,
+   0
+  ],
+  "tiptoe": [
+   "bassoon_stac",
+   null,
+   1.0,
+   -12
+  ],
+  "tension": [
+   "cello_sus",
+   "cello_sus",
+   0.8,
+   -12
+  ],
+  "folk": [
+   "flute_stac",
+   "flute_sus",
+   0.9,
+   0
+  ],
+  "happy": [
+   "trumpet_stac",
+   "trumpet_sus",
+   0.9,
+   0
+  ]
+ },
+ "characters": [
+  {
+   "id": "narrator",
+   "what": "Narrator: the head on clarinet over pizzicato bass",
+   "short": "clarinet_stac",
+   "long": "clarinet_sus",
+   "with": [
+    "pizz"
+   ]
+  },
+  {
+   "id": "hero",
+   "what": "Hero: the head on tuba with a snare march",
+   "short": "tuba_stac",
+   "long": "tuba_sus",
+   "oct": -24,
+   "with": [
+    "march"
+   ]
+  }
+ ]
+}

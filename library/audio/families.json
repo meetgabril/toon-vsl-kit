@@ -1,0 +1,136 @@
+{
+ "_about": "Sonic families: the music palette a brand picks once, like its colour roles. Every cue of the brand comes from ONE family (ideally one album or one composer inside it), so a series always sounds like itself. Moods are the Studio Standard vocabulary used by story.js `music:`. Search strings work in Epidemic Sound, Artlist, Soundstripe or Envato (use them as keywords + the library's mood/genre filters).",
+ "moods": {
+  "problem": {"aliases": ["sitcom"], "what": "The set-up, the pain, the joke being built"},
+  "explain": {"aliases": ["think"], "what": "How it works, the idea, teaching"},
+  "hustle":  {"aliases": ["aerobics"], "what": "The grind, chaos, posting every day, busy"},
+  "money":   {"aliases": ["casino"], "what": "Ads, prices, sales, paid traffic"},
+  "awkward": {"aliases": ["tiptoe"], "what": "The mistake, the secret, sneaky, cringe"},
+  "drop":    {"aliases": ["tension"], "what": "Bad news, the algorithm, the fall"},
+  "turn":    {"aliases": ["folk"], "what": "The solution appears, hope"},
+  "win":     {"aliases": ["happy"], "what": "Community, the win, the CTA"},
+  "dream":   {"aliases": ["island"], "what": "Daydream, the beach, the life they want"}
+ },
+ "criteria": [
+  "Instrumental (no lyrics). Vocal 'oohs' only if the family uses them.",
+  "Stems available (melody / instruments / bass / drums), so the melody can step aside under the voice.",
+  "Same family instruments as the rest of the brand; prefer the same album or composer for every mood.",
+  "A clear downbeat in the first 2 seconds (no long intros) and a version with a clean ending.",
+  "Not a viral or trending track (it must sound like this brand, not like everyone's TikTok).",
+  "Energy fits a voice on top: no busy lead in the 1-4 kHz range for problem / explain."
+ ],
+ "families": {
+  "quirky-sitcom": {
+   "name": "Quirky sitcom",
+   "for": ["dry humour", "sitcom", "playful", "cartoon", "comedy", "mischievous", "witty"],
+   "instruments": "pizzicato strings, upright bass, clarinet, bassoon, glockenspiel, whistle, light brushes, the occasional tuba",
+   "avoid": "EDM drops, trap hats, corporate ukulele, epic orchestra",
+   "bpm": [88, 126],
+   "search": {
+    "problem": "quirky comedy pizzicato playful", "explain": "curious quirky light pizzicato glockenspiel",
+    "hustle": "fast comedy chase brass busy", "money": "comedy swing lounge jazz sneaky",
+    "awkward": "sneaky tiptoe pizzicato comedic", "drop": "comedic suspense tension strings",
+    "turn": "uplifting quirky acoustic hopeful", "win": "happy feel good comedy whistle claps",
+    "dream": "dreamy whimsical celesta harp", "logo": "comedy sting short ending"
+   }
+  },
+  "funk-brass": {
+   "name": "Funk and brass",
+   "for": ["energetic", "bold", "fitness", "confident", "hype", "sport", "loud"],
+   "instruments": "horn section, slap bass, clavinet, wah guitar, breakbeat drums, claps",
+   "avoid": "sad piano, ambient pads, trap",
+   "bpm": [95, 125],
+   "search": {
+    "problem": "funky groove playful bass", "explain": "laid back funk clavinet light",
+    "hustle": "high energy funk brass workout", "money": "funky brass swagger groove",
+    "awkward": "funky sneaky bass minimal", "drop": "funk breakdown tension",
+    "turn": "uplifting funk horns", "win": "celebration funk brass party",
+    "dream": "smooth soul funk relaxed", "logo": "brass stab sting funk"
+   }
+  },
+  "warm-lofi": {
+   "name": "Warm lo-fi",
+   "for": ["calm", "premium", "educational", "thoughtful", "cosy", "mindful", "creator"],
+   "instruments": "rhodes, soft boom-bap drums, upright bass, vinyl texture, muted guitar",
+   "avoid": "big drops, brass stabs, cartoon whistles",
+   "bpm": [70, 95],
+   "search": {
+    "problem": "lofi hip hop chill thoughtful", "explain": "lofi study beat rhodes",
+    "hustle": "upbeat lofi groove busy", "money": "jazzy lofi smooth",
+    "awkward": "lofi quirky minimal", "drop": "lofi melancholic dark",
+    "turn": "warm lofi hopeful", "win": "feel good lofi bright",
+    "dream": "dreamy lofi ambient", "logo": "lofi short tag"
+   }
+  },
+  "indie-acoustic": {
+   "name": "Indie acoustic",
+   "for": ["friendly", "honest", "wellness", "family", "food", "local", "warm"],
+   "instruments": "acoustic guitar, hand claps, glockenspiel, light kit, piano, stomps",
+   "avoid": "corporate ukulele whistling, EDM, trailer drums",
+   "bpm": [90, 128],
+   "search": {
+    "problem": "indie folk playful acoustic", "explain": "light acoustic piano curious",
+    "hustle": "upbeat indie stomp claps", "money": "indie pop bright confident",
+    "awkward": "quirky acoustic minimal", "drop": "sad acoustic piano reflective",
+    "turn": "hopeful indie folk building", "win": "joyful indie folk claps stomp",
+    "dream": "dreamy acoustic warm", "logo": "acoustic guitar short ending"
+   }
+  },
+  "orchestral-whimsy": {
+   "name": "Orchestral whimsy",
+   "for": ["storytelling", "magical", "kids", "fairy tale", "wonder", "family"],
+   "instruments": "chamber strings, woodwinds, celesta, harp, timpani, french horn",
+   "avoid": "epic trailer, EDM, trap",
+   "bpm": [80, 132],
+   "search": {
+    "problem": "whimsical orchestral playful", "explain": "curious orchestral light woodwinds",
+    "hustle": "fast whimsical orchestral chase", "money": "mischievous orchestral",
+    "awkward": "sneaky orchestral pizzicato", "drop": "dark whimsical tension",
+    "turn": "magical orchestral hopeful", "win": "triumphant whimsical orchestral",
+    "dream": "magical dreamy celesta harp", "logo": "orchestral magic sting"
+   }
+  },
+  "retro-synth": {
+   "name": "Retro synth",
+   "for": ["tech", "gaming", "nostalgia", "futuristic", "app", "software", "80s"],
+   "instruments": "analog synths, arpeggios, drum machine, chiptune touches",
+   "avoid": "acoustic folk, orchestra, swing",
+   "bpm": [90, 124],
+   "search": {
+    "problem": "retro synth playful 80s", "explain": "synthwave chill arpeggio",
+    "hustle": "8bit chiptune fast energetic", "money": "synthwave confident groove",
+    "awkward": "quirky chiptune minimal", "drop": "dark synth tension",
+    "turn": "uplifting synthwave", "win": "victory chiptune happy",
+    "dream": "dreamy synthwave ambient", "logo": "synth sting short"
+   }
+  },
+  "jazz-lounge": {
+   "name": "Jazz lounge",
+   "for": ["sophisticated", "finance", "luxury", "premium", "elegant", "wit"],
+   "instruments": "piano trio, brushed drums, upright bass, vibraphone, muted trumpet",
+   "avoid": "EDM, trap, cartoon whistles",
+   "bpm": [85, 140],
+   "search": {
+    "problem": "playful jazz piano trio", "explain": "smooth jazz light vibraphone",
+    "hustle": "fast swing jazz busy", "money": "lounge jazz confident swing",
+    "awkward": "sneaky jazz walking bass", "drop": "noir jazz dark",
+    "turn": "uplifting jazz piano", "win": "happy swing big band",
+    "dream": "bossa nova relaxed", "logo": "jazz piano ending sting"
+   }
+  },
+  "light-hiphop": {
+   "name": "Light hip-hop",
+   "for": ["urban", "youth", "streetwear", "confident", "creator economy", "bold"],
+   "instruments": "boom-bap drums, sampled keys, sub bass, scratches (no vocals)",
+   "avoid": "aggressive trap, orchestra, folk",
+   "bpm": [85, 100],
+   "search": {
+    "problem": "playful hip hop beat bouncy", "explain": "chill hip hop instrumental keys",
+    "hustle": "energetic hip hop beat", "money": "confident hip hop swagger",
+    "awkward": "quirky hip hop minimal", "drop": "dark hip hop tension",
+    "turn": "uplifting hip hop", "win": "feel good hip hop celebration",
+    "dream": "dreamy hip hop chill", "logo": "hip hop scratch tag"
+   }
+  }
+ }
+}

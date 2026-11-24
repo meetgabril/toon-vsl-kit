@@ -238,5 +238,11 @@
   "status": "ok",
   "original": "kenney/rpg/book_place_1.ogg",
   "credit": null
+ },
+ "cha-ching": {
+  "source": "studio-foley",
+  "status": "ok",
+  "original": "cha-ching.wav",
+  "credit": null
  }
 }

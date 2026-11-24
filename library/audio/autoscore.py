@@ -91,8 +91,21 @@ for b in EV['beats']:
     m = b['music'] or cur or 'sitcom'
     if m != cur: secs.append([b['t'], m]); cur = m
 secs.append([EV['dur'], None])
+# Real orchestra first (orchestra.py, recorded instruments, the brand's sound-identity theme); the synth below is only a fallback.
+ORCH, OM = None, None
+try:
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import orchestra as OM
+    ORCH = json.load(open('brand/sound-identity.json')) if os.path.exists('brand/sound-identity.json') else OM.identity(json.load(open('brand/brand-profile.json'))['id'])
+except Exception as ex: print('autoscore: WARNING real orchestra unavailable, synth fallback:', ex)
+ALIAS = {'happy': 'happy', 'island': 'folk', 'build': 'tension'}
+orch = np.zeros((N, 2))
 for (t0, m), (t1, _) in zip(secs, secs[1:]):
     if m in ('silence', 'none'): continue
+    mm = ALIAS.get(m, m)
+    if ORCH and mm in ORCH['moods']:
+        y = OM.finish(OM.section(ORCH, mm, t1 - t0)[0], t1 - t0) * .6
+        if m == 'build': band = OM.Band(4); band.hit('timpani', 'roll', 0, .6); r = OM.finish(band, 3); y[-len(r):] += r[-len(y):] * .5
+        i = int(t0 * SR); orch[i:i + len(y)] += y[:N - i]; continue
     if m == 'tension': Hm.add(strings_trem(t1 - t0, [M('D3'), M('A3')], .25), t0); continue
     if m == 'build': Hm.add(strings_trem(t1 - t0, [M('A2'), M('D3'), M('F3')], .3, rise=t1 - t0 - .5), t0); FX.add(noise_riser(min(3, t1 - t0), .35), max(t0, t1 - 3)); continue
     st, ch, br, mel = STY.get(m, STY['sitcom'])
@@ -103,7 +116,7 @@ for e in EV['events']:
 # ---------------- reverb + cuts ----------------
 room, spr = ir(), spring_ir()
 send = {'drums': .08, 'bass': .0, 'lead': .28, 'harm': .22, 'fx': .2}
-music = sum(b.b for b in BUS.values()) + conv(sum(BUS[k].b * send[k] for k in ['drums', 'harm', 'fx']), room) * .9 + conv(BUS['lead'].b * send['lead'], spr)
+music = orch + sum(b.b for b in BUS.values()) + conv(sum(BUS[k].b * send[k] for k in ['drums', 'harm', 'fx']), room) * .9 + conv(BUS['lead'].b * send['lead'], spr)
 def hard_cut(a, b):
     i, j = int(a * SR), int(b * SR); f = int(.01 * SR); (i >= f) and music.__setitem__(slice(i - f, i), music[i - f:i] * np.linspace(1, 0, f)[:, None]); music[i:j] = 0
 music = np.stack([hp(music[:, c], 30) for c in range(2)], 1)
@@ -152,6 +165,7 @@ cues = []
 # 'Sound boil' (Studio Standard): like the 3-drawing line boil, a repeated sound is never identical.
 # Round-robin through sfx/<k>.wav, sfx/<k>~2.wav, sfx/<k>~3.wav… and nudge pitch ±35 cents and level ±1.2 dB on every hit.
 _rr = {}
+SKIPPED = []
 def take(k):
     import glob
     fs = sorted([f'sfx/{k}.wav'] + glob.glob(f'sfx/{k}~*.wav')); i = _rr.get(k, 0); _rr[k] = i + 1
@@ -162,19 +176,20 @@ def boil(y, cents=35):
     return np.interp(np.arange(n) * q, np.arange(len(y)), y)
 bts = EV['beats'] + [{'t': EV['dur'], 'style': None}]
 for b0, b1 in zip(bts, bts[1:]):
-    if b0.get('style') == 'oldfilm': cues.append((b0['t'], projector(b1['t'] - b0['t']), .35))
+    if b0.get('style') == 'oldfilm' and os.path.exists('sfx/projector.wav'): y = take('projector'); n = int((b1['t'] - b0['t']) * SR); cues.append((b0['t'], np.tile(y, n // len(y) + 1)[:n], .3))
 for e in EV['events']:
     t, k = e['t'], e['type']
     if k in ('cut', 'end'): continue
     if k == 'count':   # ticking up, ding at the end
-        d = e.get('dur', 1.6); cues += [(t + .2 + d * q / 8, beep(1600 + 120 * q, 1), .18) for q in range(8)] + [(t + .2 + d, ding(91, .5), .5)]
+        d = e.get('dur', 1.6); cues += ([(t + .2 + d * q / 8, boil(take('tick')), .25) for q in range(8)] if os.path.exists('sfx/tick.wav') else []) + ([(t + .2 + d, take('ding'), .55)] if os.path.exists('sfx/ding.wav') else [])
     elif k == 'notif':
-        h = e.get('hit', .9); cues += [(t + h, gulp(), .3)] + [(t + h + .1 + i * .18, ding(86 + i * 2, .3), .35) for i in range(4)]
-    elif k == 'pops': cues += [(t + i * .08, pop(), .5) for i in range(5)]
+        h = e.get('hit', .9); cues += [(t + h + i * .18, boil(take('dm-ping' if os.path.exists('sfx/dm-ping.wav') else 'ding')), .35) for i in range(4) if os.path.exists('sfx/dm-ping.wav') or os.path.exists('sfx/ding.wav')]
+    elif k == 'pops': cues += [(t + i * .08, boil(take('pop')), .5) for i in range(5)] if os.path.exists('sfx/pop.wav') else []
     elif os.path.exists(f'sfx/{k}.wav'):   # file from sfx.py (library / AI) wins over the synth
         y = take(k); lvl = .12 if k.startswith('walla-') else .07 if k.startswith('amb-') else 1. if k.startswith('voice-') else .7   # mix ladder (SOUND.md)
         cues.append((t, boil(y) if lvl == .7 else y, lvl * 10 ** (rng.uniform(-1.2, 1.2) / 20)))
-    elif k in M_: cues.append((t, boil(M_[k]()), .7))
+    elif k in M_ and os.environ.get('SYNTH_SFX') == '1': cues.append((t, boil(M_[k]()), .7))   # synth SFX only on request (drafts)
+    elif k in M_: SKIPPED.append(k)
 for t, x, g in cues: put(x, t, g)
 sf.write('music/sfx.wav', (fx / (np.abs(fx).max() + 1e-9) * .8).astype(np.float32), SR)
-print('autoscore:', len(secs) - 1, 'music sections ·', len(cues), 'sfx cues')
+print('autoscore:', len(secs) - 1, 'music sections ·', len(cues), 'sfx cues' + (f' · no real file for: {sorted(set(SKIPPED))} (silent; run sfx.py kit)' if SKIPPED else ''))

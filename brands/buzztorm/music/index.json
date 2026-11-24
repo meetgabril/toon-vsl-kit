@@ -1,86 +1,110 @@
 {
- "bpm": 120,
- "key": "D minor / D major",
- "loop_seconds": 16.0,
  "cues": [
   {
    "id": "sitcom",
-   "file": "sitcom.ogg",
-   "use": "Opening problem, the joke set-up (minor sitcom, theme on theremin)"
+   "seconds": 16.0
   },
   {
    "id": "think",
-   "file": "think.ogg",
-   "use": "Explaining, the idea, how it works (rhodes, theme on vibes)"
+   "seconds": 17.78
   },
   {
    "id": "aerobics",
-   "file": "aerobics.ogg",
-   "use": "Grinding, posting every day, chaos (fast arps, theme on xylophone)"
+   "seconds": 14.55
   },
   {
    "id": "casino",
-   "file": "casino.ogg",
-   "use": "Ads, sales, prices, the casino of paid traffic (swing + brass, theme on muted brass)"
+   "seconds": 16.0
   },
   {
    "id": "tiptoe",
-   "file": "tiptoe.ogg",
-   "use": "Awkward, sneaky, the secret, the mistake (pizzicato + tuba, theme on clarinet)"
+   "seconds": 18.46
   },
   {
    "id": "tension",
-   "file": "tension.ogg",
-   "use": "The drop, bad news, the algorithm (strings + heartbeat, theme slowed on theremin)"
+   "seconds": 20.0
   },
   {
    "id": "folk",
-   "file": "folk.ogg",
-   "use": "The turn, the solution (major folk, theme on nylon guitar)"
+   "seconds": 16.0
   },
   {
    "id": "happy",
-   "file": "happy.ogg",
-   "use": "Community, win, CTA bed (major sitcom, theme on theremin)"
+   "seconds": 16.0
   }
  ],
  "leitmotifs": [
   {
    "id": "motif-dex",
-   "file": "motif-dex.ogg",
-   "use": "Dex (narrator): the theme head on theremin, dry and knowing"
+   "use": "Dex (narrator): the head on clarinet over pizzicato bass, dry and knowing"
   },
   {
    "id": "motif-tony",
-   "file": "motif-tony.ogg",
-   "use": "Tony (hero): the head on tuba, a proud oom-pah march"
+   "use": "Tony (hero): the head on tuba with a snare march, proud and a bit much"
   },
   {
    "id": "motif-mom",
-   "file": "motif-mom.ogg",
-   "use": "Tony's Mom: the head as a music box (vibes), sweet and mischievous"
+   "use": "Tony's Mom: the head in major on glockenspiel over harp, a music box"
   }
  ],
  "stings": [
   {
    "id": "logo-sting",
-   "file": "logo-sting.ogg",
-   "use": "Sonic logo: the head on brass + sparkle (brand appears)"
+   "use": "Sonic logo: the theme head on trumpet + xylophone, horn/strings chord, timpani, cymbal, glock"
   },
   {
    "id": "series-bump",
-   "file": "series-bump.ogg",
-   "use": "Series bumper / scene transition: pizzicato run (one per video, same every time)"
+   "use": "Series bumper / the one stylised transition: pizzicato + xylophone run up the head, slapstick"
   },
   {
    "id": "outro",
-   "file": "outro.ogg",
-   "use": "CTA / end card: theme head in major + warm pad"
+   "use": "CTA / end card: the head in major on flute over strings and harp"
   },
   {
    "id": "button",
-   "file": "button.ogg",
-   "use": "Button on the last joke: theremin ta-daa"
+   "use": "Last-joke button: bassoon + tuba \"bwomp\", snare, cymbal"
+  }
+ ],
+ "musical_sfx": [
+  {
+   "id": "sad-trombone",
+   "use": "Fail: wah wah wah waaah on real trombone"
+  },
+  {
+   "id": "xylo-climb",
+   "use": "Climbing up, rising, getting an idea"
+  },
+  {
+   "id": "xylo-fall",
+   "use": "Falling, losing, sliding down"
+  },
+  {
+   "id": "harp-gliss",
+   "use": "Dream, flashback, magic"
+  },
+  {
+   "id": "dramatic-sting",
+   "use": "Dun dun DUN: shock reveal"
+  },
+  {
+   "id": "rimshot",
+   "use": "Badum-tss after a pun"
+  },
+  {
+   "id": "tiptoe-pizz",
+   "use": "Sneaking, tiptoe steps"
+  },
+  {
+   "id": "drumroll",
+   "use": "Before a reveal"
+  },
+  {
+   "id": "wah-trumpet",
+   "use": "Muted trumpet wah-wah: disappointment"
+  },
+  {
+   "id": "tuba-plonk",
+   "use": "Something heavy and dumb lands"
   }
  ]
 }

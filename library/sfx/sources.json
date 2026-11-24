@@ -16,6 +16,20 @@
    "notes": "Ours."
   },
   {
+   "id": "vsco",
+   "name": "VS Chamber Orchestra Community Edition (Versilian Studios)",
+   "url": "https://github.com/sgossner/VSCO-2-CE",
+   "status": "ok",
+   "notes": "CC0. Real recorded orchestra used by orchestra.py and for musical SFX."
+  },
+  {
+   "id": "studio-foley",
+   "name": "Studio-built from CC0 recordings (Kenney + VSCO 2 CE layered)",
+   "url": null,
+   "status": "ok",
+   "notes": "Layers of real CC0 recordings, built by the studio. Free for everything."
+  },
+  {
    "id": "pixabay",
    "name": "Pixabay Sound Effects",
    "url": "https://pixabay.com/sound-effects/",

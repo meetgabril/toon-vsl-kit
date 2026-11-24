@@ -1,5 +1,5 @@
 {
- "_about": "Buzztorm sound signature: the same sound for the same idea in every video. Engine event \u2192 catalog effect. 'kit' copies them into sfx/ before autoscore. Change one here and every future video changes with it.",
+ "_about": "Buzztorm sound signature: the same REAL sound for the same idea in every video. 'events' = studio library sounds; 'musical' = gags and leitmotifs played by the real orchestra in the brand's key (brands/<b>/music, from orchestra.py); 'signature' = the brand's stings. sfx.py kit copies all of them into sfx/. No synth sounds are delivered: a missing sound stays silent and is reported.",
  "palette": "Sitcom: dry, warm, wooden and plucky. No cinematic braams, no meme sounds baked in. One hit per idea; silence before the punchline.",
  "events": {
   "pop": {
@@ -107,36 +107,98 @@
   "chalk": {
    "id": "chalk",
    "why": "Writing on the board"
+  },
+  "tick": {
+   "id": "tick",
+   "why": "Counters ticking up"
+  },
+  "dm-ping": {
+   "id": "dm-ping",
+   "why": "Notification, new DM"
   }
  },
  "signature": {
   "logo-sting": {
-   "file": "sfx/logo-sting.ogg",
+   "file": "music/logo-sting",
    "status": "candidate",
-   "from": "music_kit.py (theme head D-F-E-D)",
+   "from": "orchestra.py (theme head, real instruments)",
    "use": "Brand appears / logo"
   },
   "series-bump": {
-   "file": "sfx/series-bump.ogg",
+   "file": "music/series-bump",
    "status": "candidate",
-   "from": "music_kit.py (theme head D-F-E-D)",
+   "from": "orchestra.py (theme head, real instruments)",
    "use": "Opening of a series episode and the ONE stylised transition"
   },
   "outro": {
-   "file": "sfx/outro.ogg",
+   "file": "music/outro",
    "status": "candidate",
-   "from": "music_kit.py (theme head D-F-E-D)",
+   "from": "orchestra.py (theme head, real instruments)",
    "use": "CTA / end card"
   },
   "button": {
-   "file": "sfx/button.ogg",
+   "file": "music/button",
    "status": "candidate",
-   "from": "music_kit.py (theme head D-F-E-D)",
+   "from": "orchestra.py (theme head, real instruments)",
    "use": "Last joke lands"
   }
  },
  "music": {
   "kit": "music/index.json",
   "rule": "Every cue is the same theme. story.js `music:` uses these mood names: sitcom, think, aerobics, casino, tiptoe, tension, folk, happy, build, silence."
+ },
+ "musical": {
+  "sad-trombone": {
+   "file": "music/sad-trombone",
+   "why": "Fail, the plan collapses"
+  },
+  "xylo-climb": {
+   "file": "music/xylo-climb",
+   "why": "Rising, climbing, an idea grows"
+  },
+  "xylo-fall": {
+   "file": "music/xylo-fall",
+   "why": "Falling, losing"
+  },
+  "harp-gliss": {
+   "file": "music/harp-gliss",
+   "why": "Dream, flashback, imagination"
+  },
+  "dramatic-sting": {
+   "file": "music/dramatic-sting",
+   "why": "Shock reveal"
+  },
+  "rimshot": {
+   "file": "music/rimshot",
+   "why": "After a pun"
+  },
+  "tiptoe-pizz": {
+   "file": "music/tiptoe-pizz",
+   "why": "Sneaking"
+  },
+  "drumroll": {
+   "file": "music/drumroll",
+   "why": "Before a reveal"
+  },
+  "wah-trumpet": {
+   "file": "music/wah-trumpet",
+   "why": "Disappointment"
+  },
+  "tuba-plonk": {
+   "file": "music/tuba-plonk",
+   "why": "Something heavy and dumb lands"
+  },
+  "motif-dex": {
+   "file": "music/motif-dex",
+   "why": "Dex's first appearance"
+  },
+  "motif-tony": {
+   "file": "music/motif-tony",
+   "why": "Tony's first appearance"
+  },
+  "motif-mom": {
+   "file": "music/motif-mom",
+   "why": "Tony's Mom's first appearance"
+  }
  }
 }

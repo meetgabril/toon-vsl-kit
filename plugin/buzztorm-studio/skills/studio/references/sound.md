@@ -24,7 +24,7 @@ Before autoscore, always run `python3 sfx.py kit --brand <brand>`. It copies the
 - `python3 sfx.py browse <words>`: search the 552 raw pack files (alternates, variations).
 - `python3 sfx.py add <id> kenney/<pack>/<file> --source kenney`: promote a pack file to a catalog slot.
 - `python3 sfx.py session [category]`: ElevenLabs sheet for slots without a file; `sfx.py addall <folder> --source elevenlabs` to register the results.
-- `python3 audio/music_kit.py brands/<b>/music`: the brand's theme in 8 moods + leitmotifs + stings.
+- `python3 audio/orchestra.py kit <brand>`: the brand's theme performed by the real orchestra (VSCO 2 CE, CC0) in 8 moods + leitmotifs + stings + musical gags, into `brands/<b>/music/` (.ogg). `audition <brand>` renders theme candidates. autoscore uses the same orchestra for every video's score.
 - `python3 audio/reactions.py script|split|list`: character voice kits (32 reactions in the character's own voice).
 
 autoscore.py uses `sfx/<name>.wav` when present, else its synth, so a library file automatically upgrades every video.
@@ -39,5 +39,6 @@ transitions · impacts · text_ui · money_sales · comedy_reaction · phone_soc
 4. Mix: voice at 0 dB, SFX −8 to −12 dB under voice, ambience −24 dB or lower, music −18 dB under voice. Nothing clips.
 5. One SFX per idea, not per word. Short-form rhythm: one hit per cut; a riser only before a real reveal; silence before the punchline.
 6. First 3 seconds: one tension or hook sound at most. Loops: end on room tone so the loop is seamless.
-7. Every brand owns a sound signature (`sound-signature.json`): one sound per engine event, plus 3 stings (logo-sting, outro, series-bump) in `brands/<brand>/sfx/`. New brand: copy Buzztorm's signature, then change only what the brand's tone needs. Prefer library files over ElevenLabs; generate with AI only for a slot no pack covers, then `add` the approved result so it is never generated again.
+7. No synth sound is ever delivered: autoscore and kit leave a slot silent and report it. Synth only for drafts with SYNTH_SFX=1.
+8. Every brand owns a sound signature (`sound-signature.json`): one sound per engine event, plus 3 stings (logo-sting, outro, series-bump) in `brands/<brand>/sfx/`. New brand: copy Buzztorm's signature, then change only what the brand's tone needs. Prefer library files over ElevenLabs; generate with AI only for a slot no pack covers, then `add` the approved result so it is never generated again.
 8. Remakes of a team-supplied video keep the original audio; don't add SFX on top unless asked.

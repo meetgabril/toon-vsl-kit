@@ -1,82 +1,66 @@
 # SOUND: the house sound (Studio Standard)
 
-Every brand shares this sound the way it shares the drawing style. Brands change the theme melody, the leitmotif instruments and the signature picks, never the palette below. Read this before scoring, before picking a sound and before adding anything to the library.
+Every brand shares this sound the way it shares the drawing style. A brand owns its theme, its instruments per character and its stings (`sound-identity.json`, `sound-signature.json`); it never changes the rules below. Read this before scoring, picking a sound or adding a brand.
+
+## 0. Non-negotiable: everything is a real recording
+- **Music** is performed by a real recorded orchestra: VS Chamber Orchestra Community Edition (Versilian Studios, CC0), curated in `library/instruments/vsco/` (pizzicato strings and bass, tuba, clarinet, bassoon, flute, piccolo, trumpet incl. harmon mute, trombone, horn, xylophone, glockenspiel, marimba, harp, upright piano, timpani, snare, bass drum, woodblocks, slapstick, ratchet, vibraslap, cymbals, triangle, bells). `orchestra.py` picks the right recorded note, velocity layer and round-robin take, adds human timing and dynamics and one shared room. Pitches in `map.json` are measured (VSCO names use C3 = middle C).
+- **SFX** come from recorded libraries (The Designer's Choice CARTOON, Kenney, VSCO, studio layers of those). Crowds and ambiences come from recorded walla (to download: Sonniss GDC, Freesound CC0). Character reactions are the character's own ElevenLabs voice.
+- **No synth sound is delivered.** If a slot has no real file, autoscore leaves it silent and reports it; `sfx.py kit` lists it as MISSING. Synth exists only for drafts (`SYNTH_SFX=1`).
 
 ## 1. The idea: the picture, translated into sound
-Our films look hand-made: flat colour, one plum ink, hard shade, a line that boils, film grain. They should sound hand-made too, like a mid-century TV cartoon crossed with a 90s sitcom. Real objects, real instruments, a little warmth and wobble, nothing slick.
+Our films look hand-made: flat colour, one plum ink, hard shade, a boiling line, film grain. They sound like a hand-made TV cartoon: a small studio orchestra (the Carl Stalling / sitcom tradition), real foley, real voices.
 
 | Picture (STYLE.md) | Sound rule |
 |---|---|
-| Flat colour, few shapes | Few, clear sounds. **One sound per idea**, never a stack of three "trailer" layers. |
-| One plum ink for everything | One **ink bus**: every music and SFX track goes through the same tape warmth and the same small room (`stylize.py ink`). That glue is what makes 900 sounds from different packs feel like one show. |
-| Hard-edged shade, hard cuts | **Hard cuts in sound too.** Music stops dead on the punchline (`silence`), no long fades, no swells into jokes. |
-| Line boil (3 drawings at 12 fps) | **Sound boil**: a repeated sound is never identical. Round-robin takes (`sfx/<k>~2.wav`) plus ±35 cents and ±1.2 dB per hit (autoscore does it). |
-| 4.5 % film grain | **Room tone under every scene** (`amb-*`, about −40 dB under the voice). Musical silence yes, digital silence never. |
-| Pop with overshoot (`back` ease) | Appearing things get short, bright, upward pops; leaving things get downward zips. Sound direction follows motion direction. |
-| One stylised transition per film | One **series bump** per film, the same one every time. |
+| Flat colour, few shapes | **One sound per idea.** Never a stack of "trailer" layers. Small orchestra, never a wall of sound. |
+| One plum ink for everything | **One room and one tape warmth** for all music and SFX (`stylize.py`, the ink bus). That glue makes sounds from different libraries feel like one show. |
+| Hard-edged shade, hard cuts | **Hard cuts in sound.** The music stops dead before the punchline (`silence`), no long fades. |
+| Line boil | **Sound boil.** A repeated sound is never identical: round-robin takes (`sfx/<k>~2.wav`), ±35 cents, ±1.2 dB. The orchestra does the same with its round robins and human timing. |
+| Film grain | **Room tone under every scene.** Musical silence, yes; digital silence, never. |
+| Pop with overshoot | Things that appear go up (pizz, xylo climb); things that leave go down (zip, xylo fall, slide whistle). |
+| One stylised transition per film | **One series bump per film**, the same every time. |
 
-## 2. The house orchestra
-- **Lead voice of the brand**: theremin (Dex and the brand theme). It is our signature colour, like a sitcom's slap bass.
-- **Rhythm section**: upright/analog bass, brushes and rim, small kit, claps, shaker.
-- **Colour**: tuba (oom-pah, Tony), vibes / music box (Tony's Mom), nylon guitar, pizzicato, xylophone, rhodes, muted brass, tremolo strings for tension.
-- **Foley**: wood, rubber, springs, kazoo, slide whistle, bike horn, real paper, real coins. Prefer acoustic sounds (Kenney, The Designer's Choice) over synthetic beeps.
-- **Banned** (wrong picture): cinematic braams, sub drops and trailer hits, EDM risers and trap hats, glossy "corporate ukulele", stock meme sounds baked into the file (add those in the app), other companies' sonic logos.
+## 2. The house orchestra and what it may play
+Lead colours: clarinet, bassoon (sneaky), muted trumpet (wah), tuba (oom-pah), flute, glockenspiel and xylophone. Rhythm: pizzicato double bass (walking), upright piano comping, woodblock, snare, light cymbal. Drama: tremolo strings, timpani, horn.
+**Banned:** synth pads and leads, cinematic braams and sub drops, EDM risers, trap hats, "corporate ukulele", meme sounds baked into the file (add those in the app), other companies' sonic logos.
 
-## 3. Key, theme and moods
-- Everything is in **D**: D minor for the problem, D major for the solution. Pitched SFX (ding, chime, sparkle) should sit on D, F#, A.
-- **One theme, many moods** (theme and variations). Every cue plays the same melody, which is what makes a stranger recognise the brand by ear. Bank: `brands/<b>/music/` from `music_kit.py`; the same mood names drive story.js `music:`.
+## 3. Brands: one theme, many moods
+Each brand has ONE 16-beat theme (`sound-identity.json` → `theme`) in a key of its own. Bar 1 (4 or 5 notes) is the **sonic logo** and must be singable alone. Minor for the problem; `theme_major` for the solution. The orchestra plays the same theme in every mood, on the lead the identity assigns:
 
-| Mood (`music:`) | When | Theme played on |
+| Mood (`music:` in story.js) | When | Default lead |
 |---|---|---|
-| `sitcom` | the problem, the set-up | theremin |
-| `think` | explaining how it works | vibes over rhodes |
-| `aerobics` | the grind, chaos, posting every day | xylophone over fast arps |
-| `casino` | ads, money, paid traffic | muted brass over brushed swing |
-| `tiptoe` | awkward, sneaky, the mistake | clarinet over tuba + pizzicato |
-| `tension` / `build` | the drop, bad news / a real reveal | slowed theremin over tremolo strings |
-| `folk` | the turn, the solution | nylon guitar (major) |
-| `happy` | community, the win, the CTA | theremin (major) |
-| `silence` | right before every punchline | nothing (room tone stays) |
+| `sitcom` | the problem, the set-up | clarinet over walking pizz bass + piano |
+| `think` | explaining how it works | glockenspiel over harp |
+| `aerobics` | the grind, chaos, posting every day | xylophone over spiccato strings + tuba |
+| `casino` | ads, money, paid traffic | muted trumpet over swing bass + piano |
+| `tiptoe` | awkward, sneaky, the mistake | bassoon over pizzicato + woodblock |
+| `tension` / `build` | the drop, bad news / a real reveal | slow cello over tremolo strings + timpani |
+| `folk` | the turn, the solution | flute over harp + marimba |
+| `happy` | community, the win, the CTA | trumpet over a tuba march |
+| `silence` | before every punchline | nothing (room tone stays) |
 
-## 4. Leitmotifs and the sonic logo
-- Each main character owns the theme's first bar on their own instrument: Dex = theremin, Tony = tuba march, Tony's Mom = music box (`motif-*.wav`). Play it when the character first appears in a film, never more than once.
-- **Sonic logo** = the first four notes of the theme (D-F-E-D) on brass + sparkle (`logo-sting`). **Series bump** = a pizzicato run up the same notes (`series-bump`). **Outro** = the head in major. **Button** = theremin ta-daa on the last joke. All four live in `brands/<b>/sfx/` and come in through `sfx.py kit`.
+**Adding a brand** (references/brands.md step 6): write 3 different themes into `theme_candidates`, `orchestra.py audition <brand>`, the user picks one; give each main character a different instrument; `orchestra.py kit <brand>` renders into `brands/<b>/music/`: 8 moods, `motif-<character>`, `logo-sting`, `series-bump`, `outro`, `button`, and the musical gags (`sad-trombone`, `xylo-climb`, `xylo-fall`, `harp-gliss`, `dramatic-sting`, `rimshot`, `tiptoe-pizz`, `drumroll`, `wah-trumpet`, `tuba-plonk`), all in the brand's key. Store as .ogg (brand .wav files are git-ignored).
+
+## 4. The signature: one sound per idea
+`sound-signature.json`: `events` (studio library sound for each engine event: pop, ding, stamp, whoosh, boing…), `musical` (the gags and leitmotifs above, used as event types in story.js), `signature` (stings). `sfx.py kit --brand <b>` copies them all into the project. Never pick a different sound for an event inside one video; change the signature instead.
 
 ## 5. Voices that are not the script
-- **Main characters react in their own voice.** Every character has a voice kit of 32 reactions (laughs, gasps, grunts, angry shouts, cheers, sighs…) recorded once in ElevenLabs v3/v4 with the character's own voice: `reactions.py script` → user records one take → `reactions.py split`. Use as events `voice-<char>-<id>`; they are mixed as dialogue (no boil, no ducking).
-- **Extras** (`reactions` category) are generic people. They are never used for a named character.
-- **Walla** (`walla` category) is always unintelligible, 20 to 24 dB under the voice, low-cut at about 200 Hz, wide. Clear words in a crowd compete with the voiceover and kill retention.
-- Sitcom audience laughs: organic posts only, at most once per film, on the biggest joke.
+- Main characters react in **their own voice**: 32 reactions recorded once in ElevenLabs v3/v4 with audio tags (`reactions.py script` → one take → `reactions.py split`). Events `voice-<char>-<id>`, mixed as dialogue.
+- Extras (`reactions` category) are generic people, never a named character.
+- Walla is unintelligible, 20 to 24 dB under the voice, low-cut at about 200 Hz, wide. Sitcom audience laughs: organic posts only, once per film at most.
 
-## 6. Places
-Every background has a room tone: gym → `amb-gym`, desk → `amb-studio`, living room → `amb-living-room`, beach → `amb-beach`, street → `amb-street`, office → `amb-office` + `walla-office`. The tone changes on the cut, exactly like the picture.
+## 6. Places, styles, mix
+- Every background has a room tone (`amb-*`), changing on the cut like the picture.
+- Visual style → `STYLE=<style> python3 stylize.py` on music + SFX only (ink, oldfilm, paper, riso, noir, comic, pastel, dusk, freeze, vhs). The voice is never processed.
+- Mix ladder vs the voice: reactions ≈ 0 · SFX −8 to −12 · music −11 in gaps, ≈ −19 under speech · walla −20 to −24 · ambience −30 · room tone ≈ −40. Master −15 LUFS, ≈ −1 dBTP.
 
-## 7. Visual style → sound style (`STYLE=<style> python3 stylize.py`)
-| Visual style | Sound |
-|---|---|
-| Standard (`ink`), Freeze frame | ink bus: warm tape, small room |
-| Old film | mono, 300 Hz–4 kHz, wow, projector crackle |
-| Paper cut-out | dry, close, papery mids, no room |
-| Risograph | light bit-crush and 16 kHz sample-and-hold, saturated |
-| Noir | dark (3.8 kHz top), long smoky room |
-| Comic | more drive, presence lift, tight room |
-| Pastel | rounded highs, chorus, airy room |
-| Dusk | warm 5 kHz top, long warm room |
-| VHS | wobble + flutter, faint hiss, narrowed stereo |
-The voice is never stylised.
-
-## 8. Mix ladder (relative to the voice)
-voice 0 dB · character reactions about 0 · SFX −8 to −12 · music −11 in gaps, about −19 under speech (mix.py ducks) · walla −20 to −24 · ambience −30 · room tone about −40. Master −15 LUFS integrated, about −1 dBTP (finish.sh). Nothing clips.
-
-## 9. Pipeline
+## 7. Pipeline
 ```
-python3 sfx.py kit --brand <brand>                  # signature sounds + takes + stings into sfx/
-node events.mjs && python3 audio/autoscore.py      # score + SFX from the story (mood names above, sound boil, ladder)
-STYLE=<visual style> python3 audio/stylize.py      # the visual style's sound, on music + SFX only
+python3 sfx.py kit --brand <brand>               # signature, gags, stings, takes → sfx/ (reports anything missing)
+node events.mjs && python3 audio/autoscore.py   # real-orchestra score in the brand's theme + SFX + sound boil + ladder
+STYLE=<visual style> python3 audio/stylize.py   # the style's sound on music + SFX
 python3 audio/mix.py && bash finish.sh "<name>" 916
 ```
 
-## 10. Growing the library
-- `sfx.py session [category]` prints the ElevenLabs Sound Effects sheet for every slot without a file. Generate once, name files `<id>.mp3`, then `sfx.py addall <folder> --source elevenlabs`. Never generate the same slot twice.
-- Pack files are searchable with `sfx.py browse <words>`; promote one with `sfx.py add <id> <pack file> --source <source>`.
-- Sources and licences: `library/sfx/sources.json`. The Designer's Choice files may never sit in a public repo.
+## 8. Growing the library
+`sfx.py session [category]` prints what still has no file (with ElevenLabs prompts, but prefer recorded libraries first); `sfx.py addall <folder> --source <id>` registers a batch; `sfx.py browse <words>` searches the raw packs. Licences in `library/sfx/sources.json`. The Designer's Choice files never sit in a public repo.

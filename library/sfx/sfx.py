@@ -80,14 +80,19 @@ def kit(brand):
         lib = os.path.join(FILES, f"{r['id']}.wav")
         src = own if own and os.path.exists(own) else (lib if os.path.exists(lib) else None)
         if src: to_wav(src, os.path.join('sfx', f'{ev}.wav')); out.append((ev, r['id'], 'brand' if src == own else 'library'))
-        else: out.append((ev, r['id'], 'synth'))
+        else: out.append((ev, r['id'], 'MISSING (silent; no synth is delivered)'))
         for n, alt in enumerate(r.get('alts', []), 2):   # round-robin takes for the 'sound boil'
             a = os.path.join(PACKS, alt)
             if os.path.exists(a): to_wav(a, os.path.join('sfx', f'{ev}~{n}.wav'))
-    for i, r in s.get('signature', {}).items():
-        own = os.path.join(BRANDS, brand, r['file']) if r.get('file') else None
-        if own and os.path.exists(own): to_wav(own, os.path.join('sfx', f'{i}.wav')); out.append((i, i, 'brand ' + r.get('status', '')))
+    for group in ('signature', 'musical'):
+        for i, r in s.get(group, {}).items():
+            base = os.path.join(BRANDS, brand, r['file']) if r.get('file') else None
+            own = next((base + e for e in ('', '.ogg', '.wav') if base and os.path.isfile(base + e)), None)
+            if own: to_wav(own, os.path.join('sfx', f'{i}.wav')); out.append((i, i, f"brand {group} {r.get('status', '')}".strip()))
+            else: out.append((i, i, 'MISSING (run: orchestra.py kit ' + brand + ')'))
     for ev, i, how in out: print(f'  {ev:<14} {i:<18} {how}')
+    miss = [ev for ev, i, how in out if how.startswith('MISSING')]
+    if miss: print(f'  {len(miss)} sound(s) missing: ' + ', '.join(miss))
 
 def add(i, f, source, dur=None):
     if not os.path.exists(f) and os.path.exists(os.path.join(PACKS, f)): f = os.path.join(PACKS, f)
