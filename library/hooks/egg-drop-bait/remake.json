@@ -19,11 +19,12 @@
    "fg": "primary_dark",
    "size": 150,
    "fit": 0.88,
-   "y": 0.492
+   "y": 0.492,
+   "group": "q"
   },
   {
    "t": 2.8667,
-   "text": "engaged.",
+   "text": "built.",
    "bg": "primary_dark",
    "fg": "accent",
    "size": 320,
@@ -33,7 +34,7 @@
   },
   {
    "t": 3.7334,
-   "text": "loyal.",
+   "text": "launched.",
    "bg": "paper",
    "fg": "primary_dark",
    "size": 320,
@@ -43,7 +44,7 @@
   },
   {
    "t": 4.5667,
-   "text": "growing.",
+   "text": "selling.",
    "bg": "primary_dark",
    "fg": "accent",
    "size": 320,
@@ -53,12 +54,13 @@
   },
   {
    "t": 5.4334,
-   "text": "DM PLAN to start.",
+   "text": "DM \"PLAN\"",
    "bg": "paper",
    "fg": "primary_dark",
-   "size": 150,
+   "size": 170,
    "fit": 0.88,
-   "y": 0.497
+   "y": 0.497,
+   "group": "cta"
   }
  ],
  "audio": {
@@ -66,5 +68,5 @@
  },
  "brand": "brand/brand-profile.json",
  "out": "delivery/<brand>_reel_<title>_v1_9x16.mp4",
- "_how": "Copy source.mp4 to work/example.mp4 in the project. Replace the 5 texts keeping each one's length close to the original (question ~15\u201317 chars, words 6\u20139 chars, CTA ~15\u201317 chars). Colours: paper / primary_dark from the brand. Branding: one font, light cards paper/primary_dark, dark cards primary_dark/accent."
+ "_how": "Copy source.mp4 to work/example.mp4 in the project. Replace the 5 texts: question = the thing the brand offers (no audience label, ~15-17 chars); 3 words = what the brand DOES, in order (6-9 chars each, lowercase, full stop); CTA = only the DM keyword in quotes. One font for every card. Light cards: paper bg + primary_dark text. Dark cards: primary_dark bg + accent text."
 }

@@ -13,7 +13,7 @@
     "sell",
     "grow"
   ],
-  "best_for": "A service or offer you can say in 3 words; direct CTA",
+  "best_for": "An offer the brand can show as 3 steps it does for the buyer; DM-keyword CTA",
   "timeline": [
     {
       "t0": 0.0,
@@ -58,28 +58,30 @@
       "sound": "silence, so the loop back to the bait is seamless"
     }
   ],
-  "rhythm": "cuts every ~0.85 s after the bait; bait \u2248 30 % of the video; CTA held twice as long as a word",
+  "rhythm": "cuts every ~0.85 s after the bait; bait ≈ 30 % of the video; CTA held twice as long as a word",
   "why_it_works": [
-    "Open loop: the brain waits to see the object fall; the video never shows it \u2192 rewatches and longer watch time",
+    "Open loop: the brain waits to see the object fall; the video never shows it → rewatches and longer watch time",
     "Pattern interrupt: real-world calm footage, then a hard cut to bold type",
     "Three one-word benefits are readable in under a second each, even muted",
     "Silent tail makes the loop feel continuous; people watch twice before noticing"
   ],
   "variables": {
-    "bait_object": "Something from the brand's world creeping to the edge (Buzztorm: the ring light on a desk). Must never fall.",
-    "question": "The buyer's need as a question, 3\u20135 words",
-    "words": "Exactly 3 one-word benefits ending with a full stop",
-    "cta": "From the brand CTA library, \u2264 5 words"
+    "bait_object": "Exact remake: the original footage. Own version: something from the brand's world creeping to the edge; must never fall.",
+    "question": "The thing the brand offers, as a question (\"need a community?\"). No audience label.",
+    "words": "Exactly 3 single words, lowercase, full stop: what the brand does, in order (\"built. launched. selling.\").",
+    "cta": "Only the DM keyword: DM \"KEYWORD\" (from cta.json)."
   },
   "rules": [
     "Never resolve the bait",
-    "Bait \u2264 2.2 s, no text on it",
-    "Words: one per card, same size, alternating primary/paper",
-    "Question and CTA at about 40 % of the word size",
-    "No voiceover, no music bed; one hit per card",
-    "CTA must be from cta.json; claims check applies",
-    "Exact remake: match each text's length to the original's so sizes match; the three words share one size",
-    "Consistency: one font, two colour pairs, no extra accent cards. The three words must describe the noun in the question."
+    "Bait ≤ 2.2 s, no text on it",
+    "One font for every card; lowercase like the original",
+    "Only two colour pairs: light = paper bg + primary_dark text; dark = primary_dark bg + accent text. No extra accent cards.",
+    "Question and CTA on light cards (bookends); words alternate dark, light, dark",
+    "The three words share one size and say what the brand does for the thing in the question",
+    "No audience label on screen (say who it's for in the caption only if the brand asks)",
+    "CTA = DM keyword only; claims check applies",
+    "Exact remake: keep the original audio and cuts (frames 64, 86, 112, 137, 163 at 30 fps); keep text lengths close to the original so sizes match",
+    "Caption: use the default Instagram caption structure (references/delivery.md)"
   ],
   "variations": [
     "Bait objects: a coffee cup sliding, a phone vibrating toward the edge, a domino about to tip, a full glass on a moving table",
@@ -90,7 +92,7 @@
     "exact_remake": {
       "default": true,
       "what": "Same footage, same audio, same cuts (frames 64, 86, 112, 137, 163 at 30 fps), same layout; only the text, the brand colours and the brand font change.",
-      "build": "remake.json + source.mp4 \u2192 kinetic.py",
+      "build": "remake.json + source.mp4 → kinetic.py",
       "example": {
         "brand": "buzztorm",
         "project": "egg-drop-remake",
@@ -108,7 +110,7 @@
     },
     "own_version": {
       "what": "The same mechanics with the brand's own bait (drawn by the engine): e.g. Buzztorm's ring light creeping to the edge.",
-      "build": "own_version_story.js + own_version_kinetic.json \u2192 render bait frames, then kinetic.py",
+      "build": "own_version_story.js + own_version_kinetic.json → render bait frames, then kinetic.py",
       "example": {
         "brand": "buzztorm",
         "project": "ring-light-bait"
@@ -173,5 +175,6 @@
     },
     "animation": "none (hard cuts)",
     "audio": "original track kept"
-  }
+  },
+  "caption_example": "Why do people follow you, buy once and disappear? Watch the egg again. 🥚\n\nYou didn't care about the egg.\nYou stayed because something was about to happen.\n\nPeople don't stay for content.\nThey stay for what happens next.\n\nThat's why a feed loses people. Every post ends. Every buyer leaves alone.\n\nSave this question 👇\n❌ \"How do I post more?\"\n✅ \"Where do my people come back to see what happens next?\"\n\nThe answer is a community. Members see who joined, who's winning and what's coming this week. There's always a next thing, so they come back.\n\nBuzztorm builds it for you: the onboarding, the offers and the payments. You record your content once. Your members and your sales stay yours.\n\nDM \"PLAN\" for a free 30-minute call. You leave with a plan, even if you don't hire us.\n\nNow tell me: who do you know who's still posting into the void? 😅\n\n#Buzztorm #communitybuilding #onlinebusiness #doneforyou #creators"
 }
