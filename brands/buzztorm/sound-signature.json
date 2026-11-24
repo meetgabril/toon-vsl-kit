@@ -1,30 +1,142 @@
 {
- "_about": "Buzztorm sound signature: the same sound for the same idea in every video. Engine event → catalog effect. 'kit' copies them into sfx/ before autoscore. Change one here and every future video changes with it.",
+ "_about": "Buzztorm sound signature: the same sound for the same idea in every video. Engine event \u2192 catalog effect. 'kit' copies them into sfx/ before autoscore. Change one here and every future video changes with it.",
  "palette": "Sitcom: dry, warm, wooden and plucky. No cinematic braams, no meme sounds baked in. One hit per idea; silence before the punchline.",
  "events": {
-  "pop":       {"id": "pop",          "why": "Every element that appears (text, sticker, prop)"},
-  "pops":      {"id": "pop",          "why": "Burst of items"},
-  "click":     {"id": "click",        "why": "Buttons, phone taps"},
-  "ding":      {"id": "chime",        "why": "Idea, reveal, correct answer"},
-  "buzz":      {"id": "wrong",        "why": "Wrong answer, myth, bad idea"},
-  "stamp":     {"id": "stamp",        "why": "Verdict stamps (MYTH / FACT)"},
-  "whoosh":    {"id": "whoosh-fast",  "why": "Big moves and scene changes"},
-  "chaching":  {"id": "cha-ching",    "why": "Money, sale, growth"},
-  "cheer":     {"id": "cheer",        "why": "Win, community moment"},
-  "sparkle":   {"id": "magic-wand",   "why": "Transformation, 'after'"},
-  "steps":     {"id": "steps",        "why": "Character walks in"},
-  "portal":    {"id": "portal",       "why": "Jump in time or place"},
-  "boing":     {"id": "boing",        "why": "Comic bounce, fail"},
-  "thud":      {"id": "thud",         "why": "Something lands, reality check"},
-  "creak":     {"id": "creak",        "why": "Awkward pause, door"},
-  "page":      {"id": "page-flip",    "why": "Book, plan, calendar"},
-  "gulp":      {"id": "gulp",         "why": "Nervous reaction"},
-  "scratch":   {"id": "record-scratch","why": "Hard stop, 'wait, what?'"},
-  "chalk":     {"id": "chalk",        "why": "Writing on the board"}
+  "pop": {
+   "id": "pop",
+   "why": "Every element that appears (text, sticker, prop)"
+  },
+  "pops": {
+   "id": "pop",
+   "why": "Burst of items"
+  },
+  "click": {
+   "id": "click",
+   "why": "Buttons, phone taps",
+   "alts": [
+    "kenney/ui/click2.wav",
+    "kenney/ui/click3.wav"
+   ]
+  },
+  "ding": {
+   "id": "chime",
+   "why": "Idea, reveal, correct answer"
+  },
+  "buzz": {
+   "id": "wrong",
+   "why": "Wrong answer, myth, bad idea",
+   "alts": [
+    "kenney/interface/error_005.wav"
+   ]
+  },
+  "stamp": {
+   "id": "stamp",
+   "why": "Verdict stamps (MYTH / FACT)",
+   "alts": [
+    "kenney/impact/impact_plank_medium_001.ogg",
+    "kenney/impact/impact_plank_medium_003.ogg"
+   ]
+  },
+  "whoosh": {
+   "id": "whoosh-fast",
+   "why": "Big moves and scene changes",
+   "alts": [
+    "designers-choice/zip/down-quick.ogg"
+   ]
+  },
+  "chaching": {
+   "id": "cha-ching",
+   "why": "Money, sale, growth"
+  },
+  "cheer": {
+   "id": "cheer",
+   "why": "Win, community moment"
+  },
+  "sparkle": {
+   "id": "magic-wand",
+   "why": "Transformation, 'after'"
+  },
+  "steps": {
+   "id": "steps",
+   "why": "Character walks in",
+   "alts": [
+    "kenney/impact/footstep_concrete_001.ogg",
+    "kenney/impact/footstep_concrete_002.ogg"
+   ]
+  },
+  "portal": {
+   "id": "portal",
+   "why": "Jump in time or place"
+  },
+  "boing": {
+   "id": "boing",
+   "why": "Comic bounce, fail"
+  },
+  "thud": {
+   "id": "thud",
+   "why": "Something lands, reality check",
+   "alts": [
+    "kenney/impact/impact_soft_heavy_001.ogg",
+    "kenney/impact/impact_soft_heavy_003.ogg"
+   ]
+  },
+  "creak": {
+   "id": "creak",
+   "why": "Awkward pause, door"
+  },
+  "page": {
+   "id": "page-flip",
+   "why": "Book, plan, calendar",
+   "alts": [
+    "kenney/rpg/book_flip_2.ogg",
+    "kenney/rpg/book_flip_3.ogg"
+   ]
+  },
+  "gulp": {
+   "id": "gulp",
+   "why": "Nervous reaction",
+   "alts": [
+    "designers-choice/vocal/gulp-comedic-02.ogg",
+    "designers-choice/vocal/gulp-comedic-03.ogg"
+   ]
+  },
+  "scratch": {
+   "id": "record-scratch",
+   "why": "Hard stop, 'wait, what?'"
+  },
+  "chalk": {
+   "id": "chalk",
+   "why": "Writing on the board"
+  }
  },
  "signature": {
-  "logo-sting":  {"file": "sfx/logo-sting.wav",  "status": "candidate", "from": "kenney/jingles/sax_sax_7.ogg"},
-  "series-bump": {"file": "sfx/series-bump.wav", "status": "candidate", "from": "kenney/jingles/pizzicato_pizzi_7.ogg"},
-  "outro":       {"file": "sfx/outro.wav",       "status": "candidate", "from": "kenney/jingles/pizzicato_pizzi_3.ogg"}
+  "logo-sting": {
+   "file": "sfx/logo-sting.ogg",
+   "status": "candidate",
+   "from": "music_kit.py (theme head D-F-E-D)",
+   "use": "Brand appears / logo"
+  },
+  "series-bump": {
+   "file": "sfx/series-bump.ogg",
+   "status": "candidate",
+   "from": "music_kit.py (theme head D-F-E-D)",
+   "use": "Opening of a series episode and the ONE stylised transition"
+  },
+  "outro": {
+   "file": "sfx/outro.ogg",
+   "status": "candidate",
+   "from": "music_kit.py (theme head D-F-E-D)",
+   "use": "CTA / end card"
+  },
+  "button": {
+   "file": "sfx/button.ogg",
+   "status": "candidate",
+   "from": "music_kit.py (theme head D-F-E-D)",
+   "use": "Last joke lands"
+  }
+ },
+ "music": {
+  "kit": "music/index.json",
+  "rule": "Every cue is the same theme. story.js `music:` uses these mood names: sitcom, think, aerobics, casino, tiptoe, tension, folk, happy, build, silence."
  }
 }

@@ -1,5 +1,7 @@
 # Sound effects
 
+The house sound (palette, theme and moods, leitmotifs, sonic logo, voice kits, walla, style chains, mix ladder) is `library/docs/SOUND.md`. Read it before scoring or choosing sounds.
+
 Catalog: `~/buzztorm-studio/library/sfx/catalog.json` (128 effects in 11 categories). Approved sources: `library/sfx/sources.json`. Tool: `sfx.py` (copied into every project).
 
 ## Library contents
@@ -21,6 +23,9 @@ Before autoscore, always run `python3 sfx.py kit --brand <brand>`. It copies the
 - `python3 sfx.py signature <brand>`: show the brand's signature.
 - `python3 sfx.py browse <words>`: search the 552 raw pack files (alternates, variations).
 - `python3 sfx.py add <id> kenney/<pack>/<file> --source kenney`: promote a pack file to a catalog slot.
+- `python3 sfx.py session [category]`: ElevenLabs sheet for slots without a file; `sfx.py addall <folder> --source elevenlabs` to register the results.
+- `python3 audio/music_kit.py brands/<b>/music`: the brand's theme in 8 moods + leitmotifs + stings.
+- `python3 audio/reactions.py script|split|list`: character voice kits (32 reactions in the character's own voice).
 
 autoscore.py uses `sfx/<name>.wav` when present, else its synth, so a library file automatically upgrades every video.
 

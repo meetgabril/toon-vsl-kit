@@ -142,7 +142,7 @@
     {
      "id": "portal",
      "name": "Portal / warp",
-     "use": "Time travel, before→after, new world",
+     "use": "Time travel, before\u2192after, new world",
      "duration": 1.6,
      "synth": "portal",
      "prompt": "Portal / warp, single isolated sound effect, clean, no music, no voice, for a short social video",
@@ -246,7 +246,7 @@
     {
      "id": "gavel",
      "name": "Gavel",
-     "use": "Rule, verdict, 'the law of…'",
+     "use": "Rule, verdict, 'the law of\u2026'",
      "duration": 0.6,
      "synth": null,
      "prompt": "Gavel, single isolated sound effect, clean, no music, no voice, for a short social video",
@@ -332,7 +332,7 @@
     {
      "id": "check",
      "name": "Correct / checkmark ding",
-     "use": "✅ answer, right way",
+     "use": "\u2705 answer, right way",
      "duration": 0.6,
      "synth": "ding",
      "prompt": "Correct / checkmark ding, single isolated sound effect, clean, no music, no voice, for a short social video",
@@ -341,7 +341,7 @@
     {
      "id": "wrong",
      "name": "Wrong answer buzz",
-     "use": "❌ answer, myth, wrong way",
+     "use": "\u274c answer, myth, wrong way",
      "duration": 0.5,
      "synth": "buzz",
      "prompt": "Wrong answer buzz, single isolated sound effect, clean, no music, no voice, for a short social video",
@@ -866,7 +866,7 @@
     {
      "id": "vinyl-crackle",
      "name": "Vinyl crackle bed",
-     "use": "Old story, history fact (1969…)",
+     "use": "Old story, history fact (1969\u2026)",
      "duration": 4.0,
      "synth": null,
      "prompt": "Vinyl crackle bed, single isolated sound effect, clean, no music, no voice, for a short social video",
@@ -909,7 +909,7 @@
     {
      "id": "shimmer",
      "name": "Shimmer",
-     "use": "Before→after reveal",
+     "use": "Before\u2192after reveal",
      "duration": 1.5,
      "synth": null,
      "prompt": "Shimmer, single isolated sound effect, clean, no music, no voice, for a short social video",
@@ -1094,7 +1094,7 @@
    ]
   },
   "ambience": {
-   "what": "Quiet beds under a scene (−24 dB or lower)",
+   "what": "Quiet beds under a scene (\u221224 dB or lower)",
    "effects": [
     {
      "id": "amb-office",
@@ -1185,6 +1185,46 @@
      "prompt": "Ocean waves, single isolated sound effect, clean, no music, no voice, for a short social video",
      "search": "ocean waves",
      "loop": true
+    },
+    {
+     "id": "amb-gym",
+     "name": "Gym room tone",
+     "use": "Under gym scenes",
+     "duration": 8,
+     "synth": null,
+     "prompt": "Gym ambience, air conditioning hum, distant weights, no voices up front, seamless loop",
+     "search": "gym room tone",
+     "loop": true
+    },
+    {
+     "id": "amb-studio",
+     "name": "Home studio tone",
+     "use": "Creator at desk",
+     "duration": 8,
+     "synth": null,
+     "prompt": "Quiet home office room tone, computer fan, faint street outside, seamless loop",
+     "search": "home studio tone",
+     "loop": true
+    },
+    {
+     "id": "amb-beach",
+     "name": "Beach",
+     "use": "Island / vacation dream scenes",
+     "duration": 8,
+     "synth": null,
+     "prompt": "Gentle beach waves and seagulls, warm and calm, seamless loop",
+     "search": "beach",
+     "loop": true
+    },
+    {
+     "id": "amb-living-room",
+     "name": "Living room",
+     "use": "Mom at home, family scenes",
+     "duration": 8,
+     "synth": null,
+     "prompt": "Cozy living room tone, clock ticking softly, distant TV, seamless loop",
+     "search": "living room",
+     "loop": true
     }
    ]
   },
@@ -1219,7 +1259,258 @@
      "search": "series bumper"
     }
    ]
+  },
+  "walla": {
+   "what": "Crowds (walla): always unintelligible, mixed 20-24 dB under the voice, never with clear words",
+   "effects": [
+    {
+     "id": "walla-office",
+     "name": "Office murmur",
+     "use": "Open office, coworkers busy in the background",
+     "duration": 6,
+     "synth": null,
+     "prompt": "Soft office murmur of a dozen coworkers talking quietly, keyboard taps far away, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "office murmur",
+     "loop": true
+    },
+    {
+     "id": "walla-cafe",
+     "name": "Caf\u00e9 chatter",
+     "use": "Coffee shop, meeting, date",
+     "duration": 6,
+     "synth": null,
+     "prompt": "Cozy cafe chatter, cups clinking softly, relaxed conversations, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "caf\u00e9 chatter",
+     "loop": true
+    },
+    {
+     "id": "walla-gym",
+     "name": "Gym crowd",
+     "use": "Gym scenes behind Tony",
+     "duration": 6,
+     "synth": null,
+     "prompt": "Busy gym crowd talking and grunting, distant weights clanking, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "gym crowd",
+     "loop": true
+    },
+    {
+     "id": "walla-party",
+     "name": "Party crowd",
+     "use": "Launch party, community celebration",
+     "duration": 6,
+     "synth": null,
+     "prompt": "Happy party crowd laughing and talking, glasses clinking, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "party crowd",
+     "loop": true
+    },
+    {
+     "id": "walla-classroom",
+     "name": "Class / audience settling",
+     "use": "Webinar, class, live event before it starts",
+     "duration": 5,
+     "synth": null,
+     "prompt": "Audience of 40 people settling into seats, murmuring, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "class / audience settling",
+     "loop": true
+    },
+    {
+     "id": "walla-crowd-excited",
+     "name": "Excited crowd",
+     "use": "Big reveal is coming, hype",
+     "duration": 4,
+     "synth": null,
+     "prompt": "Excited crowd buzzing with anticipation, rising energy, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "excited crowd",
+     "loop": true
+    },
+    {
+     "id": "walla-crowd-ooh",
+     "name": "Crowd ooh",
+     "use": "Impressive number or trick",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Studio audience saying a long impressed oooh together, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "crowd ooh",
+     "loop": true
+    },
+    {
+     "id": "walla-crowd-aww",
+     "name": "Crowd aww",
+     "use": "Cute or sad moment",
+     "duration": 2,
+     "synth": null,
+     "prompt": "Studio audience saying a warm sympathetic awww together, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "crowd aww",
+     "loop": true
+    },
+    {
+     "id": "walla-crowd-laugh",
+     "name": "Sitcom audience laugh",
+     "use": "The joke lands (use rarely, organic only)",
+     "duration": 3,
+     "synth": null,
+     "prompt": "Warm 1990s sitcom studio audience laughing, medium size, natural, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "sitcom audience laugh",
+     "loop": true
+    },
+    {
+     "id": "walla-crowd-gasp",
+     "name": "Crowd gasp",
+     "use": "Shock reveal",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Studio audience gasping in shock all at once, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "crowd gasp",
+     "loop": true
+    },
+    {
+     "id": "walla-crowd-boo",
+     "name": "Crowd boo",
+     "use": "Bad idea, villain move",
+     "duration": 3,
+     "synth": null,
+     "prompt": "Playful crowd booing, comedic, not aggressive, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "crowd boo",
+     "loop": true
+    },
+    {
+     "id": "walla-angry-mob",
+     "name": "Angry mob",
+     "use": "Clients complaining, chaos",
+     "duration": 4,
+     "synth": null,
+     "prompt": "Comedic angry mob grumbling and shouting, cartoon style, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "angry mob",
+     "loop": true
+    },
+    {
+     "id": "walla-cheer",
+     "name": "Crowd cheer",
+     "use": "Win, launch, sale goes off",
+     "duration": 3,
+     "synth": null,
+     "prompt": "Crowd cheering and whooping with applause, joyful, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "crowd cheer",
+     "loop": true
+    },
+    {
+     "id": "walla-applause",
+     "name": "Applause",
+     "use": "End of a demo, CTA",
+     "duration": 3,
+     "synth": null,
+     "prompt": "Medium audience applause, warm, natural, fading out, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "applause",
+     "loop": true
+    },
+    {
+     "id": "walla-kids",
+     "name": "Kids playing",
+     "use": "Park, school, family scenes",
+     "duration": 5,
+     "synth": null,
+     "prompt": "Kids playing and laughing in a playground, distant, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "kids playing",
+     "loop": true
+    },
+    {
+     "id": "walla-whisper",
+     "name": "Whispering crowd",
+     "use": "Rumours, gossip, the secret spreads",
+     "duration": 4,
+     "synth": null,
+     "prompt": "Group of people whispering and gossiping, close and secretive, unintelligible walla with no clear words, cartoon sitcom style, clean recording, no music",
+     "search": "whispering crowd",
+     "loop": true
+    }
+   ]
+  },
+  "reactions": {
+   "what": "Human reactions for EXTRAS. Main characters use their own voice kit (reactions.py)",
+   "effects": [
+    {
+     "id": "extra-man-laugh",
+     "name": "Extra: man laughs",
+     "use": "Background character laughs",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Middle-aged man laughing heartily, cartoon sitcom style, isolated, no music",
+     "search": "extra: man laughs"
+    },
+    {
+     "id": "extra-woman-laugh",
+     "name": "Extra: woman laughs",
+     "use": "Background character laughs",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Woman laughing warmly, cartoon sitcom style, isolated, no music",
+     "search": "extra: woman laughs"
+    },
+    {
+     "id": "extra-angry-grumble",
+     "name": "Extra: angry grumble",
+     "use": "Annoyed client, neighbour",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Man grumbling angrily under his breath, comedic cartoon, isolated, no words",
+     "search": "extra: angry grumble"
+    },
+    {
+     "id": "extra-happy-yay",
+     "name": "Extra: happy yay",
+     "use": "Client wins",
+     "duration": 1,
+     "synth": null,
+     "prompt": "Person shouting yay happily, cartoon style, isolated",
+     "search": "extra: happy yay"
+    },
+    {
+     "id": "extra-surprised-gasp",
+     "name": "Extra: gasp",
+     "use": "Background reaction",
+     "duration": 0.8,
+     "synth": null,
+     "prompt": "Person gasping in surprise, short, isolated",
+     "search": "extra: gasp"
+    },
+    {
+     "id": "extra-sigh",
+     "name": "Extra: sigh",
+     "use": "Bored, tired",
+     "duration": 1.2,
+     "synth": null,
+     "prompt": "Person sighing heavily, bored, comedic, isolated",
+     "search": "extra: sigh"
+    },
+    {
+     "id": "extra-effort-grunt",
+     "name": "Extra: effort grunt",
+     "use": "Lifting, pushing, gym",
+     "duration": 0.8,
+     "synth": null,
+     "prompt": "Man grunting with effort while lifting heavy weight, short, isolated",
+     "search": "extra: effort grunt"
+    },
+    {
+     "id": "extra-baby-giggle",
+     "name": "Extra: baby giggle",
+     "use": "Cute beat",
+     "duration": 1.2,
+     "synth": null,
+     "prompt": "Baby giggling, short, isolated",
+     "search": "extra: baby giggle"
+    },
+    {
+     "id": "extra-dog-bark",
+     "name": "Extra: small dog bark",
+     "use": "Comic interruption",
+     "duration": 0.8,
+     "synth": null,
+     "prompt": "Small dog barking twice, cartoon timing, isolated",
+     "search": "extra: small dog bark"
+    }
+   ]
   }
  },
- "count": 128
+ "count": 157
 }

@@ -56,6 +56,10 @@ def groove(t0, t1, chords, bassroot, style='sitcom', v=1.):
                 D.add(brush(.35 * v), tb); D.add(shaker(.25 * v), tb + B / 2)
                 if k % 2 == 1: D.add(clap(.25 * v), tb)
                 Bs.add(bass(tb, B * .9, root - 12 + (7 if k == 2 else 0), .4 * v, 700), tb)
+            elif style == 'tiptoe':   # awkward / sneaky / the mistake: tuba + pizzicato
+                if k % 2 == 0: Bs.add(tuba(tb, B * .6, root - 12, .55 * v), tb)
+                Hm.add(ks(M(ch[k % 3]) + 12, .25, .3 * v, .3), tb + B / 2)
+                D.add(rim(.12 * v), tb + (B / 2 if k % 2 else 0))
             elif style == 'island':
                 for s, n in enumerate([ch[0], ch[2], ch[1], ch[2]]): Hm.add(ks(M(n) + 24, .6, .22 * v, .8), tb + s * B / 4)
                 if k == 0: Hm.add(vibes(1, M(ch[1]) + 24, .15 * v), tb)
@@ -80,6 +84,7 @@ STY = {   # style → (groove style, chords, bass roots, melody?)
   'aerobics': ('aerobics', [Dm, Bb, Gm, A7], ['D3', 'A#2', 'G2', 'A2'], False),
   'island':   ('island',   [DM, GM], ['D3', 'G2'], False),
   'folk':     ('folk',     [DM, Bm, GM, AM], ['D3', 'B2', 'G2', 'A2'], True),
+  'tiptoe':   ('tiptoe',   [Dm, Bb, Gm, A7], ['D3', 'A#2', 'G2', 'A2'], False),
 }
 secs, cur = [], None
 for b in EV['beats']:
@@ -144,6 +149,17 @@ M_ = {'pop': lambda: pop(), 'pops': lambda: pop(), 'click': lambda: click(), 'di
       'chaching': lambda: chaching(), 'cheer': lambda: cheer(1.6), 'sparkle': lambda: sparkle(), 'steps': lambda: steps(1.8, 4), 'portal': lambda: portal(), 'boing': lambda: boing(),
       'thud': lambda: thud(), 'creak': lambda: creak(), 'powerdown': lambda: powerdown(), 'page': lambda: page(), 'waves': lambda: waves(4.0), 'gulp': lambda: gulp(), 'chalk': lambda: chalk(), 'scratch': lambda: scratch()}
 cues = []
+# 'Sound boil' (Studio Standard): like the 3-drawing line boil, a repeated sound is never identical.
+# Round-robin through sfx/<k>.wav, sfx/<k>~2.wav, sfx/<k>~3.wav… and nudge pitch ±35 cents and level ±1.2 dB on every hit.
+_rr = {}
+def take(k):
+    import glob
+    fs = sorted([f'sfx/{k}.wav'] + glob.glob(f'sfx/{k}~*.wav')); i = _rr.get(k, 0); _rr[k] = i + 1
+    y, r = sf.read(fs[i % len(fs)]); return y.mean(1) if y.ndim > 1 else y
+def boil(y, cents=35):
+    if os.environ.get('BOIL') == '0' or len(y) < 32: return y
+    q = 2 ** (rng.uniform(-cents, cents) / 1200); n = int(len(y) / q)
+    return np.interp(np.arange(n) * q, np.arange(len(y)), y)
 bts = EV['beats'] + [{'t': EV['dur'], 'style': None}]
 for b0, b1 in zip(bts, bts[1:]):
     if b0.get('style') == 'oldfilm': cues.append((b0['t'], projector(b1['t'] - b0['t']), .35))
@@ -156,8 +172,9 @@ for e in EV['events']:
         h = e.get('hit', .9); cues += [(t + h, gulp(), .3)] + [(t + h + .1 + i * .18, ding(86 + i * 2, .3), .35) for i in range(4)]
     elif k == 'pops': cues += [(t + i * .08, pop(), .5) for i in range(5)]
     elif os.path.exists(f'sfx/{k}.wav'):   # file from sfx.py (library / AI) wins over the synth
-        y, r = sf.read(f'sfx/{k}.wav'); y = y.mean(1) if y.ndim > 1 else y; cues.append((t, y, .7))
-    elif k in M_: cues.append((t, M_[k](), .7))
+        y = take(k); lvl = .12 if k.startswith('walla-') else .07 if k.startswith('amb-') else 1. if k.startswith('voice-') else .7   # mix ladder (SOUND.md)
+        cues.append((t, boil(y) if lvl == .7 else y, lvl * 10 ** (rng.uniform(-1.2, 1.2) / 20)))
+    elif k in M_: cues.append((t, boil(M_[k]()), .7))
 for t, x, g in cues: put(x, t, g)
 sf.write('music/sfx.wav', (fx / (np.abs(fx).max() + 1e-9) * .8).astype(np.float32), SR)
 print('autoscore:', len(secs) - 1, 'music sections ·', len(cues), 'sfx cues')

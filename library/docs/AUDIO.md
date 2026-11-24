@@ -1,5 +1,7 @@
 # Audio: voice, timing, lip sync, score, SFX and mix
 
+The artistic rules (palette, moods, leitmotifs, style chains, mix ladder) are in SOUND.md. This file is the mechanics.
+
 ## Golden rule: the voice is sacred
 The user's ElevenLabs voiceover is the master clock and the star.
 - **Never** pitch-shift, time-stretch, de-ess hard, heavily compress or limit it. An earlier version did, and the client heard the quality loss immediately.
