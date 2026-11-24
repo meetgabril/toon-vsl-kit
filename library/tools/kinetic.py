@@ -57,7 +57,7 @@ def main(spec):
     d0 = ImageDraw.Draw(Image.new('RGB', (10, 10))); fitted = {}
     for ci, c in enumerate(cards):
         px = int(c.get('size', 160)); maxw = (W * float(c['fit'])) if c.get('fit') else W - 2 * int(S.get('side_margin', 130))
-        while d0.textlength(c['text'], font=font(fam, px)) > maxw and px > 44: px -= 2
+        while d0.textlength(c['text'], font=font(c.get('font', fam), px)) > maxw and px > 44: px -= 2
         fitted[ci] = px
     for g in {c.get('group') for c in cards if c.get('group')}:
         m = min(fitted[i] for i, c in enumerate(cards) if c.get('group') == g)
@@ -66,12 +66,12 @@ def main(spec):
     for ci, c in enumerate(cards):
         t1 = cards[ci + 1]['t'] if ci + 1 < len(cards) else end
         f0, f1 = int(round(c['t'] * fps)), int(round(t1 * fps))
-        px = fitted[ci]; fnt = font(fam, px)
+        cf = c.get('font', fam); px = fitted[ci]; fnt = font(cf, px)
         bg, fg = col(c.get('bg', 'paper'), roles), col(c.get('fg', 'primary'), roles)
         for k in range(max(1, f1 - f0)):
             im = Image.new('RGB', (W, H), bg); dr = ImageDraw.Draw(im)
             s = 1.0 + (0.12 * (1 - k / 3) if S.get('pop', True) and k < 3 else 0)
-            f = font(fam, int(px * s)) if s != 1.0 else fnt
+            f = font(cf, int(px * s)) if s != 1.0 else fnt
             tw = dr.textlength(c['text'], font=f); bb = dr.textbbox((0, 0), c['text'], font=f); th = bb[3] - bb[1]
             x, y = (W - tw) / 2, H * c.get('y', 0.5) - th / 2 - bb[1]
             dr.text((x, y), c['text'], font=f, fill=fg)

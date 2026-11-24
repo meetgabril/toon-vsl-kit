@@ -1,29 +1,31 @@
-# Buzztorm · Reel · egg-drop-remake · v1
+# Buzztorm · Reel · egg-drop-remake · v2
 
 ## Instagram
-Engaged. Loyal. Growing. That's a community that sells for you. 🥚
+Your clients aren't ghosting you. They just have nowhere to stay. 🥚
 
-Who do you know still posting every day to keep clients around?
+A community keeps them engaged, loyal and booking again, even when you stop posting.
 
-DM us PLAN and we'll send you the booking link.
+Which coach friend just lost another client after week one?
 
-#Buzztorm #onlinecoach #clientgrowth #communitybuilding #contentcreator
+Coach? DM us PLAN and we'll send you the booking link.
+
+#Buzztorm #onlinecoach #fitnesscoach #clientgrowth #communitybuilding
 
 ## TikTok
-Did the egg fall? Watch again. Then DM PLAN. 🥚
+Coach, your clients don't ghost. They drift. Did the egg fall? 🥚
 
-#Buzztorm #onlinecoach #communitybuilding
+#Buzztorm #onlinecoach #fitnesscoach
 
 ## YouTube Shorts
-A community that sells for you: engaged, loyal, growing.
+Coach: engaged, loyal, booked. That's a community.
 
-#Buzztorm #onlinecoach #communitybuilding
+#Buzztorm #onlinecoach #fitnesscoach
 
 ## Pinned comment
-Did the egg fall? 👀
+Did the egg fall? Watch again. 👀
 
 ## Cover
-need a community?
+clients ghosting?
 
 ## Posting note
-Turn on the PLAN DM-keyword automation first. Keep the original sound; no music on top.
+Turn on the PLAN DM-keyword automation first. Keep the original sound; no music on top. Organic only (the egg footage is not ours).

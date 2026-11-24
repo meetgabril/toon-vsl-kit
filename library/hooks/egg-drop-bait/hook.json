@@ -93,13 +93,15 @@
       "example": {
         "brand": "buzztorm",
         "project": "egg-drop-remake",
+        "version": 2,
         "texts": [
-          "need a community?",
-          "engaged.",
-          "loyal.",
-          "growing.",
-          "DM PLAN to start."
-        ]
+          "clients ghosting?",
+          "ENGAGED.",
+          "LOYAL.",
+          "BOOKED.",
+          "Coach? DM PLAN."
+        ],
+        "branding": "question/CTA in the label font (Baloo 2), words in the title font (Bungee); navy/cream alternating; last word in the highlight colour; CTA card in the brand accent (orange)"
       }
     },
     "own_version": {

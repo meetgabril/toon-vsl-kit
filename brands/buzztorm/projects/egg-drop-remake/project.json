@@ -6,7 +6,7 @@
   "goal": "sell",
   "offer": "community-build",
   "status": "Ready for approval",
-  "version": 1,
+  "version": 2,
   "created": "2026-11-24",
   "updated": "2026-11-24",
   "parent": null,
@@ -37,6 +37,34 @@
       "from": "Rendering",
       "to": "Ready for approval",
       "version": 1,
+      "note": ""
+    },
+    {
+      "date": "2026-11-24",
+      "from": "Ready for approval",
+      "to": "Script review",
+      "version": 2,
+      "note": "v2: Buzztorm fonts and orange CTA, coach copy"
+    },
+    {
+      "date": "2026-11-24",
+      "from": "Script review",
+      "to": "Storyboard review",
+      "version": 2,
+      "note": ""
+    },
+    {
+      "date": "2026-11-24",
+      "from": "Storyboard review",
+      "to": "Rendering",
+      "version": 2,
+      "note": ""
+    },
+    {
+      "date": "2026-11-24",
+      "from": "Rendering",
+      "to": "Ready for approval",
+      "version": 2,
       "note": ""
     }
   ]
