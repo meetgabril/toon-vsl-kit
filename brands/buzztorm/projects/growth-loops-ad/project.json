@@ -6,7 +6,7 @@
   "goal": "sell",
   "offer": "buzztorm-academy",
   "status": "Approved",
-  "version": 1,
+  "version": 2,
   "created": "2026-11-25",
   "updated": "2026-11-25",
   "parent": "growth-loops-cheat-sheet",
@@ -44,6 +44,48 @@
       "from": "Ready for approval",
       "to": "Approved",
       "version": 1,
+      "note": ""
+    },
+    {
+      "date": "2026-11-25",
+      "from": "Approved",
+      "to": "Ready for approval",
+      "version": 2,
+      "note": "changes requested"
+    },
+    {
+      "date": "2026-11-25",
+      "from": "Ready for approval",
+      "to": "Script review",
+      "version": 3,
+      "note": "v2: rebuilt with the silent-video study"
+    },
+    {
+      "date": "2026-11-25",
+      "from": "Script review",
+      "to": "Storyboard review",
+      "version": 2,
+      "note": ""
+    },
+    {
+      "date": "2026-11-25",
+      "from": "Storyboard review",
+      "to": "Rendering",
+      "version": 2,
+      "note": ""
+    },
+    {
+      "date": "2026-11-25",
+      "from": "Rendering",
+      "to": "Ready for approval",
+      "version": 2,
+      "note": ""
+    },
+    {
+      "date": "2026-11-25",
+      "from": "Ready for approval",
+      "to": "Approved",
+      "version": 2,
       "note": ""
     }
   ]
