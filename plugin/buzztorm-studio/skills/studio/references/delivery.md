@@ -25,3 +25,18 @@ YouTube: 3 titles (≤ 60 characters), description with chapters from scene time
 
 ## Posting note
 Always one line: where/how to post (e.g. "Post as trial reels; log results in 72 h", "Turn on the ACADEMY comment automation first").
+
+## Instagram caption structure (default for reels and carousels)
+
+Write every Instagram caption in this order. Short lines, one idea per line.
+
+1. **Hook question** (first line, ≤125 characters): the reader's pain as a question, plus a pointer to the video ("Watch the egg again.").
+2. **Concrete scene or proof**: what happened in the video, or a sourced fact from facts.json.
+3. **The turn**: two contrasting lines ("People don't stay for X. / They stay for Y.").
+4. **Why the usual way fails**: one or two lines.
+5. **Save line**: "Save this question 👇" with ❌ the usual question and ✅ the better question.
+6. **The answer**: the idea, then what the brand does (from offers.json, no invented promises).
+7. **CTA**: the DM keyword or link from cta.json, with the risk reversal if the offer has one.
+8. **Send trigger**: "Now tell me: who do you know who…? 😅"
+9. **Source line** when a fact was used: "(Study: …, year.)"
+10. **Hashtags**: max 5, brand tag first.
