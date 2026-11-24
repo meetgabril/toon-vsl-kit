@@ -8,7 +8,7 @@ const SIGN = (k, d) => ((BRAND && BRAND.signs && BRAND.signs[k]) || d || ((BRAND
 const SIGN2 = (k) => { const w = SIGN(k).split(' '); return w.length > 1 ? [w.slice(0, Math.ceil(w.length / 2)).join(' '), w.slice(Math.ceil(w.length / 2)).join(' ')] : [w[0], '']; };
 import './sets.custom.js';   // the brand's own backgrounds (addSet) — see brands/<brand>/backgrounds
 import { C } from './cast.js';
-import { peep, folk2, bfaWoman, transformFig, ARMS, CAST } from './chars2.js';
+import { peep, folk2, bfaWoman, transformFig, ARMS, CAST, arm2 } from './chars2.js';
 import { loadPeeps, takePending } from './peeps.js';
 import { hand } from './chars.js';
 import './cast.custom.js';   // your own characters (addCast) — see CHARACTERS.md
@@ -26,7 +26,7 @@ const SAFE_ZONES = { post: { top: 64, bottom: 64, side: 64 }, story: { top: 250,
 const CAPTIONS = { on: Q.get('cap') === '1', y: 1330, size: 84, chunk: 3, col: '#ffffff', hi: '#ffd66b' };
 function captions(gt) {
   if (!CAPTIONS.on || !TIMING) return; const W_ = TIMING.words; let i = -1; for (let k = 0; k < W_.length && W_[k][1] - .05 <= gt; k++) i = k; if (i < 0) return;
-  let ls = i; while (ls > 0 && W_[ls - 1][3] === W_[i][3]) ls--; const c0 = ls + (i - ls) - ((i - ls) % CAPTIONS.chunk), chunk = W_.slice(c0, c0 + CAPTIONS.chunk).filter(w => w[3] === W_[i][3]);   // chunks never cross a sentence if (gt > chunk[chunk.length - 1][2] + .4) return;
+  let ls = i; while (ls > 0 && W_[ls - 1][3] === W_[i][3]) ls--; const c0 = ls + (i - ls) - ((i - ls) % CAPTIONS.chunk), chunk = W_.slice(c0, c0 + CAPTIONS.chunk).filter(w => w[3] === W_[i][3]); if (gt > chunk[chunk.length - 1][2] + .4) return;
   const txt = chunk.map(w => w[0].toUpperCase()); let fs = CAPTIONS.size; g.setTransform(1, 0, 0, 1, 0, 0);
   const meas = () => { g.font = `400 ${fs}px "Bungee"`; return txt.map(t => g.measureText(t).width + fs * .55); };
   let ws = meas(), tot = ws.reduce((a, b) => a + b, 0); if (tot > 960) { fs *= 960 / tot; ws = meas(); tot = ws.reduce((a, b) => a + b, 0); }
@@ -193,7 +193,7 @@ const TONY = (gt, P) => {
   const arms = P.run ? (Math.sin(gt * 10) > 0 ? 'runB' : 'runA') : P.arms || (P.holdR ? 'hold' : (P.armR && P.armR.h[1] < -60) ? 'point' : 'down');
   const run = P.run ? Math.abs(Math.sin(gt * 10)) * 30 * s : 0, sq = P.squat ? P.squat * 120 * s : 0;
   if (P.ringLight && !P.bust) ringStand(P.x, P.y, s, f, P.ringOff);
-  peep('T', { x: P.x + jit, y: y - run + sq, s, face: f, t: gt, arms, legs: P.legs || (P.run ? 'run' : 'stand'), walkPh: gt * 10, bare: P.bare, noShadow: P.bust || P.noShadow, squat: P.squat ? P.squat * .9 : 0,
+  peep('T', { x: P.x + jit, y: y - run + sq, s, face: f, t: gt, arms, legs: P.legs || (P.run ? 'run' : 'stand'), walkPh: gt * 10, bare: P.bare, grip: P.grip, noShadow: P.bust || P.noShadow, squat: P.squat ? P.squat * .9 : 0,
     mood: moodOf(P, 'smile'), open: P.mouth && P.mouth.o === 0 ? 0 : lip('T', gt), vis: P.mouth && P.mouth.o === 0 ? 'X' : (P.vis ?? visOf('T', gt)), talk: talkEnergy('T', gt), tilt: P.tilt ?? (P.headTilt || 0), acc: P.shades ? 'Sunglasses' : P.acc, faceName: P.faceName });
   const W = ARMS[arms].R[2]; const hx = P.x + W[0] * k * f, hy = y - (2480 - W[1]) * k;
   if (P.holdR) P.holdR([hx, hy]);
@@ -478,8 +478,8 @@ const ITEM = {
 };
 const DEFPOS = { year: 'high', label: 'low', title: 'top', sign: 'top', pill: 'high', sub: 'low', counter: 'mid', phone: 'R', card: 'high', stamp: 'mid', list: 'UR', check: 'R', x: 'R', crowd: 'mid', walkers: 'low', money: 'mid', confetti: 'mid', stars: 'mid', poof: 'mid', flash: 'mid', ba: 'R', prop: 'R', fn: 'mid', arrow: 'mid' };
 const SFX_OF = { year: 'stamp', label: 'scratch', title: 'pop', sign: 'pop', pill: 'pop', sub: 'click', counter: 'count', phone: 'notif', card: 'pop', stamp: 'stamp', list: 'pop', check: 'ding', x: 'buzz', crowd: 'pops', walkers: 'steps', money: 'chaching', confetti: 'cheer', stars: 'sparkle', poof: 'pop', flash: 'whoosh', ba: 'sparkle', prop: 'pop', arrow: 'whoosh' };
-const clipCircle = (x, y, r) => { g.save(); g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.clip(); }, unclip = () => g.restore();   // screen-space round mask (reaction bubbles)
-const API = { clipCircle, unclip, push, pop, translate, rotate, scale, shape, fillOnly, stroke, ell, arc, spline, rr, rect, text, dot, pill, sign, TONY, DEX, CHAR, folk, stars, poof, check, xMark, arrow, ss, eo, back, seg, lerp, clamp, COL };
+const clipCircle = (x, y, r) => { g.save(); g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.clip(); }, unclip = () => g.restore(), clipRect = (x, y, w, h, r = 0) => { g.save(); g.beginPath(); g.roundRect ? g.roundRect(x, y, w, h, r) : g.rect(x, y, w, h); g.clip(); };   // screen-space masks (reaction bubbles, tiles)
+const API = { arm2, clipCircle, clipRect, unclip, push, pop, translate, rotate, scale, shape, fillOnly, stroke, ell, arc, spline, rr, rect, text, dot, pill, sign, TONY, DEX, CHAR, folk, stars, poof, check, xMark, arrow, ss, eo, back, seg, lerp, clamp, COL };
 function compileStory() {
   if (!STORY || !STORY.beats || !TIMING) return;
   SH.length = 0; let cur = 0; const dur = LIPS.N / FPS;

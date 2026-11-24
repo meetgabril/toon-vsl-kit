@@ -11,7 +11,7 @@ export const TONYC = { skin: '#e9ad80', top: '#17141c', pants: '#e9ad80', shoes:
 const FACES = {   // [eyes+nose face, resting mouth face, mouth curve for speech]
   calm: ['Smile', 'Smile', .4], smile: ['Smile', 'Smile', .5], happy: ['SmileTeeth', 'BigSmile', .9], serious: ['Serious', 'Serious', 0],
   worried: ['Concerned', 'Tired', -.5], fear: ['ConcernedFear', 'ConcernedFear', -.6], awe: ['Awe', 'Awe', .2], hopeful: ['Cute', 'Cute', .7], driven: ['Driven', 'Driven', .3],
-sad: ['Solemn', 'Solemn', -.5], cheeky: ['Cheeky', 'Cheeky', .6], tired: ['Tired', 'Tired', -.3], sleep: ['EyesClosed', 'EyesClosed', 0], blank: ['Blank', 'Blank', 0],
+  sad: ['Solemn', 'Solemn', -.5], cheeky: ['Cheeky', 'Cheeky', .6], tired: ['Tired', 'Tired', -.3], sleep: ['EyesClosed', 'EyesClosed', 0], blank: ['Blank', 'Blank', 0],
 };
 // —— cast registry: one entry per speaking character (key = speaker letter used in lines.txt / lips.json) ——
 // rig 'peeps' = Open Peeps body (pose = 'standing/…' | 'sitting/…' | 'effigy/…' bust) · rig 'coach' = Tony's custom muscular rig (tonyBody3)
@@ -74,7 +74,7 @@ const FTOP = ['#ff5b6e', '#2ec4b6', '#b5e655', '#ff8fc7', '#3d7bff', '#ffffff', 
 const FPANTS = ['#22252e', '#3a3f4b', '#2b3a5c', '#22252e', '#4a3a5a'];
 export function folk2(x, y, s, i, { happy = 1, look = [0, 0], walk = 0, face = 1, sleep = false, t = 0, alpha, pose: forcePose } = {}) {
   const h = (n) => Math.floor(hash(i * 7.31 + n * 3.17) * 1e6);
-  const pose = forcePose || (walk ? FWALK[i % 2] : FPOSE[h(1) % FPOSE.length]);
+  const pose = forcePose || (walk ? FWALK[i % 2] : FPOSE[h(1) % FPOSE.length]);   // forcePose: e.g. 'effigy/PointingUp' (one arm up)
   const m = bodyInfo(pose); if (!m) return;
   const col = { skin: FSKIN[h(2) % FSKIN.length], top: FTOP[h(3) % FTOP.length], pants: FPANTS[h(4) % FPANTS.length], jacket: FTOP[h(5) % FTOP.length], shoes: ['#ffffff', '#ff5b6e', '#2ec4b6', '#ffffff'][h(11) % 4], outline: '#17141c', hair: ['#3a2418', '#7a4a26', '#d9a441', '#1b1422'][h(13) % 4] };
   const k = .125 * s; const fdir = walk ? face : (look[0] < -.3 ? -1 : look[0] > .3 ? 1 : (h(6) % 2 ? 1 : -1)) * (face < 0 && !walk ? -1 : 1);
@@ -248,7 +248,7 @@ export const ARMS = {
   runB:  { L: [[-318, 205], [-440, 520], [-220, 590]], R: [[282, 215], [400, 600], [190, 760]] },
   lean:  { L: [[-318, 205], [-470, 640], [-520, 1080]], R: [[282, 215], [430, 650], [480, 1080]] },
   hang:  { L: [[-318, 205], [-400, -140], [-345, -538]], R: [[282, 215], [365, -130], [305, -528]] },   // both hands on a ledge above the head; same limb lengths as 'down'
-  hangL: { L: [[-318, 205], [-400, -140], [-345, -538]], R: [[282, 215], [305, 570], [290, 960]] },   // hanging by the left hand only
+  hangL: { L: [[-318, 205], [-400, -140], [-345, -538]], R: [[282, 215], [305, 570], [290, 960]] },
 };
 function armShape(S, E, Wp, sk) {
   const pts = []; const N = 26;
@@ -268,6 +268,15 @@ function fist(Wp, dir, sk, mode) {
   push(); translate(Wp[0], Wp[1]); rotate(Math.atan2(dir[1], dir[0])); scale(1.25);
   const side = dir[0] < 0 ? -1 : 1;   // keep the thumb on the camera side
   shape(spline([[-12, -50], [60, -58], [96, -50], [104, 0], [96, 50], [60, 58], [-12, 52]]), { fill: sk, lw: L, boil: .15 });   // back of hand
+  if (mode && mode.startsWith('grip')) {
+    const n = +mode.slice(4);
+    for (let j = 3; j >= 0; j--) { const y = side * (42 - 28 * j);                                   // j 0 = index (thumb side) … 3 = pinky
+      if (j < n) { shape(rr(84, y - 14, 40, 28, 13), { fill: sk, lw: L, boil: .15 }); stroke([[110, y - 8], [110, y + 8]], l2, { boil: .15 }); }   // holding: hooked over the ledge (wrist + 100 = the edge)
+      else shape(rr(78, y - 12, 26, 24, 11), { fill: sk, lw: L, boil: .15 }); }                        // let go: folded into the palm
+    stroke([[56, -36], [56, 36]], l2, { boil: .15 });                                                    // knuckle line
+    shape(spline([[30, 18 * side], [80, 22 * side], [92, 38 * side], [80, 54 * side], [30, 50 * side]]), { fill: sk, lw: L, boil: .15 });   // thumb
+    pop(); return;
+  }
   if (mode === 'point') {
     shape(spline([[86, -22 * side], [200, -26 * side], [214, -10 * side], [200, 6 * side], [86, 10 * side]]), { fill: sk, lw: L, boil: .15 });    // index finger
     shape(spline([[84, 8 * side], [128, 12 * side], [132, 44 * side], [98, 54 * side], [80, 40 * side]]), { fill: sk, lw: L, boil: .15 });       // curled fingers
@@ -283,22 +292,29 @@ function armDraw(chain, sk, mode) {
   const [S, E, Wp] = chain; const P = armShape(S, E, Wp, sk);
   const a = P(.94), b = P(1); if (mode !== 'none') fist(b, [b[0] - a[0], b[1] - a[1]], sk, mode);
 }
-function legShape(hip, knee, ank, sk) {
+function legShape(hip, knee, ank, sk, rot = 0) {
   const L = [[hip[0] - 145, hip[1]], [knee[0] - 105, knee[1] - 120], [knee[0] - 78, knee[1] + 40], [ank[0] - 100, (knee[1] + ank[1]) / 2 - 40], [ank[0] - 50, ank[1]]];
   const R = [[ank[0] + 50, ank[1]], [ank[0] + 78, (knee[1] + ank[1]) / 2 - 60], [knee[0] + 80, knee[1] + 30], [knee[0] + 104, knee[1] - 120], [hip[0] + 145, hip[1]]];
   shape(spline([...L, ...R]), { fill: sk, lw: 15 * zoom(), boil: .15 });
   stroke(spline([[knee[0] - 30, knee[1] - 10], [knee[0], knee[1] + 14], [knee[0] + 30, knee[1] - 10]], false), 7 * zoom(), { line: TSKS, boil: .15 });
   shape(rr(ank[0] - 52, ank[1] - 40, 104, 90, 14), { fill: '#ffffff', lw: 13 * zoom(), boil: .15, shade: () => stroke([[ank[0] - 60, ank[1] - 12], [ank[0] + 60, ank[1] - 12]], 16 * zoom(), { line: '#ff5b4d', boil: 0 }) });
+  if (rot) { push(); translate(ank[0], ank[1] + 40); rotate(rot); translate(-ank[0], -ank[1] - 40); }
   shape(spline([[ank[0] - 80, ank[1] + 150], [ank[0] - 76, ank[1] + 50], [ank[0] + 40, ank[1] + 36], [ank[0] + 150, ank[1] + 90], [ank[0] + 170, ank[1] + 150]]), { fill: '#17141c', lw: 13 * zoom(), boil: .15, shade: () => { fillOnly(rect0(ank[0] - 100, ank[1] + 120, 300, 40), '#ffffff'); stroke([[ank[0] - 10, ank[1] + 60], [ank[0] + 60, ank[1] + 90]], 14 * zoom(), { line: '#ff5b4d', boil: 0 }); } });
+  if (rot) pop();
 }
 const STANCE = {
   stand: { L: [[-150, 1250], [-200, 1820], [-220, 2300]], R: [[130, 1250], [180, 1820], [200, 2300]] },
   sit:   { L: [[-150, 1250], [-330, 1080], [-300, 1560]], R: [[130, 1250], [310, 1080], [280, 1560]] },
+  dangle: { L: [[-140, 1250], [-150, 1830], [-125, 2330]], R: [[120, 1250], [135, 1830], [110, 2330]], rot: 1.05 },   // hanging: legs loose, toes down
 };
 function stance(name, ph) {
   if (name === 'run') {   // front-view jog: alternating high knee lifts
     const a = Math.max(0, Math.sin(ph)), b = Math.max(0, -Math.sin(ph));
     return { L: [[-150, 1250], [-170, 1820 - a * 330], [-190, 2300 - a * 470]], R: [[130, 1250], [150, 1820 - b * 330], [170, 2300 - b * 470]] };
+  }
+  if (name === 'kick') {   // hanging + kicking: loose legs swinging in turn, toes down
+    const a = Math.sin(ph), b = Math.sin(ph + 2.2);
+    return { L: [[-140, 1250], [-150 - a * 60, 1810 - Math.max(0, a) * 140], [-125 - a * 150, 2300 - Math.max(0, a) * 260]], R: [[120, 1250], [135 + b * 60, 1810 - Math.max(0, b) * 140], [110 + b * 150, 2300 - Math.max(0, b) * 260]], rot: 1.0 };
   }
   if (name !== 'walk') return STANCE[name] || STANCE.stand;
   const a = Math.max(0, Math.sin(ph)), b = Math.max(0, -Math.sin(ph));
@@ -307,7 +323,7 @@ function stance(name, ph) {
 function tonyBody3(P) {
   const sk = TSK, arms = ARMS[P.arms || 'down'], st = stance(P.legs || 'stand', P.walkPh || 0), bare = !!P.bare;
   // legs + shorts
-  for (const side of ['L', 'R']) legShape(...st[side], sk);
+  for (const side of ['L', 'R']) legShape(...st[side], sk, st.rot || 0);
   shape(spline([[-300, 960], [282, 960], [300, 1180], [292, 1430], [30, 1440], [-8, 1290], [-50, 1440], [-312, 1430], [-318, 1180]]), { fill: '#ff5b4d', lw: 15 * zoom(), boil: .15,
     shade: () => { fillOnly(rect0(-340, 950, 680, 60), '#17141c'); stroke([[-296, 1010], [-290, 1420]], 30 * zoom(), { line: '#ffffff', boil: 0 }); stroke([[278, 1010], [272, 1420]], 30 * zoom(), { line: '#ffffff', boil: 0 }); } });
   const raised = (side) => arms[side][2][1] < 720 || Math.abs(arms[side][2][0]) < 230 || P.arms === 'hips' || P.arms === 'flex' && side === 'L';   // hands up/in front: arm goes over the torso
@@ -329,7 +345,7 @@ function tonyBody3(P) {
     shape(spline([[-175, 60], [-120, 60], [-108, 230], [-50, 330], [0, 350], [50, 330], [100, 230], [112, 60], [165, 60], [190, 300], [280, 430], [268, 740], [248, 1002], [0, 1014], [-258, 1002], [-276, 740], [-290, 430], [-200, 300]]), { fill: '#17141c', lw: 15 * zoom(), boil: .15 });
     text('TF', 150, 640, { font: '400 110px "Bungee"', fill: '#ff5b4d' });
   }
-  for (const side of ['L', 'R']) if (raised(side)) armDraw(arms[side], sk, side === 'R' && P.arms === 'point' ? 'point' : side === 'R' && P.arms === 'phone' ? 'none' : 'fist');
+  for (const side of ['L', 'R']) if (raised(side)) armDraw(arms[side], sk, P.grip ? 'grip' + (P.grip[side] ?? 4) : side === 'R' && P.arms === 'point' ? 'point' : side === 'R' && P.arms === 'phone' ? 'none' : 'fist');
   if (P.arms === 'point' && !raised('R')) {}
   if (P.arms === 'phone') { const w = arms.R[2], z = zoom(); push(); translate(w[0] + 70, w[1] - 30); rotate(-.12);
     shape(rr(-70, -130, 140, 250, 20), { fill: '#1d1b24', lw: 12 * z, shade: () => fillOnly(rr(-56, -114, 112, 218, 12), '#fff6e0') });
@@ -338,4 +354,17 @@ function tonyBody3(P) {
     pop(); }
   chain();
   return arms.R[2];
+}
+
+// arm2: a natural arm for any character (Tony's tapered arm + Peeps-style hand), e.g. a helper reaching down to grab a wrist.
+// x,y = shoulder (world px), W = hand point (world px), k = rig scale (.275 * s), sleeve = shirt colour over the upper arm, mode = 'fist' | 'gripN' | 'none'
+export function arm2(x, y, W, k, sk, sleeve, mode = 'fist', bend = 1) {
+  const w = [(W[0] - x) / k, (W[1] - y) / k], L = Math.hypot(w[0], w[1]) || 1, n = [-w[1] / L, w[0] / L];
+  const e = [w[0] / 2 + n[0] * L * .12 * bend, w[1] / 2 + n[1] * L * .12 * bend];
+  push(); translate(x, y); scale(k, k);
+  const P = armShape([0, 0], e, w, sk);
+  if (sleeve) { const z = zoom(), a = P(0), b = P(.42); const pts = []; for (let i = 0; i <= 10; i++) pts.push(P(i / 10 * .42));
+    stroke(spline(pts, false), 200 * z, { line: '#17141c', boil: 0 }); stroke(spline(pts, false), 200 * z - 15 * z, { line: sleeve, boil: .15 }); }   // widths scale with the rig, like the arm outline
+  const a = P(.94), b = P(1); if (mode !== 'none') fist(b, [b[0] - a[0], b[1] - a[1]], sk, mode);
+  pop();
 }
