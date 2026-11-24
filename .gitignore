@@ -4,3 +4,9 @@ frames45/
 stills/
 out/
 __pycache__/
+# never commit media from brand projects
+brands/**/*.mp4
+brands/**/*.mov
+brands/**/*.wav
+brands/**/*.mp3
+brands/**/*.gif

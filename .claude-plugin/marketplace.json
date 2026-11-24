@@ -1,0 +1,14 @@
+{
+  "name": "buzztorm",
+  "owner": {
+    "name": "Buzztorm"
+  },
+  "description": "Buzztorm's internal plugins: the Buzztorm Studio content studio.",
+  "plugins": [
+    {
+      "name": "buzztorm-studio",
+      "source": "./plugin/buzztorm-studio",
+      "description": "Buzztorm's menu-driven cartoon content studio for every brand the agency works with."
+    }
+  ]
+}

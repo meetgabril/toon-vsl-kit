@@ -1,0 +1,60 @@
+{
+  "id": "brand-id",
+  "name": "Brand Name",
+  "description": "What the brand does, in one sentence.",
+  "niche": "niche-id",
+  "audience": "Who the content is for.",
+  "tone": "How the brand sounds.",
+  "colors": {
+    "primary": null,
+    "primary_dark": null,
+    "accent": null,
+    "highlight": null,
+    "paper": null,
+    "paper_dark": null,
+    "positive": null,
+    "negative": null,
+    "secondary": null,
+    "tertiary": null
+  },
+  "fonts": {
+    "titles": "Bungee",
+    "labels": "Baloo 2",
+    "screens": "VT323"
+  },
+  "logo": null,
+  "visual_style": {
+    "default": "standard",
+    "avoid": []
+  },
+  "audio": {
+    "music": [
+      "sitcom",
+      "happy"
+    ],
+    "sonic_logo": null
+  },
+  "characters": {
+    "A": {
+      "name": "Hero name",
+      "role": "hero",
+      "voice": "Voice description for ElevenLabs"
+    }
+  },
+  "hashtags": {
+    "brand": "#BrandName",
+    "series": null,
+    "niche": []
+  },
+  "options": {
+    "subtitles": false,
+    "post_copy": true,
+    "hashtags": true,
+    "alt_text": true,
+    "mention": "none"
+  },
+  "presets": [],
+  "discord": {
+    "boost_level": 0
+  }
+}

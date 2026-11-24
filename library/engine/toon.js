@@ -9,6 +9,12 @@ export let CW = 1080, CH = 1920, OX = 0, OY = 0, SC = 1;
 // canvas point = SC * composition point + (OX, OY)
 export function setView(cw, ch, ox, oy, sc = 1) { CW = cw; CH = ch; OX = ox; OY = oy; SC = sc; }
 export const INK = '#1b1422';
+// Brand colours: the studio draws with role colours (studio defaults); brand.js maps each role to the brand's own hex.
+import { BRAND } from './brand.js';
+export const ROLE_DEFAULTS = { primary: '#25385c', primary_dark: '#16213a', accent: '#ff6a2a', highlight: '#ffd66b', paper: '#fff6e0', paper_dark: '#efe4d2', positive: '#2f8f4a', negative: '#e8574a', secondary: '#5bc0be', tertiary: '#a974e0' };
+const REMAP = {};
+for (const [role, hex] of Object.entries((BRAND && BRAND.colors) || {})) if (ROLE_DEFAULTS[role] && hex) REMAP[ROLE_DEFAULTS[role]] = hex.toLowerCase();
+export const rc = c => (typeof c === 'string' && REMAP[c.toLowerCase()]) || c;
 export let g = null;
 let REAL = null;
 const NOOP = new Proxy({}, { get: (o, k) => (k in o ? o[k] : () => NOOP), set: (o, k, v) => { o[k] = v; return true; } });
@@ -129,7 +135,7 @@ export function shape(pts, o = {}) {
   const P = pathOf(s, closed);
   g.setTransform(1, 0, 0, 1, 0, 0);
   if (o.alpha != null) g.globalAlpha = o.alpha;
-  if (o.fill && closed) { g.fillStyle = o.fill; g.fill(P); }
+  if (o.fill && closed) { g.fillStyle = rc(o.fill); g.fill(P); }
   if (o.shade) { g.save(); g.clip(P); o.shade(); g.restore(); }
   if (o.stroke !== false && o.line !== null) outline(P, o.lw ?? S.lw, o.line ?? INK);
   if (o.alpha != null) g.globalAlpha = 1;
@@ -137,23 +143,23 @@ export function shape(pts, o = {}) {
 }
 export function outline(P, lw = S.lw, col = INK) {
   g.setTransform(1, 0, 0, 1, 0, 0);
-  g.lineWidth = lw * S.lwScale; g.lineJoin = 'round'; g.lineCap = 'round'; g.strokeStyle = col; g.stroke(P);
+  g.lineWidth = lw * S.lwScale; g.lineJoin = 'round'; g.lineCap = 'round'; g.strokeStyle = rc(col); g.stroke(P);
 }
 export const fillOnly = (pts, fill, o = {}) => shape(pts, { ...o, fill, stroke: false });
 export const stroke = (pts, lw = S.lw, o = {}) => shape(pts, { ...o, closed: false, lw });
-export const dot = (x, y, r, col = INK) => { const [a, b] = tx(x, y); g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = col; g.beginPath(); g.arc(a, b, Math.max(1.5, r * zoom()), 0, TAU); g.fill(); };
+export const dot = (x, y, r, col = INK) => { const [a, b] = tx(x, y); g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = rc(col); g.beginPath(); g.arc(a, b, Math.max(1.5, r * zoom()), 0, TAU); g.fill(); };
 
 // Text in world coordinates (signs etc.)
 export function text(str, x, y, { font = '800 40px "Baloo 2"', fill = INK, align = 'center', base = 'middle', rot = 0, outlineW = 0, outlineCol = INK } = {}) {
   g.save(); g.setTransform(M[0], M[1], M[2], M[3], M[4], M[5]);
   g.translate(x, y); if (rot) g.rotate(rot); if (mirrored()) g.scale(-1, 1);
   g.font = font; g.textAlign = align; g.textBaseline = base;
-  if (outlineW) { g.lineWidth = outlineW; g.lineJoin = 'round'; g.strokeStyle = outlineCol; g.strokeText(str, 0, 0); }
-  g.fillStyle = fill; g.fillText(str, 0, 0); g.restore();
+  if (outlineW) { g.lineWidth = outlineW; g.lineJoin = 'round'; g.strokeStyle = rc(outlineCol); g.strokeText(str, 0, 0); }
+  g.fillStyle = rc(fill); g.fillText(str, 0, 0); g.restore();
 }
 
 // —— screen-space helpers ——
-export function screenRect(col, a = 1) { g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = a; g.fillStyle = col; g.fillRect(0, 0, CW, CH); g.globalAlpha = 1; }
+export function screenRect(col, a = 1) { g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = a; g.fillStyle = rc(col); g.fillRect(0, 0, CW, CH); g.globalAlpha = 1; }
 // Flat banded "gradient" (cartoon sky: hard-edged colour bands)
 export function bands(cols, y0, y1, x0 = -4000, x1 = 6000) {
   const n = cols.length;

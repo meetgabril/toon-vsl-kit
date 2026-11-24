@@ -1,5 +1,5 @@
-// cast.custom.js — YOUR project's characters. Imported by vsl.js and charsheet.html.
-// Key = the speaker letter used in work/lines.txt ("M|line…") and lips.json. D (Dex) and T (Tony) are built in (chars2.js).
+// cast.custom.js — this brand's characters (example: Maya — replace). Copied into each project by setup.sh.
+// Key = the speaker letter used in work/lines.txt ("A|line…"). Must match the "characters" keys in brand-profile.json.
 // Recipe: pick a head (hair) + optional beard/acc from the Open Peeps catalog (CHARACTERS.md), a body pose, and a palette.
 // col keys: skin hair top jacket blazer pants shoes outline (+ cap coat …). Always keep outline '#17141c'.
 import { addCast } from './chars2.js';

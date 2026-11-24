@@ -1,0 +1,46 @@
+{
+  "id": "buzztorm",
+  "name": "Buzztorm",
+  "description": "Growth agency that turns creators and coaches into community-led businesses (free community, onboarding and a viral loop instead of paying for every client).",
+  "niche": "creators-and-coaches",
+  "audience": "Fitness coaches, creators and service businesses that depend on ads or on posting every day.",
+  "tone": "Confident, dry humour, sitcom energy. Never preachy, never salesy.",
+  "colors": {
+    "primary": "#25385c",
+    "primary_dark": "#16213a",
+    "accent": "#ff6a2a",
+    "highlight": "#ffd66b",
+    "paper": "#fff6e0",
+    "paper_dark": "#efe4d2",
+    "positive": "#2f8f4a",
+    "negative": "#e8574a",
+    "secondary": "#5bc0be",
+    "tertiary": "#a974e0"
+  },
+  "fonts": { "titles": "Bungee", "labels": "Baloo 2", "screens": "VT323" },
+  "logo": null,
+  "visual_style": { "default": "standard", "avoid": [] },
+  "audio": { "music": ["sitcom", "happy", "think", "build"], "sonic_logo": null },
+  "characters": {
+    "D": { "name": "Dex", "role": "narrator", "voice": "Warm, confident male, 30s, dry humour" },
+    "T": { "name": "Tony", "role": "hero", "voice": "Energetic fitness coach, upbeat male, a little dramatic" },
+    "M": { "name": "Tony's Mom", "role": "supporting", "voice": "Woman in her 60s, sweet but proud, slightly mischievous" }
+  },
+  "hashtags": {
+    "brand": "#Buzztorm",
+    "series": "#TonyDidItAgain",
+    "niche": ["#fitnesscoach", "#gymowner", "#onlinecoach", "#clientgrowth", "#communitybuilding", "#contentcreator"]
+  },
+  "options": { "subtitles": false, "post_copy": true, "hashtags": true, "alt_text": true, "mention": "none" },
+  "presets": [
+    {
+      "name": "Monday Episode",
+      "channel": "social",
+      "content": "reel",
+      "script_type": "sitcom-skit",
+      "audio": "voiceover",
+      "repurpose": ["discord-announcement", "hook-test"]
+    }
+  ],
+  "discord": { "boost_level": 0 }
+}

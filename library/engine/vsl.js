@@ -1,6 +1,8 @@
 // vsl.js — toon studio film engine: story.js (beats) → shots → frames. Library of sets, props, cast, motion; formats, captions, galleries.
 import { clamp, lerp, hash, seg, eo, ei, eio, back, spring, TAU } from '/core/lib.js';
-import { setDry, getM, INK, W, H, CW, CH, OX, OY, SC, setView, frame, push, pop, translate, rotate, scale, shape, fillOnly, stroke, ell, arc, spline, rr, rect, noodle, quad, dot, text, bands, g, S } from './toon.js';
+import { setDry, getM, INK, W, H, CW, CH, OX, OY, SC, setView, frame, push, pop, translate, rotate, scale, shape, fillOnly, stroke, ell, arc, spline, rr, rect, noodle, quad, dot, text, bands, g, S, rc } from './toon.js';
+import { CUSTOM_SETS } from './registry.js';
+import './sets.custom.js';   // the brand's own backgrounds (addSet) — see brands/<brand>/backgrounds
 import { C } from './cast.js';
 import { peep, folk2, bfaWoman, transformFig, ARMS, CAST } from './chars2.js';
 import { loadPeeps, takePending } from './peeps.js';
@@ -104,7 +106,7 @@ function bgContent(gt, night = 0) {
 function bgOffice() { wall('#dfe7ef'); for (let i = -4; i < 14; i++) stroke([[i * 120, 0], [i * 120, 1300]], 3, { line: '#d2dce6', boil: 0 }); shape(rr(820, 1040, 160, 30, 8), { fill: '#a9744a', lw: 5 }); shape(ell(900, 990, 50, 60, 18), { fill: '#5aa857', lw: 5 }); fillOnly(rect(-600, 1300, W + 1200, 900), '#9fb3c8', { boil: 0 }); stroke([[-600, 1300], [W + 600, 1300]], 7); }
 function bgBoard() {
   // explainer backdrop: deep brand navy, soft key light, dot grid, faint rings
-  g.setTransform(SC, 0, 0, SC, OX, OY); const gr = g.createRadialGradient(W * .5, H * .38, 60, W * .5, H * .5, H * .85); gr.addColorStop(0, '#2c4170'); gr.addColorStop(.55, '#1f2f55'); gr.addColorStop(1, '#141f3b'); g.fillStyle = gr; g.fillRect(-OX / SC, -OY / SC, CW / SC, CH / SC);
+  g.setTransform(SC, 0, 0, SC, OX, OY); const gr = g.createRadialGradient(W * .5, H * .38, 60, W * .5, H * .5, H * .85); gr.addColorStop(0, rc('#2c4170')); gr.addColorStop(.55, rc('#1f2f55')); gr.addColorStop(1, rc('#141f3b')); g.fillStyle = gr; g.fillRect(-OX / SC, -OY / SC, CW / SC, CH / SC);
   for (let j = -4; j < 26; j++) for (let i = -6; i < 18; i++) dot(i * 80 + 40, j * 80 + 40, 2.2, 'rgba(160,190,255,0.16)');
   for (let k = 0; k < 3; k++) stroke([...ell(540, 900, 300 + k * 190, 300 + k * 190, 96), ell(540, 900, 300 + k * 190, 300 + k * 190, 96)[0]], 2.5, { line: 'rgba(160,190,255,0.10)', boil: 0 });
 }
@@ -114,7 +116,7 @@ function bgCommunity() { bands(['#f3e7d3', '#efe0c8', '#eadabf'], -400, 1220); f
 function bgBeach(gt) { bands(['#7fd3ff', '#9fdcff', '#bfe8ff'], -400, 1000); shape(ell(860, 330, 90, 90, 30), { fill: '#ffd66b', lw: 6 }); fillOnly(rect(-600, 1000, W + 1200, 240), '#3aa7c9'); for (let i = 0; i < 8; i++) stroke(spline([[i * 160 - 100 + (gt * 30) % 160, 1060 + (i % 2) * 60], [i * 160 - 50 + (gt * 30) % 160, 1046 + (i % 2) * 60], [i * 160 + (gt * 30) % 160, 1060 + (i % 2) * 60]], false), 5, { line: '#ffffff' }); fillOnly(rect(-600, 1240, W + 1200, 900), '#f2d39b'); stroke([[-600, 1240], [W + 600, 1240]], 7); }
 function bgStage() {
   // Buzztorm studio set: warm slatted wall, orange LED strip, polished floor
-  g.setTransform(SC, 0, 0, SC, OX, OY); const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, '#16213a'); gr.addColorStop(.6, '#22325a'); gr.addColorStop(1, '#16213a'); g.fillStyle = gr; g.fillRect(-OX / SC, -OY / SC, CW / SC, CH / SC);
+  g.setTransform(SC, 0, 0, SC, OX, OY); const gr = g.createLinearGradient(0, 0, 0, H); gr.addColorStop(0, rc('#16213a')); gr.addColorStop(.6, rc('#22325a')); gr.addColorStop(1, rc('#16213a')); g.fillStyle = gr; g.fillRect(-OX / SC, -OY / SC, CW / SC, CH / SC);
   fillOnly(rect(-600, 520, W + 1200, 800), '#5a3d2c', { boil: 0 });
   for (let i = -8; i < 22; i++) { fillOnly(rect(i * 70, 520, 46, 800), i % 2 ? '#7a5238' : '#6d4a33', { boil: 0 }); stroke([[i * 70, 520], [i * 70, 1320]], 2.5, { line: '#3f2a1e', boil: 0 }); }
   fillOnly(rect(-600, 500, W + 1200, 26), '#ff6a2a', { boil: 0 }); fillOnly(rect(-600, 470, W + 1200, 30), 'rgba(255,120,50,0.25)', { boil: 0 }); fillOnly(rect(-600, 526, W + 1200, 60), 'rgba(255,120,50,0.18)', { boil: 0 });
@@ -271,7 +273,7 @@ const twoDoors = (lt, gt, open1 = 0, open2 = 0) => {
 };
 function gymFront(t) {
   // golden-hour sky + skyline
-  g.setTransform(SC, 0, 0, SC, OX, OY); const sky = g.createLinearGradient(0, 0, 0, H * .7); sky.addColorStop(0, '#9ccfee'); sky.addColorStop(1, '#f6d9b0'); g.fillStyle = sky; g.fillRect(-OX / SC, -OY / SC, CW / SC, CH / SC);
+  g.setTransform(SC, 0, 0, SC, OX, OY); const sky = g.createLinearGradient(0, 0, 0, H * .7); sky.addColorStop(0, rc('#9ccfee')); sky.addColorStop(1, rc('#f6d9b0')); g.fillStyle = sky; g.fillRect(-OX / SC, -OY / SC, CW / SC, CH / SC);
   for (let i = 0; i < 9; i++) fillOnly(rect(-200 + i * 170, 380 - (i * 37 % 5) * 50, 150, 900), i % 2 ? '#b9c7d6' : '#a9b8c9', { boil: 0 });
   // facade: charcoal with a slatted wood panel
   shape(rect(40, 300, 1000, 960), { fill: '#2b2d36', lw: 8 });
@@ -469,7 +471,7 @@ function drawBeat(B, lt, gt) {
   const sh = B.shake ? (() => { const tt = anchor(B.shake, 0, 0).t; const k = clamp((gt - tt) / .3); return k > 0 && k < 1 ? (hash(Math.floor(gt * 24)) - .5) * 24 * (1 - k) : 0; })() : 0;
   cam(cx + sh, cy, z);
   const set = B.set || 'studio';
-  if (SETFN[set]) SETFN[set](gt); else if (set.startsWith('#') || COL[set]) { fillOnly(rect(-600, -400, W + 1200, H + 800), col(set), { boil: 0 }); }
+  if (SETFN[set]) SETFN[set](gt); else if (CUSTOM_SETS[set]) CUSTOM_SETS[set](gt); else if (set.startsWith('#') || COL[set]) { fillOnly(rect(-600, -400, W + 1200, H + 800), col(set), { boil: 0 }); }
   const front = [];
   B._items.forEach(I => { if (I.flags.front || ['title', 'sign', 'stamp', 'flash', 'confetti', 'sub', 'card', 'year', 'label'].includes(I.type)) front.push(I); else drawItem(I, gt); });
   B._actors.forEach(a => { if (!a.at || gt >= a.t) drawActor(a, a.at ? gt - a.t : lt, gt, n); });

@@ -2,7 +2,7 @@
 <script type="module">
 // Character reference sheets: ?p=tony | dex | extras
 import { init, frame, push, pop, translate, scale, g, text, shape, fillOnly, stroke, rr, rect, ell, INK } from './toon.js';
-import { loadPeeps, takePending } from './peeps.js'; import { peep, folk2, transformFig, DEXC, TONYC, CAST } from './chars2.js'; import './cast.custom.js';
+import { loadPeeps, takePending } from './peeps.js'; import { peep, folk2, transformFig, DEXC, TONYC, CAST } from './chars2.js'; import './cast.custom.js'; import { BRAND } from './brand.js';
 init(document.getElementById('c')); await loadPeeps(); for (const f of ['400 40px Bungee', '800 40px "Baloo 2"']) await document.fonts.load(f);
 const Q = new URLSearchParams(location.search), P = Q.get('p') || 'tony', FY = +(Q.get('fy') || 50), DY = +(Q.get('dy') || 350);
 const NAVY = '#25385c', ORANGE = '#ff6a2a', PAPER = '#f6efe2';
@@ -11,7 +11,7 @@ const B = (s, x, y, o = {}) => text(s, x, y, { font: `800 ${o.size || 28}px "Bal
 function header(title, sub) {
   fillOnly(rect(0, 0, 2560, 150), NAVY, { boil: 0 }); fillOnly(rect(0, 150, 2560, 10), ORANGE, { boil: 0 });
   T(title, 60, 70, { size: 70, fill: '#fff6e0', align: 'left' }); B(sub, 62, 124, { size: 30, fill: '#c9d3ea' });
-  T('BUZZTORM TOON KIT · CHARACTER SHEET', 2500, 76, { size: 26, fill: '#ffd66b', align: 'right' });
+  T(((BRAND && BRAND.name) || 'BUZZTORM STUDIO').toUpperCase() + ' · CHARACTER SHEET', 2500, 76, { size: 26, fill: '#ffd66b', align: 'right' });
 }
 function label(s, x, y) { const w = Math.max(220, s.length * 19 + 50); shape(rr(x - w / 2, y - 26, w, 52, 26), { fill: '#fff6e0', lw: 4 }); T(s, x, y + 2, { size: 24 }); }
 function swatches(x, y, list) { list.forEach(([n, c], i) => { shape(rr(x, y + i * 62, 50, 50, 10), { fill: c, lw: 4 }); B(`${n}  ${c}`, x + 66, y + i * 62 + 27, { size: 26, fill: INK }); }); }
