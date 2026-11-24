@@ -6,7 +6,7 @@
   "goal": "sell",
   "offer": "community-build",
   "status": "Ready for approval",
-  "version": 2,
+  "version": 3,
   "created": "2026-11-24",
   "updated": "2026-11-24",
   "parent": null,
@@ -51,6 +51,27 @@
       "from": "Rendering",
       "to": "Ready for approval",
       "version": 2,
+      "note": ""
+    },
+    {
+      "date": "2026-11-24",
+      "from": "Ready for approval",
+      "to": "Script review",
+      "version": 3,
+      "note": ""
+    },
+    {
+      "date": "2026-11-24",
+      "from": "Script review",
+      "to": "Rendering",
+      "version": 3,
+      "note": ""
+    },
+    {
+      "date": "2026-11-24",
+      "from": "Rendering",
+      "to": "Ready for approval",
+      "version": 3,
       "note": ""
     }
   ]

@@ -1,0 +1,10 @@
+{"fps":30,"size":[1080,1920],"end":10.93,"font_path":"/root/buzztorm-studio/library/engine/fonts/ttf/baloo-2-latin-800-normal.ttf","roles":{"primary": "#25385c", "primary_dark": "#16213a", "accent": "#ff6a2a", "highlight": "#ffd66b", "paper": "#fff6e0", "paper_dark": "#efe4d2", "positive": "#2f8f4a", "negative": "#e8574a", "secondary": "#5bc0be", "tertiary": "#a974e0"},
+ "bait":{"video":"work/example.mp4","until":4.2},
+ "cards":[
+  {"t":4.2,"text":"need a community?","bg":"paper","fg":"primary_dark","size":150,"fit":0.88,"y":0.492,"zoom":[1.0,1.15]},
+  {"t":6.12,"text":"onboarding.","bg":"primary_dark","fg":"accent","size":320,"fit":0.86,"y":0.487,"group":"words"},
+  {"t":7.30,"text":"offers.","bg":"paper","fg":"primary_dark","size":320,"fit":0.86,"y":0.487,"group":"words"},
+  {"t":8.50,"text":"payments.","bg":"primary_dark","fg":"accent","size":320,"fit":0.86,"y":0.487,"group":"words"},
+  {"t":9.71,"text":"DM \"PLAN\"","bg":"paper","fg":"primary_dark","size":170,"fit":0.88,"y":0.497}],
+ "audio":"work/example.mp4","audio_fade_out":0.3,
+ "out":"delivery/buzztorm_reel_nails-drop-remake_v3_9x16.mp4"}
