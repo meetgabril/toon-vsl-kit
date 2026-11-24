@@ -19,19 +19,17 @@
    "fg": "primary_dark",
    "size": 150,
    "fit": 0.88,
-   "y": 0.492,
-   "font": "baloo"
+   "y": 0.492
   },
   {
    "t": 2.8667,
    "text": "engaged.",
    "bg": "primary_dark",
-   "fg": "paper",
+   "fg": "accent",
    "size": 320,
    "fit": 0.86,
    "group": "words",
-   "y": 0.487,
-   "font": "bungee"
+   "y": 0.487
   },
   {
    "t": 3.7334,
@@ -41,29 +39,26 @@
    "size": 320,
    "fit": 0.86,
    "group": "words",
-   "y": 0.487,
-   "font": "bungee"
+   "y": 0.487
   },
   {
    "t": 4.5667,
    "text": "growing.",
    "bg": "primary_dark",
-   "fg": "highlight",
+   "fg": "accent",
    "size": 320,
    "fit": 0.86,
    "group": "words",
-   "y": 0.487,
-   "font": "bungee"
+   "y": 0.487
   },
   {
    "t": 5.4334,
    "text": "DM PLAN to start.",
-   "bg": "accent",
-   "fg": "paper",
+   "bg": "paper",
+   "fg": "primary_dark",
    "size": 150,
    "fit": 0.88,
-   "y": 0.497,
-   "font": "baloo"
+   "y": 0.497
   }
  ],
  "audio": {
@@ -71,5 +66,5 @@
  },
  "brand": "brand/brand-profile.json",
  "out": "delivery/<brand>_reel_<title>_v1_9x16.mp4",
- "_how": "Copy source.mp4 to work/example.mp4 in the project. Replace the 5 texts keeping each one's length close to the original (question ~15\u201317 chars, words 6\u20139 chars, CTA ~15\u201317 chars). Colours: paper / primary_dark from the brand. Branding: label font on question/CTA, title font on the words, highlight colour on the last word, accent background on the CTA."
+ "_how": "Copy source.mp4 to work/example.mp4 in the project. Replace the 5 texts keeping each one's length close to the original (question ~15\u201317 chars, words 6\u20139 chars, CTA ~15\u201317 chars). Colours: paper / primary_dark from the brand. Branding: one font, light cards paper/primary_dark, dark cards primary_dark/accent."
 }
