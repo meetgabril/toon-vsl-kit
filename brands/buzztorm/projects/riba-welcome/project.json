@@ -1,0 +1,29 @@
+{
+  "title": "riba-welcome",
+  "brand": "buzztorm",
+  "recipe": "reel",
+  "family": "social",
+  "goal": "teach",
+  "offer": "buzztorm-academy",
+  "status": "Waiting for voiceover",
+  "version": 1,
+  "created": "2026-11-24",
+  "updated": "2026-11-24",
+  "parent": null,
+  "history": [
+    {
+      "date": "2026-11-24",
+      "from": "Brief",
+      "to": "Script review",
+      "version": 1,
+      "note": "v1, pt-BR, Tony plays Riba"
+    },
+    {
+      "date": "2026-11-24",
+      "from": "Script review",
+      "to": "Waiting for voiceover",
+      "version": 1,
+      "note": "script v1 approved"
+    }
+  ]
+}
