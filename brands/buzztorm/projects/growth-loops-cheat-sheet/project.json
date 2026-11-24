@@ -1,0 +1,43 @@
+{
+  "title": "growth-loops-cheat-sheet",
+  "brand": "buzztorm",
+  "recipe": "cheat-sheet",
+  "family": "learning",
+  "goal": "teach",
+  "offer": "buzztorm-academy",
+  "status": "Approved",
+  "version": 1,
+  "created": "2026-11-25",
+  "updated": "2026-11-25",
+  "parent": null,
+  "history": [
+    {
+      "date": "2026-11-25",
+      "from": "Brief",
+      "to": "Script review",
+      "version": 1,
+      "note": ""
+    },
+    {
+      "date": "2026-11-25",
+      "from": "Script review",
+      "to": "Rendering",
+      "version": 1,
+      "note": ""
+    },
+    {
+      "date": "2026-11-25",
+      "from": "Rendering",
+      "to": "Ready for approval",
+      "version": 1,
+      "note": ""
+    },
+    {
+      "date": "2026-11-25",
+      "from": "Ready for approval",
+      "to": "Approved",
+      "version": 1,
+      "note": ""
+    }
+  ]
+}

@@ -74,6 +74,26 @@
    ],
    "verified": "2026-11-24",
    "caution": "Later replications are mixed; cite the original study only."
+  },
+  {
+   "id": "tupperware-hostess-loop",
+   "fact": "At a Tupperware party the dealer looked for guests willing to host future parties; hostesses received merchandise as a thank-you, and hostesses and guests were often recruited as dealers.",
+   "sources": [
+    "https://www.pbs.org/wgbh/americanexperience/features/selling-business",
+    "https://www.smithsonianmag.com/smithsonian-institution/story-brownie-wise-ingenious-marketer-behind-tupperware-party-180968658/"
+   ],
+   "verified": "2026-11-25",
+   "caution": "Never mention dealer earnings."
+  },
+  {
+   "id": "dropbox-referral-2010",
+   "fact": "Dropbox's referral program gave both the inviter and the invited friend extra storage. Drew Houston (Startup Lessons Learned, 2010) said it permanently increased signups by 60%; users sent 2.8 million direct referral invites in April 2010.",
+   "sources": [
+    "https://de.slideshare.net/henchster/dropbox-startuplessonslearned",
+    "https://www.entrepreneur.com/growing-a-business/how-airbnb-and-dropbox-achieved-tremendous-growth-with/248867"
+   ],
+   "verified": "2026-11-25",
+   "caution": "Founder-reported figures; say 'Dropbox's founder said'."
   }
  ]
 }
