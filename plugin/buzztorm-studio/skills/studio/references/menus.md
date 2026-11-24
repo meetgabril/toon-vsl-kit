@@ -3,12 +3,13 @@
 Exact screens, options and conditions. ★ = recommended (first option, label ends with "(Recommended)"). Max 4 options per screen. The user can always type another answer, "back" or "home".
 
 ## Home — "Which brand?"
-- Up to 2 most recently used brands (from `projects/*/project.json` dates), then:
-- Add brand
-- Studio Library (if fewer than 2 brands exist, show every brand instead and move Studio Library and Admin into "Other": the user types them)
-- Admin (agency staff only)
+Fill the 4 slots in this order and show the first 4:
+1. Up to 2 brands, most recently used first (from `projects/*/project.json` dates; alphabetical when there are no projects yet). The first is ★.
+2. Add brand
+3. Studio Library
+4. Admin
 
-If more brands exist than fit, the user types the brand name. Accept partial names.
+Any other brand, or Admin when it doesn't fit, is typed by the user. Accept partial names ("buzz" → Buzztorm).
 
 ## Brand — "What do you need?"
 - Create content ★

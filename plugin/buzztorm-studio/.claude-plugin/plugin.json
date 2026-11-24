@@ -1,8 +1,20 @@
 {
   "name": "buzztorm-studio",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Buzztorm's menu-driven cartoon content studio. One house style, many brands: Reels, trial reels, posts, carousels, stories, YouTube, sales page videos, LinkedIn and Discord content, each delivered ready to post.",
-  "author": { "name": "Buzztorm" },
+  "author": {
+    "name": "Buzztorm"
+  },
   "repository": "https://github.com/meetgabril/toon-vsl-kit",
-  "keywords": ["buzztorm", "content", "cartoon", "reels", "discord", "agency"]
+  "keywords": [
+    "buzztorm",
+    "content",
+    "cartoon",
+    "reels",
+    "discord",
+    "agency"
+  ],
+  "icon": "./assets/icon.png",
+  "license": "LicenseRef-Buzztorm-Proprietary",
+  "homepage": "https://github.com/meetgabril/toon-vsl-kit"
 }

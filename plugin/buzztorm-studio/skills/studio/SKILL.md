@@ -1,13 +1,8 @@
 ---
 name: studio
-description: >
-  Buzztorm Studio: the agency's menu-driven cartoon content studio. This skill should be used when the user types
-  "/studio", "/studio <brand>", asks to "create content", "make a reel", "make a trial reel", "make a carousel",
-  "make a story", "make a YouTube video", "make a sales page video", "make a LinkedIn video", "make a Discord
-  announcement", "make emojis or stickers for Discord", "add a brand", "add a character", "add a background",
-  "continue a project", "log results", or anything else about producing cartoon content for a Buzztorm brand.
+description: 'Buzztorm Studio, the agency''s menu-driven cartoon content studio. This skill should be used when the user types "/studio" (optionally followed by a brand name), or asks to "create content", "make a reel", "make a trial reel", "make a carousel", "make a story", "make a YouTube video", "make a sales page video", "make a LinkedIn video", "make a Discord announcement", "make emojis or stickers for Discord", "add a brand", "add a character", "add a background", "continue a project" or "log results", or anything else about producing cartoon content for a Buzztorm brand.'
 metadata:
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 # Buzztorm Studio
