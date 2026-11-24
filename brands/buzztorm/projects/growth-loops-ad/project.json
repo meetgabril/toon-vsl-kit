@@ -1,0 +1,50 @@
+{
+  "title": "growth-loops-ad",
+  "brand": "buzztorm",
+  "recipe": "ad-concept-pack",
+  "family": "ads",
+  "goal": "sell",
+  "offer": "buzztorm-academy",
+  "status": "Approved",
+  "version": 1,
+  "created": "2026-11-25",
+  "updated": "2026-11-25",
+  "parent": "growth-loops-cheat-sheet",
+  "history": [
+    {
+      "date": "2026-11-25",
+      "from": "Brief",
+      "to": "Script review",
+      "version": 1,
+      "note": ""
+    },
+    {
+      "date": "2026-11-25",
+      "from": "Script review",
+      "to": "Storyboard review",
+      "version": 1,
+      "note": ""
+    },
+    {
+      "date": "2026-11-25",
+      "from": "Storyboard review",
+      "to": "Rendering",
+      "version": 1,
+      "note": ""
+    },
+    {
+      "date": "2026-11-25",
+      "from": "Rendering",
+      "to": "Ready for approval",
+      "version": 1,
+      "note": ""
+    },
+    {
+      "date": "2026-11-25",
+      "from": "Ready for approval",
+      "to": "Approved",
+      "version": 1,
+      "note": ""
+    }
+  ]
+}
