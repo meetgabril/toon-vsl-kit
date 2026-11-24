@@ -196,6 +196,8 @@ def check_layout(R, pdir, recipe):
             if t['px'] < minb - 0.5 and (name, key) not in seen: R.add('layout', 'ERROR', f'{name}: text too small ({t["px"]:.0f}px < {minb}px): "{t["t"][:40]}"')
             if t['x'] < safe.get('left', 0) - 2 or t['y'] < safe.get('top', 0) - 2 or t['x'] + t['w'] > fw - safe.get('right', 0) + 2 or t['y'] + t['h'] > fh - safe.get('bottom', 0) + 2:
                 R.add('layout', 'ERROR', f'{name}: outside the {sid} safe zone: "{t["t"][:40]}"')
+            if sid == '9x16' and (t['y'] < 285 or t['y'] + t['h'] > 1635) and (name, key) not in seen:   # 4:5 feed preview crops 285 px top and bottom
+                R.add('layout', 'WARN', f'{name}: cut in the 4:5 feed preview: "{t["t"][:40]}"')
             for blk in sizes.get(sid, {}).get('blocks', []):   # platform UI that covers part of the frame (e.g. Reels buttons)
                 bx0, by0, bx1, by1 = blk['box']
                 if t['x'] < bx1 and t['x'] + t['w'] > bx0 and t['y'] < by1 and t['y'] + t['h'] > by0:

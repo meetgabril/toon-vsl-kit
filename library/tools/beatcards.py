@@ -20,11 +20,14 @@ if Hd:   # freeze one clean bait frame and push in slowly until the next card
         w2, h2 = int(W * z), int(H * z); im = src.resize((w2, h2), Image.LANCZOS)
         cy = int(H * Hd.get('center_y', 0.5) * z - H / 2); cy = max(0, min(h2 - H, cy))
         im = im.crop(((w2 - W) // 2, cy, (w2 - W) // 2 + W, cy + H))
-        if Hd.get('text'):   # a line of text over the held frame (e.g. in the letterbox bar)
-            T = Hd['text']; f = ImageFont.truetype(FONT, T['size']); dr = ImageDraw.Draw(im)
-            bb = dr.textbbox((0, 0), T['text'], font=f); tw, th = bb[2] - bb[0], bb[3] - bb[1]; x, y = (W - tw) / 2 - bb[0], H * T['y'] - th / 2 - bb[1]
-            dr.text((x, y), T['text'], font=f, fill=col(T['fg']))
-            if k == 3: json.dump({'canvas': [W, H], 'texts': [{'item': 'bait_text', 't': T['text'], 'x': x + bb[0], 'y': y + bb[1], 'w': tw, 'h': th, 'px': T['size']}], 'source': 'kinetic'}, open('stills/kinetic/bait.qa.json', 'w'))
+        if Hd.get('text'):   # lines of text over the held frame (e.g. in the letterbox bar)
+            dr = ImageDraw.Draw(im); qa = []
+            for li, T in enumerate(Hd['text'] if isinstance(Hd['text'], list) else [Hd['text']]):
+                f = ImageFont.truetype(FONT, T['size']); bb = dr.textbbox((0, 0), T['text'], font=f); tw, th = bb[2] - bb[0], bb[3] - bb[1]
+                x, y = (W - tw) / 2 - bb[0], H * T['y'] - th / 2 - bb[1]
+                dr.text((x, y), T['text'], font=f, fill=col(T['fg']))
+                qa.append({'item': f'question{li}', 't': T['text'], 'x': x + bb[0], 'y': y + bb[1], 'w': tw, 'h': th, 'px': T['size']})
+            if k == 3: json.dump({'canvas': [W, H], 'texts': qa, 'source': 'kinetic'}, open('stills/kinetic/hold.qa.json', 'w'))
         im.save(f'{tmp}/k{nb + k:05d}.jpg', quality=93)
     nb += n_h
 cards = S['cards']; d0 = ImageDraw.Draw(Image.new('RGB', (8, 8))); px = {}

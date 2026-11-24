@@ -29,12 +29,20 @@
     1.12
    ],
    "center_y": 0.5,
-   "text": {
-    "text": "followers but no sales?",
-    "size": 104,
-    "fg": "paper",
-    "y": 0.17
-   }
+   "text": [
+    {
+     "text": "followers but",
+     "size": 92,
+     "fg": "paper",
+     "y": 0.195
+    },
+    {
+     "text": "no sales?",
+     "size": 92,
+     "fg": "paper",
+     "y": 0.245
+    }
+   ]
   }
  },
  "cards": [
@@ -83,5 +91,5 @@
  ],
  "audio": "work/example.mp4",
  "audio_fade_out": 0.3,
- "out": "delivery/buzztorm_reel_nails-drop-remake_v5_9x16.mp4"
+ "out": "delivery/buzztorm_reel_nails-drop-remake_v6_9x16.mp4"
 }

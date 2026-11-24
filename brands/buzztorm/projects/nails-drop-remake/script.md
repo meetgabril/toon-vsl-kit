@@ -1,4 +1,4 @@
-# nails-drop-remake v5 · Exact remake (team-supplied footage + original audio)
+# nails-drop-remake v6 · Exact remake (team-supplied footage + original audio)
 > GOAL: sell · OFFER: community-build · CTA: comment-plan (DM "PLAN")
 > FACTS: zeigarnik-1927
 > Bait = original car clip only (0–4.8 s, cut before the crossfade: no nails). Then text cards only, cut on the original edit points.
@@ -6,7 +6,8 @@
 Audience: creators with followers but no sales (cold). Offer: Buzztorm builds the community for you.
 0.00–4.77 s (f0–142): car bait, no text. Melody.
 4.77–6.12 s (f143–183): freeze on the last clean car frame, slow push-in with the riser; question in the top black bar
-ON SCREEN: followers but no sales?
+ON SCREEN: followers but
+ON SCREEN: no sales?
 6.12 s (f184, the drop): dark card
 ON SCREEN: we build
 7.30 s (f219): light card
