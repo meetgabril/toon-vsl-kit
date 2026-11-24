@@ -4,11 +4,12 @@
 @font-face{font-family:"Bungee";src:url(fonts/bungee-latin-400-normal.woff2)}
 html,body{margin:0;background:#000}</style></head><body><canvas id="c" width="1080" height="1920"></canvas>
 <script type="module">
-import { init } from './toon.js'; import * as V from './vsl.js';
+import { init, QA } from './toon.js'; import * as V from './vsl.js';
 // ?ar=916 (default) | 45 | 11 | 169 — canvas size comes from the format table in vsl.js
 const ar = new URLSearchParams(location.search).get('ar') || '916', F = V.FMT[ar], c = document.getElementById('c');
 c.width = F.cw; c.height = F.ch; V.setAspect(ar);
 init(c);
 await Promise.all(['400 40px VT323','400 40px Bungee','800 40px "Baloo 2"'].map(f=>document.fonts.load(f)));
+QA.on = new URLSearchParams(location.search).has('qa'); window.qaDump = V.qaDump;
 window.N = await V.load(); window.renderFrame = V.renderFrame; window.storyEvents = V.storyEvents; window.ready = true;
 </script></body></html>

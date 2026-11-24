@@ -1,0 +1,39 @@
+{
+  "id": "discord-server-assets",
+  "name": "Welcome kit & server art",
+  "family": "community",
+  "goals": [
+    "community"
+  ],
+  "render": "assets",
+  "limits": {
+    "banner": {
+      "w": 960,
+      "h": 540
+    },
+    "invite": {
+      "w": 1920,
+      "h": 1080,
+      "no_text": true
+    },
+    "icon": {
+      "w": 512,
+      "h": 512
+    }
+  },
+  "parts": [
+    {
+      "id": "welcome",
+      "required": true,
+      "rule": "Welcome GIF, rules card, onboarding message"
+    }
+  ],
+  "files": [
+    "icon",
+    "banner",
+    "invite background",
+    "welcome gif",
+    "rules card",
+    "message.md"
+  ]
+}

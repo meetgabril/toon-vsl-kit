@@ -1,7 +1,11 @@
 // vsl.js — toon studio film engine: story.js (beats) → shots → frames. Library of sets, props, cast, motion; formats, captions, galleries.
 import { clamp, lerp, hash, seg, eo, ei, eio, back, spring, TAU } from '/core/lib.js';
-import { setDry, getM, setM, INK, W, H, CW, CH, OX, OY, SC, setView, frame, push, pop, translate, rotate, scale, shape, fillOnly, stroke, ell, arc, spline, rr, rect, noodle, quad, dot, text, bands, g, S, rc } from './toon.js';
+import { setDry, getM, setM, INK, W, H, CW, CH, OX, OY, SC, setView, frame, push, pop, translate, rotate, scale, shape, fillOnly, stroke, ell, arc, spline, rr, rect, noodle, quad, dot, text, bands, g, S, rc, QA } from './toon.js';
 import { CUSTOM_SETS } from './registry.js';
+import { BRAND } from './brand.js';
+// Text painted on shared backgrounds comes from the brand (brand-profile.json → signs); never hard-code a brand here.
+const SIGN = (k, d) => ((BRAND && BRAND.signs && BRAND.signs[k]) || d || ((BRAND && BRAND.name) || 'STUDIO')).toUpperCase();
+const SIGN2 = (k) => { const w = SIGN(k).split(' '); return w.length > 1 ? [w.slice(0, Math.ceil(w.length / 2)).join(' '), w.slice(Math.ceil(w.length / 2)).join(' ')] : [w[0], '']; };
 import './sets.custom.js';   // the brand's own backgrounds (addSet) — see brands/<brand>/backgrounds
 import { C } from './cast.js';
 import { peep, folk2, bfaWoman, transformFig, ARMS, CAST } from './chars2.js';
@@ -15,7 +19,11 @@ let LIPS = null;
 let TIMING = null;
 export async function load() { LIPS = await (await fetch('/work/lips.json')).json(); try { TIMING = await (await fetch('/work/timing.json')).json(); } catch (e) {} await loadPeeps(); compileStory(); return LIPS.N; }
 // —— optional burned-in captions (shorts/reels/ads): 3-word chunks from timing.json, current word highlighted ——
-const CAPTIONS = { on: new URLSearchParams(location.search).get('cap') === '1', y: 1560, size: 84, chunk: 3, col: '#ffffff', hi: '#ffd66b' };
+const Q = new URLSearchParams(typeof location !== 'undefined' ? location.search : '');
+// alpha=1: transparent background (emoji, stickers) · safe=post|story|reel: platform safe zones for screen-space items · cover=TEXT: cover title plate
+const ALPHA = Q.get('alpha') === '1', SAFE_MODE = Q.get('safe') || 'post', COVER = Q.get('cover');
+const SAFE_ZONES = { post: { top: 64, bottom: 64, side: 64 }, story: { top: 250, bottom: 340, side: 64 }, reel: { top: 220, bottom: 430, side: 64 } };
+const CAPTIONS = { on: Q.get('cap') === '1', y: 1330, size: 84, chunk: 3, col: '#ffffff', hi: '#ffd66b' };
 function captions(gt) {
   if (!CAPTIONS.on || !TIMING) return; const W_ = TIMING.words; let i = -1; for (let k = 0; k < W_.length && W_[k][1] - .05 <= gt; k++) i = k; if (i < 0) return;
   const c0 = i - (i % CAPTIONS.chunk), chunk = W_.slice(c0, c0 + CAPTIONS.chunk); if (gt > chunk[chunk.length - 1][2] + .4) return;
@@ -71,7 +79,7 @@ function bgStudio(gt) {
   // dumbbell rack
   shape(rr(70, 1110, 380, 30, 8), { fill: '#3b3540', lw: 6 });
   for (let i = 0; i < 4; i++) { const x = 110 + i * 90; shape(rr(x - 34, 1060, 68, 44, 10), { fill: ['#e8574a', '#5bc0be', '#f2a541', '#9b7fd4'][i], lw: 5 }); }
-  sign(260, 330, 330, 110, '#e8574a', 'TONY FIT', { font: '400 58px "Bungee"' });
+  sign(260, 330, Math.max(330, SIGN('studio').length * 40 + 60), 110, '#e8574a', SIGN('studio'), { font: '400 58px "Bungee"' });
 }
 function bgCasino(gt) {
   bands(['#22103f', '#2a1450', '#331a60', '#3c2071'], -400, 1300);
@@ -99,7 +107,7 @@ function bgContent(gt, night = 0) {
   fillOnly(rect(-600, 1080, W + 1200, 170), night ? '#26365a' : '#a3dcc1', { boil: 0 }); stroke([[-600, 1080], [W + 600, 1080]], 4, { line: night ? '#1d2a44' : '#8ccbad', boil: 0 });
   // shelf with trophies + plant, framed poster
   shape(rr(40, 760, 240, 22, 6), { fill: '#a9744a', lw: 5 }); shape(rr(70, 700, 40, 60, 8), { fill: '#f5c842', lw: 4 }); shape(rr(130, 690, 50, 70, 8), { fill: '#e9ecef', lw: 4 }); shape(ell(230, 720, 40, 44, 16), { fill: '#5aa857', lw: 4 });
-  panel(870, 860, 220, 280, '#fff6e8', 14); text('TONY', 870, 790, { font: '400 40px "Bungee"', fill: '#ff5b4d' }); text('FIT', 870, 840, { font: '400 40px "Bungee"', fill: '#25385c' }); dumbbell([870, 930], 0);
+  panel(870, 860, 220, 280, '#fff6e8', 14); text(SIGN2('poster')[0], 870, 790, { font: '400 40px "Bungee"', fill: '#ff5b4d' }); text(SIGN2('poster')[1], 870, 840, { font: '400 40px "Bungee"', fill: '#25385c' }); dumbbell([870, 930], 0);
   fillOnly(rect(-600, 1250, W + 1200, 900), night ? '#3b5a6b' : '#7fcfab'); stroke([[-600, 1250], [W + 600, 1250]], 7);
   fillOnly(ell(540, 1640, 460, 90, 30), night ? 'rgba(255,255,255,0.06)' : 'rgba(255,255,255,0.18)', { boil: 0 });
 }
@@ -280,7 +288,7 @@ function gymFront(t) {
   shape(rect(40, 300, 1000, 210), { fill: '#3a2f2a', lw: 6, shade: () => { for (let i = 0; i < 26; i++) fillOnly(rect(40 + i * 40, 300, 22, 210), i % 2 ? '#8a5a3a' : '#7a4e32', { boil: 0 }); } });
   // channel-letter sign with glow
   fillOnly(ell(540, 405, 300, 90, 30), 'rgba(255,120,50,0.25)', { boil: 0 });
-  text('PULSE', 540, 412, { font: '400 120px "Bungee"', fill: '#fff6ea', outlineW: 10, outlineCol: '#ff6a2a' });
+  text(SIGN('gym'), 540, 412, { font: '400 120px "Bungee"', fill: '#fff6ea', outlineW: 10, outlineCol: '#ff6a2a' });
   shape(rr(830, 370, 140, 64, 14), { fill: '#ff6a2a', lw: 5 }); text('24/7', 900, 404, { font: '400 40px "Bungee"', fill: '#ffffff' });
   // big glass front with a warm, busy interior
   const glass = (x0, x1) => shape(rect(x0, 560, x1 - x0, 620), { fill: '#f7d9a8', lw: 8, shade: () => {
@@ -388,33 +396,34 @@ function drawActor(A, lt, gt, n) {
 }
 // —— screen-space UI for social posts (carousel chrome): units = final pixels at 1080 wide, whatever the size ——
 function ui(f) { const m = getM(), k = CW / 1080; setM([k, 0, 0, k, 0, 0]); f(1080, CH / k); setM(m); }
-function fitFont(t, px, maxW, fam = 'Bungee', w = 400) { g.font = `${w} ${px}px "${fam}"`; const mw = g.measureText(t).width; return mw > maxW ? Math.floor(px * maxW / mw) : px; }
-const SAFE = 64;   // side/top margin inside the post (Instagram grid crops 4:5 to 3:4: keep text off the edges)
+function fitFont(t, px, maxW, fam = 'Bungee', w = 400, floor = 44) { g.font = `${w} ${px}px "${fam}"`; const mw = g.measureText(t).width; return Math.max(floor, mw > maxW ? Math.floor(px * maxW / mw) : px); }
+const SZ = () => SAFE_ZONES[SAFE_MODE] || SAFE_ZONES.post;   // margins inside the post: platform UI and the profile-grid crop must not cover text
+const SAFE = 64;
 // —— items ——
 const ITEM = {
   // slidehead "TITLE" n=1 of=6 bg=orange — same title plate and slide number on every slide
   slidehead(I, x, y, d) { ui((W1, H1) => {
-    const t = I.txt[0] || '', n = I.kv.n, of = I.kv.of, fs = fitFont(t, +(I.kv.size || 76), W1 - SAFE * 2 - 120);
-    const ph = fs * 1.75, y0 = SAFE + 8;
-    push(); translate(W1 / 2, y0 + ph / 2); rotate(-.012); sign(0, 0, W1 - SAFE * 2 - 40, ph, col(I.kv.bg, '#ff6a2a'), t, { font: `400 ${fs}px "Bungee"` }); pop();
-    if (n && of) { push(); translate(W1 - SAFE - 30, y0 - 4); shape(rr(-62, -26, 124, 52, 26), { fill: '#fff6e0', lw: 5 }); text(`${n}/${of}`, 0, 2, { font: '400 30px "Bungee"', fill: '#25385c' }); pop(); }
+    const t = I.txt[0] || '', n = I.kv.n, of = I.kv.of, numW = n && of ? 150 : 0, plateW = W1 - SAFE * 2 - numW - (numW ? 16 : 0);
+    const fs = fitFont(t, +(I.kv.size || 76), plateW - 90), ph = Math.max(fs * 1.75, 100), y0 = SZ().top + 8;
+    push(); translate(SAFE + plateW / 2, y0 + ph / 2); rotate(-.012); sign(0, 0, plateW, ph, col(I.kv.bg, '#ff6a2a'), t, { font: `400 ${fs}px "Bungee"` }); pop();
+    if (numW) { push(); translate(W1 - SAFE - numW / 2, y0 + ph / 2); shape(rr(-numW / 2, -36, numW, 72, 36), { fill: '#fff6e0', lw: 6 }); text(`${n}/${of}`, 0, 3, { font: '400 46px "Bungee"', fill: '#25385c' }); pop(); }
   }); },
   // swipe — "SWIPE" cue, bottom right
   swipe(I, x, y, d) { ui((W1, H1) => { const k = pk(d); if (!k) return; const nudge = Math.sin(CUR_T * 6) * 6;
-    push(); translate(W1 - SAFE - 150 + nudge, H1 - SAFE - 40); scale(k); shape(rr(-150, -40, 300, 80, 40), { fill: col(I.kv.bg, '#fff6e0'), lw: 6 });
-    text(I.txt[0] || 'SWIPE', -26, 3, { font: '400 38px "Bungee"', fill: '#25385c' }); fillOnly([[86, -18], [118, 0], [86, 18]], '#ff6a2a', { boil: 0 }); stroke([[52, 0], [112, 0]], 9, { line: '#ff6a2a' }); pop(); }); },
+    push(); translate(W1 - SAFE - 170 + nudge, H1 - SZ().bottom - 46); scale(k); shape(rr(-170, -46, 340, 92, 46), { fill: col(I.kv.bg, '#fff6e0'), lw: 6 });
+    text(I.txt[0] || 'SWIPE', -30, 3, { font: '400 46px "Bungee"', fill: '#25385c' }); fillOnly([[100, -20], [136, 0], [100, 20]], '#ff6a2a', { boil: 0 }); stroke([[66, 0], [128, 0]], 10, { line: '#ff6a2a' }); pop(); }); },
   // say "line" who=MOM — what a character says, big and readable (bottom, above the swipe cue)
   say(I, x, y, d) { ui((W1, H1) => { const k = pk(d, .25); if (!k) return; const t = I.txt[0] || '', who = I.kv.who ? I.kv.who.replace(/_/g, ' ') + ': ' : '';
-    const fs = fitFont(who + t, +(I.kv.size || 50), W1 - SAFE * 2 - 80, 'Baloo 2', 800), yy = +(I.kv.y || H1 - SAFE - 150);
+    const fs = fitFont(who + t, +(I.kv.size || 50), W1 - SAFE * 2 - 56, 'Baloo 2', 800), yy = +(I.kv.y || H1 - SZ().bottom - 150);
     push(); translate(W1 / 2, yy); scale(k); shape(rr(-(W1 / 2 - SAFE), -fs * .95, W1 - SAFE * 2, fs * 1.9, 30), { fill: '#fff6e0', lw: 7 });
     if (who) { g.font = `800 ${fs}px "Baloo 2"`; const ww = g.measureText(who + t).width, wx = g.measureText(who).width; text(who, -ww / 2, 4, { font: `800 ${fs}px "Baloo 2"`, fill: '#ff6a2a', align: 'left' }); text(t, -ww / 2 + wx, 4, { font: `800 ${fs}px "Baloo 2"`, fill: '#25385c', align: 'left' }); }
     else text(t, 0, 4, { font: `800 ${fs}px "Baloo 2"`, fill: '#25385c' }); pop(); }); },
   // cta "MAIN LINE" "small line" bg=orange — call-to-action panel, lower half
   cta(I, x, y, d) { ui((W1, H1) => { const k = pk(d); if (!k) return; const a = I.txt[0] || '', b = I.txt[1] || '';
-    const fa = fitFont(a, +(I.kv.size || 68), W1 - SAFE * 2 - 100), yy = +(I.kv.y || H1 - SAFE - 210);
+    const fa = fitFont(a, +(I.kv.size || 68), W1 - SAFE * 2 - 100), yy = +(I.kv.y || H1 - SZ().bottom - 210);
     push(); translate(W1 / 2, yy); scale(k); rotate(.01); shape(rr(-(W1 / 2 - SAFE), -110, W1 - SAFE * 2, 220, 34), { fill: col(I.kv.bg, '#ff6a2a'), lw: 9 });
     text(a, 0, b ? -30 : 0, { font: `400 ${fa}px "Bungee"`, fill: '#fff6e0', outlineW: 10, outlineCol: INK });
-    if (b) text(b, 0, 52, { font: `800 ${fitFont(b, 42, W1 - SAFE * 2 - 100, 'Baloo 2', 800)}px "Baloo 2"`, fill: '#ffffff' }); pop(); }); },
+    if (b) text(b, 0, 52, { font: `800 ${fitFont(b, 46, W1 - SAFE * 2 - 100, 'Baloo 2', 800)}px "Baloo 2"`, fill: '#ffffff' }); pop(); }); },
 
   title(I, x, y, d) { const k = pk(d); if (!k) return; push(); translate(x, y); rotate(-.03); scale(k); text(I.txt[0] || '', 0, 0, { font: `400 ${I.kv.size || 110}px "Bungee"`, fill: col(I.kv.color, '#fff6e0'), outlineW: 14, outlineCol: INK }); pop(); },
   sign(I, x, y, d) { const k = pk(d); if (!k) return; const t = I.txt[0] || '', fs = +(I.kv.size || 64), w = t.length * fs * .72 + fs * 1.6; push(); translate(x, y); scale(k); sign(0, 0, w, fs * 1.9, col(I.kv.bg, '#e8574a'), t, { font: `400 ${fs}px "Bungee"`, rot: -.02 }); pop(); },
@@ -423,7 +432,7 @@ const ITEM = {
   counter(I, x, y, d) {
     const k = pk(d); if (!k) return; const [a, b] = I.range || [0, 100], dur = +(I.kv.dur || 1.6), v = Math.round(lerp(a, b, ss(clamp((d - .2) / dur))));
     push(); translate(x, y); scale(k); text((I.kv.pre || '') + v.toLocaleString((STORY && STORY.ui && STORY.ui.locale) || 'en-US') + (I.kv.post || ''), 0, 0, { font: `400 ${I.kv.size || 150}px "Bungee"`, fill: col(I.kv.color, '#2f8f4a'), outlineW: 12, outlineCol: '#fff6e0' });
-    if (I.txt[0]) text(I.txt[0], 0, 120, { font: '400 50px "Bungee"', fill: '#25385c', outlineW: 8, outlineCol: '#fff6e0' }); pop();
+    if (I.txt[0]) text(I.txt[0], 0, Math.max(120, (+(I.kv.size || 150)) * .85), { font: `400 ${+(I.kv.lsize || 60)}px "Bungee"`, fill: '#25385c', outlineW: 8, outlineCol: '#fff6e0' }); pop();
   },
   phone(I, x, y, d) {   // phone answering a question: checking… → buzz → counter + notification pills
     const k = pk(d); if (!k) return; const hit = +(I.kv.hit || .9), fl = ss(clamp((d - hit) / 1.0)), buzz = d > hit && d < hit + .5 ? Math.sin(d * 90) * 6 * (1 - (d - hit) / .5) : 0;
@@ -499,16 +508,17 @@ function drawBeat(B, lt, gt) {
   const sh = B.shake ? (() => { const tt = anchor(B.shake, 0, 0).t; const k = clamp((gt - tt) / .3); return k > 0 && k < 1 ? (hash(Math.floor(gt * 24)) - .5) * 24 * (1 - k) : 0; })() : 0;
   cam(cx + sh, cy, z);
   const set = B.set || 'studio';
-  if (SETFN[set]) SETFN[set](gt); else if (CUSTOM_SETS[set]) CUSTOM_SETS[set](gt); else if (set.startsWith('#') || COL[set]) { fillOnly(rect(-600, -400, W + 1200, H + 800), col(set), { boil: 0 }); }
+  QA.ctx = 'set';
+  if (set === 'none') {} else if (SETFN[set]) SETFN[set](gt); else if (CUSTOM_SETS[set]) CUSTOM_SETS[set](gt); else if (set.startsWith('#') || COL[set]) { fillOnly(rect(-600, -400, W + 1200, H + 800), col(set), { boil: 0 }); }
   const front = [];
   B._items.forEach(I => { if (I.flags.front || ['title', 'sign', 'stamp', 'flash', 'confetti', 'sub', 'card', 'year', 'label', 'slidehead', 'swipe', 'say', 'cta'].includes(I.type)) front.push(I); else drawItem(I, gt); });
-  B._actors.forEach(a => { if (!a.at || gt >= a.t) drawActor(a, a.at ? gt - a.t : lt, gt, n); });
+  QA.ctx = 'actor'; B._actors.forEach(a => { if (!a.at || gt >= a.t) drawActor(a, a.at ? gt - a.t : lt, gt, n); });
   front.forEach(I => drawItem(I, gt));
   camEnd();
 }
 function drawItem(I, gt) {
   const p = I.kv.x || I.kv.y ? [+(I.kv.x || 540), +(I.kv.y || 820)] : POS[I.pos || DEFPOS[I.type] || 'mid'];
-  const f = ITEM[I.type]; if (!f) return; if (I.kv.until && gt > anchor(I.kv.until, 0, 0).t) return;
+  const f = ITEM[I.type]; if (!f) return; QA.ctx = I.type + ':' + (I.txt[0] || ''); if (I.kv.until && gt > anchor(I.kv.until, 0, 0).t) return;
   f(I, p[0], p[1], gt - I.t, I.ts);
 }
 export function storyEvents() { return { events: EVENTS.sort((a, b) => a.t - b.t), wipes: WIPES, dur: LIPS.N / FPS, beats: (STORY.beats || []).map(b => ({ t: b._t0, music: b.music || null, set: b.set || 'studio', style: b.style || STORY.style || 'ink' })), loop: STORY.loop || 0 }; }
@@ -516,8 +526,9 @@ export function storyEvents() { return { events: EVENTS.sort((a, b) => a.t - b.t
 // =================== render ===================
 const WIPE = null;   // legacy single wipe [start, end]; story beats use { wipe: true }
 SH.sort((a, b) => a[0] - b[0]);
+export function qaDump() { return { canvas: [CW, CH], texts: QA.list }; }
 export async function renderFrame(f) {
-  for (let pass = 0; pass < 6; pass++) { drawFrame(f); const p = takePending(); if (!p.length) break; await Promise.all(p); }
+  for (let pass = 0; pass < 6; pass++) { QA.list = []; drawFrame(f); const p = takePending(); if (!p.length) break; await Promise.all(p); }
   return true;
 }
 function drawCore(f) {
@@ -527,7 +538,7 @@ function drawCore(f) {
   const [t0, fn] = SH[i];
   applyAspect(i);
   frame(gt, { amp: 1.2 });
-  g.setTransform(1, 0, 0, 1, 0, 0); g.fillStyle = '#ffffff'; g.fillRect(0, 0, CW, CH);
+  g.setTransform(1, 0, 0, 1, 0, 0); if (ALPHA) g.clearRect(0, 0, CW, CH); else { g.fillStyle = '#ffffff'; g.fillRect(0, 0, CW, CH); }
   const t1 = i + 1 < SH.length ? SH[i + 1][0] : (LIPS ? LIPS.N / FPS : t0 + 5), zk = 1 + .035 * ss(clamp((gt - t0) / (t1 - t0)));
   push(); translate(W / 2, H / 2); scale(zk); translate(-W / 2, -H / 2);
   fn(gt - t0, gt);
@@ -540,8 +551,8 @@ function drawCore(f) {
     pop();
   }
   captions(gt);
-  post(f);
-  stylize(ST, f);
+  if (COVER) ITEM.slidehead({ txt: [COVER], kv: { size: 74, bg: Q.get('coverbg') || 'orange' }, flags: {} }, 0, 0, 1);
+  if (!ALPHA) { post(f); stylize(ST, f); }
 }
 // —— loop ending: the last LOOP seconds dissolve into frame 0 so the video replays seamlessly (STORY.loop = 0.4) ——
 let LOOPBUF = null;

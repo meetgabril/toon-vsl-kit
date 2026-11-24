@@ -1,0 +1,44 @@
+{
+  "id": "ebook",
+  "name": "E-book / Guide",
+  "family": "learning",
+  "goals": [
+    "teach"
+  ],
+  "render": "pdf",
+  "sizes": [
+    {
+      "id": "letter",
+      "w": 816,
+      "h": 1056,
+      "unit": "css px"
+    }
+  ],
+  "length": {
+    "min": 10,
+    "max": 25,
+    "unit": "pages"
+  },
+  "parts": [
+    {
+      "id": "specific_title",
+      "required": true,
+      "rule": "Specific title with a number or outcome"
+    },
+    {
+      "id": "one_promise",
+      "required": true,
+      "rule": "One promise; each chapter delivers part of it"
+    },
+    {
+      "id": "cta_page",
+      "required": true,
+      "rule": "Last page: the offer CTA"
+    }
+  ],
+  "files": [
+    "ebook.pdf",
+    "cover 4x5",
+    "post.md"
+  ]
+}

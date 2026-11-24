@@ -1,0 +1,31 @@
+{
+  "offers": [
+    {
+      "id": "buzztorm-academy",
+      "name": "Buzztorm Academy",
+      "stage": "free",
+      "type": "community",
+      "promise": "Learn how to build a community that sells, with people who are doing it.",
+      "price": 0,
+      "link": null,
+      "dm_keyword": "ACADEMY",
+      "status": "active",
+      "notes": "TODO: add the join link."
+    },
+    {
+      "id": "community-build",
+      "name": "Buzztorm Community Build",
+      "stage": "high-ticket",
+      "type": "done-for-you service",
+      "promise": "You bring your expertise and record your content once. We build the community, the onboarding, the offers and the payments.",
+      "keeps": "Your members, your content and your sales stay yours.",
+      "risk_reversal": "If it's not the right fit, we tell you before you pay.",
+      "cta": "Book a free 30-minute call. You leave with a plan, even if you don't hire us.",
+      "price": null,
+      "link": "https://buzztorm.com",
+      "dm_keyword": "PLAN",
+      "status": "active",
+      "notes": "TODO: confirm price range and booking link. The approved VSL also shows a 'Starter plan' — add it if it is a separate offer."
+    }
+  ]
+}

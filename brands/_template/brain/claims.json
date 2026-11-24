@@ -1,0 +1,12 @@
+{
+  "risk_level": "medium",
+  "why": "",
+  "never": [
+    "guaranteed results",
+    "get rich quick"
+  ],
+  "allowed": [],
+  "numbers_rule": "Any number about a client's result must come from proof.json.",
+  "ad_disclaimer": "Results vary.",
+  "fictional_note": ""
+}

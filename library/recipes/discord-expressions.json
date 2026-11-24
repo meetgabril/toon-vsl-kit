@@ -1,0 +1,29 @@
+{
+  "id": "discord-expressions",
+  "name": "Emoji, stickers & sounds",
+  "family": "community",
+  "goals": [
+    "community"
+  ],
+  "render": "assets",
+  "limits": {
+    "emoji": {
+      "size": 128,
+      "max_kb": 256
+    },
+    "sticker": {
+      "size": 320,
+      "max_kb": 512,
+      "exact": true
+    },
+    "sound": {
+      "max_s": 5,
+      "max_kb": 512
+    }
+  },
+  "files": [
+    "emoji png/gif",
+    "sticker png/apng",
+    "sound mp3"
+  ]
+}

@@ -23,6 +23,11 @@
     "screens": "VT323"
   },
   "logo": null,
+  "signs": {
+    "studio": null,
+    "poster": null,
+    "gym": null
+  },
   "visual_style": {
     "default": "standard",
     "avoid": []
@@ -38,7 +43,8 @@
     "A": {
       "name": "Hero name",
       "role": "hero",
-      "voice": "Voice description for ElevenLabs"
+      "voice": "Voice description for ElevenLabs",
+      "voice_id": null
     }
   },
   "hashtags": {
@@ -56,5 +62,15 @@
   "presets": [],
   "discord": {
     "boost_level": 0
-  }
+  },
+  "weekly_mix": {
+    "grow": 3,
+    "teach": 2,
+    "sell": 1,
+    "community": 1
+  },
+  "archive": {
+    "google_drive_folder": "Buzztorm Studio/Brand Name"
+  },
+  "portfolio": null
 }

@@ -1,79 +1,71 @@
 ---
 name: studio
-description: 'Buzztorm Studio, the agency''s menu-driven cartoon content studio. This skill should be used when the user types "/studio" (optionally followed by a brand name), or asks to "create content", "make a reel", "make a trial reel", "make a carousel", "make a story", "make a YouTube video", "make a sales page video", "make a LinkedIn video", "make a Discord announcement", "make emojis or stickers for Discord", "add a brand", "add a character", "add a background", "continue a project" or "log results", or anything else about producing cartoon content for a Buzztorm brand.'
+description: 'Buzztorm Studio, the agency''s menu-driven content studio for its own infoproduct brands and its client brands. This skill should be used when the user types "/studio" (optionally followed by a brand name), or asks to "create content", "make a reel", "make trial reels", "make a carousel", "make a post", "make a story", "make a meme", "make an ad", "make a lesson", "make a course", "make a playbook", "make an ebook", "make a checklist", "make a worksheet", "make a cheat sheet", "make a YouTube video", "make a sales page video", "make a Discord announcement", "plan the week", "add a brand", "add a character", "add a background", "continue a project" or "log results", or anything else about producing content for a Buzztorm brand.'
 metadata:
-  version: "0.1.2"
+  version: "0.2.0"
 ---
 
 # Buzztorm Studio
 
-Buzztorm Studio produces cartoon content in one house style for many brands. Every brand, including Buzztorm itself, shares the same Studio Standards (drawing style, sizes, script types, visual styles, quality check, review process). Each brand owns its Brand Profile, characters, backgrounds, props, series guide, hooks and results.
+One studio, many brands. Every brand (Buzztorm included) shares the Studio Standards, the Recipes and the Quality Gate. Each brand owns its **Brand Brain** (audience, offers, voice, proof, claims policy, facts, CTAs, series, ideas), its look (colors, characters, backgrounds, props) and its results.
 
-Everything is driven by menus. The user should never have to type a command or a file name.
+Three layers, always in this order:
+1. **Brand Brain**: why this piece exists (goal, idea, audience, offer, CTA).
+2. **Content Factory**: how it is made (the format's Recipe in `library/recipes/<id>.json`).
+3. **Quality Gate**: proof it is right before anyone sees it (`python3 studio.py check`).
 
-## Vocabulary (use these words, and only these, with the user)
+Everything is driven by menus. The user never types a command, a file name or a required free-text answer.
 
-- **Brand**: a client space, including Buzztorm. **Brand Profile**: colors, logo, fonts, voices, hashtags, default options, presets.
-- **Studio Library**: what every brand shares. **Studio Standards**: rules no brand changes.
-- **Channel**: Social, YouTube & Web, Discord. **Content**: Reel, Trial reels, Post, Carousel, Story, YouTube video, Sales page video, LinkedIn video, Presentation loop, Discord announcement, Discord event, Emoji, Stickers, Soundboard, Server assets.
-- **Script type**: the story structure. **Hook**: first line and first image. **Visual style**: Standard, Old film, Paper cut-out, Risograph, Noir, Comic, Pastel, Dusk, Freeze frame, VHS. **Size**: 9:16, 4:5, 1:1, 16:9.
-- **Characters, Backgrounds, Props**. **Options**: Subtitles, Post copy, Hashtags, Alt text, Mention. **Preset**: a saved menu path.
-- **Hook test**: 3 trial reels with different hooks. **Repurpose**: turn approved content into other content. **Delivery package**: the final files plus the text to post.
+## Vocabulary (use only these words with the user)
+Brand · Brand Brain · Goal (Grow, Teach, Sell, Community) · Idea · Offer · CTA · Format (Reel, Trial reels, Carousel, Post, Story, Meme, Ad concept pack, YouTube video, Sales page video, LinkedIn video, Presentation loop, Lesson pack, Course, Playbook, E-book, Checklist, Worksheet, Cheat sheet, Discord announcement, Discord event, Emoji & stickers & sounds, Welcome kit) · Script type · Hook · Visual style · Size · Characters · Backgrounds · Props · Options (Subtitles, Post copy, Hashtags, Alt text, Mention) · Preset · Series · Hook test · Quality check · Delivery package · Studio Library · Studio Standards.
+Never say recipe, studio.py, JSON, story.js, beats, engine, kit or file paths to the user. Speak the user's language in chat; all content is in English.
 
-Never say "apartment", "tower", "kit", "toon-vsl", "beats" or engine file names to the user. Speak the user's language in chat; all content (on-screen text, scripts, post copy, hashtags) is in English.
-
-## Menu rules
-
-1. Show every menu with AskUserQuestion: at most 4 options, the recommended one first with "(Recommended)" in its label. The user can always type something else; treat "back" and "home" typed as navigation.
-2. Each screen title is a question ("What are you making?"). Buttons are verbs ("Approve", "Request changes").
-3. Ask only what changes the result. Skip any screen whose answer is implied (see the conditions in `references/menus.md`). When two screens don't depend on each other, ask them in the same AskUserQuestion call.
-4. Never ask about anything that has a brand default (characters, visual style, size, options). Show defaults on the review card with a "Change options" button instead.
-5. Put the brand's most used preset as the first option of the first screen.
-6. If AskUserQuestion is unavailable, show the same menu as a numbered list and accept the number.
+## Menu rules (Hick's law, KISS)
+1. AskUserQuestion for every decision: at most 4 options, recommended first with "(Recommended)". Typed "back" and "home" navigate.
+2. Screen titles are questions; buttons are verbs.
+3. Ask only what changes the result; skip screens whose answer is implied; ask independent screens in one call.
+4. Defaults (characters, visual style, size, options, CTA) are shown on the review card, never asked.
+5. Revisions are menus too (`references/menus.md` → Revisions). Free text is always optional, never required.
+6. Without AskUserQuestion, show the same menu as a numbered list.
 
 ## Start of every session
+1. `git -C ~/buzztorm-studio pull --ff-only` if it exists, else `git clone https://github.com/meetgabril/toon-vsl-kit ~/buzztorm-studio` (if refused: add_repo owner `meetgabril`, repo `toon-vsl-kit`, access `push`, then clone).
+2. Tools live in `~/buzztorm-studio/library/tools/`. A project is created with `python3 ~/buzztorm-studio/library/tools/studio.py new <brand> <title> <recipe> --goal <goal> [--offer <id>]` and built in `~/studio/<brand>/<title>` (all tools are copied there; run them from that folder).
+3. Brands = folders in `~/buzztorm-studio/brands/` with `brand-profile.json`, except `_template`. A brand whose Brand Brain has no offers gets the Brand Brain interview before its first content (`references/brain.md`).
+4. Show Home, or open the brand the user named.
 
-1. Make the studio available: if `~/buzztorm-studio/.git` exists run `git -C ~/buzztorm-studio pull --ff-only`; otherwise `git clone https://github.com/meetgabril/toon-vsl-kit ~/buzztorm-studio`. If the clone is refused, request the repository with the add_repo tool (owner `meetgabril`, repo `toon-vsl-kit`, access `push`) and clone again.
-2. List brands: every folder in `~/buzztorm-studio/brands/` with a `brand-profile.json`, except `_template`.
-3. If the user named a brand (`/studio buzztorm`), open it. Otherwise show Home.
+## Producing anything
+Follow `references/menus.md` exactly, then the reference for the format's family:
 
-## The menus
-
-Follow `references/menus.md` exactly. Summary:
-
-- **Home** ("Which brand?"): recent brands · Add brand · Studio Library · Admin.
-- **Brand** ("What do you need?"): Create content · Projects · Characters & backgrounds · Brand Profile.
-- **Create content**: 1 Where will it be posted? → 2 What are you making? → 3 What kind of story? → 4 How should it sound? (video only) → 5 Which hook?
-- **Script review** → **Waiting for voiceover** (voiceover only) → **Storyboard review** → **Rendering** → **Ready for approval** → Approved.
-
-## Producing content
-
-Load only the reference a step needs:
-
-| Step | Read |
+| Need | Read |
 |---|---|
-| Menus, conditions, exact options | `references/menus.md` |
-| What each content delivers (sizes, lengths, files, options) | `references/content.md` |
-| Script types, hooks, scoring | `references/scripts.md` |
-| Setup, voiceover, storyboard, render, sound, hook test, repurpose | `references/production.md` |
-| Delivery package, post copy, hashtags, alt text, file names | `references/delivery.md` |
-| Discord content | `references/discord.md` |
-| Add brand, characters, backgrounds, Brand Profile, Share to library | `references/brands.md` |
-| Projects, statuses, results, saving to GitHub | `references/projects.md` |
-| Admin | `references/admin.md` |
+| Menus, conditions, revisions | `references/menus.md` |
+| Brand Brain: reading it, the interview, keeping it current | `references/brain.md` |
+| Recipes and the format catalog | `references/recipes.md` |
+| Scripts, hooks, CTA, facts | `references/scripts.md` |
+| Video and image production, hook test | `references/production.md` |
+| Lessons, courses, playbooks, e-books, checklists, worksheets, cheat sheets | `references/learning.md` |
+| Memes | `references/memes.md` |
+| Ads | `references/ads.md` |
+| Discord | `references/discord.md` |
+| Delivery package, post copy, hashtags, file names | `references/delivery.md` |
+| Quality Gate: what it checks and how to fix | `references/quality-gate.md` |
+| Projects, statuses, archive, results | `references/projects.md` |
+| Plan the week, series | `references/planning.md` |
+| Add brand, characters, backgrounds | `references/brands.md` |
+| Admin, goldens, engine updates | `references/admin.md` |
 
-The engine's own documentation is in `~/buzztorm-studio/library/docs/` (VIRAL, STORY, STYLE, STYLES, FORMATS, CHARACTERS, SCENES, MOTION, AUDIO). Always read VIRAL.md, STYLE.md and STORY.md before writing a script or storyboard.
+Engine documentation: `~/buzztorm-studio/library/docs/` (read VIRAL.md, STYLE.md and STORY.md before any script or storyboard).
 
-## Non-negotiable Studio Standards
+## Non-negotiable
+- Never show the user a script, storyboard, file or text that has not passed the Quality Gate for its stage (`--stage script` before Script review, `--stage final` before Ready for approval). Fix and re-run until it passes; tell the user one line: "Quality check passed (6/6)".
+- Every piece has a goal and an idea; every piece except pure Grow content has an offer and a CTA from the Brand Brain.
+- Never invent results, testimonials, numbers or facts. Facts come from `brain/facts.json` (verify with a web search and add them first); results from `brain/proof.json`.
+- Never use third-party images (film stills, photos of real people, other artists' work, meme template images). Only the brand's characters, backgrounds and props.
+- The house drawing style never changes; brands change colors, characters, backgrounds and words.
+- The voiceover is never altered. The picture follows the voice.
+- Every request for changes is a symptom: fix that class of problem in the whole piece, bump the version, re-run the gate.
+- Never mix brands.
 
-- The house drawing style never changes between brands: flat colour, plum ink, hard shade, line boil, grain. Brands change colours, characters and backgrounds only.
-- The voiceover is never altered (only a 70 Hz high-pass and gentle 2:1 compression). The picture follows the voice.
-- Every line of the script has a literal visual. Facts used as hooks are verified with a web search.
-- Never ship without looking at what changed: contact sheets before render, crops after.
-- Every request for changes is treated as a symptom: check the whole piece for that class of problem, fix the root cause, re-render only what changed, bump the version.
-- Brand rules (`brands/<brand>/brand-rules.md`) apply on top of the Studio Standards.
-- Never mix brands: a project only uses its own brand's characters, backgrounds, props, colours and hashtags, plus the Studio Library.
-
-## Ending each step
-
-After every approval, update the project record and save to GitHub as `references/projects.md` describes. Deliver files with SendUserFile. Keep chat messages short: what was made, the delivery package, and the next menu.
+## After each approval
+Update the status with `studio.py status`, package with `studio.py package`, commit and push the brand folder (`references/projects.md`), archive media (Google Drive when connected), deliver files with SendUserFile and the post text in a code block. Keep chat short: what was made, the delivery package, the next menu.

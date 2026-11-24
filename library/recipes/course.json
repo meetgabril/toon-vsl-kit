@@ -1,0 +1,35 @@
+{
+  "id": "course",
+  "name": "Course",
+  "family": "learning",
+  "goals": [
+    "teach",
+    "sell"
+  ],
+  "render": "plan",
+  "parts": [
+    {
+      "id": "transformation",
+      "required": true,
+      "rule": "One transformation: from X to Y"
+    },
+    {
+      "id": "map",
+      "required": true,
+      "rule": "Modules \u2192 lessons (each lesson one objective, 2\u20135 min)"
+    },
+    {
+      "id": "trailer",
+      "required": true,
+      "rule": "Course trailer reel and sales page video brief"
+    }
+  ],
+  "copy": [
+    "course_map",
+    "module_descriptions"
+  ],
+  "files": [
+    "course-map.pdf",
+    "lesson packs (in batches)"
+  ]
+}

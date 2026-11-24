@@ -1,0 +1,44 @@
+{
+  "id": "playbook",
+  "name": "Playbook",
+  "family": "learning",
+  "goals": [
+    "teach",
+    "sell"
+  ],
+  "render": "pdf",
+  "sizes": [
+    {
+      "id": "letter",
+      "w": 816,
+      "h": 1056,
+      "unit": "css px"
+    }
+  ],
+  "count": {
+    "plays": {
+      "default": 7,
+      "options": [
+        5,
+        7,
+        10
+      ]
+    }
+  },
+  "parts": [
+    {
+      "id": "plays",
+      "required": true,
+      "rule": "Each play: situation \u2192 the play \u2192 script/template \u2192 common mistake \u2192 metric; one page each"
+    },
+    {
+      "id": "illustrations",
+      "required": true,
+      "rule": "One character illustration per play"
+    }
+  ],
+  "files": [
+    "playbook.pdf",
+    "editable doc"
+  ]
+}

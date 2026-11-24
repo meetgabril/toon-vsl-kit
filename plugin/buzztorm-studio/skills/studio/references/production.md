@@ -1,87 +1,43 @@
-# Production
+# Production (video and images)
 
-`$S` = `~/buzztorm-studio`. Projects are built in `~/studio/<brand>/<project-title>` (title in lowercase-with-hyphens, e.g. `daily-posting`).
-
-## 1. Set up the project
+`$S` = `~/buzztorm-studio`. Run every command inside the project folder (`~/studio/<brand>/<title>`), created by:
 ```
-bash $S/library/tools/setup.sh ~/studio/<brand>/<title> <brand>
-cd ~/studio/<brand>/<title>
+python3 $S/library/tools/studio.py new <brand> <title> <recipe> --goal <goal> [--offer <id>] [--parent <title>]
 ```
-This copies the engine and the Studio Library, the brand's profile (`brand/`), its characters (`cast.custom.js`), its backgrounds (`sets.custom.js`) and generates `brand.js`, which swaps the studio's colour roles for the brand's colours at render time. Then create the project record (`projects.md`).
+It copies the engine, the tools, the document templates and the brand (profile, Brand Brain, characters, backgrounds) and writes the project record (status Brief). Move status with `studio.py status <brand>/<title> --set "<Status>" [--note …]` at every step.
 
-Docs: `$S/library/docs/`. References (style card, sets, props, scenes, motion): `ref/` in the project.
+## 1. Script → voice
+Write `script.md` (format: `library/example/script_example.md`; voice lines from the Brand Profile characters; `> FACTS:` line when needed). Gate: `--stage script`. Script review.
+- Voice recorded for you (ELEVENLABS_API_KEY set and every character has `voice_id`): `python3 voice.py script.md` → `work/voice_api.mp3`.
+- Otherwise: `python3 script.py el script.md`, send the dialogue text and voice descriptions, status "Waiting for voiceover", wait for the upload.
+- Then `python3 ingest.py <audio> script.md`. If words changed while recording, update `script.md` and run it again.
+Music-only videos: hand-written `work/timing.json` and closed `lips.json` (`library/docs/FORMATS.md`).
 
-## 2. Script → voiceover (voiceover only)
-Write `script.md` (format: `library/example/script_example.md`):
-- `lang: en`, one `voice X:` line per speaker from the Brand Profile `characters`.
-- One line per speaker turn: `X: [emotion] text`.
-
-Run `python3 script.py el script.md` and send the user, in one message:
-1. the contents of `work/elevenlabs_dialogue.txt` in a code block;
-2. the voice descriptions;
-3. "Paste it into ElevenLabs (Text to Dialogue or Studio, Eleven v3), export ONE file with all lines in order, and upload it here."
-
-Status: Waiting for voiceover. Build nothing until the file arrives. Then:
+## 2. Storyboard
+`story.js`, one scene per sentence (`library/docs/STORY.md`). Brand characters, backgrounds and props only. Every number and screen answers its line literally.
+Contact sheet with layout capture:
 ```
-python3 ingest.py <upload> script.md
+QA=1 node render.mjs stills/a "$(python3 shot_stills.py 0.5)" 3 && python3 sheet.py stills/a stills/a.jpg 8 220
 ```
-If the recorded words differ from the script, update `script.md` to match the audio and run it again. Add an ARPAbet pronunciation in `audio/align.py` for every brand or invented word.
+Look at it yourself, then `python3 studio.py check . --stage final` must show the layout check OK (ignore the files check until delivery). Then Storyboard review.
 
-Music-only videos: write `work/timing.json` by hand (scenes on a 120 bpm grid, 0.5 s per beat) and a closed-mouth `lips.json` (`library/docs/FORMATS.md`, "Without a voiceover").
+Social post layout (carousel, post): `AR=45`, screen-space items `slidehead` (same size on every slide), `swipe`, `say`, `cta` (`library/docs/FORMATS.md` → Social post layout). Story frames: `SAFE=story`. Reels: `SAFE=reel`. Covers: `COVER="TEXT"`. Transparent assets: `ALPHA=1` (PNG).
 
-## 3. Storyboard
-Write `story.js`, one scene per sentence or punchline (`library/docs/STORY.md`). Use only the brand's characters and backgrounds plus the Studio Library. Every number and screen answers the line it illustrates.
-
-Contact sheet:
+## 3. Render, sound, finish
 ```
-node render.mjs stills/a "$(python3 shot_stills.py 0.5)" 3 && python3 sheet.py stills/a stills/a.jpg 8 220
-```
-Look at it, fix overlaps, empty frames and illogical moments, then send it for Storyboard review.
-
-## 4. Render and sound
-```
-node render.mjs frames "0-<N-1>" 3                    # AR=45|11|169 for other sizes, CAP=1 when Subtitles is ON
+QA=1 node render.mjs frames "0-<N-1>" 3          # AR=45|11|169 for other sizes; CAP=1 when Subtitles is ON
 node events.mjs && python3 audio/autoscore.py && python3 audio/mix.py
-bash finish.sh "<brand>_<content>_<title>_v<N>" 916   # 916,45,169 … masters −15 LUFS, encodes, runs QA
+bash finish.sh "<brand>_<format>_<title>_v<N>" 916      # masters at −15 LUFS, encodes, QA
 ```
-Run renders longer than ~2 minutes in the background and poll. Rename outputs to the file-name rule in `delivery.md`.
+Long renders in the background; poll. Move outputs into `delivery/` with the naming rule (`delivery.md`), write `delivery/post.md`, run the gate `--stage final`, then Ready for approval.
 
-`STYLE=<engine name>` previews a visual style on every scene. Engine names: Standard `ink`, Old film `oldfilm`, Paper cut-out `paper`, Risograph `riso`, Noir `noir`, Comic `comic`, Pastel `pastel`, Dusk `dusk`, Freeze frame `freeze`, VHS `vhs`.
+Visual styles (`STYLE=`): Standard `ink` · Old film `oldfilm` · Paper cut-out `paper` · Risograph `riso` · Noir `noir` · Comic `comic` · Pastel `pastel` · Dusk `dusk` · Freeze frame `freeze` · VHS `vhs`.
 
-## 5. Stills (Post, Carousel, Story, covers, thumbnails)
-Add a `thumbXxx()` design at the end of `vsl.js`, wire it in `renderThumb`, then:
-```
-node shoot_thumb.mjs out/<file>.png "?v=xxx&w=1080&h=1350"
-```
-Layouts: `library/docs/FORMATS.md` and `library/docs/SCENES.md` (Thumbnails).
-
-## 6. Quality check (before every Ready for approval)
-Check and fix, then report one line "Quality check passed":
-- Only the brand's colours, characters, backgrounds and props (plus Studio Library).
-- Outfits identical in every scene; characters in a two-shot are the same height.
-- On-screen text: 3 words or fewer where possible, inside the safe area for the content.
-- Ads: brand visible within 3 s, CTA end card held 2 s.
-- Audio mastered at −15 LUFS; voiceover unaltered.
-- Story frames leave the top 250 px and bottom 340 px free.
-- Discord files within their size limits (`discord.md`).
-- Look at a contact sheet of the final render and at full-size crops of anything that changed.
+## Stills (post, carousel, story, covers, thumbnails)
+Render beats as stills (`QA=1 AR=45 node render.mjs stills/x "<frames>" 3`), or a `thumbXxx()` design with `shoot_thumb.mjs`. Downscale 4:5 renders (1400×1750) to 1080×1350 when exporting.
 
 ## Hook test (Trial reels)
-1. Build and render the full reel with hook A.
-2. Write the first scene(s) for hooks B and C in copies of `story.js` (`story_b.js`, `story_c.js`) that differ only until the end of the hook; render only that frame range for each and splice with the shared body.
-3. Deliver 3 videos and 3 post copies (`delivery.md`).
-4. After 72 hours the user logs results (`projects.md`). The winner can be graduated: new post copy written for followers, same video. Add the winning hook to the top of "Proven" in the brand's `hooks.md`.
+Render the full reel with hook A; write `story_b.js`/`story_c.js` that differ only until the hook ends; render only that range for each and splice with the shared body. Deliver 3 videos and 3 post copies for non-followers. After 72 h: Projects → Log results → graduate the winner and add its hook to "Proven" in `hooks.md`.
 
-## Repurpose
-Start from the approved project; each target becomes its own version folder in the same project with its own delivery package.
-| Target | How |
-|---|---|
-| Carousel | one slide per key scene, rendered as stills at 4:5 with the Comic or Standard style; last slide CTA |
-| Story teaser | 3 frames: hook image, "new episode" frame with a countdown or link sticker, a poll frame |
-| Trial reels | hook test on the approved body |
-| 16:9 version | `AR=169`, set `Y0['169']` per scene after a stills check |
-| 4:5 feed video | `AR=45` |
-| Short cut-downs | 3 clips: the hook, the funniest scene, the twist (8–15 s each) |
-| Discord announcement | GIF teaser (3–6 s) + message (`discord.md`) |
-| Sticker | best character moment as a 320×320 loop (`discord.md`) |
-| Soundboard clip | best line of the voiceover, up to 5 s (`discord.md`) |
+## Make another format (from an approved piece)
+Each new format is a new project with `--parent <title>` reusing the approved script, facts, CTA and scenes: carousel from scenes · story teaser · trial reels · 16:9 (`AR=169`, tune `Y0`) · 4:5 feed video (`AR=45`) · short cut-downs · Discord announcement · sticker · soundboard clip · checklist or lesson from the same idea.

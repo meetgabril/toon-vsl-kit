@@ -1,0 +1,140 @@
+{
+  "rule": "Formats are structures and joke mechanics, drawn only with the brand's own characters, backgrounds and props. Never use third-party images (film stills, photos of real people, other artists' comics). This keeps every meme original (Instagram originality) and safe for ads.",
+  "formats": [
+    {
+      "id": "reject-prefer",
+      "name": "Reject / Prefer",
+      "layout": "rows",
+      "panels": 2,
+      "how": "Top row: a character refusing something (blank or serious mood, hand up). Bottom row: the same character delighted (happy). Text on the right of each row.",
+      "use_for": "The old habit vs the better way",
+      "spec": "rows: [{text: 'Posting every day'}, {text: 'Building a community'}]"
+    },
+    {
+      "id": "four-levels",
+      "name": "Four levels",
+      "layout": "rows",
+      "panels": 4,
+      "how": "Four rows, the same idea getting smarter or more absurd. The character's mood climbs (calm \u2192 smile \u2192 happy \u2192 awe) and the background gets brighter each row.",
+      "use_for": "Escalating sophistication, last level absurd or the brand's idea",
+      "spec": "rows x4"
+    },
+    {
+      "id": "nobody-me",
+      "name": "Nobody: / Me:",
+      "layout": "single",
+      "panels": 1,
+      "how": "Caption band: 'Nobody:' then 'Me:' and the absurd thing. The panel shows the character doing it.",
+      "use_for": "A habit the audience recognises in themselves",
+      "spec": "caption 2 lines + 1 panel"
+    },
+    {
+      "id": "pov",
+      "name": "POV",
+      "layout": "single",
+      "panels": 1,
+      "how": "Caption: 'POV: you \u2026'. The panel shows the scene from the viewer's side.",
+      "use_for": "Put the viewer inside a relatable moment",
+      "spec": "caption + 1 panel"
+    },
+    {
+      "id": "expectation-reality",
+      "name": "Expectation vs reality",
+      "layout": "cols",
+      "panels": 2,
+      "how": "Two panels side by side labelled EXPECTATION and REALITY. Same character, opposite outcome.",
+      "use_for": "The fantasy vs what actually happens",
+      "spec": "labels + 2 panels"
+    },
+    {
+      "id": "them-me",
+      "name": "Them / Me",
+      "layout": "cols",
+      "panels": 2,
+      "how": "Two panels labelled with two types of people (e.g. 'Coaches with ads' / 'Coaches with a community').",
+      "use_for": "Contrast two approaches",
+      "spec": "labels + 2 panels"
+    },
+    {
+      "id": "day1-day100",
+      "name": "Day 1 vs Day 100",
+      "layout": "cols",
+      "panels": 2,
+      "how": "Same character and place, two moments: beginning vs later.",
+      "use_for": "Progress or decline over time",
+      "spec": "labels + 2 panels"
+    },
+    {
+      "id": "asked-got",
+      "name": "What I asked for / What I got",
+      "layout": "cols",
+      "panels": 2,
+      "how": "Left: the plan. Right: the funny result.",
+      "use_for": "Misfire of expectations",
+      "spec": "labels + 2 panels"
+    },
+    {
+      "id": "starter-pack",
+      "name": "Starter pack",
+      "layout": "grid",
+      "panels": 6,
+      "how": "A title band 'The ___ starter pack' and a 2\u00d73 grid of props or mini scenes, each with a short label.",
+      "use_for": "Affectionate stereotype of an archetype from audience.json",
+      "spec": "title + 6 labeled cells"
+    },
+    {
+      "id": "tier-list",
+      "name": "Tier list",
+      "layout": "tier",
+      "panels": 5,
+      "how": "Rows S, A, B, C, D with coloured letter boxes; items are short labels or props.",
+      "use_for": "Rank tactics, habits or tools",
+      "spec": "5 rows of items"
+    },
+    {
+      "id": "two-doors",
+      "name": "The impossible choice",
+      "layout": "single",
+      "panels": 1,
+      "how": "The character sweating between two labelled doors or buttons (the 'doors' background).",
+      "use_for": "A dilemma the audience faces",
+      "spec": "caption + 1 panel with 2 labels"
+    },
+    {
+      "id": "explaining",
+      "name": "Me explaining",
+      "layout": "single",
+      "panels": 1,
+      "how": "Caption 'Me explaining ___ to ___'. Panel: a character at the board, the other bored or asleep.",
+      "use_for": "Explaining something obvious to someone who doesn't get it",
+      "spec": "caption + 1 panel"
+    },
+    {
+      "id": "hot-take-sign",
+      "name": "Hot take sign",
+      "layout": "single",
+      "panels": 1,
+      "how": "A character holding a sign with a bold opinion.",
+      "use_for": "A spicy but true belief",
+      "spec": "caption optional + 1 panel"
+    },
+    {
+      "id": "fake-chart",
+      "name": "The chart",
+      "layout": "single",
+      "panels": 1,
+      "how": "A cartoon chart with an absurd axis (e.g. 'Posts per day' vs 'Sales').",
+      "use_for": "Data joke",
+      "spec": "caption + 1 panel"
+    },
+    {
+      "id": "plot-twist",
+      "name": "Reaction caption",
+      "layout": "single",
+      "panels": 1,
+      "how": "One reaction image of a character (any mood) under a caption describing the moment.",
+      "use_for": "Universal reaction to a niche moment",
+      "spec": "caption + 1 panel"
+    }
+  ]
+}

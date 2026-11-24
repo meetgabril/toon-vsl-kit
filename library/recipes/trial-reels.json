@@ -1,0 +1,70 @@
+{
+  "id": "trial-reels",
+  "name": "Trial reels (hook test)",
+  "family": "social",
+  "goals": [
+    "grow"
+  ],
+  "render": "video",
+  "sizes": [
+    {
+      "w": 1080,
+      "h": 1920,
+      "ar": "916",
+      "id": "9x16",
+      "safe": {
+        "top": 220,
+        "bottom": 340,
+        "left": 60,
+        "right": 120
+      }
+    }
+  ],
+  "length": {
+    "min": 15,
+    "max": 60,
+    "unit": "s"
+  },
+  "parts": [
+    {
+      "id": "hooks",
+      "required": true,
+      "rule": "3 hooks of different kinds; same body"
+    },
+    {
+      "id": "cta",
+      "required": true,
+      "rule": "Written for people who don't follow yet"
+    }
+  ],
+  "text": {
+    "min_px": {
+      "title": 56,
+      "body": 40
+    }
+  },
+  "copy": [
+    "instagram_per_hook",
+    "posting_note"
+  ],
+  "hashtags": {
+    "instagram": 5
+  },
+  "options": [
+    "subtitles",
+    "post_copy",
+    "hashtags"
+  ],
+  "script_types": [
+    "sitcom-skit",
+    "history-hook",
+    "escalation",
+    "myth-vs-fact",
+    "yep-thats-me"
+  ],
+  "files": [
+    "video x3",
+    "cover x3",
+    "post.md"
+  ]
+}

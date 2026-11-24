@@ -1,0 +1,17 @@
+{
+  "title": "free-perfume",
+  "brand": "buzztorm",
+  "channel": "social",
+  "content": "reel",
+  "script_type": "sitcom-skit",
+  "audio": "voiceover",
+  "preset": "Monday Episode",
+  "hook": "In 1886, a bookseller gave away free perfume. Nobody wanted the books.",
+  "options": { "subtitles": false, "post_copy": true, "hashtags": true },
+  "status": "Script review",
+  "version": 1,
+  "created": "2026-11-24",
+  "updated": "2026-11-24",
+  "parent": null,
+  "history": []
+}

@@ -1,7 +1,7 @@
 {
   "name": "buzztorm-studio",
-  "version": "0.1.2",
-  "description": "Buzztorm's menu-driven cartoon content studio. One house style, many brands: Reels, trial reels, posts, carousels, stories, YouTube, sales page videos, LinkedIn and Discord content, each delivered ready to post.",
+  "version": "0.2.0",
+  "description": "Buzztorm's menu-driven content studio for its own infoproduct brands and its clients: Brand Brain, recipes for every format (reels, trial reels, carousels, posts, stories, memes, ad concept packs, YouTube, lessons, courses, playbooks, e-books, checklists, worksheets, cheat sheets, Discord) and an automatic Quality Gate.",
   "author": {
     "name": "Buzztorm"
   },

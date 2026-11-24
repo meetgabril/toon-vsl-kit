@@ -1,0 +1,76 @@
+{
+  "id": "linkedin-video",
+  "name": "LinkedIn video",
+  "family": "web",
+  "goals": [
+    "teach",
+    "grow"
+  ],
+  "render": "video",
+  "sizes": [
+    {
+      "w": 1920,
+      "h": 1080,
+      "ar": "169",
+      "id": "16x9",
+      "safe": {
+        "top": 60,
+        "bottom": 60,
+        "left": 90,
+        "right": 90
+      }
+    },
+    {
+      "w": 1080,
+      "h": 1350,
+      "ar": "45",
+      "id": "4x5",
+      "safe": {
+        "top": 64,
+        "bottom": 64,
+        "left": 64,
+        "right": 64
+      }
+    }
+  ],
+  "length": {
+    "min": 30,
+    "max": 90,
+    "unit": "s"
+  },
+  "parts": [
+    {
+      "id": "lesson",
+      "required": true,
+      "rule": "One concrete lesson or number"
+    }
+  ],
+  "text": {
+    "min_px": {
+      "title": 56,
+      "body": 40
+    }
+  },
+  "copy": [
+    "linkedin",
+    "hashtags"
+  ],
+  "hashtags": {
+    "linkedin": 3
+  },
+  "options": [
+    "subtitles",
+    "post_copy",
+    "hashtags"
+  ],
+  "script_types": [
+    "explainer",
+    "before-after",
+    "myth-vs-fact"
+  ],
+  "files": [
+    "video",
+    "cover",
+    "post.md"
+  ]
+}

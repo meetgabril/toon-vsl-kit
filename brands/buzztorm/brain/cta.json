@@ -1,0 +1,53 @@
+{
+  "by_goal": {
+    "grow": [
+      {
+        "id": "send-trigger",
+        "type": "soft",
+        "text": "A question that makes them think of a friend (no hard CTA)."
+      },
+      {
+        "id": "follow-series",
+        "type": "soft",
+        "text": "Follow for the next episode of Tony did it again."
+      }
+    ],
+    "teach": [
+      {
+        "id": "comment-academy",
+        "type": "comment-to-dm",
+        "keyword": "ACADEMY",
+        "offer": "buzztorm-academy",
+        "text": "Comment ACADEMY and we'll DM you the link. It's free."
+      },
+      {
+        "id": "save",
+        "type": "soft",
+        "text": "Save this for your next launch."
+      }
+    ],
+    "sell": [
+      {
+        "id": "book-call",
+        "type": "link",
+        "offer": "community-build",
+        "text": "Book a free 30-minute call. Leave with a plan, even if you don't hire us."
+      },
+      {
+        "id": "comment-plan",
+        "type": "comment-to-dm",
+        "keyword": "PLAN",
+        "offer": "community-build",
+        "text": "Comment PLAN and we'll send you the booking link."
+      }
+    ],
+    "community": [
+      {
+        "id": "introduce",
+        "type": "community",
+        "text": "Introduce yourself in #welcome: what do you teach?"
+      }
+    ]
+  },
+  "automation": "Comment-to-DM keywords need an automation tool connected to the account (ManyChat or another Meta Business Partner). Meta allows one private reply per comment within 7 days."
+}

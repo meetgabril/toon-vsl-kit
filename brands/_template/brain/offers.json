@@ -1,0 +1,15 @@
+{
+  "offers": [
+    {
+      "id": "offer-id",
+      "name": "",
+      "stage": "free | low-ticket | course | high-ticket",
+      "type": "",
+      "promise": "",
+      "price": null,
+      "link": null,
+      "dm_keyword": null,
+      "status": "active"
+    }
+  ]
+}

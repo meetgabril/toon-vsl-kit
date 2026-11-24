@@ -1,0 +1,73 @@
+{
+  "id": "story",
+  "name": "Story sequence",
+  "family": "social",
+  "goals": [
+    "grow",
+    "teach",
+    "sell",
+    "community"
+  ],
+  "render": "stills",
+  "sizes": [
+    {
+      "w": 1080,
+      "h": 1920,
+      "ar": "916",
+      "id": "9x16",
+      "safe": {
+        "top": 250,
+        "bottom": 340,
+        "left": 65,
+        "right": 65
+      }
+    }
+  ],
+  "count": {
+    "frames": {
+      "default": 4,
+      "options": [
+        3,
+        4,
+        5,
+        7
+      ]
+    }
+  },
+  "parts": [
+    {
+      "id": "mechanic",
+      "required": true,
+      "rule": "At least one interactive sticker: poll, quiz, question, slider, countdown, link or Add Yours"
+    },
+    {
+      "id": "sticker_space",
+      "required": true,
+      "rule": "Leave the sticker area empty in the art"
+    }
+  ],
+  "text": {
+    "min_px": {
+      "title": 56,
+      "body": 44
+    }
+  },
+  "copy": [
+    "sticker_plan"
+  ],
+  "hashtags": {
+    "instagram": 0
+  },
+  "options": [],
+  "script_types": [
+    "poll-gag",
+    "behind-the-scenes",
+    "yep-thats-me",
+    "quiz-reveal",
+    "countdown"
+  ],
+  "files": [
+    "frames",
+    "post.md"
+  ]
+}

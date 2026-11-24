@@ -1,0 +1,22 @@
+{
+  "risk_level": "high",
+  "why": "Business-growth and money-making education: Meta 'unrealistic outcomes' policy and the FTC's proposed Business and Money-Making Opportunity Rule.",
+  "never": [
+    "guaranteed income or results",
+    "get rich quick, overnight, in X days",
+    "passive income, financial freedom, quit your job",
+    "little or no work",
+    "screenshots of earnings or bank balances",
+    "before/after framed as money",
+    "specific earnings for a typical buyer"
+  ],
+  "allowed": [
+    "Story-based results of fictional characters (Tony) clearly in a cartoon",
+    "Process outcomes (more members, fewer scattered leads) without money amounts",
+    "Verified public facts with a source in facts.json",
+    "Numbers about the market (ad costs, reach) with a source"
+  ],
+  "numbers_rule": "Any number about a client's result must come from proof.json with permission and evidence. Otherwise remove it.",
+  "ad_disclaimer": "Results vary. We don't guarantee any income or business result.",
+  "fictional_note": "Tony and Dex are fictional characters."
+}

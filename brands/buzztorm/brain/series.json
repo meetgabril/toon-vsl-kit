@@ -1,0 +1,26 @@
+{
+  "series": [
+    {
+      "id": "tony-did-it-again",
+      "name": "Tony did it again",
+      "format": "Sitcom skit reel",
+      "structure": "Tony hits a growth problem → Dex narrates → the community idea fixes it → Tony's gag",
+      "cadence": "weekly",
+      "hashtag": "#TonyDidItAgain"
+    },
+    {
+      "id": "history-hook",
+      "name": "History says",
+      "format": "History hook reel or carousel",
+      "structure": "Verified bizarre fact → pivot to community selling → lesson",
+      "cadence": "every 2 weeks"
+    },
+    {
+      "id": "myth-monday",
+      "name": "Myth Monday",
+      "format": "Myth vs fact carousel",
+      "structure": "A belief creators hold → proof → the fact → one action",
+      "cadence": "weekly"
+    }
+  ]
+}

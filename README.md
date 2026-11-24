@@ -12,9 +12,15 @@ library/                   the Studio Library, shared by every brand
   ref/                     style card, character sheets, backgrounds, props, scene and motion catalogs
   example/                 approved Buzztorm films used as references
   shared/                  backgrounds and props proposed by brands for every brand
+  recipes/                 one spec per format (sizes, safe zones, parts, copy, limits) — the Content Factory
+  memes/formats.json       structural meme formats, drawn only with each brand's own characters
+  doc-templates/           branded HTML/CSS for PDFs (e-books, checklists, playbooks, worksheets, cheat sheets, lessons)
+  goldens/                 reference pieces every engine change must keep passing
+  tools/studio.py          project state machine + the Quality Gate (claims, facts, copy, CTA, layout, files)
+  tools/build_doc.py · meme.py · voice.py   PDFs · meme layouts · optional ElevenLabs voice
 brands/
   _template/               the structure every brand copies
-  buzztorm/                Buzztorm, a brand like any other
+  buzztorm/                Buzztorm, a brand like any other (brain/ = Brand Brain: audience, offers, CTAs, voice, claims, facts, proof, series, ideas)
 legacy/                    the old toon-vsl skill (kept for reference)
 ```
 

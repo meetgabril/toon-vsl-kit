@@ -1,0 +1,78 @@
+{
+  "id": "youtube-video",
+  "name": "YouTube video",
+  "family": "web",
+  "goals": [
+    "teach",
+    "grow"
+  ],
+  "render": "video",
+  "sizes": [
+    {
+      "w": 1920,
+      "h": 1080,
+      "ar": "169",
+      "id": "16x9",
+      "safe": {
+        "top": 60,
+        "bottom": 60,
+        "left": 90,
+        "right": 90
+      }
+    }
+  ],
+  "length": {
+    "min": 60,
+    "max": 600,
+    "unit": "s"
+  },
+  "parts": [
+    {
+      "id": "hook",
+      "required": true,
+      "rule": "Promise in the first 10 s"
+    },
+    {
+      "id": "chapters",
+      "required": true,
+      "rule": "From scene times, at least 3, first at 00:00"
+    },
+    {
+      "id": "cta",
+      "required": true,
+      "rule": "From the CTA library"
+    }
+  ],
+  "text": {
+    "min_px": {
+      "title": 56,
+      "body": 40
+    }
+  },
+  "copy": [
+    "titles_x3",
+    "description_with_chapters",
+    "hashtags",
+    "thumbnail"
+  ],
+  "hashtags": {
+    "youtube": 3
+  },
+  "options": [
+    "subtitles",
+    "post_copy",
+    "hashtags"
+  ],
+  "script_types": [
+    "explainer",
+    "sitcom-skit",
+    "history-hook",
+    "sales-pitch",
+    "how-to"
+  ],
+  "files": [
+    "video",
+    "thumbnail",
+    "post.md"
+  ]
+}

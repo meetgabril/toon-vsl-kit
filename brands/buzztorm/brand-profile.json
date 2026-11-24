@@ -17,21 +17,69 @@
     "secondary": "#5bc0be",
     "tertiary": "#a974e0"
   },
-  "fonts": { "titles": "Bungee", "labels": "Baloo 2", "screens": "VT323" },
+  "fonts": {
+    "titles": "Bungee",
+    "labels": "Baloo 2",
+    "screens": "VT323"
+  },
   "logo": null,
-  "visual_style": { "default": "standard", "avoid": [] },
-  "audio": { "music": ["sitcom", "happy", "think", "build"], "sonic_logo": null },
+  "signs": {
+    "studio": "TONY FIT",
+    "poster": "TONY FIT",
+    "gym": "PULSE"
+  },
+  "visual_style": {
+    "default": "standard",
+    "avoid": []
+  },
+  "audio": {
+    "music": [
+      "sitcom",
+      "happy",
+      "think",
+      "build"
+    ],
+    "sonic_logo": null
+  },
   "characters": {
-    "D": { "name": "Dex", "role": "narrator", "voice": "Warm, confident male, 30s, dry humour" },
-    "T": { "name": "Tony", "role": "hero", "voice": "Energetic fitness coach, upbeat male, a little dramatic" },
-    "M": { "name": "Tony's Mom", "role": "supporting", "voice": "Woman in her 60s, sweet but proud, slightly mischievous" }
+    "D": {
+      "name": "Dex",
+      "role": "narrator",
+      "voice": "Warm, confident male, 30s, dry humour",
+      "voice_id": null
+    },
+    "T": {
+      "name": "Tony",
+      "role": "hero",
+      "voice": "Energetic fitness coach, upbeat male, a little dramatic",
+      "voice_id": null
+    },
+    "M": {
+      "name": "Tony's Mom",
+      "role": "supporting",
+      "voice": "Woman in her 60s, sweet but proud, slightly mischievous",
+      "voice_id": null
+    }
   },
   "hashtags": {
     "brand": "#Buzztorm",
     "series": "#TonyDidItAgain",
-    "niche": ["#fitnesscoach", "#gymowner", "#onlinecoach", "#clientgrowth", "#communitybuilding", "#contentcreator"]
+    "niche": [
+      "#fitnesscoach",
+      "#gymowner",
+      "#onlinecoach",
+      "#clientgrowth",
+      "#communitybuilding",
+      "#contentcreator"
+    ]
   },
-  "options": { "subtitles": false, "post_copy": true, "hashtags": true, "alt_text": true, "mention": "none" },
+  "options": {
+    "subtitles": false,
+    "post_copy": true,
+    "hashtags": true,
+    "alt_text": true,
+    "mention": "none"
+  },
   "presets": [
     {
       "name": "Monday Episode",
@@ -39,8 +87,23 @@
       "content": "reel",
       "script_type": "sitcom-skit",
       "audio": "voiceover",
-      "repurpose": ["discord-announcement", "hook-test"]
+      "repurpose": [
+        "discord-announcement",
+        "hook-test"
+      ]
     }
   ],
-  "discord": { "boost_level": 0 }
+  "discord": {
+    "boost_level": 0
+  },
+  "weekly_mix": {
+    "grow": 3,
+    "teach": 2,
+    "sell": 1,
+    "community": 1
+  },
+  "archive": {
+    "google_drive_folder": "Buzztorm Studio/Buzztorm"
+  },
+  "portfolio": null
 }

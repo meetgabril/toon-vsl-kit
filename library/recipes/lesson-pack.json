@@ -1,0 +1,99 @@
+{
+  "id": "lesson-pack",
+  "name": "Lesson pack",
+  "family": "learning",
+  "goals": [
+    "teach"
+  ],
+  "render": "video+pdf+stills",
+  "sizes": [
+    {
+      "w": 1920,
+      "h": 1080,
+      "ar": "169",
+      "id": "16x9",
+      "safe": {
+        "top": 60,
+        "bottom": 60,
+        "left": 90,
+        "right": 90
+      }
+    },
+    {
+      "w": 1080,
+      "h": 1350,
+      "ar": "45",
+      "id": "4x5",
+      "safe": {
+        "top": 64,
+        "bottom": 64,
+        "left": 64,
+        "right": 64
+      }
+    },
+    {
+      "w": 1080,
+      "h": 1920,
+      "ar": "916",
+      "id": "9x16",
+      "safe": {
+        "top": 220,
+        "bottom": 340,
+        "left": 60,
+        "right": 120
+      }
+    }
+  ],
+  "length": {
+    "min": 120,
+    "max": 300,
+    "unit": "s"
+  },
+  "parts": [
+    {
+      "id": "one_objective",
+      "required": true,
+      "rule": "One learning objective the learner can act on today"
+    },
+    {
+      "id": "structure",
+      "required": true,
+      "rule": "hook \u2192 why it matters \u2192 3 steps \u2192 example with a character \u2192 today's action \u2192 quiz"
+    },
+    {
+      "id": "quiz",
+      "required": true,
+      "rule": "3 questions with plausible wrong answers and explanations"
+    },
+    {
+      "id": "teaser",
+      "required": true,
+      "rule": "A 9:16 teaser reel (15\u201330 s) that sells the lesson"
+    }
+  ],
+  "text": {
+    "min_px": {
+      "title": 56,
+      "body": 40
+    }
+  },
+  "copy": [
+    "lesson_summary",
+    "quiz",
+    "teaser_post"
+  ],
+  "hashtags": {
+    "instagram": 5
+  },
+  "options": [
+    "subtitles"
+  ],
+  "files": [
+    "lesson video 16x9",
+    "slides",
+    "worksheet.pdf",
+    "summary card 4x5",
+    "teaser reel 9x16",
+    "post.md"
+  ]
+}

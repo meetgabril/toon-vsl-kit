@@ -1,0 +1,70 @@
+{
+  "personas": [
+    {
+      "id": "treadmill-coach",
+      "name": "The treadmill coach",
+      "who": "Fitness and online coaches who get every client from ads or from posting every day.",
+      "pains": [
+        "Every client costs about $200 in ads, and the price keeps rising",
+        "One week off and the leads disappear",
+        "Leads scattered across DMs, email, WhatsApp and booking apps"
+      ],
+      "desires": [
+        "Clients that keep coming while they rest",
+        "Clients who bring other clients",
+        "Stop being the only source of every sale"
+      ],
+      "objections": [
+        "I don't have time to run a community",
+        "My audience won't join",
+        "I tried a group before and it died",
+        "I'm not techy"
+      ],
+      "phrases": [
+        "If I miss a day, I feel it",
+        "Can I finally take off the ring light?",
+        "Did my leads disappear?"
+      ]
+    },
+    {
+      "id": "followers-no-sales",
+      "name": "The creator with followers but no sales",
+      "who": "Creators and course sellers with an audience that watches but doesn't buy.",
+      "pains": [
+        "Thousands of followers, a handful of sales",
+        "Each post reaches a small share of followers",
+        "Shouting 'buy now' in stories feels tiring and doesn't sell"
+      ],
+      "desires": [
+        "Followers who see each other buy and win",
+        "A launch that doesn't depend on the algorithm"
+      ],
+      "objections": [
+        "I need more followers first",
+        "Communities are only for big creators"
+      ],
+      "phrases": [
+        "Why do I sell so little with so many followers?"
+      ]
+    },
+    {
+      "id": "ads-dependent-service",
+      "name": "The ads-dependent service business",
+      "who": "Studios, clinics and service owners who pay for every new client.",
+      "pains": [
+        "Rising cost per client",
+        "Ad accounts flagged or paused",
+        "No owned audience"
+      ],
+      "desires": [
+        "An owned channel that keeps working when ads stop"
+      ],
+      "objections": [
+        "My business isn't a 'community' type of business"
+      ],
+      "phrases": [
+        "Every year it goes up"
+      ]
+    }
+  ]
+}

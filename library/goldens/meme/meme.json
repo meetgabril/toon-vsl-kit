@@ -1,0 +1,17 @@
+{
+ "format": "reject-prefer",
+ "size": "4x5",
+ "brand": "brand/brand-profile.json",
+ "handle": "@buzztorm",
+ "panels": [
+  {
+   "image": "stills/m/f00048.jpg",
+   "text": "Posting every day at 5 a.m. for 12 views"
+  },
+  {
+   "image": "stills/m/f00120.jpg",
+   "text": "Building a place where your followers meet each other"
+  }
+ ],
+ "out": "delivery/buzztorm_meme_daily-posting-meme_v1_4x5.png"
+}

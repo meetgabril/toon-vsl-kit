@@ -1,0 +1,32 @@
+{
+  "id": "worksheet",
+  "name": "Worksheet",
+  "family": "learning",
+  "goals": [
+    "teach"
+  ],
+  "render": "pdf",
+  "sizes": [
+    {
+      "id": "letter",
+      "w": 816,
+      "h": 1056,
+      "unit": "css px"
+    }
+  ],
+  "length": {
+    "min": 1,
+    "max": 2,
+    "unit": "pages"
+  },
+  "parts": [
+    {
+      "id": "exercise",
+      "required": true,
+      "rule": "Fill-in fields tied to one lesson or lead magnet"
+    }
+  ],
+  "files": [
+    "worksheet.pdf"
+  ]
+}

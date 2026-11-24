@@ -1,0 +1,68 @@
+{
+  "ideas": [
+    {
+      "id": "free-perfume",
+      "idea": "The free bonus becomes the business (Avon's perfume → Tony's free community).",
+      "goal": "grow",
+      "fact": "avon-1886",
+      "status": "in-progress"
+    },
+    {
+      "id": "content-plan",
+      "idea": "Tony's 3 a.m. live for one viewer: posting more isn't a strategy.",
+      "goal": "grow",
+      "status": "in-progress"
+    },
+    {
+      "id": "harley-club",
+      "idea": "Harley's riders stayed because they had a club.",
+      "goal": "teach",
+      "fact": "harley-hog-1983",
+      "status": "new"
+    },
+    {
+      "id": "busiest-gym",
+      "idea": "The busiest gym in town never runs ads.",
+      "goal": "grow",
+      "status": "new"
+    },
+    {
+      "id": "rent-audience",
+      "idea": "You're paying rent on your own audience (followers vs members).",
+      "goal": "teach",
+      "status": "new"
+    },
+    {
+      "id": "one-week-off",
+      "idea": "What happens to your clients if you disappear for a week?",
+      "goal": "sell",
+      "status": "new"
+    },
+    {
+      "id": "scattered-leads",
+      "idea": "Leads in DMs, email, WhatsApp and a booking app: the 4-door leak.",
+      "goal": "teach",
+      "status": "new"
+    },
+    {
+      "id": "crowd-effect",
+      "idea": "Nobody looks where one person points; everyone looks where the group looks.",
+      "goal": "teach",
+      "fact": "milgram-1969",
+      "status": "used"
+    },
+    {
+      "id": "tupperware-parties",
+      "idea": "Tupperware left the shelves and sold in living rooms.",
+      "goal": "teach",
+      "fact": "tupperware-1951",
+      "status": "used"
+    },
+    {
+      "id": "onboarding-checklist",
+      "idea": "The 12-point community launch checklist (lead magnet).",
+      "goal": "teach",
+      "status": "new"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "presentation-loop",
+  "name": "Presentation loop",
+  "family": "web",
+  "goals": [
+    "community",
+    "sell"
+  ],
+  "render": "video",
+  "sizes": [
+    {
+      "w": 1920,
+      "h": 1080,
+      "ar": "169",
+      "id": "16x9",
+      "safe": {
+        "top": 60,
+        "bottom": 60,
+        "left": 90,
+        "right": 90
+      }
+    }
+  ],
+  "length": {
+    "min": 5,
+    "max": 15,
+    "unit": "s"
+  },
+  "parts": [
+    {
+      "id": "seamless",
+      "required": true,
+      "rule": "Last frame = first frame"
+    }
+  ],
+  "copy": [],
+  "hashtags": {},
+  "options": [],
+  "files": [
+    "mp4",
+    "gif"
+  ]
+}

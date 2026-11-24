@@ -1,0 +1,49 @@
+/* Buzztorm Studio — document style (every brand). Brand colours come in as CSS variables from brand-profile.json. */
+@font-face { font-family: "Bungee"; src: url(../fonts/bungee-latin-400-normal.woff2); }
+@font-face { font-family: "Baloo 2"; font-weight: 800; src: url(../fonts/baloo-2-latin-800-normal.woff2); }
+@font-face { font-family: "Inter"; font-weight: 400; src: url(../fonts/inter-latin-400-normal.woff2); }
+@font-face { font-family: "Inter"; font-weight: 700; src: url(../fonts/inter-latin-700-normal.woff2); }
+@page { size: Letter; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "Inter", sans-serif; font-size: 12.5pt; line-height: 1.5; color: #1b1422; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 8.5in; min-height: 11in; padding: 0.7in 0.75in 0.8in; position: relative; page-break-after: always; overflow: hidden; }
+.page:last-child { page-break-after: auto; }
+h1, h2, .display { font-family: "Bungee", sans-serif; font-weight: 400; line-height: 1.08; letter-spacing: .01em; }
+h1 { font-size: 34pt; margin: 0 0 .25in; }
+h2 { font-size: 20pt; margin: .3in 0 .14in; color: var(--primary); }
+h3 { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 15pt; margin: .2in 0 .06in; }
+p { margin: 0 0 .12in; } strong { font-weight: 700; } a { color: var(--primary); }
+img { max-width: 100%; border: 4px solid #17141c; border-radius: 14px; }
+.band { position: absolute; left: 0; right: 0; top: 0; height: .32in; background: var(--primary); }
+.footer { position: absolute; left: .75in; right: .75in; bottom: .35in; font: 700 9pt "Inter"; color: #6d6577; display: flex; justify-content: space-between; }
+/* cover */
+.cover { background: var(--primary); color: var(--paper); display: flex; flex-direction: column; justify-content: center; }
+.cover h1 { font-size: 40pt; color: var(--paper); text-shadow: 3px 3px 0 #17141c; }
+.cover .sub { font: 800 17pt "Baloo 2"; color: var(--highlight); margin-bottom: .3in; }
+.cover .brand { position: absolute; bottom: .6in; left: .75in; font: 400 14pt "Bungee"; color: var(--paper); }
+.cover img { max-height: 4.2in; align-self: flex-start; background: var(--paper); }
+.chip { display: inline-block; font: 400 10pt "Bungee"; background: var(--accent); color: #fff; padding: 4px 12px; border-radius: 99px; border: 3px solid #17141c; margin-bottom: .18in; }
+/* boxes */
+.box { border: 4px solid #17141c; border-radius: 16px; padding: .16in .22in; margin: .16in 0; background: var(--paper); box-shadow: 5px 5px 0 rgba(23,20,28,.18); page-break-inside: avoid; }
+.box > h3:first-child { margin-top: 0; }
+.tip { background: color-mix(in srgb, var(--positive) 12%, white); } .warning { background: color-mix(in srgb, var(--negative) 12%, white); }
+.example { background: color-mix(in srgb, var(--secondary) 14%, white); }
+.play { background: #fff; border-color: var(--primary); }
+.play .label { font: 400 9pt "Bungee"; color: var(--accent); letter-spacing: .05em; }
+/* checklists & fields */
+ul.check { list-style: none; padding: 0; margin: .1in 0; }
+ul.check li { position: relative; padding: .07in 0 .07in .42in; min-height: .36in; border-bottom: 2px dashed #d9d1c6; page-break-inside: avoid; }
+ul.check li::before { content: ""; position: absolute; left: 0; top: .07in; width: .21in; height: .21in; border: 2.5px solid #17141c; border-radius: 5px; background: #fff; }
+.field { border-bottom: 2.5px solid #17141c; height: .42in; margin: .06in 0 .1in; }
+.field.tall { height: 1.4in; border: 3px solid #17141c; border-radius: 12px; }
+.field-label { font: 700 10pt "Inter"; color: #4a4352; margin-top: .14in; }
+/* cta */
+.cta { background: var(--accent); color: #fff; border: 5px solid #17141c; border-radius: 22px; padding: .25in .3in; margin-top: .3in; box-shadow: 6px 6px 0 #17141c; page-break-inside: avoid; }
+.cta .display { font-size: 20pt; margin-bottom: .08in; } .cta p { margin: 0; font: 800 13pt "Baloo 2"; }
+/* toc */
+.toc ol { font: 800 13pt "Baloo 2"; padding-left: .3in; } .toc li { margin: .06in 0; }
+/* compact one-pagers */
+.compact { font-size: 11pt; line-height: 1.34; } .compact .page, .compact h1 { } .compact ul.check li { padding-top: .05in; padding-bottom: .05in; } .compact h2 { font-size: 14pt; margin: .12in 0 .06in; }
+.cols2 { column-count: 2; column-gap: .35in; } .cols2 .box, .cols2 h2 { break-inside: avoid; }
+table { width: 100%; border-collapse: collapse; margin: .12in 0; font-size: 11pt; } th, td { border: 2px solid #17141c; padding: 6px 8px; text-align: left; } th { background: var(--paper-dark); font-weight: 700; }

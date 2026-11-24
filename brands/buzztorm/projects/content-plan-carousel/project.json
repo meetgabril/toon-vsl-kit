@@ -1,0 +1,22 @@
+{
+  "title": "content-plan-carousel",
+  "brand": "buzztorm",
+  "channel": "social",
+  "content": "carousel",
+  "slides": 5,
+  "script_type": "comic-strip",
+  "audio": null,
+  "hook": "Tony's content plan: 5 a.m. workout. Noon meal prep. Live at 3 a.m. for one viewer.",
+  "options": {
+    "post_copy": true,
+    "hashtags": true,
+    "alt_text": true
+  },
+  "visual_style": "comic",
+  "status": "Storyboard review",
+  "version": 1,
+  "created": "2026-11-24",
+  "updated": "2026-11-24",
+  "parent": null,
+  "history": []
+}

@@ -1,0 +1,113 @@
+{
+  "id": "ad-concept-pack",
+  "name": "Ad concept pack",
+  "family": "ads",
+  "goals": [
+    "sell"
+  ],
+  "render": "video+stills",
+  "sizes": [
+    {
+      "w": 1080,
+      "h": 1920,
+      "ar": "916",
+      "id": "9x16",
+      "safe": {
+        "top": 269,
+        "bottom": 672,
+        "left": 65,
+        "right": 65
+      }
+    },
+    {
+      "w": 1080,
+      "h": 1350,
+      "ar": "45",
+      "id": "4x5",
+      "safe": {
+        "top": 189,
+        "bottom": 270,
+        "left": 65,
+        "right": 65
+      }
+    },
+    {
+      "w": 1080,
+      "h": 1080,
+      "ar": "11",
+      "id": "1x1",
+      "safe": {
+        "top": 108,
+        "bottom": 108,
+        "left": 108,
+        "right": 108
+      }
+    }
+  ],
+  "count": {
+    "concepts": {
+      "default": 3,
+      "options": [
+        3,
+        4,
+        5
+      ]
+    }
+  },
+  "length": {
+    "min": 6,
+    "max": 30,
+    "unit": "s"
+  },
+  "parts": [
+    {
+      "id": "distinct",
+      "required": true,
+      "rule": "Concepts differ in persona, pain AND format (not small variations)"
+    },
+    {
+      "id": "brand_3s",
+      "required": true,
+      "rule": "Brand visible within 3 s"
+    },
+    {
+      "id": "end_card",
+      "required": true,
+      "rule": "CTA end card held 2 s"
+    },
+    {
+      "id": "claims",
+      "required": true,
+      "rule": "Claims check: zero warnings; disclaimer from claims.json in primary text when needed"
+    }
+  ],
+  "text": {
+    "min_px": {
+      "title": 60,
+      "body": 44
+    }
+  },
+  "copy": [
+    "primary_text",
+    "headline",
+    "description",
+    "button",
+    "test_plan"
+  ],
+  "hashtags": {},
+  "options": [
+    "subtitles"
+  ],
+  "script_types": [
+    "ad",
+    "sitcom-skit",
+    "myth-vs-fact",
+    "before-after",
+    "explainer"
+  ],
+  "files": [
+    "per concept: 9x16 video, 4x5, 1x1",
+    "post.md"
+  ],
+  "notes": "Plan the test with Meta's native Creative Testing (2\u20135 ads). Ads made with generative AI tools may get an 'AI info' label."
+}

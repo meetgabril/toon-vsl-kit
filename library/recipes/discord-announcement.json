@@ -1,0 +1,28 @@
+{
+  "id": "discord-announcement",
+  "name": "Discord announcement",
+  "family": "community",
+  "goals": [
+    "community",
+    "grow"
+  ],
+  "render": "stills+gif",
+  "parts": [
+    {
+      "id": "message",
+      "required": true,
+      "rule": "# headline, 1\u20132 lines, -# small print; Mention option"
+    }
+  ],
+  "copy": [
+    "discord_message",
+    "thread_starter"
+  ],
+  "options": [
+    "mention"
+  ],
+  "files": [
+    "gif or mp4 teaser",
+    "message.md"
+  ]
+}

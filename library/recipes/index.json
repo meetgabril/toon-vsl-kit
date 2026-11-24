@@ -1,0 +1,103 @@
+{
+  "by_goal": {
+    "grow": [
+      "reel",
+      "trial-reels",
+      "carousel",
+      "post",
+      "story",
+      "meme",
+      "youtube-video",
+      "linkedin-video",
+      "discord-announcement"
+    ],
+    "teach": [
+      "reel",
+      "carousel",
+      "post",
+      "story",
+      "youtube-video",
+      "linkedin-video",
+      "lesson-pack",
+      "course",
+      "playbook",
+      "ebook",
+      "checklist",
+      "worksheet",
+      "cheat-sheet"
+    ],
+    "sell": [
+      "reel",
+      "carousel",
+      "story",
+      "sales-page-video",
+      "presentation-loop",
+      "ad-concept-pack",
+      "course",
+      "playbook"
+    ],
+    "community": [
+      "story",
+      "presentation-loop",
+      "discord-announcement",
+      "discord-event",
+      "discord-expressions",
+      "discord-server-assets"
+    ]
+  },
+  "menu_top3": {
+    "grow": [
+      "reel",
+      "trial-reels",
+      "carousel",
+      "meme"
+    ],
+    "teach": [
+      "carousel",
+      "lesson-pack",
+      "checklist",
+      "playbook",
+      "ebook",
+      "cheat-sheet",
+      "worksheet",
+      "youtube-video",
+      "course"
+    ],
+    "sell": [
+      "ad-concept-pack",
+      "sales-page-video",
+      "story",
+      "carousel"
+    ],
+    "community": [
+      "discord-announcement",
+      "discord-event",
+      "discord-server-assets",
+      "discord-expressions"
+    ]
+  },
+  "recipes": [
+    "reel",
+    "trial-reels",
+    "carousel",
+    "post",
+    "story",
+    "meme",
+    "youtube-video",
+    "sales-page-video",
+    "linkedin-video",
+    "presentation-loop",
+    "ad-concept-pack",
+    "lesson-pack",
+    "course",
+    "playbook",
+    "ebook",
+    "checklist",
+    "worksheet",
+    "cheat-sheet",
+    "discord-announcement",
+    "discord-event",
+    "discord-expressions",
+    "discord-server-assets"
+  ]
+}

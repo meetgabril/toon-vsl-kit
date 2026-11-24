@@ -1,0 +1,76 @@
+{
+  "id": "meme",
+  "name": "Meme",
+  "family": "social",
+  "goals": [
+    "grow"
+  ],
+  "render": "meme",
+  "sizes": [
+    {
+      "w": 1080,
+      "h": 1350,
+      "ar": "45",
+      "id": "4x5",
+      "safe": {
+        "top": 64,
+        "bottom": 64,
+        "left": 64,
+        "right": 64
+      }
+    },
+    {
+      "w": 1080,
+      "h": 1080,
+      "ar": "11",
+      "id": "1x1",
+      "safe": {
+        "top": 64,
+        "bottom": 64,
+        "left": 64,
+        "right": 64
+      }
+    }
+  ],
+  "parts": [
+    {
+      "id": "format",
+      "required": true,
+      "rule": "A structural format from library/memes/formats.json"
+    },
+    {
+      "id": "own_characters",
+      "required": true,
+      "rule": "Only the brand's characters and backgrounds: never third-party images"
+    },
+    {
+      "id": "relatable",
+      "required": true,
+      "rule": "About a pain the audience lives (audience.json)"
+    }
+  ],
+  "text": {
+    "min_px": {
+      "title": 48,
+      "body": 40
+    },
+    "max_words_on_screen": 18
+  },
+  "copy": [
+    "instagram",
+    "alt_text",
+    "posting_note"
+  ],
+  "hashtags": {
+    "instagram": 3
+  },
+  "options": [
+    "post_copy",
+    "hashtags",
+    "alt_text"
+  ],
+  "files": [
+    "image",
+    "post.md"
+  ]
+}

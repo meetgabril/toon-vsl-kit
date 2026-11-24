@@ -1,0 +1,33 @@
+{
+  "id": "cheat-sheet",
+  "name": "Cheat sheet",
+  "family": "learning",
+  "goals": [
+    "teach"
+  ],
+  "render": "pdf",
+  "sizes": [
+    {
+      "id": "letter",
+      "w": 816,
+      "h": 1056,
+      "unit": "css px"
+    }
+  ],
+  "length": {
+    "min": 1,
+    "max": 1,
+    "unit": "pages"
+  },
+  "parts": [
+    {
+      "id": "dense",
+      "required": true,
+      "rule": "Two columns, scannable, no paragraph over 2 lines"
+    }
+  ],
+  "files": [
+    "cheat-sheet.pdf",
+    "post 4x5"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "post",
+  "name": "Post (single image)",
+  "family": "social",
+  "goals": [
+    "grow",
+    "teach"
+  ],
+  "render": "stills",
+  "sizes": [
+    {
+      "w": 1080,
+      "h": 1350,
+      "ar": "45",
+      "id": "4x5",
+      "safe": {
+        "top": 64,
+        "bottom": 64,
+        "left": 64,
+        "right": 64
+      }
+    }
+  ],
+  "parts": [
+    {
+      "id": "one_message",
+      "required": true,
+      "rule": "The whole joke or idea in one image"
+    }
+  ],
+  "text": {
+    "min_px": {
+      "title": 60,
+      "body": 44
+    }
+  },
+  "copy": [
+    "instagram",
+    "alt_text",
+    "posting_note"
+  ],
+  "hashtags": {
+    "instagram": 5
+  },
+  "options": [
+    "post_copy",
+    "hashtags",
+    "alt_text"
+  ],
+  "script_types": [
+    "comic-strip",
+    "before-after",
+    "calm-tip",
+    "myth-vs-fact"
+  ],
+  "files": [
+    "image",
+    "post.md"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "facts": [
+    {
+      "id": "avon-1886",
+      "fact": "In 1886 a door-to-door bookseller, David McConnell, gave free perfume samples; customers preferred the perfume, and he founded the California Perfume Company, later Avon.",
+      "sources": [
+        "https://www.avon.com/135-years-of-avon/david-h-mcconnell",
+        "https://www.encyclopedia.com/social-sciences-and-law/economics-business-and-labor/businesses-and-occupations/avon-products-inc"
+      ],
+      "verified": "2026-11-24"
+    },
+    {
+      "id": "harley-hog-1983",
+      "fact": "Harley-Davidson launched the Harley Owners Group (H.O.G.) on January 1, 1983.",
+      "sources": [
+        "https://hog-content-hub.herokuapp.com/insider-articles/h-o-g-history-the-beginning?region=gb"
+      ],
+      "verified": "2026-11-24"
+    },
+    {
+      "id": "harley-1985",
+      "fact": "On New Year's Eve 1985 Harley-Davidson was hours from filing for bankruptcy before a refinancing deal was signed.",
+      "sources": [
+        "https://www.motorcycle.com/bikes/features/bore-stoke-breakout-the-call-that-saved-harley-davidson-44668852"
+      ],
+      "verified": "2026-11-24",
+      "caution": "Do not say the club alone saved the company."
+    },
+    {
+      "id": "milgram-1969",
+      "fact": "Milgram, Bickman & Berkowitz (1969): with 1 person looking up at an empty window, 4% of passers-by stopped; with 15, 40% stopped and 86% looked up.",
+      "sources": [
+        "Journal of Personality and Social Psychology, 1969"
+      ],
+      "verified": "2026-11",
+      "caution": "A 2012 replication found a weaker effect; cite the original study only."
+    },
+    {
+      "id": "tupperware-1951",
+      "fact": "In 1951 Tupperware left stores and sold only through home parties; sales took off.",
+      "sources": [
+        "Smithsonian",
+        "PBS",
+        "Hagley Museum"
+      ],
+      "verified": "2026-11"
+    },
+    {
+      "id": "dancing-plague-1518",
+      "fact": "In 1518 in Strasbourg, people danced in the streets for weeks (the dancing plague).",
+      "sources": [
+        "Historical record; crowd sizes are disputed"
+      ],
+      "verified": "2026-11",
+      "caution": "Say 'hundreds' or 'dozens', never an exact number."
+    }
+  ]
+}

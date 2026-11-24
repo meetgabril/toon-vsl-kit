@@ -1,0 +1,39 @@
+{
+  "id": "discord-event",
+  "name": "Discord event",
+  "family": "community",
+  "goals": [
+    "community"
+  ],
+  "render": "stills",
+  "sizes": [
+    {
+      "id": "event",
+      "w": 1600,
+      "h": 800,
+      "safe": {
+        "top": 200,
+        "bottom": 200,
+        "left": 400,
+        "right": 400
+      }
+    }
+  ],
+  "parts": [
+    {
+      "id": "center",
+      "required": true,
+      "rule": "Everything important in the middle half (Discord crops)"
+    }
+  ],
+  "copy": [
+    "event_description"
+  ],
+  "options": [
+    "mention"
+  ],
+  "files": [
+    "cover",
+    "message.md"
+  ]
+}
