@@ -4,7 +4,8 @@ Catalog: `~/buzztorm-studio/library/sfx/catalog.json` (128 effects in 11 categor
 
 ## Library contents
 - `library/sfx/files/<id>.wav`: the chosen file for a catalog slot (54 of 128: Kenney CC0 + The Designer's Choice CARTOON; `credits.json` records the source and original file).
-- `library/sfx/packs/`: raw packs kept whole for alternates (Kenney Interface, UI, Digital, Impact, RPG, Sci-fi, Music Jingles: 552 files, CC0). `packs/designers-choice/`: 364 cartoon sounds (boings, slide whistles, zips, bonks, squeaks, gulps, vocal FX, vehicles), royalty-free for commercial use and ads, never redistribute the raw files (this repo must stay private). `packs/index.json` lists all 916 files with tags and duration.
+- `library/sfx/packs/`: raw packs kept whole for alternates (Kenney Interface, UI, Digital, Impact, RPG, Sci-fi, Music Jingles: 552 files, CC0). `packs/designers-choice/`: 364 cartoon sounds (boings, slide whistles, zips, bonks, squeaks, gulps, vocal FX, vehicles), royalty-free for commercial use and ads, never redistribute the raw files (this repo must stay private). `packs/index.json` lists all files with tags and duration.
+- While this repo is public, the cartoon pack is NOT in git. If `packs/designers-choice/` is missing, ask the user to stage `~/Downloads/buzztorm-cartoon-ogg.tar` from their Mac, then run `python3 library/sfx/import_designers_choice.py <tar>` (fills 16 cartoon slots: boing, slide whistles, record scratch, bonk, spring, honk, squeak, gulp, whooshes, swish, zoom, crickets, pop, sparkle). Never commit those files while the repo is public.
 - `brands/<brand>/sound-signature.json`: the brand's fixed sound for each engine event (pop, ding, whoosh, stamp…) plus its 3 stings in `brands/<brand>/sfx/`.
 
 ## Signature first (every video)

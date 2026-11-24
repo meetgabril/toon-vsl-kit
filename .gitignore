@@ -12,3 +12,5 @@ brands/**/*.mp3
 brands/**/*.gif
 # Hook Library example videos are kept on purpose (exact remakes)
 !library/hooks/*/source.mp4
+# The Designer's Choice CARTOON: no redistribution. Remove these lines only after the repo is PRIVATE.
+library/sfx/packs/designers-choice/
