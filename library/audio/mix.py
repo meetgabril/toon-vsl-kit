@@ -24,7 +24,7 @@ m = m * g * duck[:, None] + L * g * (duck ** 2)[:, None]      # bed: -11 dB in g
 def layer(name, rel_db):   # places: ambience and walla on the ladder (SOUND.md), ducked a little under speech
     if not os.path.exists(name): return 0
     a = pad(sf.read(name)[0]); r = grms(a)
-    return 0 if r < 1e-6 else a * (grms(v) / r * 10 ** (rel_db / 20)) * (10 ** ((-4 * np.clip(talk * 1.5, 0, 1)) / 20))[:, None]
+    return 0 if not np.isfinite(r) or r < 1e-6 else a * (grms(v) / r * 10 ** (rel_db / 20)) * (10 ** ((-4 * np.clip(talk * 1.5, 0, 1)) / 20))[:, None]
 m = m + layer('music/amb.wav', -30) + layer('music/walla.wav', -22)
 x = x * (grms(v) / grms(x) * 10 ** (-10 / 20)) * (10 ** ((-3 * np.clip(talk * 1.5, 0, 1)) / 20))[:, None]   # SFX: -10 dB, 3 dB lower while someone talks
 cap = np.abs(v).max() * .7; pk = np.abs(x).max()

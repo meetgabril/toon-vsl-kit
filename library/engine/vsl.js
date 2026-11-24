@@ -26,7 +26,7 @@ const SAFE_ZONES = { post: { top: 64, bottom: 64, side: 64 }, story: { top: 250,
 const CAPTIONS = { on: Q.get('cap') === '1', y: 1330, size: 84, chunk: 3, col: '#ffffff', hi: '#ffd66b' };
 function captions(gt) {
   if (!CAPTIONS.on || !TIMING) return; const W_ = TIMING.words; let i = -1; for (let k = 0; k < W_.length && W_[k][1] - .05 <= gt; k++) i = k; if (i < 0) return;
-  const c0 = i - (i % CAPTIONS.chunk), chunk = W_.slice(c0, c0 + CAPTIONS.chunk); if (gt > chunk[chunk.length - 1][2] + .4) return;
+  let ls = i; while (ls > 0 && W_[ls - 1][3] === W_[i][3]) ls--; const c0 = ls + (i - ls) - ((i - ls) % CAPTIONS.chunk), chunk = W_.slice(c0, c0 + CAPTIONS.chunk).filter(w => w[3] === W_[i][3]);   // chunks never cross a sentence if (gt > chunk[chunk.length - 1][2] + .4) return;
   const txt = chunk.map(w => w[0].toUpperCase()); let fs = CAPTIONS.size; g.setTransform(1, 0, 0, 1, 0, 0);
   const meas = () => { g.font = `400 ${fs}px "Bungee"`; return txt.map(t => g.measureText(t).width + fs * .55); };
   let ws = meas(), tot = ws.reduce((a, b) => a + b, 0); if (tot > 960) { fs *= 960 / tot; ws = meas(); tot = ws.reduce((a, b) => a + b, 0); }
