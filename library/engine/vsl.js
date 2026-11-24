@@ -315,7 +315,7 @@ function gymFront(t) {
 // A film is a list of beats. Each beat = one shot, anchored to a word of the voiceover. Grammar in docs/STORY.md.
 const SLOT = { LL: 150, L: 290, C: 540, R: 790, RR: 930 };
 const POS = { top: [540, 330], high: [540, 560], mid: [540, 820], low: [540, 1480], L: [290, 820], R: [790, 820], UL: [290, 460], UR: [790, 460], LL: [290, 1400], LR: [790, 1400] };
-const MOODS = new Set(['calm', 'smile', 'happy', 'serious', 'worried', 'fear', 'awe', 'hopeful', 'driven', 'sad', 'cheeky', 'tired', 'sleep', 'blank', 'panic', 'hectic']);
+const MOODS = new Set(['calm', 'smile', 'happy', 'serious', 'worried', 'fear', 'awe', 'hopeful', 'driven', 'sad', 'cheeky', 'tired', 'sleep', 'blank']);
 const POSES = { stand: 'standing/EasingColorPants', point: 'standing/PointingFingerColorPants', cross: 'standing/CrossArmColorPants', blazer: 'standing/BlazerColorPants', walk: 'standing/WalkingColorPants', rest: 'standing/RestingColorPants', shirt: 'standing/ShirtColorPants', sit: 'sitting/MidColorPants', dancer: 'standing/Dancer' };
 const COL = { navy: '#25385c', orange: '#ff6a2a', gold: '#ffd66b', cream: '#fff6e0', green: '#2f8f4a', red: '#e8574a', teal: '#5bc0be', violet: '#a974e0', coral: '#ff5b4d', ink: '#17141c', pink: '#ff8fc7', blue: '#4f6db8' };
 const col = (c, d) => c ? (COL[c] || c) : d;

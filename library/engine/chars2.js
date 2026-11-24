@@ -11,7 +11,7 @@ export const TONYC = { skin: '#e9ad80', top: '#17141c', pants: '#e9ad80', shoes:
 const FACES = {   // [eyes+nose face, resting mouth face, mouth curve for speech]
   calm: ['Smile', 'Smile', .4], smile: ['Smile', 'Smile', .5], happy: ['SmileTeeth', 'BigSmile', .9], serious: ['Serious', 'Serious', 0],
   worried: ['Concerned', 'Tired', -.5], fear: ['ConcernedFear', 'ConcernedFear', -.6], awe: ['Awe', 'Awe', .2], hopeful: ['Cute', 'Cute', .7], driven: ['Driven', 'Driven', .3],
-  panic: ['Fear', 'Fear', -.7], hectic: ['Hectic', 'Hectic', -.4], sad: ['Solemn', 'Solemn', -.5], cheeky: ['Cheeky', 'Cheeky', .6], tired: ['Tired', 'Tired', -.3], sleep: ['EyesClosed', 'EyesClosed', 0], blank: ['Blank', 'Blank', 0],
+sad: ['Solemn', 'Solemn', -.5], cheeky: ['Cheeky', 'Cheeky', .6], tired: ['Tired', 'Tired', -.3], sleep: ['EyesClosed', 'EyesClosed', 0], blank: ['Blank', 'Blank', 0],
 };
 // —— cast registry: one entry per speaking character (key = speaker letter used in lines.txt / lips.json) ——
 // rig 'peeps' = Open Peeps body (pose = 'standing/…' | 'sitting/…' | 'effigy/…' bust) · rig 'coach' = Tony's custom muscular rig (tonyBody3)
@@ -247,8 +247,8 @@ export const ARMS = {
   runA:  { L: [[-318, 205], [-440, 600], [-220, 760]], R: [[282, 215], [400, 520], [190, 590]] },
   runB:  { L: [[-318, 205], [-440, 520], [-220, 590]], R: [[282, 215], [400, 600], [190, 760]] },
   lean:  { L: [[-318, 205], [-470, 640], [-520, 1080]], R: [[282, 215], [430, 650], [480, 1080]] },
-  hang:  { L: [[-318, 205], [-470, -260], [-330, -780]], R: [[282, 215], [430, -260], [300, -780]] },   // hanging from a ledge (hands above the head)
-  hangL: { L: [[-318, 205], [-470, -260], [-330, -780]], R: [[282, 215], [330, 600], [360, 960]] },   // hanging by the left hand only
+  hang:  { L: [[-318, 205], [-400, -140], [-345, -538]], R: [[282, 215], [365, -130], [305, -528]] },   // both hands on a ledge above the head; same limb lengths as 'down'
+  hangL: { L: [[-318, 205], [-400, -140], [-345, -538]], R: [[282, 215], [305, 570], [290, 960]] },   // hanging by the left hand only
 };
 function armShape(S, E, Wp, sk) {
   const pts = []; const N = 26;
