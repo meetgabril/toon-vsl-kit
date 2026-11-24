@@ -94,6 +94,16 @@
    ],
    "verified": "2026-11-25",
    "caution": "Founder-reported figures; say 'Dropbox's founder said'."
+  },
+  {
+   "id": "near-miss-2009",
+   "fact": "Clark et al. (University of Cambridge, Neuron 2009): on a simplified slot machine, near-misses felt less pleasant than full misses but increased the desire to keep playing, and recruited the same striatal and insula circuitry that responded to wins.",
+   "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC2658737",
+    "https://www.eurekalert.org/news-releases/874059"
+   ],
+   "verified": "2026-11-25",
+   "caution": "Say 'almost winning lights up the same brain circuits as winning' and 'makes people want to keep playing'. Do not say it causes addiction."
   }
  ]
 }
