@@ -1,5 +1,6 @@
 # nails-drop-remake v4 · Exact remake (team-supplied footage + original audio)
 > GOAL: sell · OFFER: community-build · CTA: comment-plan (DM "PLAN")
+> FACTS: zeigarnik-1927
 > Bait = original car clip only (0–4.8 s, cut before the crossfade: no nails). Then text cards only, cut on the original edit points.
 
 Audio grid after the drop: 100 bpm, a beat every 0.6 s. Cards change every 2 beats.

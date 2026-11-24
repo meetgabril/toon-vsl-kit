@@ -1,5 +1,6 @@
 # flash-card-remake · Exact remake (team-supplied footage + original audio)
 > GOAL: sell · OFFER: community-build · CTA: comment-plan (DM "PLAN")
+> FACTS: harley-hog-1983
 > Source: team-supplied cartoon "inventory + flash" reel. Footage and audio untouched; 4:3 placed on a blurred fill for 9:16.
 
 0.00–8.08 s (f0–193): original footage. No text.
