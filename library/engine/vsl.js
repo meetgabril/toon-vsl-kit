@@ -1,6 +1,6 @@
 // vsl.js — toon studio film engine: story.js (beats) → shots → frames. Library of sets, props, cast, motion; formats, captions, galleries.
 import { clamp, lerp, hash, seg, eo, ei, eio, back, spring, TAU } from '/core/lib.js';
-import { setDry, getM, INK, W, H, CW, CH, OX, OY, SC, setView, frame, push, pop, translate, rotate, scale, shape, fillOnly, stroke, ell, arc, spline, rr, rect, noodle, quad, dot, text, bands, g, S, rc } from './toon.js';
+import { setDry, getM, setM, INK, W, H, CW, CH, OX, OY, SC, setView, frame, push, pop, translate, rotate, scale, shape, fillOnly, stroke, ell, arc, spline, rr, rect, noodle, quad, dot, text, bands, g, S, rc } from './toon.js';
 import { CUSTOM_SETS } from './registry.js';
 import './sets.custom.js';   // the brand's own backgrounds (addSet) — see brands/<brand>/backgrounds
 import { C } from './cast.js';
@@ -386,8 +386,36 @@ function drawActor(A, lt, gt, n) {
     const i = +(A.who.split(':')[1] || 0); folk(x, y, sz[0] * 1.6, i, { walk: walking || F.walk ? gt * 10 + i : 0, face, happy: A.mood === 'sad' || A.mood === 'worried' ? 0 : 1 });
   } else if (A.who === 'client') transformFig(x, y, sz[0] * 1.05, !!F.after, gt, !!F.sport);
 }
+// —— screen-space UI for social posts (carousel chrome): units = final pixels at 1080 wide, whatever the size ——
+function ui(f) { const m = getM(), k = CW / 1080; setM([k, 0, 0, k, 0, 0]); f(1080, CH / k); setM(m); }
+function fitFont(t, px, maxW, fam = 'Bungee', w = 400) { g.font = `${w} ${px}px "${fam}"`; const mw = g.measureText(t).width; return mw > maxW ? Math.floor(px * maxW / mw) : px; }
+const SAFE = 64;   // side/top margin inside the post (Instagram grid crops 4:5 to 3:4: keep text off the edges)
 // —— items ——
 const ITEM = {
+  // slidehead "TITLE" n=1 of=6 bg=orange — same title plate and slide number on every slide
+  slidehead(I, x, y, d) { ui((W1, H1) => {
+    const t = I.txt[0] || '', n = I.kv.n, of = I.kv.of, fs = fitFont(t, +(I.kv.size || 76), W1 - SAFE * 2 - 120);
+    const ph = fs * 1.75, y0 = SAFE + 8;
+    push(); translate(W1 / 2, y0 + ph / 2); rotate(-.012); sign(0, 0, W1 - SAFE * 2 - 40, ph, col(I.kv.bg, '#ff6a2a'), t, { font: `400 ${fs}px "Bungee"` }); pop();
+    if (n && of) { push(); translate(W1 - SAFE - 30, y0 - 4); shape(rr(-62, -26, 124, 52, 26), { fill: '#fff6e0', lw: 5 }); text(`${n}/${of}`, 0, 2, { font: '400 30px "Bungee"', fill: '#25385c' }); pop(); }
+  }); },
+  // swipe — "SWIPE" cue, bottom right
+  swipe(I, x, y, d) { ui((W1, H1) => { const k = pk(d); if (!k) return; const nudge = Math.sin(CUR_T * 6) * 6;
+    push(); translate(W1 - SAFE - 150 + nudge, H1 - SAFE - 40); scale(k); shape(rr(-150, -40, 300, 80, 40), { fill: col(I.kv.bg, '#fff6e0'), lw: 6 });
+    text(I.txt[0] || 'SWIPE', -26, 3, { font: '400 38px "Bungee"', fill: '#25385c' }); fillOnly([[86, -18], [118, 0], [86, 18]], '#ff6a2a', { boil: 0 }); stroke([[52, 0], [112, 0]], 9, { line: '#ff6a2a' }); pop(); }); },
+  // say "line" who=MOM — what a character says, big and readable (bottom, above the swipe cue)
+  say(I, x, y, d) { ui((W1, H1) => { const k = pk(d, .25); if (!k) return; const t = I.txt[0] || '', who = I.kv.who ? I.kv.who.replace(/_/g, ' ') + ': ' : '';
+    const fs = fitFont(who + t, +(I.kv.size || 50), W1 - SAFE * 2 - 80, 'Baloo 2', 800), yy = +(I.kv.y || H1 - SAFE - 150);
+    push(); translate(W1 / 2, yy); scale(k); shape(rr(-(W1 / 2 - SAFE), -fs * .95, W1 - SAFE * 2, fs * 1.9, 30), { fill: '#fff6e0', lw: 7 });
+    if (who) { g.font = `800 ${fs}px "Baloo 2"`; const ww = g.measureText(who + t).width, wx = g.measureText(who).width; text(who, -ww / 2, 4, { font: `800 ${fs}px "Baloo 2"`, fill: '#ff6a2a', align: 'left' }); text(t, -ww / 2 + wx, 4, { font: `800 ${fs}px "Baloo 2"`, fill: '#25385c', align: 'left' }); }
+    else text(t, 0, 4, { font: `800 ${fs}px "Baloo 2"`, fill: '#25385c' }); pop(); }); },
+  // cta "MAIN LINE" "small line" bg=orange — call-to-action panel, lower half
+  cta(I, x, y, d) { ui((W1, H1) => { const k = pk(d); if (!k) return; const a = I.txt[0] || '', b = I.txt[1] || '';
+    const fa = fitFont(a, +(I.kv.size || 68), W1 - SAFE * 2 - 100), yy = +(I.kv.y || H1 - SAFE - 210);
+    push(); translate(W1 / 2, yy); scale(k); rotate(.01); shape(rr(-(W1 / 2 - SAFE), -110, W1 - SAFE * 2, 220, 34), { fill: col(I.kv.bg, '#ff6a2a'), lw: 9 });
+    text(a, 0, b ? -30 : 0, { font: `400 ${fa}px "Bungee"`, fill: '#fff6e0', outlineW: 10, outlineCol: INK });
+    if (b) text(b, 0, 52, { font: `800 ${fitFont(b, 42, W1 - SAFE * 2 - 100, 'Baloo 2', 800)}px "Baloo 2"`, fill: '#ffffff' }); pop(); }); },
+
   title(I, x, y, d) { const k = pk(d); if (!k) return; push(); translate(x, y); rotate(-.03); scale(k); text(I.txt[0] || '', 0, 0, { font: `400 ${I.kv.size || 110}px "Bungee"`, fill: col(I.kv.color, '#fff6e0'), outlineW: 14, outlineCol: INK }); pop(); },
   sign(I, x, y, d) { const k = pk(d); if (!k) return; const t = I.txt[0] || '', fs = +(I.kv.size || 64), w = t.length * fs * .72 + fs * 1.6; push(); translate(x, y); scale(k); sign(0, 0, w, fs * 1.9, col(I.kv.bg, '#e8574a'), t, { font: `400 ${fs}px "Bungee"`, rot: -.02 }); pop(); },
   pill(I, x, y, d) { const k = pk(d); if (!k) return; push(); translate(x, y); scale(k); pill(0, 0, I.txt[0] || '', col(I.kv.bg, '#5bc0be'), '#ffffff', +(I.kv.size || 46)); pop(); },
@@ -416,7 +444,7 @@ const ITEM = {
     pop();
   },
   stamp(I, x, y, d) { if (d < 0) return; const k = clamp(d / .3); push(); translate(x, y); rotate(-.1); scale(lerp(2.0, 1, eo(k))); const t = I.txt[0] || 'DONE', w = t.length * 52 + 80; const c = col(I.kv.color, '#e8574a'); stroke(rr(-w / 2, -60, w, 120, 14).concat([[-w / 2 + 14, -60]]), 10, { line: c }); text(t, 0, 6, { font: '400 84px "Bungee"', fill: c }); pop(); },
-  list(I, x, y, d, ts) { const it = (I.txt[0] || '').split('|'); it.forEach((t, i) => { const dd = ts ? CUR_T - ts[i] : d - i * .45; const k = pk(dd); if (!k) return; push(); translate(x, y + i * 120); scale(k); pill(0, 0, t, [COL.teal, COL.orange, COL.violet, COL.green, COL.blue, COL.red][i % 6]); pop(); }); },
+  list(I, x, y, d, ts) { const it = (I.txt[0] || '').split('|'); it.forEach((t, i) => { const dd = ts ? CUR_T - ts[i] : d - i * .45; const k = pk(dd); if (!k) return; const fs = +(I.kv.size || 46); push(); translate(x, y + i * fs * 2.6); scale(k); pill(0, 0, t, [COL.teal, COL.orange, COL.violet, COL.green, COL.blue, COL.red][i % 6], '#ffffff', fs); pop(); }); },
   check(I, x, y, d) { check(x, y, +(I.kv.s || 1.4), clamp(d / .35)); },
   x(I, x, y, d) { xMark(x, y, +(I.kv.s || 1.4), clamp(d / .35)); },
   arrow(I, x, y, d) { const a = POS[I.kv.from] || [200, 800], b = POS[I.kv.to] || [880, 800]; arrow(a, b, col(I.kv.color, '#e8574a'), 12, ss(clamp(d / .5))); },
@@ -473,7 +501,7 @@ function drawBeat(B, lt, gt) {
   const set = B.set || 'studio';
   if (SETFN[set]) SETFN[set](gt); else if (CUSTOM_SETS[set]) CUSTOM_SETS[set](gt); else if (set.startsWith('#') || COL[set]) { fillOnly(rect(-600, -400, W + 1200, H + 800), col(set), { boil: 0 }); }
   const front = [];
-  B._items.forEach(I => { if (I.flags.front || ['title', 'sign', 'stamp', 'flash', 'confetti', 'sub', 'card', 'year', 'label'].includes(I.type)) front.push(I); else drawItem(I, gt); });
+  B._items.forEach(I => { if (I.flags.front || ['title', 'sign', 'stamp', 'flash', 'confetti', 'sub', 'card', 'year', 'label', 'slidehead', 'swipe', 'say', 'cta'].includes(I.type)) front.push(I); else drawItem(I, gt); });
   B._actors.forEach(a => { if (!a.at || gt >= a.t) drawActor(a, a.at ? gt - a.t : lt, gt, n); });
   front.forEach(I => drawItem(I, gt));
   camEnd();

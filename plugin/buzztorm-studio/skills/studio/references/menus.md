@@ -33,7 +33,7 @@ Any other brand, or Admin when it doesn't fit, is typed by the user. Accept part
 | Discord | Announcement ★ · Event · Emoji, stickers & sounds · Server assets |
 
 Follow-up screens, only when needed:
-- Post or carousel → "How many slides?" 5 ★ · 1 (single post) · 7 · 10
+- Post or carousel → "How many story slides?" 5 ★ · 1 (single post) · 7 · 9 — a call-to-action slide is added after them (not for a single post, where the CTA goes in the post copy).
 - Story → "How many frames?" 3 ★ · 1 · 5
 - Emoji, stickers & sounds → "Which set?" Emoji ★ · Stickers · Soundboard sounds · All three
 - Event → ask in plain text: event title, date and time (one message).

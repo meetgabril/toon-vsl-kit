@@ -76,6 +76,10 @@ Actors face the centre automatically. Lip sync, blinks, breathing and head nods 
 | `year` | `year "1518" "STRASBOURG"` | old paper date card for history hooks (pair with `style: 'oldfilm'`) |
 | `label` | `label "YEP. THAT'S ME." low` | freeze-frame caption (pair with `style: 'freeze'`; record-scratch sound) |
 | `fn` | `fn myMoment` | your own drawing code in `STORY.fns` |
+| `slidehead` | `slidehead "TITLE" n=1 of=6 bg=orange size=68` | social posts: the same title plate and slide number on every slide (screen space, inside the safe margins) |
+| `swipe` | `swipe` | social posts: "SWIPE →" cue, bottom right; every carousel slide except the last |
+| `say` | `say "Thanks for coming!" who=TONY` | social posts: a line a character says, big and readable, bottom |
+| `cta` | `cta "JOIN THE FREE ACADEMY" "Comment ACADEMY for the link"` | social posts: call-to-action panel, lower half |
 
 Every item gets its sound automatically: pop, stamp, ticks + ding, notification dings, cheer, buzz and so on. Add `silent` to mute one.
 

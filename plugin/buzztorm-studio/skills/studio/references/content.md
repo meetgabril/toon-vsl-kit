@@ -15,7 +15,7 @@ What each content is, its sizes, and what its delivery package contains. Options
 Rules:
 - Reel and Trial reels: frame 1 is already the hook image. Hard cuts every 1.5–3 s. Loop the end into the start when possible.
 - Trial reels are shown only to people who don't follow the account and stay off the grid until shared to everyone. Instagram limits who can use them (minimum follower count), so mention that once if the brand has never used them.
-- Carousel: same background and title position on every slide, slide number, last slide = call to action. Slide 1 is the hook.
+- Post and Carousel follow the Instagram layout in `library/docs/FORMATS.md` (Social post layout): same title plate and size on every slide, slide number, swipe cue, dialogue in big bands, 64 px safe margins. Slide 1 is the hook. A call-to-action slide is always added after the story slides: comment a keyword or join the brand's free community (Buzztorm: Buzztorm Academy).
 - Story: reserve the top 250 px and bottom 340 px of each frame for the platform UI and the sticker. The sticker plan says which sticker (poll, quiz, question, link, countdown), its exact text and where it goes.
 
 ## YouTube & Web

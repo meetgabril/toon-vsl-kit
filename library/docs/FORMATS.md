@@ -50,6 +50,16 @@ Encode any format with ffmpeg the way finish.sh does (scale `frames11` to 1080×
 | Character sheet | 2560×1440 | `node shoot_sheet2.mjs cast:<KEY>` |
 | Sticker / transparent PNG | any | skip the background fill and `post()`; the PNG keeps alpha |
 
+## Social post layout (Post, Carousel) — Instagram standard
+Render slides as beats at `AR=45` (1080×1350) and use the screen-space items, which stay fixed and readable whatever the scene:
+- `slidehead` on every slide, with the **same `size=` on every slide** (68 by default) and `n=`/`of=`. Keep titles to 19 characters or fewer so none shrinks.
+- `swipe` on every slide except the last.
+- Dialogue with `say` (never `sub`, which is too small once downscaled).
+- One extra last slide for the call to action with `cta`: comment a keyword, or join the brand's free community. The menu's slide count is story slides; the CTA slide is added on top.
+- Safe area: 64 px from every edge (the profile grid crops 4:5 posts to 3:4). Minimum text on the final image: titles 60 px, dialogue 44 px, counters 80 px.
+- Scene items (counters, lists, props) stay between the title plate and the dialogue band: composition y ≈ 450–1350 at `AR=45`.
+- No platform UI, no small print. Check the 6-up contact sheet at phone size before review.
+
 ## Consistency checklist (every deliverable)
 - Same cast, same outfits, same palette and fonts (`ref/style_card.jpg`), same ink weight.
 - Sets and props come from `ref/sets_sheet.jpg` and `ref/props_sheet.jpg` before inventing new ones. New pieces are drawn in the same way: flat fill, hard shade and plum ink.
