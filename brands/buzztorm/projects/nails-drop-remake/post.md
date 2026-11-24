@@ -1,5 +1,5 @@
 ## Instagram
-Why do your followers forget you the day after they buy? Watch the car again. 🚗
+Why do you have followers but almost no sales? Watch the car again. 🚗
 
 You wanted to see what happened next.
 The video cut right before it.
@@ -10,20 +10,20 @@ They remembered the unfinished tasks about 90% better. 🧠
 People forget what's finished.
 They remember what's still open.
 
-That's why a course that ends at the last lesson gets forgotten.
-Once it's done, there's no reason to come back.
+That's why one post, one launch, one "buy now" gets forgotten.
+Once it's seen, there's no reason to come back.
 
 Save this question 👇
-❌ "How do I make my course longer?"
-✅ "What's still open for my members next week?"
+❌ "How do I get more followers?"
+✅ "What's still open for my followers next week?"
 
-The answer is a community. There's always a next thing: a new member, a new win, a new offer.
+The answer is a community. There's always a next thing: a new member, a new win, a new offer. And members who see others buy, buy too.
 
 Buzztorm builds it for you: the onboarding, the offers and the payments. You record your content once. Your members, your content and your sales stay yours.
 
 DM "PLAN" for a free 30-minute call. You leave with a plan, even if you don't hire us.
 
-Now tell me: who do you know whose buyers disappear after lesson one? 😅
+Now tell me: who do you know with lots of followers and almost no sales? 😅
 
 (Study: Zeigarnik, 1927.)
 

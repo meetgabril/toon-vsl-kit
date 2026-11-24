@@ -28,39 +28,42 @@
     1.0,
     1.12
    ],
-   "center_y": 0.5
+   "center_y": 0.5,
+   "text": {
+    "text": "followers but no sales?",
+    "size": 104,
+    "fg": "paper",
+    "y": 0.17
+   }
   }
  },
  "cards": [
   {
    "t": 6.12,
-   "text": "onboarding.",
+   "text": "we build",
    "bg": "primary_dark",
    "fg": "accent",
-   "size": 320,
+   "size": 260,
    "fit": 0.86,
-   "y": 0.487,
-   "group": "words"
+   "y": 0.487
   },
   {
    "t": 7.3,
-   "text": "offers.",
+   "text": "your community.",
    "bg": "paper",
    "fg": "primary_dark",
-   "size": 320,
+   "size": 260,
    "fit": 0.86,
-   "y": 0.487,
-   "group": "words"
+   "y": 0.487
   },
   {
    "t": 8.5,
-   "text": "payments.",
+   "text": "members buy.",
    "bg": "primary_dark",
    "fg": "accent",
-   "size": 320,
+   "size": 260,
    "fit": 0.86,
-   "y": 0.487,
-   "group": "words"
+   "y": 0.487
   },
   {
    "t": 9.71,
@@ -69,10 +72,16 @@
    "fg": "primary_dark",
    "size": 170,
    "fit": 0.88,
-   "y": 0.497
+   "y": 0.47,
+   "sub": {
+    "text": "done for you · free call",
+    "size": 64,
+    "fg": "accent",
+    "y": 0.555
+   }
   }
  ],
  "audio": "work/example.mp4",
  "audio_fade_out": 0.3,
- "out": "delivery/buzztorm_reel_nails-drop-remake_v4_9x16.mp4"
+ "out": "delivery/buzztorm_reel_nails-drop-remake_v5_9x16.mp4"
 }
