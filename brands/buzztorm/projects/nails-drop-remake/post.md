@@ -25,3 +25,37 @@ Now tell me: who do you know who launched a community and never looked at it aga
 
 ## Posting note
 Organic post only (never as an ad). Turn on the PLAN DM automation first.
+
+## Instagram (PT)
+Por que você ficou até o fim pra ver o que ia acontecer no carro? A resposta começou com um garçom, há quase 100 anos.
+
+O psicólogo Kurt Lewin reparou que um garçom lembrava de todos os pedidos ainda não pagos.
+Depois que a conta fechava, ele esquecia.
+
+Em 1927, sua aluna Bluma Zeigarnik testou isso com 32 adultos e 22 tarefas.
+Algumas ela interrompia no meio. As interrompidas foram lembradas 90% mais. 🧠
+
+Foi o que aconteceu com você agora: o vídeo cortou antes do final.
+E você ficou.
+
+Ninguém lembra do que TERMINOU.
+Todo mundo lembra do que ficou em ABERTO.
+
+É por isso que entregar o curso inteiro de uma vez vira arquivo esquecido.
+Acabou, saiu da cabeça.
+
+Salva essa pergunta 👇
+❌ "Como eu entrego tudo de uma vez?"
+✅ "O que fica em aberto pro meu aluno voltar semana que vem?"
+
+A resposta é uma comunidade. Sempre tem um próximo encontro, um próximo desafio, o próximo resultado de alguém.
+
+A Buzztorm monta tudo pra você: boas-vindas, ofertas e pagamentos. Você grava seu conteúdo uma vez. Membros, conteúdo e vendas continuam seus.
+
+Manda "PLAN" na DM e marca uma call grátis de 30 minutos. Você sai com um plano, mesmo que não contrate a gente.
+
+Agora me diz: qual amigo seu ainda entrega tudo e some? 😅
+
+(Estudo: Zeigarnik, 1927.)
+
+#comunidadeonline #marketingdigital #infoprodutor #engajamento
