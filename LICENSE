@@ -6,5 +6,6 @@ distributed or used outside Buzztorm without written permission.
 
 Third-party components keep their own licences:
 - Open Peeps illustrations by Pablo Stanley: CC0 1.0 (public domain).
-- Fonts Bungee, Baloo 2, VT323, Titan One and Inter: SIL Open Font License 1.1.
+- Fonts Bungee, Baloo 2, VT323, Titan One, Inter and Anton: SIL Open Font License 1.1.
+- Meme templates in library/memes/templates are supplied by the team; their rights stay with their owners.
 - Synth instruments in library/audio: adapted from an MIT-licensed demo.

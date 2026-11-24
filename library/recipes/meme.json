@@ -34,19 +34,19 @@
   ],
   "parts": [
     {
-      "id": "format",
+      "id": "source",
       "required": true,
-      "rule": "A structural format from library/memes/formats.json"
+      "rule": "A team-supplied template from library/memes/templates (organic only) or a drawn format with the brand's own characters"
     },
     {
-      "id": "own_characters",
+      "id": "text_only",
       "required": true,
-      "rule": "Only the brand's characters and backgrounds: never third-party images"
+      "rule": "Templates: add text only, never alter the picture; never fetch template images yourself"
     },
     {
       "id": "relatable",
       "required": true,
-      "rule": "About a pain the audience lives (audience.json)"
+      "rule": "About a pain or phrase from audience.json; comparatives first"
     }
   ],
   "text": {
@@ -72,5 +72,6 @@
   "files": [
     "image",
     "post.md"
-  ]
+  ],
+  "notes": "Templates with real people, film stills or artwork are for organic posts only, never ads."
 }

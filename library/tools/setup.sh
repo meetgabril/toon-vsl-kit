@@ -15,7 +15,7 @@ cp "$KIT"/example/buzztorm_vsl.js "$P"/example_buzztorm_vsl.js   # reference onl
 mkdir -p "$P"/audio && cp "$KIT"/audio/*.py "$P"/audio/
 cp "$KIT"/tools/*.py "$KIT"/tools/*.sh "$KIT"/tools/*.mjs "$P"/ && rm -f "$P"/setup.sh
 cp -r "$KIT"/doc-templates "$P"/doc-templates
-mkdir -p "$P"/memes && cp "$KIT"/memes/formats.json "$P"/memes/ && mkdir -p "$P"/doc "$P"/qa
+mkdir -p "$P"/memes && cp "$KIT"/memes/formats.json "$P"/memes/ && cp -r "$KIT"/memes/templates "$P"/memes/ 2>/dev/null || true && mkdir -p "$P"/doc "$P"/qa
 cp -r "$KIT"/ref/. "$P"/ref/
 for f in "$KIT"/example/work/*; do [ -e "$P/work/$(basename "$f")" ] || cp "$f" "$P/work/"; done
 

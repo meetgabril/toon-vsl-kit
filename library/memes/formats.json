@@ -1,5 +1,5 @@
 {
-  "rule": "Formats are structures and joke mechanics, drawn only with the brand's own characters, backgrounds and props. Never use third-party images (film stills, photos of real people, other artists' comics). This keeps every meme original (Instagram originality) and safe for ads.",
+  "rule": "Drawn formats: joke structures drawn only with the brand's own characters, backgrounds and props (use for ads and when no team template fits). Team-supplied real templates live in library/memes/templates and are for organic posts only.",
   "formats": [
     {
       "id": "reject-prefer",

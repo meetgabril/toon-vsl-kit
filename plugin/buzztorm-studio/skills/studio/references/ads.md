@@ -11,4 +11,4 @@ Meta's ranking (Andromeda) rewards **creative diversification**: genuinely diffe
 
 ## Compliance (Claims check = zero warnings for ads)
 Meta's "unrealistic outcomes" policy rejects get-rich-quick, little-or-no-work and unrealistic-results-in-a-timeframe claims; income opportunities must describe the model. Earnings screenshots and money before/afters are out. The FTC proposed extending its Business Opportunity Rule to business coaching: every earnings claim needs substantiation. Rule: no earnings numbers unless `proof.json` holds them with evidence and permission.
-Ads made with generative AI tools can get an "AI info" label; mention it in the posting note when relevant.
+Memes in ads: drawn formats only (never team meme templates with real people, film stills or artwork). Ads made with generative AI tools can get an "AI info" label; mention it in the posting note when relevant.

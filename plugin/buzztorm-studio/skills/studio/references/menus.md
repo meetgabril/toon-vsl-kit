@@ -22,7 +22,7 @@ New ideas the user picks are saved to `ideas.json`.
 
 ### 3 — "What format?"
 Top 3 for the goal (from `library/recipes/index.json` → menu_top3, filtered by what the idea suits) + More.
-- Grow: Reel ★ · Trial reels · Carousel · More (Meme, Story, YouTube video)
+- Grow: Reel ★ · Trial reels · Carousel · Meme · More (Story, YouTube video)  — if this exceeds 4, drop the least used into More
 - Teach: Carousel ★ · Lesson pack · Checklist · More (Playbook, E-book, Cheat sheet, Worksheet, YouTube video, Course)
 - Sell: Ad concept pack ★ · Sales page video · Story sequence · More (Carousel, Reel)
 - Community: Discord announcement ★ · Discord event · Welcome kit · More (Emoji & stickers & sounds)
@@ -33,6 +33,7 @@ Follow-ups only when the recipe has a count (ask together with screen 4 in one c
 - Ad concept pack → "How many concepts?" 3 ★ · 4 · 5
 - Playbook → "How many plays?" 7 ★ · 5 · 10
 - Emoji & stickers & sounds → "Which set?" Emoji ★ · Stickers · Sounds · All three
+- Meme → "Which template?" 3 most used comparative templates ★ · More (all templates, drawn formats, Add a template) — see memes.md
 
 ### 4 — conditional screens (one call)
 - "Which offer?" only when the goal is Sell or Teach and the brand has more than one active offer (from `brain/offers.json`). Otherwise use the only/first one silently.

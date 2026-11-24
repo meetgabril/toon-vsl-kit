@@ -2,7 +2,7 @@
 name: studio
 description: 'Buzztorm Studio, the agency''s menu-driven content studio for its own infoproduct brands and its client brands. This skill should be used when the user types "/studio" (optionally followed by a brand name), or asks to "create content", "make a reel", "make trial reels", "make a carousel", "make a post", "make a story", "make a meme", "make an ad", "make a lesson", "make a course", "make a playbook", "make an ebook", "make a checklist", "make a worksheet", "make a cheat sheet", "make a YouTube video", "make a sales page video", "make a Discord announcement", "plan the week", "add a brand", "add a character", "add a background", "continue a project" or "log results", or anything else about producing content for a Buzztorm brand.'
 metadata:
-  version: "0.2.0"
+  version: "0.2.1"
 ---
 
 # Buzztorm Studio
@@ -61,7 +61,7 @@ Engine documentation: `~/buzztorm-studio/library/docs/` (read VIRAL.md, STYLE.md
 - Never show the user a script, storyboard, file or text that has not passed the Quality Gate for its stage (`--stage script` before Script review, `--stage final` before Ready for approval). Fix and re-run until it passes; tell the user one line: "Quality check passed (6/6)".
 - Every piece has a goal and an idea; every piece except pure Grow content has an offer and a CTA from the Brand Brain.
 - Never invent results, testimonials, numbers or facts. Facts come from `brain/facts.json` (verify with a web search and add them first); results from `brain/proof.json`.
-- Never use third-party images (film stills, photos of real people, other artists' work, meme template images). Only the brand's characters, backgrounds and props.
+- Never search for or download third-party images yourself. Pictures come from the brand's characters, backgrounds and props, or from meme templates the team supplied to the Studio Library (organic posts only, never ads; text added, picture untouched).
 - The house drawing style never changes; brands change colors, characters, backgrounds and words.
 - The voiceover is never altered. The picture follows the voice.
 - Every request for changes is a symptom: fix that class of problem in the whole piece, bump the version, re-run the gate.

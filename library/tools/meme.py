@@ -17,7 +17,7 @@ MIN_PX = 40
 
 
 def font(name, px):
-    files = {'baloo': 'baloo-2-latin-800-normal.ttf', 'bungee': 'bungee-latin-400-normal.ttf'}
+    files = {'baloo': 'baloo-2-latin-800-normal.ttf', 'bungee': 'bungee-latin-400-normal.ttf', 'anton': 'anton-latin-400-normal.ttf'}
     for d in FONT_DIRS:
         p = os.path.join(d, files[name])
         if os.path.exists(p):
@@ -68,8 +68,52 @@ class Canvas:
         self.d.rectangle((x0, y0, x1 - 1, y1 - 1), outline=INK, width=border)
 
 
+def find_template(tid):
+    for root in (os.path.join(os.path.expanduser(os.environ.get('STUDIO', '~/buzztorm-studio')), 'library', 'memes', 'templates'), os.path.join(HERE, 'memes', 'templates'), os.path.join(HERE, '..', 'memes', 'templates')):
+        p = os.path.join(root, tid, 'template.json')
+        if os.path.exists(p): return os.path.dirname(p), json.load(open(p))
+    raise SystemExit(f'unknown meme template "{tid}" (meme_template.py list)')
+
+
+def compose_template(S):
+    """Real meme template (supplied by the team) + the brand's text in its boxes."""
+    d, T = find_template(S['template']); texts = S.get('texts', [])
+    if len(texts) != len(T['boxes']): raise SystemExit(f'template {T["id"]} has {len(T["boxes"])} text boxes; got {len(texts)} texts')
+    src = Image.open(os.path.join(d, T['image'])).convert('RGB'); sw, sh = src.size
+    M = 64; foot = 70 if S.get('handle') else 0
+    W = 1080; H = 1080 if sh / sw <= 1.0 else 1350
+    s = min((W - 2 * M) / sw, (H - 2 * M - foot) / sh); iw, ih = int(sw * s), int(sh * s)
+    C = Canvas(W, H); ox, oy = (W - iw) // 2, (H - foot - ih) // 2; C.im.paste(src.resize((iw, ih), Image.LANCZOS), (ox, oy))
+    for i, (b, t) in enumerate(zip(T['boxes'], texts)):
+        x0, y0, x1, y1 = b['box']; box = (ox + x0 * iw, oy + y0 * ih, ox + x1 * iw, oy + y1 * ih)
+        if b.get('style') == 'classic':
+            classic(C, t.upper(), box, i)
+        else:
+            C.text_box(t, box, start=int(b.get('size', 64)), align=b.get('align', 'left'), item=f'box{i}')
+    if S.get('handle'): C.text_box(S['handle'], (M, H - 62, W - M, H - 12), start=40, align='center', fill=(110, 105, 120), item='handle')
+    out = S.get('out', 'delivery/meme.png'); os.makedirs(os.path.dirname(out) or '.', exist_ok=True); C.im.save(out)
+    json.dump({'canvas': [W, H], 'final_w': W, 'texts': C.qa, 'source': 'meme-template', 'template': T['id']}, open(out + '.qa.json', 'w'), indent=1)
+    print('meme:', out, f'({W}x{H}, template {T["id"]}, {len(C.qa)} text lines, min {min([q["px"] for q in C.qa] or [0])}px)')
+
+
+def classic(C, text, box, i):
+    x0, y0, x1, y1 = box; px = 84
+    while px >= MIN_PX:
+        f = font('anton', px); lines = C.wrap(text, f, x1 - x0); lh = int(px * 1.1)
+        if lh * len(lines) <= (y1 - y0): break
+        px -= 2
+    else: raise SystemExit(f'TEXT DOES NOT FIT at {MIN_PX}px: "{text[:40]}…" — shorten it')
+    y = y0 + (y1 - y0 - lh * len(lines)) / 2
+    for l in lines:
+        tw = C.d.textlength(l, font=f); x = x0 + (x1 - x0 - tw) / 2
+        C.d.text((x, y), l, font=f, fill='white', stroke_width=max(3, px // 12), stroke_fill='black')
+        C.qa.append({'item': f'box{i}', 't': l, 'x': x, 'y': y, 'w': tw, 'h': lh, 'px': px}); y += lh
+
+
 def main(spec_path):
-    S = json.load(open(spec_path)); size = S.get('size', '4x5'); W, H = (1080, 1350) if size == '4x5' else (1080, 1080)
+    S = json.load(open(spec_path))
+    if S.get('template'): return compose_template(S)
+    size = S.get('size', '4x5'); W, H = (1080, 1350) if size == '4x5' else (1080, 1080)
     fp = next((p for p in (os.path.join(HERE, 'memes', 'formats.json'), os.path.join(HERE, '..', 'memes', 'formats.json')) if os.path.exists(p)), None)
     if not fp: raise SystemExit('memes/formats.json not found')
     fmts = {f['id']: f for f in json.load(open(fp))['formats']}
