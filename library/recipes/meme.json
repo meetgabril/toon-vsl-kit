@@ -47,6 +47,11 @@
       "id": "relatable",
       "required": true,
       "rule": "About a pain or phrase from audience.json; comparatives first"
+    },
+    {
+      "id": "fresh",
+      "required": true,
+      "rule": "Trend Radar first: templates trending in the last 14 days (or classic evergreen comparatives); brand-safety tier green or yellow, never red"
     }
   ],
   "text": {

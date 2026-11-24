@@ -2,7 +2,7 @@
 name: studio
 description: 'Buzztorm Studio, the agency''s menu-driven content studio for its own infoproduct brands and its client brands. This skill should be used when the user types "/studio" (optionally followed by a brand name), or asks to "create content", "make a reel", "make trial reels", "make a carousel", "make a post", "make a story", "make a meme", "make an ad", "make a lesson", "make a course", "make a playbook", "make an ebook", "make a checklist", "make a worksheet", "make a cheat sheet", "make a YouTube video", "make a sales page video", "make a Discord announcement", "plan the week", "add a brand", "add a character", "add a background", "continue a project" or "log results", or anything else about producing content for a Buzztorm brand.'
 metadata:
-  version: "0.2.1"
+  version: "0.2.2"
 ---
 
 # Buzztorm Studio
