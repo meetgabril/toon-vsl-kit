@@ -47,6 +47,7 @@ Follow `references/menus.md` exactly, then the reference for the format's family
 | Lessons, courses, playbooks, e-books, checklists, worksheets, cheat sheets | `references/learning.md` |
 | Memes | `references/memes.md` |
 | Viral hooks to replicate (Hook Library), adding examples | `references/hooks.md` |
+| Sound effects: catalog, approved sources, mixing | `references/sound.md` |
 | Ads | `references/ads.md` |
 | Discord | `references/discord.md` |
 | Delivery package, post copy, hashtags, file names | `references/delivery.md` |

@@ -155,6 +155,8 @@ for e in EV['events']:
     elif k == 'notif':
         h = e.get('hit', .9); cues += [(t + h, gulp(), .3)] + [(t + h + .1 + i * .18, ding(86 + i * 2, .3), .35) for i in range(4)]
     elif k == 'pops': cues += [(t + i * .08, pop(), .5) for i in range(5)]
+    elif os.path.exists(f'sfx/{k}.wav'):   # file from sfx.py (library / AI) wins over the synth
+        y, r = sf.read(f'sfx/{k}.wav'); y = y.mean(1) if y.ndim > 1 else y; cues.append((t, y, .7))
     elif k in M_: cues.append((t, M_[k](), .7))
 for t, x, g in cues: put(x, t, g)
 sf.write('music/sfx.wav', (fx / (np.abs(fx).max() + 1e-9) * .8).astype(np.float32), SR)

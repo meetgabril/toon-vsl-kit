@@ -1,0 +1,1225 @@
+{
+ "_about": "Buzztorm Studio sound effects catalog. Each effect: when to use it, a built-in synth fallback (if any), an AI generation prompt and search terms for the approved libraries. Get a file with: python3 sfx.py get <id>.",
+ "categories": {
+  "transitions": {
+   "what": "Cuts, scene changes, text sliding in",
+   "effects": [
+    {
+     "id": "whoosh-fast",
+     "name": "Fast whoosh",
+     "use": "Text or object flying in on a cut",
+     "duration": 0.4,
+     "synth": "whoosh",
+     "prompt": "Fast whoosh, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "fast whoosh"
+    },
+    {
+     "id": "whoosh-long",
+     "name": "Long cinematic whoosh",
+     "use": "Big scene change, hook to body",
+     "duration": 1.2,
+     "synth": null,
+     "prompt": "Long cinematic whoosh, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "long cinematic whoosh"
+    },
+    {
+     "id": "swish",
+     "name": "Light swish",
+     "use": "Small text slide, list item in",
+     "duration": 0.3,
+     "synth": null,
+     "prompt": "Light swish, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "light swish"
+    },
+    {
+     "id": "reverse-whoosh",
+     "name": "Reverse whoosh (suck in)",
+     "use": "Build into a hard cut or reveal",
+     "duration": 0.8,
+     "synth": null,
+     "prompt": "Reverse whoosh (suck in), single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "reverse whoosh"
+    },
+    {
+     "id": "riser-short",
+     "name": "Short riser",
+     "use": "Build-up before a reveal or punchline",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Short riser, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "short riser"
+    },
+    {
+     "id": "riser-long",
+     "name": "Long tension riser",
+     "use": "Hook build in the first 3 s, ad intro",
+     "duration": 4.0,
+     "synth": null,
+     "prompt": "Long tension riser, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "long tension riser"
+    },
+    {
+     "id": "downlifter",
+     "name": "Downlifter / drop sweep",
+     "use": "After a reveal, settle into the explanation",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Downlifter / drop sweep, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "downlifter / drop sweep"
+    },
+    {
+     "id": "reverse-cymbal",
+     "name": "Reverse cymbal swell",
+     "use": "Lead into a beat drop or title card",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Reverse cymbal swell, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "reverse cymbal swell"
+    },
+    {
+     "id": "glitch",
+     "name": "Digital glitch",
+     "use": "Tech topic, 'error' moment, jump cut",
+     "duration": 0.4,
+     "synth": null,
+     "prompt": "Digital glitch, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "digital glitch"
+    },
+    {
+     "id": "tape-rewind",
+     "name": "Tape rewind",
+     "use": "'Let's go back' flashback, replay",
+     "duration": 1.0,
+     "synth": null,
+     "prompt": "Tape rewind, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "tape rewind"
+    },
+    {
+     "id": "tape-stop",
+     "name": "Tape stop / slowdown",
+     "use": "Record-stop moment, 'wait, what?'",
+     "duration": 0.8,
+     "synth": "powerdown",
+     "prompt": "Tape stop / slowdown, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "tape stop / slowdown"
+    },
+    {
+     "id": "page-flip",
+     "name": "Page flip",
+     "use": "Carousel-to-video, book, chapter change",
+     "duration": 0.4,
+     "synth": "page",
+     "prompt": "Page flip, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "page flip"
+    },
+    {
+     "id": "swipe",
+     "name": "Phone swipe",
+     "use": "Swiping between screens or slides",
+     "duration": 0.3,
+     "synth": null,
+     "prompt": "Phone swipe, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "phone swipe"
+    },
+    {
+     "id": "zoom-in",
+     "name": "Zoom-in punch",
+     "use": "Punch-in on a face or key word",
+     "duration": 0.4,
+     "synth": null,
+     "prompt": "Zoom-in punch, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "zoom-in punch"
+    },
+    {
+     "id": "camera-shutter",
+     "name": "Camera shutter",
+     "use": "Freeze frame, screenshot, 'remember this'",
+     "duration": 0.3,
+     "synth": null,
+     "prompt": "Camera shutter, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "camera shutter"
+    },
+    {
+     "id": "portal",
+     "name": "Portal / warp",
+     "use": "Time travel, before→after, new world",
+     "duration": 1.6,
+     "synth": "portal",
+     "prompt": "Portal / warp, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "portal / warp"
+    }
+   ]
+  },
+  "impacts": {
+   "what": "Hits that land a word, a number or a punchline",
+   "effects": [
+    {
+     "id": "boom",
+     "name": "Deep boom",
+     "use": "Big number or bold claim lands",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Deep boom, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "deep boom"
+    },
+    {
+     "id": "sub-drop",
+     "name": "Sub bass drop",
+     "use": "Beat drop after silence, title slam",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Sub bass drop, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "sub bass drop"
+    },
+    {
+     "id": "braam",
+     "name": "Cinematic braam",
+     "use": "Trailer-style hook, dramatic stake",
+     "duration": 2.5,
+     "synth": null,
+     "prompt": "Cinematic braam, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "cinematic braam"
+    },
+    {
+     "id": "hit-cinematic",
+     "name": "Cinematic hit",
+     "use": "Each word of a 3-word punch (egg-drop style)",
+     "duration": 0.8,
+     "synth": null,
+     "prompt": "Cinematic hit, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "cinematic hit"
+    },
+    {
+     "id": "punch",
+     "name": "Punch",
+     "use": "Comedy hit, 'ouch' moment, slam text",
+     "duration": 0.3,
+     "synth": null,
+     "prompt": "Punch, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "punch"
+    },
+    {
+     "id": "thud",
+     "name": "Heavy thud",
+     "use": "Object lands, box drops, sticker slap",
+     "duration": 0.4,
+     "synth": "thud",
+     "prompt": "Heavy thud, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "heavy thud"
+    },
+    {
+     "id": "stamp",
+     "name": "Rubber stamp",
+     "use": "'Approved', 'Done', date stamp, verdict",
+     "duration": 0.4,
+     "synth": "stamp",
+     "prompt": "Rubber stamp, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "rubber stamp"
+    },
+    {
+     "id": "slam",
+     "name": "Door slam",
+     "use": "Rejection, end of an option, 'closed'",
+     "duration": 0.6,
+     "synth": null,
+     "prompt": "Door slam, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "door slam"
+    },
+    {
+     "id": "glass-break",
+     "name": "Glass break",
+     "use": "Breaking a myth or belief",
+     "duration": 1.0,
+     "synth": null,
+     "prompt": "Glass break, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "glass break"
+    },
+    {
+     "id": "stomp",
+     "name": "Stomp / clap hit",
+     "use": "Rhythmic text beats, list counts",
+     "duration": 0.4,
+     "synth": null,
+     "prompt": "Stomp / clap hit, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "stomp / clap hit"
+    },
+    {
+     "id": "gavel",
+     "name": "Gavel",
+     "use": "Rule, verdict, 'the law of…'",
+     "duration": 0.6,
+     "synth": null,
+     "prompt": "Gavel, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "gavel"
+    },
+    {
+     "id": "heartbeat-thump",
+     "name": "Single heartbeat thump",
+     "use": "Moment of truth, pause before reveal",
+     "duration": 0.6,
+     "synth": null,
+     "prompt": "Single heartbeat thump, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "single heartbeat thump"
+    }
+   ]
+  },
+  "text_ui": {
+   "what": "On-screen text, captions, interface moments",
+   "effects": [
+    {
+     "id": "pop",
+     "name": "Soft pop",
+     "use": "Caption word or sticker appears",
+     "duration": 0.15,
+     "synth": "pop",
+     "prompt": "Soft pop, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "soft pop"
+    },
+    {
+     "id": "bubble-pop",
+     "name": "Bubble pop",
+     "use": "Speech bubble, emoji appears",
+     "duration": 0.2,
+     "synth": null,
+     "prompt": "Bubble pop, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "bubble pop"
+    },
+    {
+     "id": "click",
+     "name": "Click",
+     "use": "Button, toggle, selection",
+     "duration": 0.05,
+     "synth": "click",
+     "prompt": "Click, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "click"
+    },
+    {
+     "id": "mouse-click",
+     "name": "Mouse click",
+     "use": "Screen recording, 'click here'",
+     "duration": 0.1,
+     "synth": null,
+     "prompt": "Mouse click, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "mouse click"
+    },
+    {
+     "id": "typing",
+     "name": "Keyboard typing",
+     "use": "Text typed on screen, search bar",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Keyboard typing, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "keyboard typing"
+    },
+    {
+     "id": "typewriter",
+     "name": "Typewriter keys + bell",
+     "use": "Headline typed, old-school quote",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Typewriter keys + bell, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "typewriter keys + bell"
+    },
+    {
+     "id": "tick",
+     "name": "Tick",
+     "use": "Checklist step, counter step",
+     "duration": 0.1,
+     "synth": "beep",
+     "prompt": "Tick, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "tick"
+    },
+    {
+     "id": "check",
+     "name": "Correct / checkmark ding",
+     "use": "✅ answer, right way",
+     "duration": 0.6,
+     "synth": "ding",
+     "prompt": "Correct / checkmark ding, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "correct / checkmark ding"
+    },
+    {
+     "id": "wrong",
+     "name": "Wrong answer buzz",
+     "use": "❌ answer, myth, wrong way",
+     "duration": 0.5,
+     "synth": "buzz",
+     "prompt": "Wrong answer buzz, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "wrong answer buzz"
+    },
+    {
+     "id": "error",
+     "name": "Computer error beep",
+     "use": "System fails, 'this doesn't work'",
+     "duration": 0.6,
+     "synth": null,
+     "prompt": "Computer error beep, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "computer error beep"
+    },
+    {
+     "id": "level-up",
+     "name": "Level up",
+     "use": "Progress, unlocking the next step",
+     "duration": 1.0,
+     "synth": null,
+     "prompt": "Level up, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "level up"
+    },
+    {
+     "id": "counter",
+     "name": "Counter rolling",
+     "use": "Numbers counting up",
+     "duration": 1.6,
+     "synth": null,
+     "prompt": "Counter rolling, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "counter rolling"
+    },
+    {
+     "id": "scroll",
+     "name": "Scroll / wheel",
+     "use": "Feed scrolling, long list",
+     "duration": 1.0,
+     "synth": null,
+     "prompt": "Scroll / wheel, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "scroll / wheel"
+    },
+    {
+     "id": "toggle",
+     "name": "Switch toggle",
+     "use": "Before/after switch, on/off",
+     "duration": 0.2,
+     "synth": null,
+     "prompt": "Switch toggle, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "switch toggle"
+    },
+    {
+     "id": "highlight",
+     "name": "Marker highlight",
+     "use": "Underline or highlight a word",
+     "duration": 0.4,
+     "synth": "chalk",
+     "prompt": "Marker highlight, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "marker highlight"
+    },
+    {
+     "id": "chalk",
+     "name": "Chalk / marker writing",
+     "use": "Whiteboard explainer",
+     "duration": 0.5,
+     "synth": "chalk",
+     "prompt": "Chalk / marker writing, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "chalk / marker writing"
+    }
+   ]
+  },
+  "money_sales": {
+   "what": "Offers, prices, sales, results",
+   "effects": [
+    {
+     "id": "cha-ching",
+     "name": "Cash register cha-ching",
+     "use": "Sale made, price reveal",
+     "duration": 0.8,
+     "synth": "chaching",
+     "prompt": "Cash register cha-ching, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "cash register cha-ching"
+    },
+    {
+     "id": "coin",
+     "name": "Single coin",
+     "use": "Small win, tip, point earned",
+     "duration": 0.4,
+     "synth": "coin",
+     "prompt": "Single coin, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "single coin"
+    },
+    {
+     "id": "coins-drop",
+     "name": "Coins pouring",
+     "use": "Money adding up",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Coins pouring, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "coins pouring"
+    },
+    {
+     "id": "cash-count",
+     "name": "Bill counter",
+     "use": "Counting money, budget",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Bill counter, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "bill counter"
+    },
+    {
+     "id": "register-drawer",
+     "name": "Register drawer open",
+     "use": "Checkout moment",
+     "duration": 0.8,
+     "synth": null,
+     "prompt": "Register drawer open, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "register drawer open"
+    },
+    {
+     "id": "receipt",
+     "name": "Receipt printing",
+     "use": "Invoice, 'here's the bill'",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Receipt printing, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "receipt printing"
+    },
+    {
+     "id": "payment-success",
+     "name": "Payment success chime",
+     "use": "New member paid, checkout done",
+     "duration": 0.8,
+     "synth": null,
+     "prompt": "Payment success chime, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "payment success chime"
+    },
+    {
+     "id": "notification-sale",
+     "name": "Sale notification",
+     "use": "Phone pings with a sale/DM",
+     "duration": 0.6,
+     "synth": null,
+     "prompt": "Sale notification, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "sale notification"
+    },
+    {
+     "id": "auction-bell",
+     "name": "Bell 'ding ding'",
+     "use": "Deal, round starts, offer opens",
+     "duration": 1.0,
+     "synth": null,
+     "prompt": "Bell 'ding ding', single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "bell 'ding ding'"
+    }
+   ]
+  },
+  "comedy_reaction": {
+   "what": "Jokes, fails, reactions (keep it rare)",
+   "effects": [
+    {
+     "id": "record-scratch",
+     "name": "Record scratch",
+     "use": "'Wait, back up' freeze moment",
+     "duration": 0.5,
+     "synth": "scratch",
+     "prompt": "Record scratch, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "record scratch"
+    },
+    {
+     "id": "boing",
+     "name": "Boing",
+     "use": "Bounce, silly fail",
+     "duration": 0.5,
+     "synth": "boing",
+     "prompt": "Boing, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "boing"
+    },
+    {
+     "id": "slide-whistle-down",
+     "name": "Slide whistle down",
+     "use": "Something falls, plan fails",
+     "duration": 0.8,
+     "synth": "slide",
+     "prompt": "Slide whistle down, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "slide whistle down"
+    },
+    {
+     "id": "slide-whistle-up",
+     "name": "Slide whistle up",
+     "use": "Rises, jumps, goes up",
+     "duration": 0.8,
+     "synth": "slide",
+     "prompt": "Slide whistle up, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "slide whistle up"
+    },
+    {
+     "id": "rimshot",
+     "name": "Drum rimshot (ba-dum-tss)",
+     "use": "Bad joke, pun",
+     "duration": 1.0,
+     "synth": null,
+     "prompt": "Drum rimshot (ba-dum-tss), single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "drum rimshot"
+    },
+    {
+     "id": "crickets",
+     "name": "Crickets",
+     "use": "Awkward silence, no sales, no comments",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Crickets, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "crickets"
+    },
+    {
+     "id": "gasp",
+     "name": "Crowd gasp",
+     "use": "Shock reveal",
+     "duration": 1.0,
+     "synth": null,
+     "prompt": "Crowd gasp, single isolated sound effect, clean, no music, no words, for a short social video",
+     "search": "crowd gasp"
+    },
+    {
+     "id": "crowd-laugh",
+     "name": "Small crowd laugh",
+     "use": "Sitcom punchline",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Small crowd laugh, single isolated sound effect, clean, no music, no words, for a short social video",
+     "search": "small crowd laugh"
+    },
+    {
+     "id": "crowd-aww",
+     "name": "Crowd 'aww'",
+     "use": "Cute or sad moment",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Crowd 'aww', single isolated sound effect, clean, no music, no words, for a short social video",
+     "search": "crowd 'aww'"
+    },
+    {
+     "id": "crowd-ooh",
+     "name": "Crowd 'ooh'",
+     "use": "Bold claim, impressive number",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Crowd 'ooh', single isolated sound effect, clean, no music, no words, for a short social video",
+     "search": "crowd 'ooh'"
+    },
+    {
+     "id": "applause",
+     "name": "Applause",
+     "use": "Win, launch, finish",
+     "duration": 3.0,
+     "synth": null,
+     "prompt": "Applause, single isolated sound effect, clean, no music, no words, for a short social video",
+     "search": "applause"
+    },
+    {
+     "id": "cheer",
+     "name": "Cheer",
+     "use": "Celebration",
+     "duration": 1.6,
+     "synth": "cheer",
+     "prompt": "Cheer, single isolated sound effect, clean, no music, no words, for a short social video",
+     "search": "cheer"
+    },
+    {
+     "id": "honk",
+     "name": "Clown horn honk",
+     "use": "Silly mistake",
+     "duration": 0.4,
+     "synth": null,
+     "prompt": "Clown horn honk, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "clown horn honk"
+    },
+    {
+     "id": "squeak",
+     "name": "Rubber squeak",
+     "use": "Tiny, cute, awkward",
+     "duration": 0.3,
+     "synth": null,
+     "prompt": "Rubber squeak, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "rubber squeak"
+    },
+    {
+     "id": "dramatic-sting",
+     "name": "Dramatic sting (dun dun dun)",
+     "use": "Over-the-top reveal",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Dramatic sting (dun dun dun), single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "dramatic sting"
+    },
+    {
+     "id": "bonk",
+     "name": "Bonk",
+     "use": "Hit on the head, 'stop doing that'",
+     "duration": 0.3,
+     "synth": null,
+     "prompt": "Bonk, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "bonk"
+    },
+    {
+     "id": "tiny-violin",
+     "name": "Tiny sad violin",
+     "use": "Mock sympathy",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Tiny sad violin, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "tiny sad violin"
+    },
+    {
+     "id": "sad-trombone",
+     "name": "Sad trombone (wah wah)",
+     "use": "Fail, flop",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Sad trombone (wah wah), single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "sad trombone"
+    },
+    {
+     "id": "spring",
+     "name": "Spring 'doing'",
+     "use": "Idea pops up",
+     "duration": 0.5,
+     "synth": "boing",
+     "prompt": "Spring 'doing', single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "spring 'doing'"
+    }
+   ]
+  },
+  "phone_social": {
+   "what": "Phones, DMs, notifications, creator life",
+   "effects": [
+    {
+     "id": "vibrate",
+     "name": "Phone vibrating on table",
+     "use": "Hook: phone buzzes, unread DMs",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Phone vibrating on table, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "phone vibrating on table"
+    },
+    {
+     "id": "dm-ping",
+     "name": "Message received ping",
+     "use": "DM arrives",
+     "duration": 0.4,
+     "synth": "ding",
+     "prompt": "Message received ping, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "message received ping"
+    },
+    {
+     "id": "message-sent",
+     "name": "Message sent whoosh",
+     "use": "Reply sent",
+     "duration": 0.4,
+     "synth": null,
+     "prompt": "Message sent whoosh, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "message sent whoosh"
+    },
+    {
+     "id": "notif-stack",
+     "name": "Notifications piling up",
+     "use": "Viral moment, flood of DMs",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Notifications piling up, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "notifications piling up"
+    },
+    {
+     "id": "ringtone",
+     "name": "Generic phone ringtone",
+     "use": "Incoming call (no branded ringtones)",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Generic phone ringtone, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "generic phone ringtone"
+    },
+    {
+     "id": "call-join",
+     "name": "Video call join chime",
+     "use": "Zoom-style call, client meeting",
+     "duration": 1.0,
+     "synth": null,
+     "prompt": "Video call join chime, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "video call join chime"
+    },
+    {
+     "id": "unlock",
+     "name": "Phone unlock click",
+     "use": "Open the app, start",
+     "duration": 0.3,
+     "synth": null,
+     "prompt": "Phone unlock click, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "phone unlock click"
+    },
+    {
+     "id": "screenshot",
+     "name": "Screenshot shutter",
+     "use": "Save this, screenshot this",
+     "duration": 0.3,
+     "synth": null,
+     "prompt": "Screenshot shutter, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "screenshot shutter"
+    },
+    {
+     "id": "like-tap",
+     "name": "Double-tap like",
+     "use": "Like / heart pops",
+     "duration": 0.3,
+     "synth": "pop",
+     "prompt": "Double-tap like, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "double-tap like"
+    },
+    {
+     "id": "voice-note",
+     "name": "Voice note start blip",
+     "use": "Recording a voice note",
+     "duration": 0.4,
+     "synth": null,
+     "prompt": "Voice note start blip, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "voice note start blip"
+    },
+    {
+     "id": "keyboard-phone",
+     "name": "Phone keyboard taps",
+     "use": "Typing a DM / comment",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Phone keyboard taps, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "phone keyboard taps"
+    }
+   ]
+  },
+  "tension_hook": {
+   "what": "First 3 seconds, open loops, suspense",
+   "effects": [
+    {
+     "id": "clock-tick",
+     "name": "Clock ticking",
+     "use": "Deadline, 'you're running out of time'",
+     "duration": 3.0,
+     "synth": null,
+     "prompt": "Clock ticking, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "clock ticking"
+    },
+    {
+     "id": "heartbeat",
+     "name": "Heartbeat",
+     "use": "Nervous moment, high stakes",
+     "duration": 3.0,
+     "synth": null,
+     "prompt": "Heartbeat, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "heartbeat"
+    },
+    {
+     "id": "drone",
+     "name": "Dark drone",
+     "use": "Problem setup, 'here's what nobody tells you'",
+     "duration": 5.0,
+     "synth": null,
+     "prompt": "Dark drone, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "dark drone",
+     "loop": true
+    },
+    {
+     "id": "suspense-rise",
+     "name": "Suspense rise",
+     "use": "Bait builds (egg rolling to the edge)",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Suspense rise, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "suspense rise"
+    },
+    {
+     "id": "alarm",
+     "name": "Alarm",
+     "use": "Warning, mistake alert",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Alarm, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "alarm"
+    },
+    {
+     "id": "countdown",
+     "name": "Countdown beeps",
+     "use": "3-2-1, launch",
+     "duration": 3.0,
+     "synth": "beep",
+     "prompt": "Countdown beeps, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "countdown beeps"
+    },
+    {
+     "id": "sonar",
+     "name": "Sonar ping",
+     "use": "Searching, finding the answer",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Sonar ping, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "sonar ping"
+    },
+    {
+     "id": "rumble",
+     "name": "Low rumble",
+     "use": "Something big coming",
+     "duration": 3.0,
+     "synth": null,
+     "prompt": "Low rumble, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "low rumble"
+    },
+    {
+     "id": "static",
+     "name": "TV static",
+     "use": "Lost signal, noise, distraction",
+     "duration": 1.0,
+     "synth": null,
+     "prompt": "TV static, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "tv static"
+    },
+    {
+     "id": "vinyl-crackle",
+     "name": "Vinyl crackle bed",
+     "use": "Old story, history fact (1969…)",
+     "duration": 4.0,
+     "synth": null,
+     "prompt": "Vinyl crackle bed, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "vinyl crackle bed",
+     "loop": true
+    },
+    {
+     "id": "breath",
+     "name": "Sharp inhale",
+     "use": "Right before the punchline",
+     "duration": 0.6,
+     "synth": null,
+     "prompt": "Sharp inhale, single isolated sound effect, clean, no music, no words, for a short social video",
+     "search": "sharp inhale"
+    },
+    {
+     "id": "room-tone",
+     "name": "Room tone (silence)",
+     "use": "Silent tail for seamless loops",
+     "duration": 3.0,
+     "synth": null,
+     "prompt": "Room tone (silence), single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "room tone",
+     "loop": true
+    }
+   ]
+  },
+  "magic_reveal": {
+   "what": "Reveals, transformations, 'aha'",
+   "effects": [
+    {
+     "id": "sparkle",
+     "name": "Sparkle",
+     "use": "Shiny new thing, result appears",
+     "duration": 0.8,
+     "synth": "sparkle",
+     "prompt": "Sparkle, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "sparkle"
+    },
+    {
+     "id": "shimmer",
+     "name": "Shimmer",
+     "use": "Before→after reveal",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Shimmer, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "shimmer"
+    },
+    {
+     "id": "chime",
+     "name": "Bright chime",
+     "use": "Idea, tip, aha moment",
+     "duration": 1.0,
+     "synth": "ding",
+     "prompt": "Bright chime, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "bright chime"
+    },
+    {
+     "id": "magic-wand",
+     "name": "Magic wand",
+     "use": "Transformation, 'poof'",
+     "duration": 1.0,
+     "synth": null,
+     "prompt": "Magic wand, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "magic wand"
+    },
+    {
+     "id": "reveal-swell",
+     "name": "Reveal swell",
+     "use": "Big reveal, logo",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Reveal swell, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "reveal swell"
+    },
+    {
+     "id": "harp-gliss",
+     "name": "Harp glissando",
+     "use": "Dream, imagine this",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Harp glissando, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "harp glissando"
+    },
+    {
+     "id": "choir-aah",
+     "name": "Angelic 'aah'",
+     "use": "The perfect solution (ironic or sincere)",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Angelic 'aah', single isolated sound effect, clean, no music, no words, for a short social video",
+     "search": "angelic 'aah'"
+    },
+    {
+     "id": "power-up",
+     "name": "Power up",
+     "use": "Upgrade, new skill",
+     "duration": 1.0,
+     "synth": null,
+     "prompt": "Power up, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "power up"
+    },
+    {
+     "id": "lightbulb",
+     "name": "Lightbulb click on",
+     "use": "Idea moment",
+     "duration": 0.5,
+     "synth": "click",
+     "prompt": "Lightbulb click on, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "lightbulb click on"
+    }
+   ]
+  },
+  "office_creator": {
+   "what": "Desk, studio, business scenes",
+   "effects": [
+    {
+     "id": "pen-scribble",
+     "name": "Pen scribble",
+     "use": "Signing, taking notes",
+     "duration": 1.0,
+     "synth": null,
+     "prompt": "Pen scribble, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "pen scribble"
+    },
+    {
+     "id": "paper-crumple",
+     "name": "Paper crumple",
+     "use": "Throwing away the old plan",
+     "duration": 0.8,
+     "synth": null,
+     "prompt": "Paper crumple, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "paper crumple"
+    },
+    {
+     "id": "printer",
+     "name": "Printer",
+     "use": "Report, contract",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Printer, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "printer"
+    },
+    {
+     "id": "mug-desk",
+     "name": "Mug placed on desk",
+     "use": "Calm start, 'story time'",
+     "duration": 0.4,
+     "synth": null,
+     "prompt": "Mug placed on desk, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "mug placed on desk"
+    },
+    {
+     "id": "coffee-pour",
+     "name": "Coffee pour",
+     "use": "Morning routine",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Coffee pour, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "coffee pour"
+    },
+    {
+     "id": "door-knock",
+     "name": "Door knock",
+     "use": "Opportunity knocks, client arrives",
+     "duration": 1.0,
+     "synth": null,
+     "prompt": "Door knock, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "door knock"
+    },
+    {
+     "id": "elevator-ding",
+     "name": "Elevator ding",
+     "use": "Next level, arrival",
+     "duration": 1.0,
+     "synth": null,
+     "prompt": "Elevator ding, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "elevator ding"
+    },
+    {
+     "id": "mic-tap",
+     "name": "Mic tap",
+     "use": "'Is this on?', announcement",
+     "duration": 0.5,
+     "synth": null,
+     "prompt": "Mic tap, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "mic tap"
+    },
+    {
+     "id": "ring-light-click",
+     "name": "Light switch click",
+     "use": "Studio light on, start recording",
+     "duration": 0.3,
+     "synth": "click",
+     "prompt": "Light switch click, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "light switch click"
+    },
+    {
+     "id": "creak",
+     "name": "Chair/door creak",
+     "use": "Awkward pause",
+     "duration": 0.6,
+     "synth": "creak",
+     "prompt": "Chair/door creak, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "chair/door creak"
+    },
+    {
+     "id": "steps",
+     "name": "Footsteps",
+     "use": "Walk-in, journey",
+     "duration": 1.8,
+     "synth": "steps",
+     "prompt": "Footsteps, single isolated sound effect, clean, no music, no words, for a short social video",
+     "search": "footsteps"
+    },
+    {
+     "id": "gulp",
+     "name": "Gulp",
+     "use": "Nervous, 'uh-oh'",
+     "duration": 0.2,
+     "synth": "gulp",
+     "prompt": "Gulp, single isolated sound effect, clean, no music, no words, for a short social video",
+     "search": "gulp"
+    }
+   ]
+  },
+  "ambience": {
+   "what": "Quiet beds under a scene (−24 dB or lower)",
+   "effects": [
+    {
+     "id": "amb-office",
+     "name": "Office ambience",
+     "use": "Office scene bed",
+     "duration": 10,
+     "synth": null,
+     "prompt": "Office ambience, single isolated sound effect, clean, no music, no words, for a short social video",
+     "search": "office ambience",
+     "loop": true
+    },
+    {
+     "id": "amb-cafe",
+     "name": "Coffee shop ambience",
+     "use": "Casual story bed",
+     "duration": 10,
+     "synth": null,
+     "prompt": "Coffee shop ambience, single isolated sound effect, clean, no music, no words, for a short social video",
+     "search": "coffee shop ambience",
+     "loop": true
+    },
+    {
+     "id": "amb-street",
+     "name": "City street (New York)",
+     "use": "Street experiment, city scene",
+     "duration": 10,
+     "synth": null,
+     "prompt": "City street (New York), single isolated sound effect, clean, no music, no words, for a short social video",
+     "search": "city street",
+     "loop": true
+    },
+    {
+     "id": "amb-crowd",
+     "name": "Crowd murmur",
+     "use": "Event, community, launch",
+     "duration": 10,
+     "synth": null,
+     "prompt": "Crowd murmur, single isolated sound effect, clean, no music, no words, for a short social video",
+     "search": "crowd murmur",
+     "loop": true
+    },
+    {
+     "id": "amb-classroom",
+     "name": "Classroom ambience",
+     "use": "Lesson, course",
+     "duration": 10,
+     "synth": null,
+     "prompt": "Classroom ambience, single isolated sound effect, clean, no music, no words, for a short social video",
+     "search": "classroom ambience",
+     "loop": true
+    },
+    {
+     "id": "amb-rain",
+     "name": "Rain on window",
+     "use": "Calm, reflective",
+     "duration": 10,
+     "synth": null,
+     "prompt": "Rain on window, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "rain on window",
+     "loop": true
+    },
+    {
+     "id": "amb-night",
+     "name": "Night crickets",
+     "use": "Late-night grind",
+     "duration": 10,
+     "synth": null,
+     "prompt": "Night crickets, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "night crickets",
+     "loop": true
+    },
+    {
+     "id": "amb-kitchen",
+     "name": "Quiet kitchen room tone",
+     "use": "Home scene, bait footage",
+     "duration": 10,
+     "synth": null,
+     "prompt": "Quiet kitchen room tone, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "quiet kitchen room tone",
+     "loop": true
+    },
+    {
+     "id": "waves",
+     "name": "Ocean waves",
+     "use": "Freedom, vacation, calm",
+     "duration": 10,
+     "synth": "waves",
+     "prompt": "Ocean waves, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "ocean waves",
+     "loop": true
+    }
+   ]
+  },
+  "brand": {
+   "what": "Signature sounds (create once per brand, reuse everywhere)",
+   "effects": [
+    {
+     "id": "logo-sting",
+     "name": "Logo sting",
+     "use": "Brand appears at the end",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Logo sting, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "logo sting"
+    },
+    {
+     "id": "outro",
+     "name": "Outro whoosh + chime",
+     "use": "CTA card",
+     "duration": 1.5,
+     "synth": null,
+     "prompt": "Outro whoosh + chime, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "outro whoosh + chime"
+    },
+    {
+     "id": "series-bump",
+     "name": "Series bumper",
+     "use": "Opening of a recurring series (Monday Episode)",
+     "duration": 2.0,
+     "synth": null,
+     "prompt": "Series bumper, single isolated sound effect, clean, no music, no voice, for a short social video",
+     "search": "series bumper"
+    }
+   ]
+  }
+ },
+ "count": 128
+}
