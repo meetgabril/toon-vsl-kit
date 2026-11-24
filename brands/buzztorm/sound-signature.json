@@ -1,0 +1,30 @@
+{
+ "_about": "Buzztorm sound signature: the same sound for the same idea in every video. Engine event → catalog effect. 'kit' copies them into sfx/ before autoscore. Change one here and every future video changes with it.",
+ "palette": "Sitcom: dry, warm, wooden and plucky. No cinematic braams, no meme sounds baked in. One hit per idea; silence before the punchline.",
+ "events": {
+  "pop":       {"id": "pop",          "why": "Every element that appears (text, sticker, prop)"},
+  "pops":      {"id": "pop",          "why": "Burst of items"},
+  "click":     {"id": "click",        "why": "Buttons, phone taps"},
+  "ding":      {"id": "chime",        "why": "Idea, reveal, correct answer"},
+  "buzz":      {"id": "wrong",        "why": "Wrong answer, myth, bad idea"},
+  "stamp":     {"id": "stamp",        "why": "Verdict stamps (MYTH / FACT)"},
+  "whoosh":    {"id": "whoosh-fast",  "why": "Big moves and scene changes"},
+  "chaching":  {"id": "cha-ching",    "why": "Money, sale, growth"},
+  "cheer":     {"id": "cheer",        "why": "Win, community moment"},
+  "sparkle":   {"id": "magic-wand",   "why": "Transformation, 'after'"},
+  "steps":     {"id": "steps",        "why": "Character walks in"},
+  "portal":    {"id": "portal",       "why": "Jump in time or place"},
+  "boing":     {"id": "boing",        "why": "Comic bounce, fail"},
+  "thud":      {"id": "thud",         "why": "Something lands, reality check"},
+  "creak":     {"id": "creak",        "why": "Awkward pause, door"},
+  "page":      {"id": "page-flip",    "why": "Book, plan, calendar"},
+  "gulp":      {"id": "gulp",         "why": "Nervous reaction"},
+  "scratch":   {"id": "record-scratch","why": "Hard stop, 'wait, what?'"},
+  "chalk":     {"id": "chalk",        "why": "Writing on the board"}
+ },
+ "signature": {
+  "logo-sting":  {"file": "sfx/logo-sting.wav",  "status": "candidate", "from": "kenney/jingles/sax_sax_7.ogg"},
+  "series-bump": {"file": "sfx/series-bump.wav", "status": "candidate", "from": "kenney/jingles/pizzicato_pizzi_7.ogg"},
+  "outro":       {"file": "sfx/outro.wav",       "status": "candidate", "from": "kenney/jingles/pizzicato_pizzi_3.ogg"}
+ }
+}

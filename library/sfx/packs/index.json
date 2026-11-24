@@ -1,0 +1,6573 @@
+{
+"_about": "Every raw sound in library/sfx/packs. Search with: python3 sfx.py browse <words>. Promote one to a catalog slot with: python3 sfx.py add <id> packs/<file> --source <source>.",
+"count": 552,
+"files": [
+{
+"file": "kenney/digital/high_down.ogg",
+"pack": "kenney-digital",
+"category": "misc",
+"tags": [
+"high",
+"down"
+],
+"duration": 0.52,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/high_up.ogg",
+"pack": "kenney-digital",
+"category": "misc",
+"tags": [
+"high",
+"up"
+],
+"duration": 0.55,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/laser_1.ogg",
+"pack": "kenney-digital",
+"category": "tension_hook",
+"tags": [
+"laser"
+],
+"duration": 1.1,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/laser_2.ogg",
+"pack": "kenney-digital",
+"category": "tension_hook",
+"tags": [
+"laser"
+],
+"duration": 1.09,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/laser_3.ogg",
+"pack": "kenney-digital",
+"category": "tension_hook",
+"tags": [
+"laser"
+],
+"duration": 0.98,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/laser_4.ogg",
+"pack": "kenney-digital",
+"category": "tension_hook",
+"tags": [
+"laser"
+],
+"duration": 1.13,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/laser_5.ogg",
+"pack": "kenney-digital",
+"category": "tension_hook",
+"tags": [
+"laser"
+],
+"duration": 1.01,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/laser_6.ogg",
+"pack": "kenney-digital",
+"category": "tension_hook",
+"tags": [
+"laser"
+],
+"duration": 0.97,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/laser_7.ogg",
+"pack": "kenney-digital",
+"category": "tension_hook",
+"tags": [
+"laser"
+],
+"duration": 0.93,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/laser_8.ogg",
+"pack": "kenney-digital",
+"category": "tension_hook",
+"tags": [
+"laser"
+],
+"duration": 0.99,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/laser_9.ogg",
+"pack": "kenney-digital",
+"category": "tension_hook",
+"tags": [
+"laser"
+],
+"duration": 1.01,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/low_down.ogg",
+"pack": "kenney-digital",
+"category": "misc",
+"tags": [
+"low",
+"down"
+],
+"duration": 0.78,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/low_random.ogg",
+"pack": "kenney-digital",
+"category": "misc",
+"tags": [
+"low",
+"random"
+],
+"duration": 0.55,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/low_three_tone.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"low",
+"three",
+"tone"
+],
+"duration": 1.02,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/pep_sound_1.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"pep",
+"sound"
+],
+"duration": 0.52,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/pep_sound_2.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"pep",
+"sound"
+],
+"duration": 0.55,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/pep_sound_3.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"pep",
+"sound"
+],
+"duration": 0.44,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/pep_sound_4.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"pep",
+"sound"
+],
+"duration": 0.63,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/pep_sound_5.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"pep",
+"sound"
+],
+"duration": 0.63,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/phase_jump_1.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"phase",
+"jump"
+],
+"duration": 0.47,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/phase_jump_2.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"phase",
+"jump"
+],
+"duration": 0.39,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/phase_jump_3.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"phase",
+"jump"
+],
+"duration": 0.44,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/phase_jump_4.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"phase",
+"jump"
+],
+"duration": 0.47,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/phase_jump_5.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"phase",
+"jump"
+],
+"duration": 0.42,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/phaser_down_1.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"phaser",
+"down"
+],
+"duration": 0.47,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/phaser_down_2.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"phaser",
+"down"
+],
+"duration": 0.31,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/phaser_down_3.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"phaser",
+"down"
+],
+"duration": 0.5,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/phaser_up_1.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"phaser",
+"up"
+],
+"duration": 0.5,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/phaser_up_2.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"phaser",
+"up"
+],
+"duration": 0.42,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/phaser_up_3.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"phaser",
+"up"
+],
+"duration": 0.52,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/phaser_up_4.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"phaser",
+"up"
+],
+"duration": 0.37,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/phaser_up_5.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"phaser",
+"up"
+],
+"duration": 0.31,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/phaser_up_6.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"phaser",
+"up"
+],
+"duration": 0.34,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/phaser_up_7.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"phaser",
+"up"
+],
+"duration": 0.37,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/power_up_1.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"power",
+"up"
+],
+"duration": 1.2,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/power_up_10.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"power",
+"up"
+],
+"duration": 0.65,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/power_up_11.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"power",
+"up"
+],
+"duration": 0.68,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/power_up_12.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"power",
+"up"
+],
+"duration": 0.86,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/power_up_2.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"power",
+"up"
+],
+"duration": 0.47,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/power_up_3.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"power",
+"up"
+],
+"duration": 1.15,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/power_up_4.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"power",
+"up"
+],
+"duration": 0.55,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/power_up_5.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"power",
+"up"
+],
+"duration": 0.44,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/power_up_6.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"power",
+"up"
+],
+"duration": 0.44,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/power_up_7.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"power",
+"up"
+],
+"duration": 0.52,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/power_up_8.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"power",
+"up"
+],
+"duration": 0.57,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/power_up_9.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"power",
+"up"
+],
+"duration": 0.55,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/space_trash_1.ogg",
+"pack": "kenney-digital",
+"category": "tension_hook",
+"tags": [
+"space",
+"trash"
+],
+"duration": 1.45,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/space_trash_2.ogg",
+"pack": "kenney-digital",
+"category": "tension_hook",
+"tags": [
+"space",
+"trash"
+],
+"duration": 1.47,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/space_trash_3.ogg",
+"pack": "kenney-digital",
+"category": "tension_hook",
+"tags": [
+"space",
+"trash"
+],
+"duration": 1.54,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/space_trash_4.ogg",
+"pack": "kenney-digital",
+"category": "tension_hook",
+"tags": [
+"space",
+"trash"
+],
+"duration": 1.48,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/space_trash_5.ogg",
+"pack": "kenney-digital",
+"category": "tension_hook",
+"tags": [
+"space",
+"trash"
+],
+"duration": 1.43,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/three_tone_1.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"three",
+"tone"
+],
+"duration": 0.83,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/three_tone_2.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"three",
+"tone"
+],
+"duration": 0.87,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/tone_1.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"tone"
+],
+"duration": 0.66,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/two_tone_1.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"two",
+"tone"
+],
+"duration": 0.72,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/two_tone_2.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"two",
+"tone"
+],
+"duration": 0.73,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/zap_1.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"zap"
+],
+"duration": 1.02,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/zap_2.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"zap"
+],
+"duration": 1.23,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/zap_three_tone_down.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"zap",
+"three",
+"tone",
+"down"
+],
+"duration": 1.33,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/zap_three_tone_up.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"zap",
+"three",
+"tone",
+"up"
+],
+"duration": 1.2,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/zap_two_tone.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"zap",
+"two",
+"tone"
+],
+"duration": 1.31,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/digital/zap_two_tone_2.ogg",
+"pack": "kenney-digital",
+"category": "magic_reveal",
+"tags": [
+"zap",
+"two",
+"tone"
+],
+"duration": 1.2,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_carpet_000.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"carpet"
+],
+"duration": 0.14,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_carpet_001.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"carpet"
+],
+"duration": 0.14,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_carpet_002.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"carpet"
+],
+"duration": 0.14,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_carpet_003.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"carpet"
+],
+"duration": 0.14,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_carpet_004.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"carpet"
+],
+"duration": 0.14,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_concrete_000.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"concrete"
+],
+"duration": 0.11,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_concrete_001.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"concrete"
+],
+"duration": 0.11,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_concrete_002.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"concrete"
+],
+"duration": 0.11,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_concrete_003.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"concrete"
+],
+"duration": 0.11,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_concrete_004.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"concrete"
+],
+"duration": 0.11,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_grass_000.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"grass"
+],
+"duration": 0.78,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_grass_001.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"grass"
+],
+"duration": 0.67,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_grass_002.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"grass"
+],
+"duration": 0.69,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_grass_003.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"grass"
+],
+"duration": 0.67,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_grass_004.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"grass"
+],
+"duration": 0.59,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_snow_000.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"snow"
+],
+"duration": 0.37,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_snow_001.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"snow"
+],
+"duration": 0.37,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_snow_002.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"snow"
+],
+"duration": 0.37,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_snow_003.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"snow"
+],
+"duration": 0.37,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_snow_004.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"snow"
+],
+"duration": 0.37,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_wood_000.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"wood"
+],
+"duration": 0.25,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_wood_001.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"wood"
+],
+"duration": 0.25,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_wood_002.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"wood"
+],
+"duration": 0.25,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_wood_003.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"wood"
+],
+"duration": 0.25,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/footstep_wood_004.ogg",
+"pack": "kenney-impact",
+"category": "office_creator",
+"tags": [
+"footstep",
+"wood"
+],
+"duration": 0.25,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_bell_heavy_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"bell",
+"heavy"
+],
+"duration": 1.48,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_bell_heavy_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"bell",
+"heavy"
+],
+"duration": 1.74,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_bell_heavy_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"bell",
+"heavy"
+],
+"duration": 0.7,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_bell_heavy_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"bell",
+"heavy"
+],
+"duration": 0.65,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_bell_heavy_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"bell",
+"heavy"
+],
+"duration": 0.3,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_generic_light_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"generic",
+"light"
+],
+"duration": 0.14,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_generic_light_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"generic",
+"light"
+],
+"duration": 0.12,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_generic_light_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"generic",
+"light"
+],
+"duration": 0.14,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_generic_light_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"generic",
+"light"
+],
+"duration": 0.14,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_generic_light_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"generic",
+"light"
+],
+"duration": 0.14,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_glass_heavy_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"glass",
+"heavy"
+],
+"duration": 0.24,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_glass_heavy_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"glass",
+"heavy"
+],
+"duration": 0.43,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_glass_heavy_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"glass",
+"heavy"
+],
+"duration": 0.25,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_glass_heavy_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"glass",
+"heavy"
+],
+"duration": 0.17,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_glass_heavy_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"glass",
+"heavy"
+],
+"duration": 0.4,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_glass_light_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"glass",
+"light"
+],
+"duration": 0.21,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_glass_light_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"glass",
+"light"
+],
+"duration": 0.21,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_glass_light_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"glass",
+"light"
+],
+"duration": 0.21,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_glass_light_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"glass",
+"light"
+],
+"duration": 0.21,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_glass_light_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"glass",
+"light"
+],
+"duration": 0.21,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_glass_medium_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"glass",
+"medium"
+],
+"duration": 0.54,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_glass_medium_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"glass",
+"medium"
+],
+"duration": 0.54,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_glass_medium_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"glass",
+"medium"
+],
+"duration": 0.54,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_glass_medium_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"glass",
+"medium"
+],
+"duration": 0.54,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_glass_medium_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"glass",
+"medium"
+],
+"duration": 0.54,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_metal_heavy_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"metal",
+"heavy"
+],
+"duration": 0.17,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_metal_heavy_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"metal",
+"heavy"
+],
+"duration": 0.36,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_metal_heavy_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"metal",
+"heavy"
+],
+"duration": 0.12,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_metal_heavy_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"metal",
+"heavy"
+],
+"duration": 0.21,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_metal_heavy_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"metal",
+"heavy"
+],
+"duration": 0.13,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_metal_light_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"metal",
+"light"
+],
+"duration": 0.35,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_metal_light_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"metal",
+"light"
+],
+"duration": 0.25,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_metal_light_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"metal",
+"light"
+],
+"duration": 0.24,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_metal_light_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"metal",
+"light"
+],
+"duration": 0.48,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_metal_light_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"metal",
+"light"
+],
+"duration": 0.21,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_metal_medium_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"metal",
+"medium"
+],
+"duration": 0.27,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_metal_medium_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"metal",
+"medium"
+],
+"duration": 0.14,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_metal_medium_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"metal",
+"medium"
+],
+"duration": 0.12,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_metal_medium_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"metal",
+"medium"
+],
+"duration": 0.25,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_metal_medium_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"metal",
+"medium"
+],
+"duration": 0.11,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_mining_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"mining"
+],
+"duration": 0.94,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_mining_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"mining"
+],
+"duration": 0.87,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_mining_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"mining"
+],
+"duration": 0.8,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_mining_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"mining"
+],
+"duration": 0.99,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_mining_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"mining"
+],
+"duration": 0.83,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plank_medium_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plank",
+"medium"
+],
+"duration": 0.78,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plank_medium_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plank",
+"medium"
+],
+"duration": 0.78,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plank_medium_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plank",
+"medium"
+],
+"duration": 0.78,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plank_medium_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plank",
+"medium"
+],
+"duration": 0.78,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plank_medium_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plank",
+"medium"
+],
+"duration": 0.78,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plate_heavy_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plate",
+"heavy"
+],
+"duration": 0.49,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plate_heavy_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plate",
+"heavy"
+],
+"duration": 0.35,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plate_heavy_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plate",
+"heavy"
+],
+"duration": 0.49,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plate_heavy_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plate",
+"heavy"
+],
+"duration": 0.35,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plate_heavy_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plate",
+"heavy"
+],
+"duration": 0.56,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plate_light_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plate",
+"light"
+],
+"duration": 0.54,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plate_light_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plate",
+"light"
+],
+"duration": 0.65,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plate_light_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plate",
+"light"
+],
+"duration": 0.49,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plate_light_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plate",
+"light"
+],
+"duration": 0.53,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plate_light_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plate",
+"light"
+],
+"duration": 0.66,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plate_medium_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plate",
+"medium"
+],
+"duration": 0.61,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plate_medium_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plate",
+"medium"
+],
+"duration": 0.62,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plate_medium_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plate",
+"medium"
+],
+"duration": 0.52,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plate_medium_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plate",
+"medium"
+],
+"duration": 0.65,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_plate_medium_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"plate",
+"medium"
+],
+"duration": 0.53,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_punch_heavy_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"punch",
+"heavy"
+],
+"duration": 0.65,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_punch_heavy_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"punch",
+"heavy"
+],
+"duration": 0.54,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_punch_heavy_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"punch",
+"heavy"
+],
+"duration": 0.46,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_punch_heavy_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"punch",
+"heavy"
+],
+"duration": 0.47,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_punch_heavy_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"punch",
+"heavy"
+],
+"duration": 0.54,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_punch_medium_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"punch",
+"medium"
+],
+"duration": 0.43,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_punch_medium_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"punch",
+"medium"
+],
+"duration": 0.4,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_punch_medium_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"punch",
+"medium"
+],
+"duration": 0.54,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_punch_medium_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"punch",
+"medium"
+],
+"duration": 0.46,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_punch_medium_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"punch",
+"medium"
+],
+"duration": 0.54,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_soft_heavy_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"soft",
+"heavy"
+],
+"duration": 0.51,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_soft_heavy_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"soft",
+"heavy"
+],
+"duration": 0.57,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_soft_heavy_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"soft",
+"heavy"
+],
+"duration": 0.57,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_soft_heavy_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"soft",
+"heavy"
+],
+"duration": 0.54,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_soft_heavy_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"soft",
+"heavy"
+],
+"duration": 0.5,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_soft_medium_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"soft",
+"medium"
+],
+"duration": 0.12,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_soft_medium_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"soft",
+"medium"
+],
+"duration": 0.18,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_soft_medium_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"soft",
+"medium"
+],
+"duration": 0.14,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_soft_medium_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"soft",
+"medium"
+],
+"duration": 0.14,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_soft_medium_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"soft",
+"medium"
+],
+"duration": 0.15,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_tin_medium_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"tin",
+"medium"
+],
+"duration": 0.16,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_tin_medium_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"tin",
+"medium"
+],
+"duration": 0.17,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_tin_medium_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"tin",
+"medium"
+],
+"duration": 0.13,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_tin_medium_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"tin",
+"medium"
+],
+"duration": 0.21,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_tin_medium_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"tin",
+"medium"
+],
+"duration": 0.18,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_wood_heavy_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"wood",
+"heavy"
+],
+"duration": 0.31,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_wood_heavy_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"wood",
+"heavy"
+],
+"duration": 0.31,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_wood_heavy_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"wood",
+"heavy"
+],
+"duration": 0.31,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_wood_heavy_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"wood",
+"heavy"
+],
+"duration": 0.31,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_wood_heavy_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"wood",
+"heavy"
+],
+"duration": 0.31,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_wood_light_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"wood",
+"light"
+],
+"duration": 0.27,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_wood_light_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"wood",
+"light"
+],
+"duration": 0.27,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_wood_light_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"wood",
+"light"
+],
+"duration": 0.27,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_wood_light_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"wood",
+"light"
+],
+"duration": 0.27,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_wood_light_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"wood",
+"light"
+],
+"duration": 0.27,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_wood_medium_000.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"wood",
+"medium"
+],
+"duration": 0.33,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_wood_medium_001.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"wood",
+"medium"
+],
+"duration": 0.33,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_wood_medium_002.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"wood",
+"medium"
+],
+"duration": 0.33,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_wood_medium_003.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"wood",
+"medium"
+],
+"duration": 0.33,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/impact/impact_wood_medium_004.ogg",
+"pack": "kenney-impact",
+"category": "impacts",
+"tags": [
+"impact",
+"wood",
+"medium"
+],
+"duration": 0.33,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/back_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"back"
+],
+"duration": 0.07,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/back_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"back"
+],
+"duration": 0.09,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/back_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"back"
+],
+"duration": 0.09,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/back_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"back"
+],
+"duration": 0.09,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/bong_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"bong"
+],
+"duration": 0.13,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/click_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"click"
+],
+"duration": 0.11,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/click_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"click"
+],
+"duration": 0.01,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/click_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"click"
+],
+"duration": 0.02,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/click_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"click"
+],
+"duration": 0.02,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/click_005.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"click"
+],
+"duration": 0.02,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/close_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"close"
+],
+"duration": 0.15,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/close_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"close"
+],
+"duration": 0.33,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/close_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"close"
+],
+"duration": 0.33,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/close_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"close"
+],
+"duration": 0.34,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/confirmation_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"confirmation"
+],
+"duration": 0.29,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/confirmation_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"confirmation"
+],
+"duration": 0.56,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/confirmation_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"confirmation"
+],
+"duration": 0.32,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/confirmation_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"confirmation"
+],
+"duration": 0.5,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/drop_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"drop"
+],
+"duration": 0.13,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/drop_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"drop"
+],
+"duration": 0.2,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/drop_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"drop"
+],
+"duration": 0.2,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/drop_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"drop"
+],
+"duration": 0.29,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/error_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"error"
+],
+"duration": 0.17,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/error_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"error"
+],
+"duration": 0.17,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/error_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"error"
+],
+"duration": 0.56,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/error_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"error"
+],
+"duration": 0.1,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/error_005.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"error"
+],
+"duration": 0.52,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/error_006.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"error"
+],
+"duration": 0.52,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/error_007.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"error"
+],
+"duration": 0.2,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/error_008.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"error"
+],
+"duration": 0.14,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/glass_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"glass"
+],
+"duration": 0.29,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/glass_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"glass"
+],
+"duration": 0.13,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/glass_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"glass"
+],
+"duration": 0.13,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/glass_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"glass"
+],
+"duration": 0.71,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/glass_005.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"glass"
+],
+"duration": 0.13,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/glass_006.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"glass"
+],
+"duration": 0.13,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/glitch_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"glitch"
+],
+"duration": 0.02,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/glitch_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"glitch"
+],
+"duration": 0.04,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/glitch_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"glitch"
+],
+"duration": 0.01,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/glitch_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"glitch"
+],
+"duration": 0.03,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/maximize_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"maximize"
+],
+"duration": 0.26,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/maximize_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"maximize"
+],
+"duration": 0.26,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/maximize_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"maximize"
+],
+"duration": 0.21,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/maximize_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"maximize"
+],
+"duration": 0.43,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/maximize_005.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"maximize"
+],
+"duration": 0.53,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/maximize_006.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"maximize"
+],
+"duration": 0.39,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/maximize_007.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"maximize"
+],
+"duration": 0.19,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/maximize_008.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"maximize"
+],
+"duration": 0.25,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/maximize_009.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"maximize"
+],
+"duration": 0.23,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/minimize_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"minimize"
+],
+"duration": 0.27,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/minimize_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"minimize"
+],
+"duration": 0.26,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/minimize_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"minimize"
+],
+"duration": 0.22,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/minimize_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"minimize"
+],
+"duration": 0.43,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/minimize_005.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"minimize"
+],
+"duration": 0.55,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/minimize_006.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"minimize"
+],
+"duration": 0.38,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/minimize_007.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"minimize"
+],
+"duration": 0.19,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/minimize_008.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"minimize"
+],
+"duration": 0.25,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/minimize_009.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"minimize"
+],
+"duration": 0.24,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/open_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"open"
+],
+"duration": 0.15,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/open_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"open"
+],
+"duration": 0.32,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/open_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"open"
+],
+"duration": 0.32,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/open_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"open"
+],
+"duration": 0.33,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/pluck_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"pluck"
+],
+"duration": 0.11,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/pluck_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"pluck"
+],
+"duration": 0.18,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/question_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"question"
+],
+"duration": 0.5,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/question_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"question"
+],
+"duration": 0.34,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/question_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"question"
+],
+"duration": 0.34,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/question_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"question"
+],
+"duration": 0.34,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/scratch_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"scratch"
+],
+"duration": 0.16,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/scratch_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"scratch"
+],
+"duration": 0.16,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/scratch_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"scratch"
+],
+"duration": 0.12,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/scratch_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"scratch"
+],
+"duration": 0.35,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/scratch_005.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"scratch"
+],
+"duration": 0.34,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/scroll_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"scroll"
+],
+"duration": 1.02,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/scroll_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"scroll"
+],
+"duration": 1.01,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/scroll_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"scroll"
+],
+"duration": 1.01,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/scroll_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"scroll"
+],
+"duration": 1.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/scroll_005.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"scroll"
+],
+"duration": 1.02,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/select_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"select"
+],
+"duration": 0.06,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/select_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"select"
+],
+"duration": 0.06,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/select_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"select"
+],
+"duration": 0.38,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/select_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"select"
+],
+"duration": 0.38,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/select_005.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"select"
+],
+"duration": 0.38,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/select_006.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"select"
+],
+"duration": 1.95,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/select_007.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"select"
+],
+"duration": 0.06,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/select_008.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"select"
+],
+"duration": 0.06,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/switch_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.62,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/switch_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.62,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/switch_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.5,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/switch_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.5,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/switch_005.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.62,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/switch_006.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.62,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/switch_007.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.62,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/tick_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"tick"
+],
+"duration": 0.04,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/tick_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"tick"
+],
+"duration": 0.02,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/tick_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"tick"
+],
+"duration": 0.06,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/toggle_001.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"toggle"
+],
+"duration": 0.16,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/toggle_002.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"toggle"
+],
+"duration": 0.14,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/toggle_003.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"toggle"
+],
+"duration": 0.16,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/interface/toggle_004.wav",
+"pack": "kenney-interface",
+"category": "text_ui",
+"tags": [
+"toggle"
+],
+"duration": 0.07,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_0.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 0.39,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_1.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 0.89,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_10.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 0.64,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_11.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 0.62,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_12.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 0.85,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_13.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 0.78,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_14.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 0.75,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_15.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 0.6,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_16.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 0.41,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_2.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 0.87,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_3.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 1.12,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_4.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 0.39,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_5.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 0.46,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_6.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 0.51,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_7.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 1.74,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_8.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 0.39,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/sax_sax_9.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"sax"
+],
+"duration": 0.37,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_0.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.28,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_1.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.51,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_10.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.75,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_11.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.96,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_12.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.28,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_13.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.29,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_14.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.42,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_15.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 1.16,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_16.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.29,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_2.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.52,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_3.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.75,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_4.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.64,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_5.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.61,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_6.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.51,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_7.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.28,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_8.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.28,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/hit_hit_9.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"hit"
+],
+"duration": 0.75,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_0.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 0.93,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_1.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 1.38,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_10.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 0.91,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_11.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 0.83,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_12.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 1.26,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_13.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 1.05,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_14.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 1.38,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_15.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 0.94,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_16.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 0.91,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_2.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 1.39,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_3.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 1.39,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_4.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 0.91,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_5.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 0.94,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_6.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 1.38,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_7.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 1.55,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_8.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 0.8,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/steel_steel_9.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"steel"
+],
+"duration": 0.59,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_0.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 1.76,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_1.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 0.41,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_10.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 0.41,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_11.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 0.83,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_12.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 0.85,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_13.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 1.05,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_14.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 0.37,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_15.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 0.43,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_16.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 0.51,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_2.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 0.39,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_3.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 0.6,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_4.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 0.6,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_5.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 0.91,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_6.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 0.8,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_7.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 0.75,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_8.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 0.62,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/8-bit_nes_9.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"8-bit"
+],
+"duration": 0.44,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_0.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 0.49,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_1.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 1.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_10.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 0.8,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_11.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 0.79,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_12.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 0.99,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_13.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 0.88,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_14.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 0.92,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_15.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 0.81,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_16.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 0.46,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_2.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 0.96,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_3.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 1.15,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_4.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 0.56,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_5.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 0.54,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_6.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 0.69,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_7.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 1.32,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_8.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 0.57,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/jingles/pizzicato_pizzi_9.ogg",
+"pack": "kenney-jingles",
+"category": "brand",
+"tags": [
+"jingle",
+"pizzicato"
+],
+"duration": 0.57,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/belt_handle_1.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"belt",
+"handle"
+],
+"duration": 0.28,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/belt_handle_2.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"belt",
+"handle"
+],
+"duration": 0.48,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/book_close.ogg",
+"pack": "kenney-rpg",
+"category": "text_ui",
+"tags": [
+"book",
+"close"
+],
+"duration": 0.23,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/book_flip_1.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"book",
+"flip"
+],
+"duration": 0.77,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/book_flip_2.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"book",
+"flip"
+],
+"duration": 0.43,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/book_flip_3.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"book",
+"flip"
+],
+"duration": 0.23,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/book_open.ogg",
+"pack": "kenney-rpg",
+"category": "text_ui",
+"tags": [
+"book",
+"open"
+],
+"duration": 0.15,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/book_place_1.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"book",
+"place"
+],
+"duration": 0.28,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/book_place_2.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"book",
+"place"
+],
+"duration": 0.35,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/book_place_3.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"book",
+"place"
+],
+"duration": 0.26,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/chop.ogg",
+"pack": "kenney-rpg",
+"category": "impacts",
+"tags": [
+"chop"
+],
+"duration": 0.24,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/cloth_1.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"cloth"
+],
+"duration": 0.66,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/cloth_2.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"cloth"
+],
+"duration": 0.42,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/cloth_3.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"cloth"
+],
+"duration": 0.48,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/cloth_4.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"cloth"
+],
+"duration": 0.38,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/cloth_belt.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"cloth",
+"belt"
+],
+"duration": 0.72,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/cloth_belt_2.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"cloth",
+"belt"
+],
+"duration": 0.75,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/creak_1.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"creak"
+],
+"duration": 0.66,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/creak_2.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"creak"
+],
+"duration": 0.83,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/creak_3.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"creak"
+],
+"duration": 0.34,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/door_close_1.ogg",
+"pack": "kenney-rpg",
+"category": "text_ui",
+"tags": [
+"door",
+"close"
+],
+"duration": 0.68,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/door_close_2.ogg",
+"pack": "kenney-rpg",
+"category": "text_ui",
+"tags": [
+"door",
+"close"
+],
+"duration": 0.61,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/door_close_3.ogg",
+"pack": "kenney-rpg",
+"category": "text_ui",
+"tags": [
+"door",
+"close"
+],
+"duration": 0.71,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/door_close_4.ogg",
+"pack": "kenney-rpg",
+"category": "text_ui",
+"tags": [
+"door",
+"close"
+],
+"duration": 0.6,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/door_open_1.ogg",
+"pack": "kenney-rpg",
+"category": "text_ui",
+"tags": [
+"door",
+"open"
+],
+"duration": 0.92,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/door_open_2.ogg",
+"pack": "kenney-rpg",
+"category": "text_ui",
+"tags": [
+"door",
+"open"
+],
+"duration": 1.41,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/draw_knife_1.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"draw",
+"knife"
+],
+"duration": 0.4,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/draw_knife_2.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"draw",
+"knife"
+],
+"duration": 0.45,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/draw_knife_3.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"draw",
+"knife"
+],
+"duration": 0.48,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/drop_leather.ogg",
+"pack": "kenney-rpg",
+"category": "text_ui",
+"tags": [
+"drop",
+"leather"
+],
+"duration": 0.42,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/footstep_0.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"footstep"
+],
+"duration": 0.25,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/footstep_1.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"footstep"
+],
+"duration": 0.28,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/footstep_2.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"footstep"
+],
+"duration": 0.24,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/footstep_3.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"footstep"
+],
+"duration": 0.27,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/footstep_4.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"footstep"
+],
+"duration": 0.32,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/footstep_5.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"footstep"
+],
+"duration": 0.28,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/footstep_6.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"footstep"
+],
+"duration": 0.24,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/footstep_7.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"footstep"
+],
+"duration": 0.26,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/footstep_8.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"footstep"
+],
+"duration": 0.26,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/footstep_9.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"footstep"
+],
+"duration": 0.22,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/handle_coins.ogg",
+"pack": "kenney-rpg",
+"category": "money_sales",
+"tags": [
+"handle",
+"coins"
+],
+"duration": 0.85,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/handle_coins_2.ogg",
+"pack": "kenney-rpg",
+"category": "money_sales",
+"tags": [
+"handle",
+"coins"
+],
+"duration": 0.34,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/handle_small_leather.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"handle",
+"small",
+"leather"
+],
+"duration": 0.34,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/handle_small_leather_2.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"handle",
+"small",
+"leather"
+],
+"duration": 0.31,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/knife_slice.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"knife",
+"slice"
+],
+"duration": 0.6,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/knife_slice_2.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"knife",
+"slice"
+],
+"duration": 0.57,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/metal_click.ogg",
+"pack": "kenney-rpg",
+"category": "text_ui",
+"tags": [
+"metal",
+"click"
+],
+"duration": 0.45,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/metal_latch.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"metal",
+"latch"
+],
+"duration": 0.26,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/metal_pot_1.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"metal",
+"pot"
+],
+"duration": 1.46,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/metal_pot_2.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"metal",
+"pot"
+],
+"duration": 0.94,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/rpg/metal_pot_3.ogg",
+"pack": "kenney-rpg",
+"category": "office_creator",
+"tags": [
+"metal",
+"pot"
+],
+"duration": 0.91,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/computer_noise_000.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"computer",
+"noise"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/computer_noise_001.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"computer",
+"noise"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/computer_noise_002.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"computer",
+"noise"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/computer_noise_003.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"computer",
+"noise"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/door_close_000.ogg",
+"pack": "kenney-scifi",
+"category": "text_ui",
+"tags": [
+"door",
+"close"
+],
+"duration": 0.53,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/door_close_001.ogg",
+"pack": "kenney-scifi",
+"category": "text_ui",
+"tags": [
+"door",
+"close"
+],
+"duration": 0.53,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/door_close_002.ogg",
+"pack": "kenney-scifi",
+"category": "text_ui",
+"tags": [
+"door",
+"close"
+],
+"duration": 0.53,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/door_open_000.ogg",
+"pack": "kenney-scifi",
+"category": "text_ui",
+"tags": [
+"door",
+"open"
+],
+"duration": 0.53,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/door_open_001.ogg",
+"pack": "kenney-scifi",
+"category": "text_ui",
+"tags": [
+"door",
+"open"
+],
+"duration": 0.53,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/door_open_002.ogg",
+"pack": "kenney-scifi",
+"category": "text_ui",
+"tags": [
+"door",
+"open"
+],
+"duration": 0.53,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/engine_circular_000.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"engine",
+"circular"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/engine_circular_001.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"engine",
+"circular"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/engine_circular_002.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"engine",
+"circular"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/engine_circular_003.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"engine",
+"circular"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/engine_circular_004.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"engine",
+"circular"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/explosion_crunch_000.ogg",
+"pack": "kenney-scifi",
+"category": "impacts",
+"tags": [
+"explosion",
+"crunch"
+],
+"duration": 0.78,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/explosion_crunch_001.ogg",
+"pack": "kenney-scifi",
+"category": "impacts",
+"tags": [
+"explosion",
+"crunch"
+],
+"duration": 1.36,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/explosion_crunch_002.ogg",
+"pack": "kenney-scifi",
+"category": "impacts",
+"tags": [
+"explosion",
+"crunch"
+],
+"duration": 1.26,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/explosion_crunch_003.ogg",
+"pack": "kenney-scifi",
+"category": "impacts",
+"tags": [
+"explosion",
+"crunch"
+],
+"duration": 1.55,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/explosion_crunch_004.ogg",
+"pack": "kenney-scifi",
+"category": "impacts",
+"tags": [
+"explosion",
+"crunch"
+],
+"duration": 1.98,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/force_field_000.ogg",
+"pack": "kenney-scifi",
+"category": "magic_reveal",
+"tags": [
+"force",
+"field"
+],
+"duration": 0.95,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/force_field_001.ogg",
+"pack": "kenney-scifi",
+"category": "magic_reveal",
+"tags": [
+"force",
+"field"
+],
+"duration": 0.95,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/force_field_002.ogg",
+"pack": "kenney-scifi",
+"category": "magic_reveal",
+"tags": [
+"force",
+"field"
+],
+"duration": 0.96,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/force_field_003.ogg",
+"pack": "kenney-scifi",
+"category": "magic_reveal",
+"tags": [
+"force",
+"field"
+],
+"duration": 0.96,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/force_field_004.ogg",
+"pack": "kenney-scifi",
+"category": "magic_reveal",
+"tags": [
+"force",
+"field"
+],
+"duration": 0.95,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/impact_metal_000.ogg",
+"pack": "kenney-scifi",
+"category": "impacts",
+"tags": [
+"impact",
+"metal"
+],
+"duration": 0.63,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/impact_metal_001.ogg",
+"pack": "kenney-scifi",
+"category": "impacts",
+"tags": [
+"impact",
+"metal"
+],
+"duration": 0.69,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/impact_metal_002.ogg",
+"pack": "kenney-scifi",
+"category": "impacts",
+"tags": [
+"impact",
+"metal"
+],
+"duration": 0.47,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/impact_metal_003.ogg",
+"pack": "kenney-scifi",
+"category": "impacts",
+"tags": [
+"impact",
+"metal"
+],
+"duration": 0.78,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/impact_metal_004.ogg",
+"pack": "kenney-scifi",
+"category": "impacts",
+"tags": [
+"impact",
+"metal"
+],
+"duration": 0.39,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/laser_large_000.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"laser",
+"large"
+],
+"duration": 0.68,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/laser_large_001.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"laser",
+"large"
+],
+"duration": 0.72,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/laser_large_002.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"laser",
+"large"
+],
+"duration": 0.74,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/laser_large_003.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"laser",
+"large"
+],
+"duration": 0.72,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/laser_large_004.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"laser",
+"large"
+],
+"duration": 0.69,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/laser_retro_000.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"laser",
+"retro"
+],
+"duration": 0.24,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/laser_retro_001.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"laser",
+"retro"
+],
+"duration": 0.24,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/laser_retro_002.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"laser",
+"retro"
+],
+"duration": 0.26,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/laser_retro_003.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"laser",
+"retro"
+],
+"duration": 0.25,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/laser_retro_004.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"laser",
+"retro"
+],
+"duration": 0.28,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/laser_small_000.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"laser",
+"small"
+],
+"duration": 0.24,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/laser_small_001.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"laser",
+"small"
+],
+"duration": 0.25,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/laser_small_002.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"laser",
+"small"
+],
+"duration": 0.34,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/laser_small_003.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"laser",
+"small"
+],
+"duration": 0.3,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/laser_small_004.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"laser",
+"small"
+],
+"duration": 0.41,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/low_frequency_explosion_000.ogg",
+"pack": "kenney-scifi",
+"category": "impacts",
+"tags": [
+"low",
+"frequency",
+"explosion"
+],
+"duration": 2.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/low_frequency_explosion_001.ogg",
+"pack": "kenney-scifi",
+"category": "impacts",
+"tags": [
+"low",
+"frequency",
+"explosion"
+],
+"duration": 1.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/slime_000.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"slime"
+],
+"duration": 0.5,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/slime_001.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"slime"
+],
+"duration": 4.71,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_000.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_001.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_002.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_003.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_large_000.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine",
+"large"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_large_001.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine",
+"large"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_large_002.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine",
+"large"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_large_003.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine",
+"large"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_large_004.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine",
+"large"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_low_000.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine",
+"low"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_low_001.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine",
+"low"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_low_002.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine",
+"low"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_low_003.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine",
+"low"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_low_004.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine",
+"low"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_small_000.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine",
+"small"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_small_001.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine",
+"small"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_small_002.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine",
+"small"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_small_003.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine",
+"small"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/space_engine_small_004.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"space",
+"engine",
+"small"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/thruster_fire_000.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"thruster",
+"fire"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/thruster_fire_001.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"thruster",
+"fire"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/thruster_fire_002.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"thruster",
+"fire"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/thruster_fire_003.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"thruster",
+"fire"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/scifi/thruster_fire_004.ogg",
+"pack": "kenney-scifi",
+"category": "tension_hook",
+"tags": [
+"thruster",
+"fire"
+],
+"duration": 5.0,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/click1.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"click"
+],
+"duration": 0.1,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/click2.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"click"
+],
+"duration": 0.06,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/click3.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"click"
+],
+"duration": 0.09,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/click4.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"click"
+],
+"duration": 0.04,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/click5.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"click"
+],
+"duration": 0.03,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/mouseclick1.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"mouseclick"
+],
+"duration": 0.08,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/mouserelease1.wav",
+"pack": "kenney-ui",
+"category": "misc",
+"tags": [
+"mouserelease"
+],
+"duration": 0.09,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/rollover1.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"rollover"
+],
+"duration": 0.24,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/rollover2.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"rollover"
+],
+"duration": 0.06,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/rollover3.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"rollover"
+],
+"duration": 0.09,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/rollover4.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"rollover"
+],
+"duration": 0.12,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/rollover5.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"rollover"
+],
+"duration": 0.13,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/rollover6.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"rollover"
+],
+"duration": 0.18,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch1.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.32,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch10.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.39,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch11.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.31,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch12.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.07,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch13.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.04,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch14.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.03,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch15.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.27,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch16.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.38,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch17.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.35,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch18.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.44,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch19.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.39,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch2.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.32,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch20.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.36,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch21.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.42,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch22.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.37,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch23.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.4,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch24.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.28,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch25.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.38,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch26.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.24,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch27.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.29,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch28.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.22,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch29.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.31,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch3.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.37,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch30.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.37,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch31.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.45,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch32.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.45,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch33.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.51,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch34.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.48,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch35.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.34,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch36.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.33,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch37.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.31,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch38.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.43,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch4.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.43,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch5.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.31,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch6.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.36,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch7.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.21,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch8.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.34,
+"license": "CC0",
+"source": "kenney"
+},
+{
+"file": "kenney/ui/switch9.wav",
+"pack": "kenney-ui",
+"category": "text_ui",
+"tags": [
+"switch"
+],
+"duration": 0.26,
+"license": "CC0",
+"source": "kenney"
+}
+]
+}

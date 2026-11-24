@@ -26,6 +26,7 @@ Social post layout (carousel, post): `AR=45`, screen-space items `slidehead` (sa
 ## 3. Render, sound, finish
 ```
 QA=1 node render.mjs frames "0-<N-1>" 3          # AR=45|11|169 for other sizes; CAP=1 when Subtitles is ON
+python3 sfx.py kit --brand <brand>                 # brand sound signature into sfx/ (see sound.md)
 node events.mjs && python3 audio/autoscore.py && python3 audio/mix.py
 bash finish.sh "<brand>_<format>_<title>_v<N>" 916      # masters at −15 LUFS, encodes, QA
 ```

@@ -1,0 +1,242 @@
+{
+ "pop": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/interface/drop_002.wav",
+  "credit": null
+ },
+ "bubble-pop": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/interface/pluck_002.wav",
+  "credit": null
+ },
+ "click": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/ui/click1.wav",
+  "credit": null
+ },
+ "mouse-click": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/ui/mouseclick1.wav",
+  "credit": null
+ },
+ "tick": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/interface/tick_001.wav",
+  "credit": null
+ },
+ "check": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/interface/confirmation_001.wav",
+  "credit": null
+ },
+ "wrong": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/interface/error_006.wav",
+  "credit": null
+ },
+ "error": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/interface/error_003.wav",
+  "credit": null
+ },
+ "level-up": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/digital/power_up_3.ogg",
+  "credit": null
+ },
+ "toggle": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/interface/toggle_001.wav",
+  "credit": null
+ },
+ "scroll": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/interface/scroll_001.wav",
+  "credit": null
+ },
+ "highlight": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/interface/maximize_004.wav",
+  "credit": null
+ },
+ "counter": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/interface/select_001.wav",
+  "credit": null
+ },
+ "glitch": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/digital/low_random.ogg",
+  "credit": null
+ },
+ "portal": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/scifi/force_field_000.ogg",
+  "credit": null
+ },
+ "page-flip": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/rpg/book_flip_1.ogg",
+  "credit": null
+ },
+ "punch": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/impact/impact_punch_heavy_000.ogg",
+  "credit": null
+ },
+ "thud": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/impact/impact_soft_heavy_000.ogg",
+  "credit": null
+ },
+ "slam": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/rpg/door_close_1.ogg",
+  "credit": null
+ },
+ "glass-break": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/impact/impact_glass_heavy_001.ogg",
+  "credit": null
+ },
+ "gavel": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/impact/impact_wood_heavy_002.ogg",
+  "credit": null
+ },
+ "stamp": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/impact/impact_plank_medium_000.ogg",
+  "credit": null
+ },
+ "stomp": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/impact/impact_soft_heavy_002.ogg",
+  "credit": null
+ },
+ "boom": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/scifi/low_frequency_explosion_000.ogg",
+  "credit": null
+ },
+ "sub-drop": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/scifi/low_frequency_explosion_001.ogg",
+  "credit": null
+ },
+ "coin": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/rpg/handle_coins_2.ogg",
+  "credit": null
+ },
+ "coins-drop": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/rpg/handle_coins.ogg",
+  "credit": null
+ },
+ "payment-success": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/interface/confirmation_004.wav",
+  "credit": null
+ },
+ "bonk": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/impact/impact_tin_medium_003.ogg",
+  "credit": null
+ },
+ "power-up": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/digital/power_up_1.ogg",
+  "credit": null
+ },
+ "chime": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/impact/impact_bell_heavy_003.ogg",
+  "credit": null
+ },
+ "magic-wand": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/digital/pep_sound_1.ogg",
+  "credit": null
+ },
+ "creak": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/rpg/creak_1.ogg",
+  "credit": null
+ },
+ "steps": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/impact/footstep_concrete_000.ogg",
+  "credit": null
+ },
+ "like-tap": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/interface/select_002.wav",
+  "credit": null
+ },
+ "message-sent": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/interface/maximize_008.wav",
+  "credit": null
+ },
+ "dm-ping": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/interface/glass_001.wav",
+  "credit": null
+ },
+ "unlock": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/rpg/metal_click.ogg",
+  "credit": null
+ },
+ "static": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/scifi/computer_noise_000.ogg",
+  "credit": null
+ },
+ "mug-desk": {
+  "source": "kenney",
+  "status": "ok",
+  "original": "kenney/rpg/book_place_1.ogg",
+  "credit": null
+ }
+}

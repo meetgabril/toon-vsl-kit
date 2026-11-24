@@ -5,13 +5,17 @@
   get <id> [--dur S]                   put sfx/<id>.wav in the current project (library file → AI → synth)
   add <id> <file> --source <source-id> register a downloaded file in the shared library
   sources                              approved / not approved sources
+  browse <words>                       search every raw file in the packs (packs/index.json)
+  kit --brand <brand>                  put the brand's signature sounds in sfx/ (same sounds in every video)
+  signature <brand>                    show the brand's signature sounds
 Files live in ~/buzztorm-studio/library/sfx/files/<id>.wav (+ files/credits.json). autoscore.py and kinetic.py use
 sfx/<id>.wav from the project when it exists, else the built-in synth."""
 import json, os, sys, subprocess, shutil, urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 LIB = next((p for p in [os.path.expanduser('~/buzztorm-studio/library/sfx'), HERE] if os.path.exists(os.path.join(p, 'catalog.json'))), HERE)
 CAT = json.load(open(os.path.join(LIB, 'catalog.json'))); SRC = json.load(open(os.path.join(LIB, 'sources.json')))['sources']
-FILES = os.path.join(LIB, 'files'); CRED = os.path.join(FILES, 'credits.json')
+FILES = os.path.join(LIB, 'files'); CRED = os.path.join(FILES, 'credits.json'); PACKS = os.path.join(LIB, 'packs')
+BRANDS = os.path.join(LIB, '..', '..', 'brands')
 ALL = {e['id']: dict(e, category=c) for c, v in CAT['categories'].items() for e in v['effects']}
 
 def to_wav(src, dst, dur=None):
@@ -63,12 +67,30 @@ def get(i, dur=None):
     if lic.get('status') == 'credit': print(f"CREDIT REQUIRED in caption: {lic.get('credit')}", file=sys.stderr)
     print(json.dumps({'id': i, 'file': dst, 'how': how}))
 
+def sig(brand):
+    p = os.path.join(BRANDS, brand, 'sound-signature.json')
+    return json.load(open(p)) if os.path.exists(p) else sys.exit(f'no sound-signature.json for {brand!r}')
+
+def kit(brand):
+    s = sig(brand); os.makedirs('sfx', exist_ok=True); out = []
+    for ev, r in s['events'].items():
+        own = r.get('file') and os.path.join(BRANDS, brand, r['file'])
+        lib = os.path.join(FILES, f"{r['id']}.wav")
+        src = own if own and os.path.exists(own) else (lib if os.path.exists(lib) else None)
+        if src: shutil.copy(src, os.path.join('sfx', f'{ev}.wav')); out.append((ev, r['id'], 'brand' if src == own else 'library'))
+        else: out.append((ev, r['id'], 'synth'))
+    for i, r in s.get('signature', {}).items():
+        own = os.path.join(BRANDS, brand, r['file']) if r.get('file') else None
+        if own and os.path.exists(own): shutil.copy(own, os.path.join('sfx', f'{i}.wav')); out.append((i, i, 'brand ' + r.get('status', '')))
+    for ev, i, how in out: print(f'  {ev:<14} {i:<18} {how}')
+
 def add(i, f, source):
+    if not os.path.exists(f) and os.path.exists(os.path.join(PACKS, f)): f = os.path.join(PACKS, f)
     if i not in ALL: sys.exit(f'unknown effect {i!r} (add it to catalog.json first)')
     s = next((s for s in SRC if s['id'] == source), None) or sys.exit('unknown source; see: sfx.py sources')
     if s['status'] == 'no': sys.exit(f"REFUSED: {s['name']} — {s['notes']}")
     os.makedirs(FILES, exist_ok=True); to_wav(f, os.path.join(FILES, f'{i}.wav'))
-    c = credits(); c[i] = {'source': source, 'status': s['status'], 'original': os.path.basename(f),
+    c = credits(); c[i] = {'source': source, 'status': s['status'], 'original': os.path.relpath(f, PACKS) if f.startswith(PACKS) else os.path.basename(f),
                            'credit': 'Sound effects from zapsplat.com' if source == 'zapsplat-free' else None}
     json.dump(c, open(CRED, 'w'), indent=1); print(json.dumps({'added': i, 'status': s['status']}))
 
@@ -88,4 +110,14 @@ elif a[0] == 'get': get(a[1], float(a[a.index('--dur') + 1]) if '--dur' in a els
 elif a[0] == 'add': add(a[1], a[2], a[a.index('--source') + 1] if '--source' in a else sys.exit('--source required'))
 elif a[0] == 'sources':
     for s in SRC: print(f"{s['status']:<8} {s['name']:<45} {s['notes']}")
+elif a[0] == 'browse':
+    q = [w.lower() for w in a[1:]]; idx = json.load(open(os.path.join(PACKS, 'index.json')))['files']
+    for e in idx:
+        h = (e['file'] + ' ' + ' '.join(e['tags']) + ' ' + e['category']).lower()
+        if all(w in h for w in q): print(f"{e['file']:<55} {e['duration']:>5}s  {e['license']}")
+elif a[0] == 'kit': kit(a[a.index('--brand') + 1] if '--brand' in a else os.environ.get('BRAND') or sys.exit('--brand required'))
+elif a[0] == 'signature':
+    s = sig(a[1]); print(s.get('_about', ''))
+    for ev, r in s['events'].items(): print(f"  {ev:<14} → {r['id']:<18} {r.get('why', '')}")
+    for i, r in s.get('signature', {}).items(): print(f"  {i:<14} → {r.get('file') or '(not made yet)':<30} {r.get('status', '')}")
 else: print(__doc__)
