@@ -10,3 +10,5 @@ brands/**/*.mov
 brands/**/*.wav
 brands/**/*.mp3
 brands/**/*.gif
+# Hook Library example videos are kept on purpose (exact remakes)
+!library/hooks/*/source.mp4

@@ -1,0 +1,70 @@
+{
+ "fps": 30,
+ "size": [
+  1080,
+  1920
+ ],
+ "end": 7.0,
+ "pop": false,
+ "font": "baloo",
+ "bait": {
+  "video": "work/example.mp4",
+  "until": 2.1334
+ },
+ "cards": [
+  {
+   "t": 2.1334,
+   "text": "need a community?",
+   "bg": "paper",
+   "fg": "primary_dark",
+   "size": 150,
+   "fit": 0.88,
+   "y": 0.492
+  },
+  {
+   "t": 2.8667,
+   "text": "engaged.",
+   "bg": "primary_dark",
+   "fg": "paper",
+   "size": 320,
+   "fit": 0.86,
+   "group": "words",
+   "y": 0.487
+  },
+  {
+   "t": 3.7334,
+   "text": "loyal.",
+   "bg": "paper",
+   "fg": "primary_dark",
+   "size": 320,
+   "fit": 0.86,
+   "group": "words",
+   "y": 0.487
+  },
+  {
+   "t": 4.5667,
+   "text": "growing.",
+   "bg": "primary_dark",
+   "fg": "paper",
+   "size": 320,
+   "fit": 0.86,
+   "group": "words",
+   "y": 0.487
+  },
+  {
+   "t": 5.4334,
+   "text": "DM PLAN to start.",
+   "bg": "paper",
+   "fg": "primary_dark",
+   "size": 150,
+   "fit": 0.88,
+   "y": 0.497
+  }
+ ],
+ "audio": {
+  "source": "work/example.mp4"
+ },
+ "brand": "brand/brand-profile.json",
+ "out": "delivery/<brand>_reel_<title>_v1_9x16.mp4",
+ "_how": "Copy source.mp4 to work/example.mp4 in the project. Replace the 5 texts keeping each one's length close to the original (question ~15\u201317 chars, words 6\u20139 chars, CTA ~15\u201317 chars). Colours: paper / primary_dark from the brand."
+}

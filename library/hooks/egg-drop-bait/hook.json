@@ -4,8 +4,8 @@
   "category": "bait + kinetic text (open loop)",
   "added": "2026-11-24",
   "source": {
-    "file": "Need_a_website Clean. Modern. Advanced. DM me to start (web design reel)",
-    "notes": "Team-supplied example; deconstructed with deconstruct.py"
+    "file": "source.mp4",
+    "notes": "Team-supplied example (web designer reel). Rights stay with the owner. Organic posts only."
   },
   "duration_s": 7.15,
   "size": "9x16",
@@ -77,26 +77,97 @@
     "Words: one per card, same size, alternating primary/paper",
     "Question and CTA at about 40 % of the word size",
     "No voiceover, no music bed; one hit per card",
-    "CTA must be from cta.json; claims check applies"
+    "CTA must be from cta.json; claims check applies",
+    "Exact remake: match each text's length to the original's so sizes match; the three words share one size"
   ],
-  "build": {
-    "bait": "Engine: one beat with a custom fn that moves the object slowly with ease-out and a growing wobble (see story.js); render frames 0\u201351 at 24 fps with QA=1. Or a team-supplied real clip (kinetic.json bait.video).",
-    "cards": "kinetic.py with kinetic.json (brand colours and font; side margins for Reels)"
-  },
-  "example": {
-    "brand": "buzztorm",
-    "project": "ring-light-bait",
-    "texts": [
-      "need clients that stay?",
-      "community.",
-      "onboarding.",
-      "referrals.",
-      "Comment PLAN to start."
-    ]
-  },
   "variations": [
     "Bait objects: a coffee cup sliding, a phone vibrating toward the edge, a domino about to tip, a full glass on a moving table",
     "Swap the 3 words for 3 outcomes or 3 steps",
     "Use a brand character reaching for the object (cut before they catch it)"
-  ]
+  ],
+  "modes": {
+    "exact_remake": {
+      "default": true,
+      "what": "Same footage, same audio, same cuts (frames 64, 86, 112, 137, 163 at 30 fps), same layout; only the text, the brand colours and the brand font change.",
+      "build": "remake.json + source.mp4 \u2192 kinetic.py",
+      "example": {
+        "brand": "buzztorm",
+        "project": "egg-drop-remake",
+        "texts": [
+          "need a community?",
+          "engaged.",
+          "loyal.",
+          "growing.",
+          "DM PLAN to start."
+        ]
+      }
+    },
+    "own_version": {
+      "what": "The same mechanics with the brand's own bait (drawn by the engine): e.g. Buzztorm's ring light creeping to the edge.",
+      "build": "own_version_story.js + own_version_kinetic.json \u2192 render bait frames, then kinetic.py",
+      "example": {
+        "brand": "buzztorm",
+        "project": "ring-light-bait"
+      }
+    }
+  },
+  "measured": {
+    "fps": 30,
+    "frames": 210,
+    "cards": [
+      {
+        "frames": [
+          64,
+          85
+        ],
+        "role": "question",
+        "width": 0.9,
+        "center_y": 0.494
+      },
+      {
+        "frames": [
+          86,
+          111
+        ],
+        "role": "word",
+        "width": 0.73,
+        "center_y": 0.488
+      },
+      {
+        "frames": [
+          112,
+          136
+        ],
+        "role": "word",
+        "width": 0.86,
+        "center_y": 0.488
+      },
+      {
+        "frames": [
+          137,
+          162
+        ],
+        "role": "word",
+        "width": 0.86,
+        "center_y": 0.487
+      },
+      {
+        "frames": [
+          163,
+          209
+        ],
+        "role": "cta",
+        "width": 0.81,
+        "center_y": 0.497
+      }
+    ],
+    "colours": {
+      "light_bg": "#fdecce",
+      "dark_bg": "#002015",
+      "text_on_dark": "#fbd3ad",
+      "text_on_light": "#021c13"
+    },
+    "animation": "none (hard cuts)",
+    "audio": "original track kept"
+  }
 }

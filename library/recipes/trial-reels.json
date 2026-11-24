@@ -16,8 +16,19 @@
         "top": 220,
         "bottom": 340,
         "left": 60,
-        "right": 120
-      }
+        "right": 60
+      },
+      "blocks": [
+        {
+          "name": "Reels action buttons (like, comment, share, audio)",
+          "box": [
+            930,
+            1100,
+            1080,
+            1920
+          ]
+        }
+      ]
     }
   ],
   "length": {

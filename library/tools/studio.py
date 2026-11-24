@@ -196,6 +196,10 @@ def check_layout(R, pdir, recipe):
             if t['px'] < minb - 0.5 and (name, key) not in seen: R.add('layout', 'ERROR', f'{name}: text too small ({t["px"]:.0f}px < {minb}px): "{t["t"][:40]}"')
             if t['x'] < safe.get('left', 0) - 2 or t['y'] < safe.get('top', 0) - 2 or t['x'] + t['w'] > fw - safe.get('right', 0) + 2 or t['y'] + t['h'] > fh - safe.get('bottom', 0) + 2:
                 R.add('layout', 'ERROR', f'{name}: outside the {sid} safe zone: "{t["t"][:40]}"')
+            for blk in sizes.get(sid, {}).get('blocks', []):   # platform UI that covers part of the frame (e.g. Reels buttons)
+                bx0, by0, bx1, by1 = blk['box']
+                if t['x'] < bx1 and t['x'] + t['w'] > bx0 and t['y'] < by1 and t['y'] + t['h'] > by0:
+                    R.add('layout', 'ERROR', f'{name}: under the {blk["name"]}: "{t["t"][:40]}"')
             seen.add((name, key))
         for i, a in enumerate(T):
             for b in T[i + 1:]:
@@ -212,7 +216,7 @@ def check_files(R, pdir, brand, title, P, recipe):
     if not os.path.isdir(d) or not os.listdir(d): R.add('files', 'ERROR', 'delivery/ is empty'); return
     rx = re.compile(rf'^{re.escape(brand)}_[a-z0-9-]+_{re.escape(title)}_v\d+(_(9x16|4x5|1x1|16x9|letter))?(_\d\d)?\.(mp4|png|jpg|gif|apng|pdf|mp3|pptx|docx)$')
     for f in os.listdir(d):
-        if f.endswith(('.md', '.qa.json')): continue
+        if f.endswith(('.md', '.qa.json')) or f == 'manifest.json': continue
         if not rx.match(f): R.add('files', 'ERROR', f'bad file name: {f} (expected {brand}_<content>_{title}_v<N>_<size>.<ext>)')
         if f.endswith(('.mp4', '.png', '.jpg', '.pdf', '.gif')) and os.path.getsize(os.path.join(d, f)) == 0: R.add('files', 'ERROR', f'empty file: {f}')
     if not glob.glob(os.path.join(d, '*.md')) and recipe.get('copy'): R.add('files', 'ERROR', 'post.md (text to post) missing in delivery/')
