@@ -17,7 +17,8 @@ It copies the engine, the tools, the document templates, `formats.json` and the 
 | 6. Delivery | copy to `delivery/` with the naming rule, `post.md`, `studio.py check . --stage final`, package (`delivery.md`) | Publication |
 
 `make.sh` does in one call, with ≤ 12 lines of output: voice (cached; ElevenLabs when `ELEVENLABS_API_KEY` is set, else the newest `work/voice*` file) → timing → **layout preflight** (one rest frame and one end frame per shot, ~2 s, nothing rendered if a text fails) → render ‖ sound (sfx kit, score, `STYLE` sound, mix; cached) → master −15 LUFS + encode → video QA on the final (frozen/black stretches) → Quality Gate → contact sheet with the zone shaded red (`work/sheet.jpg`) → area map (`work/areas.txt`).
-- Sizes: `AR=916` (default) · `45` (ships 1080×1350) · `11` · `169`. Zones (`ZONE=`): default per size (`reel`, `feed`, `square`, `wide`); others `story`, `thumbnail`, `ad-vertical`, `ad-feed`, `ad-square`, `discord-event`. All in `library/engine/formats.json`.
+- Sizes: `AR=916` (default) · `45` (ships 1080×1350) · `11` · `169`. The zone comes from the project's recipe for that size (Story → `story`, ads → `ad-vertical`/`ad-feed`/`ad-square`, others `reel`, `feed`, `square`, `wide`); set `ZONE=` only to override (e.g. `thumbnail`). All in `library/engine/formats.json`.
+- Output: one `gate:` line (claims, facts, copy, CTA, layout; delivery files are judged at delivery), then errors and warnings. Exit code 2 when layout or copy fail: fix before showing anything. The preflight stops before rendering when a text fails (~2 s).
 - Preview = half size, 12 fps; final = full size, 24 fps. `SPECULATE=1` starts the final in the background right after the preview; `make.sh final` reuses it when nothing changed. Approvals do not change.
 - `CAP=0` turns the burnt-in captions off (on by default; they follow the zone and step around faces).
 - Visual styles (`STYLE=`): Standard `ink` · Old film `oldfilm` · Paper cut-out `paper` · Risograph `riso` · Noir `noir` · Comic `comic` · Pastel `pastel` · Dusk `dusk` · Freeze frame `freeze` · VHS `vhs`. Export `STYLE` before `make.sh`; the sound style follows.
@@ -33,6 +34,7 @@ Every text that must be read goes through the layout rails: `hud "TEXT" role=hoo
 AR=45 bash make.sh stills "60,132,204"            # posts/carousels (slides = beats)
 AR=169 ZONE=thumbnail bash make.sh stills 30      # YouTube thumbnail: a one-scene story.js
 ```
+Stills mode also exports PNGs at the size they ship to `out/` (`<name>_01.png`…; 4:5 → 1080×1350).
 **Thumbnails are a one-scene story**, not drawing code: the hero close on one side (`T R cu <mood>`), the promise as `hud "…" role=hook at=auto` (≤ 6 words), a set from the brand. The zone keeps the duration badge clear. The old `thumbXxx()` functions are reference only.
 Social post layout (carousel, post): screen-space items `slidehead` (same size on every slide), `swipe`, `say`, `cta` (`library/docs/FORMATS.md`). Covers: `COVER="TEXT"`. Transparent assets: `ALPHA=1` (PNG).
 

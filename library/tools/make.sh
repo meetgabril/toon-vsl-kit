@@ -8,17 +8,27 @@
 set -euo pipefail
 MODE=${1:-preview}
 case $MODE in shot|stills) ARG=${2:?"usage: make.sh $MODE <shot number | frames>"}; NAME=${3:-$(basename "$PWD")} ;; *) ARG=""; NAME=${2:-$(basename "$PWD")} ;; esac
-AR=${AR:-916}; [ -n "${ZONE:-}" ] && export SAFE=$ZONE || unset SAFE
+AR=${AR:-916}; export AR; ZONE=${ZONE:-$(python3 studio.py zone . "$AR" 2>/dev/null || true)}; export ZONE; [ -n "$ZONE" ] && export SAFE=$ZONE || unset SAFE
 LOG=work/make.log; : > "$LOG"; mkdir -p work out qa_pre
 t0=$(date +%s%N); lap() { echo "  $(( ($(date +%s%N) - t0) / 1000000 )) ms  $1"; }
 python3 -c "import json,sys;open('formats.js','w').write('// formats.js — generated from formats.json. Do not edit; edit formats.json.\nexport const FORMATS = '+json.dumps(json.load(open('formats.json')))+';\n')"
-HASH() { cat story.js script.md work/voice.hash formats.json vsl.js 2>/dev/null | sha1sum | cut -c1-12; echo -n "$AR${ZONE:-}"; }
+HASH() { cat story.js script.md work/voice.hash formats.json vsl.js toon.js brand.js cast.custom.js sets.custom.js audio/*.py 2>/dev/null | sha1sum | cut -c1-12; echo -n "$AR|${ZONE:-}|${STYLE:-}|${CAP:-1}"; }
+
+gate() {   # one line per check (delivery files are judged at delivery), then the errors; returns 1 when layout or copy fail
+  python3 studio.py check . --stage final > work/gate.txt 2>&1 || true
+  echo "  gate: $(grep -E '^  \[' work/gate.txt | grep -v ' files' | sed -E 's/^  \[(OK |FAIL)\] (.*)/\2 \1/; s/ OK $/ ok/; s/ FAIL$/ FAIL/' | tr '\n' ' ')(files at delivery)"
+  sed -n '/\[FAIL\] \(layout\|copy\|claims\|facts\|cta\)/,/^  \[/p' work/gate.txt | grep -E "ERROR" | head -6 || true
+  grep -E "^ +WARN" work/gate.txt | head -3 || true
+  ! grep -qE '\[FAIL\] (layout|copy)' work/gate.txt; }
 
 if [ "$MODE" = stills ]; then   # —— stills: one render at full size, gate, sheet ——
   D=stills/make; mkdir -p "$D"; find "$D" -type f -delete
-  AR=$AR QA=1 node render.mjs "$D" "$ARG" 2 >>"$LOG" 2>&1; lap "stills ($AR): $(ls "$D" | grep -c 'jpg$') frames in $D"
-  python3 studio.py check . --stage final > work/gate.txt 2>&1 || true; head -1 work/gate.txt; grep -E "ERROR" work/gate.txt | head -6 || true
-  python3 rails_sheet.py "$D" "$ARG" work/sheet.jpg; exit 0
+  AR=$AR QA=1 node render.mjs "$D" "$ARG" 2 >>"$LOG" 2>&1; touch "$D/REST"; lap "stills ($AR, zone ${ZONE:-default}): $(ls "$D" | grep -c 'jpg$') frames"
+  i=0; for f in $(ls "$D"/f*.jpg); do i=$((i + 1)); python3 -c "
+import sys; from PIL import Image; im = Image.open(sys.argv[1]).convert('RGB'); w, h = im.size
+size = {(1400, 1750): (1080, 1350)}.get((w, h), (w, h)); im.resize(size, Image.LANCZOS).save(sys.argv[2])" "$f" "out/${NAME}_$(printf %02d $i).png"; done
+  lap "exported $i PNG to out/ at the size they ship"
+  OK=0; gate || OK=2; python3 rails_sheet.py "$D" "$ARG" work/sheet.jpg; exit $OK
 fi
 
 # 1. voice: only when the script or the voices changed (cache = hash of script + brand voices)
@@ -46,13 +56,14 @@ import json; d = json.load(open('work/events.json')); ts = [b['t'] for b in d['b
 print(' '.join(str(round(t * 24)) for t in ts))")
 PRE=$(python3 - <<'EOF'
 import json; d = json.load(open('work/events.json')); ts = [b['t'] for b in d['beats']] + [d['dur']]
-fr = sorted({int(min(ts[i] + .5, (ts[i] + ts[i + 1]) / 2) * 24) for i in range(len(ts) - 1)} | {int((ts[i + 1] - .1) * 24) for i in range(len(ts) - 1)})
+fr = sorted({int(min(ts[i] + .9, (ts[i] + ts[i + 1]) / 2) * 24) for i in range(len(ts) - 1)} | {int((ts[i + 1] - .1) * 24) for i in range(len(ts) - 1)})   # after the pop-in, and the shot's last frame
 print(','.join(str(f) for f in fr))
 EOF
 )
 if [ "$MODE" != reuse ]; then
   find qa_pre -type f -delete
-  AR=${AR}p QA=1 node render.mjs qa_pre "$PRE" 2 >>"$LOG" 2>&1 || AR=$AR QA=1 node render.mjs qa_pre "$PRE" 2 >>"$LOG" 2>&1
+  AR=${AR}p QA=1 CAP=${CAP:-1} node render.mjs qa_pre "$PRE" 2 >>"$LOG" 2>&1 || AR=$AR QA=1 CAP=${CAP:-1} node render.mjs qa_pre "$PRE" 2 >>"$LOG" 2>&1
+  touch qa_pre/REST   # every preflight capture is a rest frame: the gate judges all of them
   if ! python3 studio.py check . --stage final > work/gate_pre.txt 2>&1 && grep -q "ERROR" <(sed -n '/\[FAIL\] layout/,/^  \[/p' work/gate_pre.txt); then
     lap "preflight: layout problems (nothing rendered)"; sed -n '/\[FAIL\] layout/,/^  \[/p' work/gate_pre.txt | grep ERROR | head -8; exit 2
   fi
@@ -64,7 +75,8 @@ fi
 N=$(python3 -c "import json;print(json.load(open('work/lips.json'))['N'])")
 case $MODE in
   final) DIR=frames; ARx=$AR; FR="0-$((N - 1))"; FPS=24 ;;
-  shot) [ "$(ls frames 2>/dev/null | grep -c jpg$)" -ge "$N" ] || { echo "  shot needs a full final first (make.sh final)"; exit 4; }; DIR=frames; ARx=$AR; set -- $SHOTS; S=$(eval echo \${$((ARG))}); E=$(eval echo \${$((ARG + 1))}); FR="$S-$((E - 1))"; FPS=24 ;;
+  shot) [ "$(ls frames 2>/dev/null | grep -c jpg$)" -ge "$N" ] || { echo "  shot needs a full final first (make.sh final)"; exit 4; }
+        NS=$(echo $SHOTS | wc -w); [ "$ARG" -ge 1 ] 2>/dev/null && [ "$ARG" -lt "$NS" ] || { echo "  shot must be 1–$((NS - 1))"; exit 4; }; DIR=frames; ARx=$AR; set -- $SHOTS; S=$(eval echo \${$((ARG))}); E=$(eval echo \${$((ARG + 1))}); FR="$S-$((E - 1))"; FPS=24 ;;
 
   reuse) DIR=frames; FPS=24 ;;
   *) DIR=prev; ARx=${AR}p; FR=$(python3 -c "print(','.join(map(str,range(0,$N,2))))"); FPS=12 ;;
@@ -94,14 +106,15 @@ if [ "$MODE" != reuse ]; then
 fi
 
 # 6. gate (newest capture = this render) + contact sheet with the zone shaded
-python3 studio.py check . --stage final > work/gate.txt 2>&1 || true; head -1 work/gate.txt; grep -E "ERROR" work/gate.txt | head -6 || true
+OK=0; gate || OK=2
 SH=$(python3 -c "print(','.join(str(int(x)//2*2 if '$DIR'=='prev' else int(x)) for x in '$PRE'.split(',')))")
 python3 rails_sheet.py "$DIR" "$SH" work/sheet.jpg
 lap "done"
 
 # 7. speculative final: start it now, while the preview is reviewed (approvals unchanged; discarded if anything changes)
-if [ "$MODE" = preview ] && [ "${SPECULATE:-0}" = 1 ]; then
+if [ "$MODE" = preview ] && [ "${SPECULATE:-0}" = 1 ] && [ "$OK" = 0 ]; then
   HASH > work/spec.hash; touch work/spec.lock
   ( AR=$AR ZONE=${ZONE:-} SPECULATE=0 INSPEC=1 bash make.sh final "$NAME" > work/spec.log 2>&1; rm -f work/spec.lock ) &
   disown; echo "  final started in the background (ready in ~45 s)"
 fi
+exit $OK

@@ -66,6 +66,14 @@ def cmd_new(a):
     print(json.dumps({'project_dir': pdir, 'record': rd, 'recipe': recipe, 'status': 'Brief'}))
 
 
+def cmd_zone(a):
+    """studio.py zone <project_dir> <AR> — the recipe's zone for that size (make.sh uses it when ZONE is not given)."""
+    pdir, ar = os.path.abspath(a[0]), a[1].rstrip('p'); P = find_record(pdir)[3]
+    R = load(os.path.join(STUDIO, 'library', 'recipes', (P.get('recipe') or 'reel') + '.json'), {})
+    F = load(os.path.join(STUDIO, 'library', 'engine', 'formats.json'), {})
+    print(next((s.get('zone') for s in R.get('sizes', []) if s.get('ar') == ar and s.get('zone')), F.get('default_zone', {}).get(ar, 'feed')))
+
+
 def forward_path(cur, new):
     """Shortest chain of forward statuses from cur to new (never backwards, never through Archived)."""
     from collections import deque
@@ -194,12 +202,14 @@ def check_screen_text(R, pdir):
             if not m: continue
             spoken += ' ' + re.sub(r'\{[^}]*\}|\[[^\]]*\]', ' ', m.group(1)); shown += re.findall(r'\{([^}]+)\}', m.group(1))
     st = os.path.join(pdir, 'story.js')
-    if os.path.exists(st): shown += re.findall(r'(?:hud|sign|title|stamp|pill|say|slidehead) "([^"]+)"', open(st, encoding='utf-8').read())
+    dialogue = []
+    if os.path.exists(st):
+        src = open(st, encoding='utf-8').read().replace('\\"', '"'); shown += re.findall(r'(?:hud|sign|title|stamp|pill|slidehead|label) "([^"]+)"', src); dialogue = re.findall(r'say "([^"]+)"', src)
     NUM = {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10, 'twelve': 12, 'hundred': 100}
     said = {int(n) for n in re.findall(r'\b\d+\b', spoken)} | {v for k, v in NUM.items() if re.search(r'\b' + k + r'\b', spoken, re.I)}
-    for t in dict.fromkeys(shown):
+    for t in dict.fromkeys(shown + dialogue):
         w = t.split()
-        if len(w) > 6: R.add('copy', 'ERROR', f'screen text "{t}": {len(w)} words (max 6 on screen; the voice carries the rest)')
+        if len(w) > 6 and t not in dialogue: R.add('copy', 'ERROR', f'screen text "{t}": {len(w)} words (max 6 on screen; the voice carries the rest)')
         for i, x in enumerate(w[:-1]):
             if re.fullmatch(r'\d+', x):
                 n, nxt = int(x), w[i + 1]
@@ -234,6 +244,13 @@ def check_layout(R, pdir, recipe):
     for f in files: dirs.setdefault(os.path.dirname(f), []).append(f)
     files = sorted(max(dirs.values(), key=lambda L: max(os.path.getmtime(x) for x in L)))
     sizes = {s['id']: zone_of(s) for s in recipe.get('sizes', [])}; minb = recipe.get('text', {}).get('min_px', {}).get('body', 40)
+    F = load(os.path.join(STUDIO, 'library', 'engine', 'formats.json'), {}); ZN = os.environ.get('ZONE')
+    def zone_for(sid):   # the zone the render used: $ZONE when it fits this size, else the recipe's size, else the size's default zone
+        z = F.get('zones', {}).get(ZN or '')
+        if z and z.get('canvas') == sid: return zone_of({'id': sid, 'zone': ZN})
+        if sid in sizes: return sizes[sid]
+        ar = (F.get('canvases', {}).get(sid) or {}).get('ar'); return zone_of({'id': sid, 'zone': F.get('default_zone', {}).get(ar, 'feed')})
+    all_rest = os.path.exists(os.path.join(os.path.dirname(files[0]), 'REST'))   # preflight and stills: every capture is a rest frame by construction
     fnum = lambda f: int(re.sub(r'\D', '', os.path.basename(f).split('.')[0]) or 0)
     nums = [fnum(f) for f in files]; step = min([b - a for a, b in zip(nums, nums[1:]) if b > a] or [1])
     REST = max(1, round(9 / step))   # pop-in lasts ~0.35 s: judge an item only after 9 frames on screen
@@ -241,22 +258,22 @@ def check_layout(R, pdir, recipe):
     def add(kind, key, n, msg): issues.setdefault((kind, key), [msg, []])[1].append(n)
     for f in files:
         n = fnum(f); Q = load(f, {}); cw, ch = Q.get('canvas', [1080, 1920]); sid = SIZES.get((int(cw), int(ch)), '9x16'); k = FINAL_W.get(sid, 1080) / cw
-        safe = sizes.get(sid, {}).get('safe', {'top': 0, 'bottom': 0, 'left': 0, 'right': 0}); fw, fh = cw * k, ch * k
+        Zs = zone_for(sid); safe = Zs.get('safe') or {'top': 0, 'bottom': 0, 'left': 0, 'right': 0}; fw, fh = cw * k, ch * k
         T = [dict(t, x=t['x'] * k, y=t['y'] * k, w=t['w'] * k, h=t['h'] * k, px=t['px'] * k) for t in Q.get('texts', []) if not t['item'].startswith(('body:', 'obst:'))]
         PL = [dict(t, x=t['x'] * k, y=t['y'] * k, w=t['w'] * k, h=t['h'] * k) for t in Q.get('texts', []) if t['item'].startswith('obst:plate:')]   # screen-text plates: no other text may sit on them
         rest = []
         for t in T:
             key = (t['item'].split(':')[0], t['t'][:40]); run = seen_at.get(key)
             run = run if run and run[1] == n - step else [n, n]; run[1] = n; seen_at[key] = run
-            if ((n - run[0]) / step >= REST or step >= 9) and not t['item'].startswith(IGNORE_ITEMS): rest.append((key, t))   # sparse captures (preflight) are rest frames by construction
+            if (all_rest or (n - run[0]) / step >= REST) and not t['item'].startswith(IGNORE_ITEMS): rest.append((key, t))   # dense renders: after the pop-in; preflight/stills folders carry a REST marker
         for key, t in rest:
             if t['px'] < minb - 0.5: add('small', key, n, f'text too small ({t["px"]:.0f}px < {minb}px)')
             if t['x'] < safe.get('left', 0) - 2 or t['y'] < safe.get('top', 0) - 2 or t['x'] + t['w'] > fw - safe.get('right', 0) + 2 or t['y'] + t['h'] > fh - safe.get('bottom', 0) + 2:
                 add('safe', key, n, f'outside the {sid} safe zone')
-            for cr in sizes.get(sid, {}).get('crops', []):
+            for cr in Zs.get('crops', []):
                 cx0, cy0, cx1, cy1 = cr['box']
                 if t['x'] < cx0 or t['y'] < cy0 or t['x'] + t['w'] > cx1 or t['y'] + t['h'] > cy1: add('feed', key, n, f'cut in the {cr["name"]}')
-            for blk in sizes.get(sid, {}).get('blocks', []):
+            for blk in Zs.get('blocks', []):
                 bx0, by0, bx1, by1 = blk['box']
                 if t['x'] < bx1 and t['x'] + t['w'] > bx0 and t['y'] < by1 and t['y'] + t['h'] > by0: add('block', key, n, f'under the {blk["name"]}')
         for i, (ka, a) in enumerate(rest):
@@ -350,4 +367,4 @@ def cmd_plan(a):
 
 if __name__ == '__main__':
     if len(sys.argv) < 3 and not (len(sys.argv) == 2 and sys.argv[1] in ('-h', '--help')): sys.exit(__doc__)
-    {'new': cmd_new, 'status': cmd_status, 'check': cmd_check, 'package': cmd_package, 'list': cmd_list, 'plan': cmd_plan}.get(sys.argv[1], lambda a: sys.exit(__doc__))(sys.argv[2:])
+    {'new': cmd_new, 'status': cmd_status, 'check': cmd_check, 'package': cmd_package, 'list': cmd_list, 'plan': cmd_plan, 'zone': cmd_zone}.get(sys.argv[1], lambda a: sys.exit(__doc__))(sys.argv[2:])
