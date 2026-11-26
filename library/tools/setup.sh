@@ -11,6 +11,7 @@ B="$ROOT/brands/$BRAND_ID"
 
 mkdir -p "$P"/{work,music,stills,out,ref,brand,delivery}
 cp -r "$KIT"/engine/. "$P"/
+python3 -c "import json,sys;open(sys.argv[2],'w').write('// formats.js — generated from formats.json. Do not edit; edit formats.json.\nexport const FORMATS = '+json.dumps(json.load(open(sys.argv[1])))+';\n')" "$P/formats.json" "$P/formats.js"
 cp "$KIT"/example/buzztorm_vsl.js "$P"/example_buzztorm_vsl.js   # reference only; the film = vsl.js + story.js
 mkdir -p "$P"/audio && cp "$KIT"/audio/*.py "$P"/audio/
 cp "$KIT"/tools/*.py "$KIT"/tools/*.sh "$KIT"/tools/*.mjs "$P"/ && rm -f "$P"/setup.sh

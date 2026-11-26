@@ -12,36 +12,21 @@
       "h": 1080,
       "ar": "169",
       "id": "16x9",
-      "safe": {
-        "top": 60,
-        "bottom": 60,
-        "left": 90,
-        "right": 90
-      }
+      "zone": "wide"
     },
     {
       "w": 1080,
       "h": 1350,
       "ar": "45",
       "id": "4x5",
-      "safe": {
-        "top": 64,
-        "bottom": 64,
-        "left": 64,
-        "right": 64
-      }
+      "zone": "feed"
     },
     {
       "w": 1080,
       "h": 1920,
       "ar": "916",
       "id": "9x16",
-      "safe": {
-        "top": 220,
-        "bottom": 340,
-        "left": 60,
-        "right": 120
-      }
+      "zone": "reel"
     }
   ],
   "length": {
@@ -58,7 +43,7 @@
     {
       "id": "structure",
       "required": true,
-      "rule": "hook \u2192 why it matters \u2192 3 steps \u2192 example with a character \u2192 today's action \u2192 quiz"
+      "rule": "hook → why it matters → 3 steps → example with a character → today's action → quiz"
     },
     {
       "id": "quiz",
@@ -68,7 +53,7 @@
     {
       "id": "teaser",
       "required": true,
-      "rule": "A 9:16 teaser reel (15\u201330 s) that sells the lesson"
+      "rule": "A 9:16 teaser reel (15–30 s) that sells the lesson"
     }
   ],
   "text": {

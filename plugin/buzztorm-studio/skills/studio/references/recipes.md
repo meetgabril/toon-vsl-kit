@@ -18,7 +18,7 @@ Recipe fields: `family`, `goals`, `render` (video · stills · meme · pdf · as
 - Accounts posting mostly unoriginal content (reposts, untransformed templates) stop being recommended → only the brand's own drawings.
 - Carousels: up to 20 slides organic (10 in ads); 7–10 for teaching, 3–5 for emotional stories.
 - Hashtags: max 5 on Instagram posts and Reels.
-- Reels organic safe zone used here: top 220, bottom 340, sides 60/120 px; Meta ads 9:16: top 14 %, bottom 35 %, sides 6 % (269/672/65 px at 1080×1920).
+- Sizes name a `zone` from `library/engine/formats.json` (the one source for margins, platform UI and preview crops). Reels organic `reel`: top 250, bottom 340, sides 64, plus the buttons rail; Meta ads 9:16 `ad-vertical`: 270/672/65 px at 1080×1920.
 - Stories: leave 250 px top and 340 px bottom for UI and the sticker.
 - Micro-lessons: one objective, 2–5 minutes, recall questions after.
 - Lead magnets: short and specific beats long and generic (checklist with a number in the title).

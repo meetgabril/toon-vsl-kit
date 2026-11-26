@@ -14,12 +14,7 @@
       "h": 1350,
       "ar": "45",
       "id": "4x5",
-      "safe": {
-        "top": 64,
-        "bottom": 64,
-        "left": 64,
-        "right": 64
-      }
+      "zone": "feed"
     }
   ],
   "count": {
@@ -30,7 +25,7 @@
         7,
         9
       ],
-      "note": "7\u201310 slides for teaching; 3\u20135 for emotional stories"
+      "note": "7–10 slides for teaching; 3–5 for emotional stories"
     },
     "cta_slide": true,
     "max_total": 20

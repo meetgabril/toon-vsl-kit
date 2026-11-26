@@ -50,6 +50,9 @@ Encode any format with ffmpeg the way finish.sh does (scale `frames11` to 1080×
 | Character sheet | 2560×1440 | `node shoot_sheet2.mjs cast:<KEY>` |
 | Sticker / transparent PNG | any | skip the background fill and `post()`; the PNG keeps alpha |
 
+## One source of sizes and safe zones
+`library/engine/formats.json`: canvases, platform zones (`reel`, `story`, `feed`, `square`, `wide`, `thumbnail`, ads…), platform UI that covers the frame (Reels buttons, YouTube duration badge), preview crops (4:5 feed) and the type roles. The engine, the Quality Gate and `make.sh` read it; recipes only name a `zone`. Change a margin there, never in code.
+
 ## Social post layout (Post, Carousel) — Instagram standard
 Render slides as beats at `AR=45` (1080×1350) and use the screen-space items, which stay fixed and readable whatever the scene:
 - `slidehead` on every slide, with the **same `size=` on every slide** (68 by default) and `n=`/`of=`. Keep titles to 19 characters or fewer so none shrinks.

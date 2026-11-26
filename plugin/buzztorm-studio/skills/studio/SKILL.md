@@ -59,6 +59,10 @@ Follow `references/menus.md` exactly, then the reference for the format's family
 
 Engine documentation: `~/buzztorm-studio/library/docs/` (read VIRAL.md, STYLE.md and STORY.md before any script or storyboard).
 
+## One process, every format (video, stills, thumbnails)
+Content (script with `{screen text}`) → first storyboard (`director.py`) → `make.sh preview` (layout preflight, render, sound, gate, contact sheet in one call; final starts in the background) → `make.sh final` → delivery. Same commands for every size (`AR=`, `ZONE=`); readable text is always `hud … at=auto` (roles, not pixels); thumbnails are a one-scene story. Details: `references/production.md`.
+Work lean: one piece per session; independent commands in one turn; short outputs; think hard on idea, hook and script, not on running steps; the ElevenLabs key comes from the environment, never from the chat.
+
 ## Non-negotiable
 - Never show the user a script, storyboard, file or text that has not passed the Quality Gate for its stage (`--stage script` before Script review, `--stage final` before Ready for approval). Fix and re-run until it passes; tell the user one line: "Quality check passed (6/6)".
 - Every piece has a goal and an idea; every piece except pure Grow content has an offer and a CTA from the Brand Brain.

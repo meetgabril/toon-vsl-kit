@@ -14,7 +14,7 @@ def lines(path):
     out = []
     for l in open(path):
         m = re.match(r'^([A-Z]):\s*(.+)$', l.strip())
-        if m: out.append((m.group(1), m.group(2)))
+        if m: out.append((m.group(1), re.sub(r'\s*\{[^}]*\}', '', m.group(2)).strip()))   # {on-screen text} is never spoken
     return out
 
 

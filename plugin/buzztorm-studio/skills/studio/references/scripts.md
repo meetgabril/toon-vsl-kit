@@ -37,3 +37,9 @@ History and number lines must reference `brain/facts.json`: add `> FACTS: id` un
 Plain spoken English, numbers as words in voiceovers, ≤ 15 words per sentence, never describe what is already on screen, narrator + hero, one emotion tag per line for ElevenLabs v3 (`[excited] [warm] [curious] [whispers] [sighs] [laughs] [sarcastic] [serious] [shouting] [mysterious] [deadpan] [dry] [proud] [amused]`), about 150 words per minute.
 
 Before Script review: `python3 script.py check script.md` (hook, long sentences, loop) and `python3 studio.py check . --stage script` (claims, facts, copy, CTA). Both must pass.
+
+## Screen text and directions in the script
+- Put the words that appear on screen in braces at the end of the line: `D: [deadpan] Tony goes live at three in the morning. {LIVE 3 AM}`. Braces are never spoken (voice and timing ignore them). ≤ 6 words, same numbers as the voice, singular with 1.
+- The first `{…}` becomes the hook text, the last line's `{…}` the series/CTA card; `director.py` writes the first storyboard from these.
+- Directions for one shot: a line `@ set: 'gym', cam: 'cu:T'` right after the voice line (never spoken).
+

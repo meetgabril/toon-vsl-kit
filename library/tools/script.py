@@ -32,7 +32,7 @@ def parse(path):
     return meta, voices, lines
 
 def clean(t):  # what is actually spoken
-    t = TAG.sub(' ', t); t = re.sub(r'\s+', ' ', t).strip(); return t
+    t = TAG.sub(' ', t); t = re.sub(r'\{[^}]*\}', ' ', t); t = re.sub(r'\s+', ' ', t).strip(); return t   # [tags] and {on-screen text} are not spoken
 
 def main():
     cmd, path = sys.argv[1], sys.argv[2]; os.makedirs('work', exist_ok=True)

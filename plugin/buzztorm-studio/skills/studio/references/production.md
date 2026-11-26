@@ -1,49 +1,53 @@
-# Production (video and images)
+# Production (video and images): one process, every size
 
 `$S` = `~/buzztorm-studio`. Run every command inside the project folder (`~/studio/<brand>/<title>`), created by:
 ```
 python3 $S/library/tools/studio.py new <brand> <title> <recipe> --goal <goal> [--offer <id>] [--parent <title>]
 ```
-It copies the engine, the tools, the document templates and the brand (profile, Brand Brain, characters, backgrounds) and writes the project record (status Brief). Move status with `studio.py status <brand>/<title> --set "<Status>" [--note …]` at every step.
+It copies the engine, the tools, the document templates, `formats.json` and the brand, and writes the project record (status Brief). Move status with `studio.py status <brand>/<title> --set "<Status>" [--note …]` at every step.
 
-## 1. Script → voice
-Write `script.md` (format: `library/example/script_example.md`; voice lines from the Brand Profile characters; `> FACTS:` line when needed). Gate: `--stage script`. Script review.
-- Voice recorded for you (ELEVENLABS_API_KEY set and every character has `voice_id`): `python3 voice.py script.md` → `work/voice_api.mp3`.
-- Otherwise: `python3 script.py el script.md`, send the dialogue text and voice descriptions, status "Waiting for voiceover", wait for the upload.
-- Then `python3 ingest.py <audio> script.md`. If words changed while recording, update `script.md` and run it again.
+## The process (same for Reel, Story, 16:9, 4:5, posts, carousels, thumbnails)
+| Step | Command | Approval |
+|---|---|---|
+| 1. Content | write `script.md` with `{screen text}` (`scripts.md`); `python3 script.py check script.md` and `studio.py check . --stage script` | Script review |
+| 2. First storyboard | `python3 director.py script.md story.js`, then edit 2–3 shots at most (`@ key: value` lines in the script, or story.js) | — |
+| 3. Preview | `SPECULATE=1 bash make.sh preview` (add `AR=` / `ZONE=` for other sizes) → look at `work/sheet.jpg` yourself, send the preview MP4 | Preview review |
+| 4. Changes | edit, then `bash make.sh preview` again, or on the final `bash make.sh shot <n>` (only shot n is re-rendered) | — |
+| 5. Final | `bash make.sh final` (ready at once when the speculative final matches) | Ready for approval |
+| 6. Delivery | copy to `delivery/` with the naming rule, `post.md`, `studio.py check . --stage final`, package (`delivery.md`) | Publication |
+
+`make.sh` does in one call, with ≤ 12 lines of output: voice (cached; ElevenLabs when `ELEVENLABS_API_KEY` is set, else the newest `work/voice*` file) → timing → **layout preflight** (one rest frame and one end frame per shot, ~2 s, nothing rendered if a text fails) → render ‖ sound (sfx kit, score, `STYLE` sound, mix; cached) → master −15 LUFS + encode → video QA on the final (frozen/black stretches) → Quality Gate → contact sheet with the zone shaded red (`work/sheet.jpg`) → area map (`work/areas.txt`).
+- Sizes: `AR=916` (default) · `45` (ships 1080×1350) · `11` · `169`. Zones (`ZONE=`): default per size (`reel`, `feed`, `square`, `wide`); others `story`, `thumbnail`, `ad-vertical`, `ad-feed`, `ad-square`, `discord-event`. All in `library/engine/formats.json`.
+- Preview = half size, 12 fps; final = full size, 24 fps. `SPECULATE=1` starts the final in the background right after the preview; `make.sh final` reuses it when nothing changed. Approvals do not change.
+- `CAP=0` turns the burnt-in captions off (on by default; they follow the zone and step around faces).
+- Visual styles (`STYLE=`): Standard `ink` · Old film `oldfilm` · Paper cut-out `paper` · Risograph `riso` · Noir `noir` · Comic `comic` · Pastel `pastel` · Dusk `dusk` · Freeze frame `freeze` · VHS `vhs`. Export `STYLE` before `make.sh`; the sound style follows.
+
 Music-only videos: hand-written `work/timing.json` and closed `lips.json` (`library/docs/FORMATS.md`).
+Voice recorded by the team: `python3 script.py el script.md`, send the dialogue and voice descriptions, status "Waiting for voiceover", put the file in `work/` and run `make.sh`.
 
-## 2. Storyboard
-`story.js`, one scene per sentence (`library/docs/STORY.md`). Brand characters, backgrounds and props only. Every number and screen answers its line literally.
-Contact sheet with layout capture:
+## Text on screen: roles, not pixels
+Every text that must be read goes through the layout rails: `hud "TEXT" role=hook|label|note at=auto` (`library/docs/STORY.md`). The engine places it in the format's safe zone, away from faces (strong), bodies, set signs and panels, platform UI (never) and preview crops (weak); when it would touch a face it wraps to two lines in the free side column. Size comes from the role and the format. `at=top|upper|mid|lower`, `dx=`, `tilt=`, `bg=` remain available. Never hand-place pixels for readable text; `sign`, `pill`, `stamp` are scenery that moves with the camera.
+
+## Stills (post, carousel, story frames, covers, thumbnails)
 ```
-QA=1 node render.mjs stills/a "$(python3 shot_stills.py 0.5)" 3 && python3 sheet.py stills/a stills/a.jpg 8 220
+AR=45 bash make.sh stills "60,132,204"            # posts/carousels (slides = beats)
+AR=169 ZONE=thumbnail bash make.sh stills 30      # YouTube thumbnail: a one-scene story.js
 ```
-Look at it yourself, then `python3 studio.py check . --stage final` must show the layout check OK (ignore the files check until delivery). Then Storyboard review.
-
-Social post layout (carousel, post): `AR=45`, screen-space items `slidehead` (same size on every slide), `swipe`, `say`, `cta` (`library/docs/FORMATS.md` → Social post layout). Story frames: `SAFE=story`. Reels: `SAFE=reel`. Covers: `COVER="TEXT"`. Transparent assets: `ALPHA=1` (PNG).
-
-## 3. Render, sound, finish
-```
-QA=1 node render.mjs frames "0-<N-1>" 3          # AR=45|11|169 for other sizes; CAP=1 when Subtitles is ON
-python3 sfx.py kit                                  # THE studio sound into sfx/: signature, gags, leitmotifs, places (see library/docs/SOUND.md)
-node events.mjs && python3 audio/autoscore.py
-STYLE=<visual style> python3 audio/stylize.py      # the style's sound on music + SFX (voice untouched); see library/docs/SOUND.md
-python3 audio/mix.py
-bash finish.sh "<brand>_<format>_<title>_v<N>" 916      # masters at −15 LUFS, encodes, QA
-```
-Long renders in the background; poll. Move outputs into `delivery/` with the naming rule (`delivery.md`), write `delivery/post.md`, run the gate `--stage final`, then Ready for approval.
-
-Visual styles (`STYLE=`): Standard `ink` · Old film `oldfilm` · Paper cut-out `paper` · Risograph `riso` · Noir `noir` · Comic `comic` · Pastel `pastel` · Dusk `dusk` · Freeze frame `freeze` · VHS `vhs`.
-
-## Stills (post, carousel, story, covers, thumbnails)
-Render beats as stills (`QA=1 AR=45 node render.mjs stills/x "<frames>" 3`), or a `thumbXxx()` design with `shoot_thumb.mjs`. Downscale 4:5 renders (1400×1750) to 1080×1350 when exporting.
+**Thumbnails are a one-scene story**, not drawing code: the hero close on one side (`T R cu <mood>`), the promise as `hud "…" role=hook at=auto` (≤ 6 words), a set from the brand. The zone keeps the duration badge clear. The old `thumbXxx()` functions are reference only.
+Social post layout (carousel, post): screen-space items `slidehead` (same size on every slide), `swipe`, `say`, `cta` (`library/docs/FORMATS.md`). Covers: `COVER="TEXT"`. Transparent assets: `ALPHA=1` (PNG).
 
 ## Bait + kinetic text reels (Hook Library)
 `python3 kinetic.py kinetic.json`: bait frames (engine or a team clip) + one-word cards in the brand colours and font, pop-in, one hit per card, silent tail for the loop; writes the layout capture per card. See `hooks.md`.
 
 ## Hook test (Trial reels)
-Render the full reel with hook A; write `story_b.js`/`story_c.js` that differ only until the hook ends; render only that range for each and splice with the shared body. Deliver 3 videos and 3 post copies for non-followers. After 72 h: Projects → Log results → graduate the winner and add its hook to "Proven" in `hooks.md`.
+Render the full reel with hook A; write `story_b.js`/`story_c.js` that differ only until the hook ends; `make.sh shot 1` for each and splice with the shared body. Deliver 3 videos and 3 post copies for non-followers. After 72 h: Projects → Log results → graduate the winner and add its hook to "Proven" in `hooks.md`.
 
 ## Make another format (from an approved piece)
-Each new format is a new project with `--parent <title>` reusing the approved script, facts, CTA and scenes: carousel from scenes · story teaser · trial reels · 16:9 (`AR=169`, tune `Y0`) · 4:5 feed video (`AR=45`) · short cut-downs · Discord announcement · sticker · soundboard clip · checklist or lesson from the same idea.
+Same project, same story: `AR=169 bash make.sh preview` (16:9), `AR=45` (4:5 feed video), `AR=169 ZONE=thumbnail bash make.sh stills <frame>` (thumbnail). Texts and captions re-place themselves for the size. A new project with `--parent <title>` only when the content changes (carousel from scenes, story teaser, trial reels, cut-downs, Discord, sticker, checklist or lesson from the same idea).
+16:9 framing: the wide window looks at the vertical composition; check feet and set tops on the sheet and tune `Y0` per shot only when needed.
+
+## Working fast (tokens and time)
+- One piece per session; studies and analysis in another session.
+- Independent commands in the same turn; read outputs only from `make.sh` (they are short).
+- Think hard on idea, hook and script; run production steps without long reasoning.
+- The API key lives in the environment (`ELEVENLABS_API_KEY`), never in the chat.

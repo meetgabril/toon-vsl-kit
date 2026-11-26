@@ -13,12 +13,7 @@
       "h": 1080,
       "ar": "169",
       "id": "16x9",
-      "safe": {
-        "top": 60,
-        "bottom": 60,
-        "left": 90,
-        "right": 90
-      }
+      "zone": "wide"
     }
   ],
   "length": {

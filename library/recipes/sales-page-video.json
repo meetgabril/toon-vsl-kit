@@ -12,24 +12,14 @@
       "h": 1080,
       "ar": "169",
       "id": "16x9",
-      "safe": {
-        "top": 60,
-        "bottom": 60,
-        "left": 90,
-        "right": 90
-      }
+      "zone": "wide"
     },
     {
       "w": 1080,
       "h": 1920,
       "ar": "916",
       "id": "9x16",
-      "safe": {
-        "top": 220,
-        "bottom": 340,
-        "left": 60,
-        "right": 120
-      }
+      "zone": "reel"
     }
   ],
   "length": {
@@ -41,7 +31,7 @@
     {
       "id": "vsl_arc",
       "required": true,
-      "rule": "hook \u2192 problem \u2192 agitation \u2192 reframe \u2192 mechanism \u2192 proof \u2192 offer \u2192 risk reversal \u2192 CTA \u2192 closing joke"
+      "rule": "hook → problem → agitation → reframe → mechanism → proof → offer → risk reversal → CTA → closing joke"
     },
     {
       "id": "offer",

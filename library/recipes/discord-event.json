@@ -11,12 +11,7 @@
       "id": "event",
       "w": 1600,
       "h": 800,
-      "safe": {
-        "top": 200,
-        "bottom": 200,
-        "left": 400,
-        "right": 400
-      }
+      "zone": "discord-event"
     }
   ],
   "parts": [

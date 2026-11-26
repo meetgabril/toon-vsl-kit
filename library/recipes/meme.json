@@ -12,24 +12,14 @@
       "h": 1350,
       "ar": "45",
       "id": "4x5",
-      "safe": {
-        "top": 64,
-        "bottom": 64,
-        "left": 64,
-        "right": 64
-      }
+      "zone": "feed"
     },
     {
       "w": 1080,
       "h": 1080,
       "ar": "11",
       "id": "1x1",
-      "safe": {
-        "top": 64,
-        "bottom": 64,
-        "left": 64,
-        "right": 64
-      }
+      "zone": "square"
     }
   ],
   "parts": [

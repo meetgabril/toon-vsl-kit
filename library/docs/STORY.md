@@ -56,6 +56,7 @@ Actors face the centre automatically. Lip sync, blinks, breathing and head nods 
 
 | type | example | notes |
 |---|---|---|
+| `hud` | `hud "LIVE 3 AM" role=hook at=auto bg=red` | **default for any text that must be read**: screen space (the camera never moves it), size from the role (`hook`, `label`, `note`; scaled per format, never below the minimum), `at=auto` picks the free area in the format's safe zone away from faces, bodies, set signs and platform UI, and wraps to two lines in a free side column when needed. Also `at=top\|upper\|mid\|lower`, `dx=`, `tilt=`, `bg=` |
 | `title` | `title "VIRAL LOOP" size=120 color=gold` | big outlined Bungee title |
 | `sign` | `sign "12 WEEKS" bg=green UL` | plate with a drop shadow |
 | `pill` | `pill "ADS" bg=violet x=420 y=1000 @ads` | label |
@@ -84,6 +85,7 @@ Actors face the centre automatically. Lip sync, blinks, breathing and head nods 
 Every item gets its sound automatically: pop, stamp, ticks + ding, notification dings, cheer, buzz and so on. Add `silent` to mute one.
 
 ## Layout tips (free areas per set)
+With `hud … at=auto` the engine reads these areas itself; `work/areas.txt` (written by `make.sh`) lists, per shot, which areas are free and what takes the others. New sets should leave at least one area free for text.
 - **studio**: the poster sits top right (x 700–1040, y 0–300). Put text top left or in the middle.
 - **casino**: the ads machine sits at x 640–1000. Keep text on the left.
 - **content/night**: shelf top left and a sign at the right. Use `top` or the middle.

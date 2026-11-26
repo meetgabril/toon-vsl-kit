@@ -12,7 +12,8 @@ import { peep, folk2, bfaWoman, transformFig, ARMS, CAST, arm2, folkLook } from 
 import { loadPeeps, takePending } from './peeps.js';
 import { hand } from './chars.js';
 import './cast.custom.js';   // your own characters (addCast) — see CHARACTERS.md
-import { STORY } from './story.js';         // the film: beats → shots (docs/STORY.md)
+import { STORY } from './story.js';
+import { FORMATS } from './formats.js';   // generated from formats.json by setup.sh / make.sh         // the film: beats → shots (docs/STORY.md)
 
 export const FPS = 24;
 let LIPS = null;
@@ -22,17 +23,25 @@ export async function load() { LIPS = await (await fetch('/work/lips.json')).jso
 const Q = new URLSearchParams(typeof location !== 'undefined' ? location.search : '');
 // alpha=1: transparent background (emoji, stickers) · safe=post|story|reel: platform safe zones for screen-space items · cover=TEXT: cover title plate
 const ALPHA = Q.get('alpha') === '1', SAFE_MODE = Q.get('safe') || 'post', COVER = Q.get('cover');
-const SAFE_ZONES = { post: { top: 64, bottom: 64, side: 64 }, story: { top: 250, bottom: 340, side: 64 }, reel: { top: 220, bottom: 430, side: 64 } };
+// safe zones, platform UI and crops come from formats.json (one source for engine, Quality Gate and tools); ui units = 1080 across the final canvas
+const Z_ALIAS = { post: 'feed', land: 'wide' };
 const CAPTIONS = { on: Q.get('cap') === '1', y: 1330, size: 84, chunk: 3, col: '#ffffff', hi: '#ffd66b' };
 function captions(gt) {
   if (!CAPTIONS.on || !TIMING) return; const W_ = TIMING.words; let i = -1; for (let k = 0; k < W_.length && W_[k][1] - .05 <= gt; k++) i = k; if (i < 0) return;
   let ls = i; while (ls > 0 && W_[ls - 1][3] === W_[i][3]) ls--; const c0 = ls + (i - ls) - ((i - ls) % CAPTIONS.chunk), chunk = W_.slice(c0, c0 + CAPTIONS.chunk).filter(w => w[3] === W_[i][3]); if (gt > chunk[chunk.length - 1][2] + .4) return;
-  const txt = chunk.map(w => w[0].toUpperCase()); let fs = CAPTIONS.size; g.setTransform(1, 0, 0, 1, 0, 0);
-  const meas = () => { g.font = `400 ${fs}px "Bungee"`; return txt.map(t => g.measureText(t).width + fs * .55); };
-  let ws = meas(), tot = ws.reduce((a, b) => a + b, 0); if (tot > 960) { fs *= 960 / tot; ws = meas(); tot = ws.reduce((a, b) => a + b, 0); }
-  const font = `400 ${fs}px "Bungee"`; let x = 540 - tot / 2;
-  txt.forEach((t, k) => { const on = c0 + k === i, sc = on ? 1 + .08 * (1 - Math.min(1, (gt - chunk[k][1]) / .12)) : 1;
-    push(); translate(x + ws[k] / 2, CAPTIONS.y); scale(sc); text(t, 0, 0, { font, fill: on ? CAPTIONS.hi : CAPTIONS.col, outlineW: 14, outlineCol: INK }); pop(); x += ws[k]; });
+  QA.ctx = 'caption'; ui((W1, H1) => {   // captions obey the format's safe zone and platform buttons, scale with the format and step around faces
+    const Zc = SZ(), rs = Math.min(W1, H1) / 1080, xL = Zc.left, xR = Zc.buttons ? Zc.buttons[0] - 16 * rs : W1 - Zc.right, MW = xR - xL - 20 * rs, XC = (xL + xR) / 2;
+    const txt = chunk.map(w => w[0].toUpperCase()); let fs = CAPTIONS.size * rs;
+    const meas = () => { g.font = `400 ${fs}px "Bungee"`; return txt.map(t => g.measureText(t).width + fs * .55); };
+    let ws = meas(), tot = ws.reduce((a, b) => a + b, 0); if (tot > MW) { fs = Math.max(FORMATS.roles.min * rs, fs * MW / tot); ws = meas(); tot = ws.reduce((a, b) => a + b, 0); }
+    const T0 = Zc.top, B0 = H1 - Zc.bottom, base = T0 + (B0 - T0) * .82, u = 1080 / CW, heads = QA.obst.filter(o => o.k === 'head').map(o => o.b.map(v => v * u));
+    const plates = QA.obst.filter(o => o.k === 'text').map(o => o.b.map(v => v * u)), avoid = heads.concat(plates), decor = QA.obst.filter(o => o.k === 'set').map(o => o.b.map(v => v * u)), st = fs * 1.2, cands = [];
+    for (let k = 0; k < 40; k++) { const y = base + (k % 2 ? -1 : 1) * Math.ceil(k / 2) * st; if (y >= T0 + fs && y <= B0 - fs * .4) cands.push(y); }
+    const area = (L, y) => L.reduce((a, b) => a + Math.max(0, Math.min(b[2], XC + tot / 2) - Math.max(b[0], XC - tot / 2)) * Math.max(0, Math.min(b[3], y + fs * .35) - Math.max(b[1], y - fs * .85)), 0);
+    const cost = y => area(avoid, y) * 10 + area(decor, y) + Math.abs(y - base) * tot * .05;   // faces and text plates ≫ set décor > distance from the usual line
+    const y = cands.length ? cands.reduce((m, c) => cost(c) < cost(m) ? c : m, cands[0]) : base; let x = XC - tot / 2; const font = `400 ${fs}px "Bungee"`;
+    txt.forEach((t, k) => { const on = c0 + k === i, sc = on ? 1 + .08 * (1 - Math.min(1, (gt - chunk[k][1]) / .12)) : 1;
+      push(); translate(x + ws[k] / 2, y); scale(sc); text(t, 0, 0, { font, fill: on ? CAPTIONS.hi : CAPTIONS.col, outlineW: 14 * rs, outlineCol: INK }); pop(); x += ws[k]; }); });
 }
 const lip = (sp, gt) => { const f = Math.floor(gt * FPS); return LIPS && LIPS.sp[f] === sp ? LIPS.open[f] : 0; };
 const mouthOf = (sp, gt, base = {}) => { const o = lip(sp, gt); const k = Math.floor(gt * 12); return { ...base, o: o > 0.06 ? o * (base.amp ?? 0.85) : 0, w: (base.w ?? 1) * (o > 0.06 ? 0.85 + 0.25 * hash(k * 1.7) : 1) }; };
@@ -206,7 +215,7 @@ const runLegs = (gt, sp = 9) => { const p = Math.sin(gt * sp); return { legL: [-
 
 // ---------- v3 shared design pieces ----------
 const pill = (x, y, txt, bg, fg = '#ffffff', size = 46, rot = 0) => { const w = txt.length * size * .78 + size * 1.2, h = size * 1.7; push(); translate(x, y); rotate(rot); fillOnly(rr(-w / 2 + 6, -h / 2 + 8, w, h, h / 2), 'rgba(20,12,30,0.28)', { boil: 0 }); shape(rr(-w / 2, -h / 2, w, h, h / 2), { fill: bg, lw: 6 }); text(txt, 0, 3, { font: `400 ${size}px "Bungee"`, fill: fg }); pop(); };
-const panel = (x, y, w, h, fill = '#22325a', r = 34) => { fillOnly(rr(x - w / 2 + 12, y - h / 2 + 14, w, h, r), 'rgba(8,10,25,0.35)', { boil: 0 }); return shape(rr(x - w / 2, y - h / 2, w, h, r), { fill, lw: 8 }); };
+const panel = (x, y, w, h, fill = '#22325a', r = 34) => { if (QA.ctx === 'set') { const M = getM(), mp = (a, b) => [M[0] * a + M[2] * b + M[4], M[1] * a + M[3] * b + M[5]], p0 = mp(x - w / 2, y - h / 2), p1 = mp(x + w / 2, y + h / 2); QA.obst.push({ k: 'set', b: [p0[0], p0[1], p1[0], p1[1]] }); if (QA.on) QA.list.push({ item: 'obst:panel', t: '', x: p0[0], y: p0[1], w: p1[0] - p0[0], h: p1[1] - p0[1], px: 0 }); } fillOnly(rr(x - w / 2 + 12, y - h / 2 + 14, w, h, r), 'rgba(8,10,25,0.35)', { boil: 0 }); return shape(rr(x - w / 2, y - h / 2, w, h, r), { fill, lw: 8 }); };
 const dumbbell = (hp, a = 0) => { push(); translate(hp[0], hp[1]); rotate(a); shape(rr(-46, -6, 92, 12, 5), { fill: '#9aa3ad', lw: 4 }); for (const sx of [-1, 1]) { shape(rr(sx * 46 - 14, -26, 28, 52, 8), { fill: '#3b3540', lw: 5 }); } pop(); };
 function umbrella(x, y, h = 760) {
   stroke([[x, y], [x + 60, y - h]], 12, { line: '#efe6d6' }); stroke([[x, y], [x + 60, y - h]], 4);
@@ -371,12 +380,18 @@ function headPos(A) {   // where the actor's face is on screen (for close-up cam
   const s = { far: .55, wide: .95, med: 1.35, tiny: .4 }[A.size] ?? .95, y = A.y ?? { far: 1500, wide: 1820, med: 2150, tiny: 1400 }[A.size];
   return [x, y - 2300 * .275 * s];
 }
+const HB = 780, WB = 300;
 function drawActor(A, lt, gt, n) {
   const x0 = A.x ?? SLOT[A.slot]; let x = x0, walking = false;
   if (A.enter) { const k = clamp(lt / 1.0); x = lerp(A.enter < 0 ? -260 : 1340, x0, eio(k)); walking = k < 1; }
   const face = A.face ?? (walking ? -A.enter : x0 < 520 ? 1 : x0 > 560 ? -1 : 1), F = A.flags;
   const sz = { far: [.55, 1500], wide: [.95, 1820], med: [1.35, 2150], tiny: [.4, 1400] }[A.size] || [.95, 1820];
   const y = A.y ?? sz[1];
+  { const cu = A.size === 'cu', s = cu ? (n > 1 ? 2.6 : 3.8) : sz[0], H = (cu ? 330 : HB) * s, W = (cu ? 300 : WB) * s, yy = cu ? (A.who==='T'?1960:1940) : y, M = getM(), mp = (a, b) => [M[0] * a + M[2] * b + M[4], M[1] * a + M[3] * b + M[5]];
+    const p0 = mp(x - W / 2, yy - H), p1 = mp(x + W / 2, yy), hd = mp(x, yy - H * (cu ? .72 : .9));
+    const hr = (cu ? 58 : 126) * s * Math.hypot(M[0], M[1]); QA.obst.push({ k: 'head', b: [hd[0] - hr, hd[1] - hr * 1.35, hd[0] + hr, hd[1] + hr] },   // head radius follows the drawn size (close-ups are big)
+    { k: 'body', b: [p0[0], hd[1], p1[0], p1[1]] });
+    if (QA.on) QA.list.push({ item: 'body:' + A.who, t: '', x: p0[0], y: p0[1], w: p1[0] - p0[0], h: p1[1] - p0[1], head: hd, px: 0 }); }
   if (A.who === 'T') {
     const P = { x, face, mood: A.mood, bare: F.bare, shades: F.shades, run: F.run, sweat: F.sweat, nerv: F.nervous ? 1 : 0, ringLight: F.ring };
     if (ARMS[A.pose]) P.arms = A.pose;
@@ -397,7 +412,9 @@ function drawActor(A, lt, gt, n) {
 // —— screen-space UI for social posts (carousel chrome): units = final pixels at 1080 wide, whatever the size ——
 function ui(f) { const m = getM(), k = CW / 1080; setM([k, 0, 0, k, 0, 0]); f(1080, CH / k); setM(m); }
 function fitFont(t, px, maxW, fam = 'Bungee', w = 400, floor = 44) { g.font = `${w} ${px}px "${fam}"`; const mw = g.measureText(t).width; return Math.max(floor, mw > maxW ? Math.floor(px * maxW / mw) : px); }
-const SZ = () => SAFE_ZONES[SAFE_MODE] || SAFE_ZONES.post;   // margins inside the post: platform UI and the profile-grid crop must not cover text
+const SZ = () => { const nm = Z_ALIAS[Q.get('safe')] || Q.get('safe') || FORMATS.default_zone[ASPECT] || 'feed', z = FORMATS.zones[nm] || FORMATS.zones.feed, cv = FORMATS.canvases[z.canvas], u = 1080 / cv.w, sf = z.safe;
+  const blocks = (z.blocks || []).map(b => b.box.map(v => v * u)), bands = []; (z.crops || []).forEach(c => { const [x0, y0, x1, y1] = c.box.map(v => v * u); bands.push([0, 0, 1080, y0], [0, y1, 1080, cv.h * u]); });
+  return { name: nm, top: sf.top * u, bottom: sf.bottom * u, left: sf.left * u, right: sf.right * u, side: Math.max(sf.left, sf.right) * u, buttons: blocks[0], blocks, bands }; };   // margins inside the frame: platform UI and preview crops must not cover text
 const SAFE = 64;
 // —— items ——
 const ITEM = {
@@ -424,6 +441,33 @@ const ITEM = {
     push(); translate(W1 / 2, yy); scale(k); rotate(.01); shape(rr(-(W1 / 2 - SAFE), -110, W1 - SAFE * 2, 220, 34), { fill: col(I.kv.bg, '#ff6a2a'), lw: 9 });
     text(a, 0, b ? -30 : 0, { font: `400 ${fa}px "Bungee"`, fill: '#fff6e0', outlineW: 10, outlineCol: INK });
     if (b) text(b, 0, 52, { font: `800 ${fitFont(b, 46, W1 - SAFE * 2 - 100, 'Baloo 2', 800)}px "Baloo 2"`, fill: '#ffffff' }); pop(); }); },
+
+  // hud "TEXT" role=hook|label|note at=top|upper|mid|lower bg=red tilt=-.03 dx=0 — screen-space text on rails:
+  // size comes from the role (never below 56 px), position from a named area inside the platform safe zone; the camera never moves it.
+  hud(I, x, y, d) { ui((W1, H1) => { const k = pk(d); if (!k) return; const t = I.txt[0] || '', Z = SZ();
+    const rs = Math.min(W1, H1) / 1080, fs = fitFont(t, +(I.kv.size || FORMATS.roles[I.kv.role || 'label'] || FORMATS.roles.label) * rs, W1 - Z.side * 2 - 120 * rs, 'Bungee', 400, FORMATS.roles.min * rs), ph = fs * 1.8;
+    g.font = `400 ${fs}px "Bungee"`; const pw = Math.min(W1 - Z.side * 2, g.measureText(t).width + fs * 1.4);
+    const T0 = Z.top + ph / 2 + 12 * rs, B0 = H1 - Z.bottom - ph / 2 - 12 * rs, ROW = { top: T0, upper: T0 + (B0 - T0) * .25, mid: T0 + (B0 - T0) * .45, lower: T0 + (B0 - T0) * .62 }, cx = dx => Math.max(Z.side + pw / 2, Math.min(W1 - Z.side - pw / 2, W1 / 2 + dx));
+    if ((I.kv.at || 'upper') === 'auto' && !I._auto) {   // rails, not guard rails: score every area against heads (×10), bodies (×3) and set décor (×1); keep the best for the whole item
+      const u = 1080 / CW, W = { crop: 1, ...FORMATS.obstacles }, OB = QA.obst.concat(Z.blocks.map(b => ({ k: 'ui', b: b.map(v => v / u) })), Z.bands.map(b => ({ k: 'crop', b: b.map(v => v / u) }))), ov = (a, b) => Math.max(0, Math.min(a[2], b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[3], b[3]) - Math.max(a[1], b[1]));
+      let best = null; for (const [r, ry] of Object.entries(ROW)) for (const dx of [0, -150 * rs, 150 * rs, -260 * rs, 260 * rs]) { const x = cx(dx), bx = [x - pw / 2, ry - ph / 2, x + pw / 2, ry + ph / 2];
+        const c = OB.reduce((s, o) => s + W[o.k] * ov(bx, o.b.map(v => v * u)), 0) + Math.abs(dx) * 4 + ({ top: 0, upper: 0, mid: 400, lower: 800 }[r]) * 10;
+        const hb = OB.reduce((s, o) => s + (['head', 'body', 'ui'].includes(o.k) ? ov(bx, o.b.map(v => v * u)) : 0), 0);
+        if (!best || c < best.c) best = { c, y: ry, x, r, hb }; }
+      if (best.hb > 0 && t.includes(' ')) {   // touches a face, a body or platform UI: try two lines in a free side column and keep the cheaper   // nothing free: wrap to two lines and try the side columns (thumbnail grammar: subject on one side, words on the other)
+        const w = t.split(' '), h = [...w.keys()].slice(1).reduce((b, i) => Math.abs(w.slice(0, i).join(' ').length - w.slice(i).join(' ').length) < Math.abs(w.slice(0, b).join(' ').length - w.slice(b).join(' ').length) ? i : b, 1), L = [w.slice(0, h).join(' '), w.slice(h).join(' ')], cw = (W1 - Z.side * 2) / 2 - 20 * rs;
+        const f2 = Math.min(fs * 1.15, ...L.map(l => fitFont(l, fs * 1.15, cw - fs * .8, 'Bungee', 400, FORMATS.roles.min * rs))); g.font = `400 ${f2}px "Bungee"`;
+        const p2 = Math.min(cw, Math.max(...L.map(l => g.measureText(l).width)) + f2 * 1.4), h2 = f2 * 1.8 * 2.05;
+        for (const [r, ry] of Object.entries(ROW)) for (const x of [Z.side + p2 / 2, W1 - Z.side - p2 / 2]) { const yy2 = Math.min(Math.max(ry, Z.top + h2 / 2), H1 - Z.bottom - h2 / 2), bx = [x - p2 / 2, yy2 - h2 / 2, x + p2 / 2, yy2 + h2 / 2];
+          const c = OB.reduce((s, o) => s + W[o.k] * ov(bx, o.b.map(v => v * u)), 0) + ({ top: 0, upper: 0, mid: 400, lower: 800 }[r]) * 10;
+          if (c < best.c) best = { c, y: yy2, x, r, wrap: L, fs: f2, pw: p2 }; } }
+      I._auto = best; }
+    const yy = I._auto ? I._auto.y : ROW[I.kv.at || 'upper'] ?? H1 * .30, xx = I._auto ? I._auto.x : cx(+(I.kv.dx || 0));
+    const xx0 = () => xx, yy0 = () => yy;
+    { const c = CW / 1080, A = I._auto, wpw = A && A.wrap ? A.pw : pw, wph = A && A.wrap ? A.fs * 1.8 * 2.1 : ph, bx = [(xx0() - wpw / 2) * c, (yy0() - wph / 2) * c, (xx0() + wpw / 2) * c, (yy0() + wph / 2) * c];
+      QA.obst.push({ k: 'text', b: bx }); if (QA.on) QA.list.push({ item: 'obst:plate:' + t.slice(0, 20), t: '', x: bx[0], y: bx[1], w: bx[2] - bx[0], h: bx[3] - bx[1], px: 0 }); }
+    if (I._auto && I._auto.wrap) { const A = I._auto, ph2 = A.fs * 1.8; push(); translate(A.x, A.y); scale(k); rotate(+(I.kv.tilt ?? -.02)); g.font = `400 ${A.fs}px "Bungee"`; A.wrap.forEach((l, j) => sign(0, (j - .5) * ph2 * 1.05, Math.min(A.pw, g.measureText(l).width + A.fs * 1.4), ph2, col(I.kv.bg, '#e8574a'), l, { font: `400 ${A.fs}px "Bungee"` })); pop(); return; }
+    push(); translate(xx, yy); scale(k); rotate(+(I.kv.tilt ?? -.02)); sign(0, 0, pw, ph, col(I.kv.bg, '#e8574a'), t, { font: `400 ${fs}px "Bungee"` }); pop(); }); },
 
   title(I, x, y, d) { const k = pk(d); if (!k) return; push(); translate(x, y); rotate(-.03); scale(k); text(I.txt[0] || '', 0, 0, { font: `400 ${I.kv.size || 110}px "Bungee"`, fill: col(I.kv.color, '#fff6e0'), outlineW: 14, outlineCol: INK }); pop(); },
   sign(I, x, y, d) { const k = pk(d); if (!k) return; const t = I.txt[0] || '', fs = +(I.kv.size || 64), w = t.length * fs * .72 + fs * 1.6; push(); translate(x, y); scale(k); sign(0, 0, w, fs * 1.9, col(I.kv.bg, '#e8574a'), t, { font: `400 ${fs}px "Bungee"`, rot: -.02 }); pop(); },
@@ -512,7 +556,7 @@ function drawBeat(B, lt, gt) {
   QA.ctx = 'set';
   if (set === 'none') {} else if (SETFN[set]) SETFN[set](gt); else if (CUSTOM_SETS[set]) CUSTOM_SETS[set](gt); else if (set.startsWith('#') || COL[set]) { fillOnly(rect(-600, -400, W + 1200, H + 800), col(set), { boil: 0 }); }
   const front = [];
-  B._items.forEach(I => { if (I.flags.front || ['title', 'sign', 'stamp', 'flash', 'confetti', 'sub', 'card', 'year', 'label', 'slidehead', 'swipe', 'say', 'cta'].includes(I.type)) front.push(I); else drawItem(I, gt); });
+  B._items.forEach(I => { if (I.flags.front || ['title', 'sign', 'stamp', 'flash', 'confetti', 'sub', 'card', 'year', 'label', 'slidehead', 'swipe', 'say', 'cta', 'hud'].includes(I.type)) front.push(I); else drawItem(I, gt); });
   QA.ctx = 'actor'; B._actors.forEach(a => { if (!a.at || gt >= a.t) drawActor(a, a.at ? gt - a.t : lt, gt, n); });
   front.forEach(I => drawItem(I, gt));
   camEnd();
@@ -557,7 +601,7 @@ function drawCore(f) {
 }
 // —— loop ending: the last LOOP seconds dissolve into frame 0 so the video replays seamlessly (STORY.loop = 0.4) ——
 let LOOPBUF = null;
-function drawFrame(f) {
+function drawFrame(f) { QA.obst = [];
   const L = (typeof STORY !== 'undefined' && STORY && STORY.loop) || 0, dur = LIPS ? LIPS.N / FPS : 0, gt = f / FPS;
   drawCore(f);
   if (L && dur && gt > dur - L) {
@@ -639,13 +683,17 @@ export { SH };
 let ASPECT = '916';
 export const FMT = {
   '916': { cw: 1080, ch: 1920, sc: 1, y0: 0 },
+  '916p': { cw: 540, ch: 960, sc: .5, y0: 0 },
+  '45p': { cw: 700, ch: 875, sc: .5, y0: 140 },
+  '169p': { cw: 960, ch: 540, sc: .42, y0: 520 },
+  '11p': { cw: 540, ch: 540, sc: .36, y0: 400 },   // previews: half size, same composition
   '45': { cw: 1400, ch: 1750, sc: 1, y0: 140 },
   '11': { cw: 1080, ch: 1080, sc: .72, y0: 400 },
   '169': { cw: 1920, ch: 1080, sc: .84, y0: 520 },
 };
 const Y0 = { '45': { 5: 70, 7: 70, 20: 90, 29: 90 }, '11': {}, '169': {} };
 function applyAspect(i) {
-  const F = FMT[ASPECT]; const y0 = (Y0[ASPECT] || {})[i] ?? F.y0;
+  const F = FMT[ASPECT]; const y0 = (Y0[ASPECT.replace('p', '')] || {})[i] ?? F.y0;
   setView(F.cw, F.ch, F.cw / 2 - 540 * F.sc, -y0 * F.sc, F.sc);
 }
 export function setAspect(a) { ASPECT = a; }

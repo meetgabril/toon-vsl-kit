@@ -15,7 +15,7 @@ export const ROLE_DEFAULTS = { primary: '#25385c', primary_dark: '#16213a', acce
 const REMAP = {};
 for (const [role, hex] of Object.entries((BRAND && BRAND.colors) || {})) if (ROLE_DEFAULTS[role] && hex) REMAP[ROLE_DEFAULTS[role]] = hex.toLowerCase();
 // Layout capture for the Quality Gate: every text drawn is recorded (screen box, font px, which item drew it).
-export const QA = { on: false, ctx: '', list: [] };
+export const QA = { on: false, ctx: '', list: [], obst: [] };
 export const rc = c => (typeof c === 'string' && REMAP[c.toLowerCase()]) || c;
 export let g = null;
 let REAL = null;
@@ -158,6 +158,8 @@ export function text(str, x, y, { font = '800 40px "Baloo 2"', fill = INK, align
   g.font = font; g.textAlign = align; g.textBaseline = base;
   if (outlineW) { g.lineWidth = outlineW; g.lineJoin = 'round'; g.strokeStyle = rc(outlineCol); g.strokeText(str, 0, 0); }
   g.fillStyle = rc(fill); g.fillText(str, 0, 0);
+  if (QA.ctx === 'set' && str) { const m = g.getTransform(), w = g.measureText(str).width, x0 = align === 'center' ? -w / 2 : align === 'right' ? -w : 0, h = parseFloat((font.match(/(\d+(?:\.\d+)?)px/) || [0, 0])[1]);
+    const a = [m.a * x0 + m.e, m.b * x0 + m.f - h * m.d], b = [m.a * (x0 + w) + m.e, m.b * (x0 + w) + m.f + h * .3 * m.d]; const pd = (b[1] - a[1]) * .9; QA.obst.push({ k: 'set', b: [a[0] - pd, a[1] - pd, b[0] + pd, b[1] + pd] }); }   // the board around a sign's words
   if (QA.on && str) { const m = g.getTransform(), mt = g.measureText(str), w = mt.width, a = mt.actualBoundingBoxAscent || 0, dd = mt.actualBoundingBoxDescent || 0;
     const x0 = align === 'center' ? -w / 2 : align === 'right' ? -w : 0; const pts = [[x0, -a], [x0 + w, -a], [x0, dd], [x0 + w, dd]].map(([x, y]) => [m.a * x + m.c * y + m.e, m.b * x + m.d * y + m.f]);
     const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]), px = (parseFloat((font.match(/(\d+(?:\.\d+)?)px/) || [0, 0])[1])) * Math.sqrt(Math.abs(m.a * m.d - m.b * m.c));

@@ -15,12 +15,7 @@
       "h": 1920,
       "ar": "916",
       "id": "9x16",
-      "safe": {
-        "top": 250,
-        "bottom": 340,
-        "left": 65,
-        "right": 65
-      }
+      "zone": "story"
     }
   ],
   "count": {

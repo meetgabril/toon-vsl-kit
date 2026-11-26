@@ -19,7 +19,7 @@ NEXT = {'Brief': ['Script review'], 'Script review': ['Waiting for voiceover', '
         'Waiting for voiceover': ['Storyboard review'], 'Storyboard review': ['Rendering', 'Script review'],
         'Rendering': ['Ready for approval'], 'Ready for approval': ['Approved', 'Script review', 'Storyboard review', 'Rendering'],
         'Approved': ['Published', 'Ready for approval'], 'Published': ['Archived'], 'Archived': []}
-SIZES = {(1080, 1920): '9x16', (1400, 1750): '4x5', (1080, 1350): '4x5', (1080, 1080): '1x1', (1920, 1080): '16x9'}
+SIZES = {(1080, 1920): '9x16', (540, 960): '9x16', (700, 875): '4x5', (960, 540): '16x9', (540, 540): '1x1', (1400, 1750): '4x5', (1080, 1350): '4x5', (1080, 1080): '1x1', (1920, 1080): '16x9'}
 FINAL_W = {'9x16': 1080, '4x5': 1080, '1x1': 1080, '16x9': 1920}
 IGNORE_ITEMS = ('set', 'actor', 'stars', 'confetti', 'poof', 'flash', 'money', 'crowd', 'walkers', 'ba', 'prop', 'handle')
 LIMIT_HASHTAGS = {'instagram': 5, 'tiktok': 5, 'youtube shorts': 3, 'shorts': 3, 'youtube': 3, 'linkedin': 3, 'story': 0, 'discord': 0, 'ad': 0, 'sales page': 0}
@@ -66,13 +66,29 @@ def cmd_new(a):
     print(json.dumps({'project_dir': pdir, 'record': rd, 'recipe': recipe, 'status': 'Brief'}))
 
 
+def forward_path(cur, new):
+    """Shortest chain of forward statuses from cur to new (never backwards, never through Archived)."""
+    from collections import deque
+    q, seen = deque([(cur, [])]), {cur}
+    while q:
+        st, path = q.popleft()
+        for nx in NEXT.get(st, []):
+            if nx in seen or STATUSES.index(nx) < STATUSES.index(st) or nx == 'Archived': continue
+            if nx == new: return path + [nx]
+            seen.add(nx); q.append((nx, path + [nx]))
+    return None
+
+
 def cmd_status(a):
     brand, title = a[0].split('/'); opts = dict(zip(a[1::2], a[2::2])); rd = rec_dir(brand, title); P = load(os.path.join(rd, 'project.json'))
     if not P: sys.exit('no project record')
     if '--set' in opts:
         new = opts['--set']
         if new not in STATUSES: sys.exit(f'unknown status; use one of {STATUSES}')
-        if new not in NEXT[P['status']]: sys.exit(f'cannot go from "{P["status"]}" to "{new}"; allowed: {NEXT[P["status"]]}')
+        path = [new] if new in NEXT[P['status']] else forward_path(P['status'], new)   # forward jumps walk the chain and log every step
+        if not path: sys.exit(f'cannot go from "{P["status"]}" to "{new}"; allowed: {NEXT[P["status"]]}')
+        for st in path[:-1]:
+            P['history'].append({'date': datetime.date.today().isoformat(), 'from': P['status'], 'to': st, 'version': P['version'], 'note': 'passed'}); P['status'] = st
         back = STATUSES.index(new) < STATUSES.index(P['status']) and new not in ('Archived',)
         if back: P['version'] += 1   # a request for changes always bumps the version
         P['history'].append({'date': datetime.date.today().isoformat(), 'from': P['status'], 'to': new, 'version': P['version'], 'note': opts.get('--note', '')})
@@ -84,6 +100,12 @@ def cmd_status(a):
 def cmd_list(a):
     for f in sorted(glob.glob(os.path.join(STUDIO, 'brands', a[0], 'projects', '*', 'project.json'))):
         P = load(f, {}); print(f"{P.get('updated', ''):10}  {P.get('status', ''):22} v{P.get('version', 1)}  {P.get('recipe', P.get('content', '')):20} {P.get('title', '')}")
+
+
+def zone_of(size):
+    """A recipe size + its named zone from library/engine/formats.json (the one source of safe zones, platform UI and crops)."""
+    F = load(os.path.join(STUDIO, 'library', 'engine', 'formats.json'), {}); z = F.get('zones', {}).get(size.get('zone'), {})
+    return dict(size, safe=size.get('safe') or z.get('safe', {}), blocks=size.get('blocks') or z.get('blocks', []), crops=z.get('crops', []))
 
 
 # —————————————————— QUALITY GATE ——————————————————
@@ -158,7 +180,31 @@ def check_copy(R, pdir, brain, recipe):
             if key.startswith('instagram'):
                 first = next((l for l in body.splitlines() if l.strip()), '')
                 if len(first) > 125: R.add('copy', 'WARN', f'{src} [Instagram]: first line is {len(first)} characters (shows before "more" only up to ~125)')
+    check_screen_text(R, pdir)
     R.ok('copy')
+
+
+def check_screen_text(R, pdir):
+    """Lint for on-screen words ({text} in the script, hud/sign/title items in story.js): short, number and plural agree, numbers match the voice."""
+    spoken, shown = '', []
+    sp = os.path.join(pdir, 'script.md')
+    if os.path.exists(sp):
+        for l in open(sp, encoding='utf-8'):
+            m = re.match(r'^[A-Z]:\s*(.+)$', l.strip())
+            if not m: continue
+            spoken += ' ' + re.sub(r'\{[^}]*\}|\[[^\]]*\]', ' ', m.group(1)); shown += re.findall(r'\{([^}]+)\}', m.group(1))
+    st = os.path.join(pdir, 'story.js')
+    if os.path.exists(st): shown += re.findall(r'(?:hud|sign|title|stamp|pill|say|slidehead) "([^"]+)"', open(st, encoding='utf-8').read())
+    NUM = {'one': 1, 'two': 2, 'three': 3, 'four': 4, 'five': 5, 'six': 6, 'seven': 7, 'eight': 8, 'nine': 9, 'ten': 10, 'twelve': 12, 'hundred': 100}
+    said = {int(n) for n in re.findall(r'\b\d+\b', spoken)} | {v for k, v in NUM.items() if re.search(r'\b' + k + r'\b', spoken, re.I)}
+    for t in dict.fromkeys(shown):
+        w = t.split()
+        if len(w) > 6: R.add('copy', 'ERROR', f'screen text "{t}": {len(w)} words (max 6 on screen; the voice carries the rest)')
+        for i, x in enumerate(w[:-1]):
+            if re.fullmatch(r'\d+', x):
+                n, nxt = int(x), w[i + 1]
+                if n == 1 and re.fullmatch(r'[A-Za-z]+S', nxt, re.I) and not re.search(r'(SS|US|IS)$', nxt, re.I): R.add('copy', 'ERROR', f'screen text "{t}": "1 {nxt}" should be singular')
+                if said and n not in said and not re.fullmatch(r'(AM|PM|A\.M\.|P\.M\.)', nxt, re.I): R.add('copy', 'WARN', f'screen text "{t}": {n} is never said in the voice')
 
 
 def check_cta(R, pdir, brain, recipe):
@@ -183,33 +229,50 @@ def check_layout(R, pdir, recipe):
     if not files:
         if recipe.get('render') in ('video', 'stills', 'meme', 'video+stills', 'video+pdf+stills'): R.add('layout', 'WARN', 'no layout capture found: render the stills or contact sheet with QA=1 (memes: meme.py writes it)')
         return R.ok('layout')
-    sizes = {s['id']: s for s in recipe.get('sizes', [])}; minb = recipe.get('text', {}).get('min_px', {}).get('body', 40)
-    seen = set()
-    for f in sorted(files):
-        Q = load(f, {}); cw, ch = Q.get('canvas', [1080, 1920]); sid = SIZES.get((int(cw), int(ch)), '9x16'); k = FINAL_W.get(sid, 1080) / cw
+    # only the newest capture folder (old contact sheets never fail a new render)
+    dirs = {}
+    for f in files: dirs.setdefault(os.path.dirname(f), []).append(f)
+    files = sorted(max(dirs.values(), key=lambda L: max(os.path.getmtime(x) for x in L)))
+    sizes = {s['id']: zone_of(s) for s in recipe.get('sizes', [])}; minb = recipe.get('text', {}).get('min_px', {}).get('body', 40)
+    fnum = lambda f: int(re.sub(r'\D', '', os.path.basename(f).split('.')[0]) or 0)
+    nums = [fnum(f) for f in files]; step = min([b - a for a, b in zip(nums, nums[1:]) if b > a] or [1])
+    REST = max(1, round(9 / step))   # pop-in lasts ~0.35 s: judge an item only after 9 frames on screen
+    seen_at, issues = {}, {}
+    def add(kind, key, n, msg): issues.setdefault((kind, key), [msg, []])[1].append(n)
+    for f in files:
+        n = fnum(f); Q = load(f, {}); cw, ch = Q.get('canvas', [1080, 1920]); sid = SIZES.get((int(cw), int(ch)), '9x16'); k = FINAL_W.get(sid, 1080) / cw
         safe = sizes.get(sid, {}).get('safe', {'top': 0, 'bottom': 0, 'left': 0, 'right': 0}); fw, fh = cw * k, ch * k
-        T = [dict(t, x=t['x'] * k, y=t['y'] * k, w=t['w'] * k, h=t['h'] * k, px=t['px'] * k) for t in Q.get('texts', [])]
-        name = os.path.relpath(f, pdir).replace('.qa.json', '')
-        item = [t for t in T if not t['item'].startswith(IGNORE_ITEMS)]
-        for t in item:
-            key = (t['item'], t['t'])
-            if t['px'] < minb - 0.5 and (name, key) not in seen: R.add('layout', 'ERROR', f'{name}: text too small ({t["px"]:.0f}px < {minb}px): "{t["t"][:40]}"')
+        T = [dict(t, x=t['x'] * k, y=t['y'] * k, w=t['w'] * k, h=t['h'] * k, px=t['px'] * k) for t in Q.get('texts', []) if not t['item'].startswith(('body:', 'obst:'))]
+        PL = [dict(t, x=t['x'] * k, y=t['y'] * k, w=t['w'] * k, h=t['h'] * k) for t in Q.get('texts', []) if t['item'].startswith('obst:plate:')]   # screen-text plates: no other text may sit on them
+        rest = []
+        for t in T:
+            key = (t['item'].split(':')[0], t['t'][:40]); run = seen_at.get(key)
+            run = run if run and run[1] == n - step else [n, n]; run[1] = n; seen_at[key] = run
+            if (n - run[0]) / step >= REST and not t['item'].startswith(IGNORE_ITEMS): rest.append((key, t))
+        for key, t in rest:
+            if t['px'] < minb - 0.5: add('small', key, n, f'text too small ({t["px"]:.0f}px < {minb}px)')
             if t['x'] < safe.get('left', 0) - 2 or t['y'] < safe.get('top', 0) - 2 or t['x'] + t['w'] > fw - safe.get('right', 0) + 2 or t['y'] + t['h'] > fh - safe.get('bottom', 0) + 2:
-                R.add('layout', 'ERROR', f'{name}: outside the {sid} safe zone: "{t["t"][:40]}"')
-            if sid == '9x16' and (t['y'] < 285 or t['y'] + t['h'] > 1635) and (name, key) not in seen:   # 4:5 feed preview crops 285 px top and bottom
-                R.add('layout', 'WARN', f'{name}: cut in the 4:5 feed preview: "{t["t"][:40]}"')
-            for blk in sizes.get(sid, {}).get('blocks', []):   # platform UI that covers part of the frame (e.g. Reels buttons)
+                add('safe', key, n, f'outside the {sid} safe zone')
+            for cr in sizes.get(sid, {}).get('crops', []):
+                cx0, cy0, cx1, cy1 = cr['box']
+                if t['x'] < cx0 or t['y'] < cy0 or t['x'] + t['w'] > cx1 or t['y'] + t['h'] > cy1: add('feed', key, n, f'cut in the {cr["name"]}')
+            for blk in sizes.get(sid, {}).get('blocks', []):
                 bx0, by0, bx1, by1 = blk['box']
-                if t['x'] < bx1 and t['x'] + t['w'] > bx0 and t['y'] < by1 and t['y'] + t['h'] > by0:
-                    R.add('layout', 'ERROR', f'{name}: under the {blk["name"]}: "{t["t"][:40]}"')
-            seen.add((name, key))
-        for i, a in enumerate(T):
-            for b in T[i + 1:]:
-                if a['item'] == b['item'] or (a['item'].startswith(IGNORE_ITEMS) and b['item'].startswith(IGNORE_ITEMS)): continue
-                if a['item'] == 'actor' or b['item'] == 'actor': continue
+                if t['x'] < bx1 and t['x'] + t['w'] > bx0 and t['y'] < by1 and t['y'] + t['h'] > by0: add('block', key, n, f'under the {blk["name"]}')
+        for i, (ka, a) in enumerate(rest):
+            for kb, b in rest[i + 1:]:
+                if a['item'] == b['item'] or 'actor' in (ka[0], kb[0]): continue
                 ix = max(0, min(a['x'] + a['w'], b['x'] + b['w']) - max(a['x'], b['x'])); iy = max(0, min(a['y'] + a['h'], b['y'] + b['h']) - max(a['y'], b['y']))
-                if ix * iy > 0.12 * min(a['w'] * a['h'], b['w'] * b['h']) and ix * iy > 0:
-                    R.add('layout', 'ERROR', f'{name}: text overlaps text: "{a["t"][:30]}" ({a["item"].split(":")[0]}) × "{b["t"][:30]}" ({b["item"].split(":")[0]})')
+                if ix * iy > 0.12 * min(a['w'] * a['h'], b['w'] * b['h']): add('overlap', (ka[0], f'{ka[1]}" × "{kb[1]}'), n, 'text overlaps text')
+        for key, t in rest:
+            for pl in PL:
+                if t['item'].startswith('hud:') and t['t'].startswith(pl['item'][11:]): continue
+                ix = max(0, min(t['x'] + t['w'], pl['x'] + pl['w']) - max(t['x'], pl['x'])); iy = max(0, min(t['y'] + t['h'], pl['y'] + pl['h']) - max(t['y'], pl['y']))
+                if ix * iy > 0.12 * t['w'] * t['h']: add('overlap', (key[0], f'{key[1]}" × plate "{pl["item"][11:]}'), n, 'text sits on another text\'s plate')
+    hint = {'small': 'use hud role=label at=auto', 'safe': 'use hud at=auto', 'block': 'use hud (stays left of the buttons)', 'overlap': 'move one with at=', 'feed': ''}
+    for (kind, (item, txt)), (msg, ns) in issues.items():
+        sec = f'{ns[0] / 24:.1f}–{ns[-1] / 24:.1f}s' if ns[0] != ns[-1] else f'{ns[0] / 24:.1f}s'
+        R.add('layout', 'WARN' if kind == 'feed' else 'ERROR', f'{item} "{txt}": {msg} at {sec}' + (f' → {hint[kind]}' if hint[kind] else ''))
     R.ok('layout')
 
 

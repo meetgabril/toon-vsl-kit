@@ -5,7 +5,7 @@ Meta's ranking (Andromeda) rewards **creative diversification**: genuinely diffe
 ## Building the pack
 1. From the chosen offer, pick 3–5 concepts. Each concept = one persona (`audience.json`) × one pain or desire × one format/script type (sitcom skit, myth vs fact, explainer, before & after of a process, meme). No two concepts share the same persona+pain or the same format.
 2. Concept card for review (one line each): persona · pain · angle · hook · format. Menu: Approve ★ · Replace one · Make them more different.
-3. For each concept: 9:16 video 6–30 s (safe zone 14 % top / 35 % bottom / 6 % sides: render with `SAFE=reel` and check), 4:5 and 1:1 versions; brand visible within 3 s; CTA end card held 2 s; subtitles ON.
+3. For each concept: 9:16 video 6–30 s (safe zone 14 % top / 35 % bottom / 6 % sides: `ZONE=ad-vertical bash make.sh preview`; 4:5 `AR=45 ZONE=ad-feed`, 1:1 `AR=11 ZONE=ad-square`), 4:5 and 1:1 versions; brand visible within 3 s; CTA end card held 2 s; subtitles ON.
 4. Copy per concept in `post.md` → `## Ad <n>`: primary text (hook first, 2–3 lines), headline (≤ 40 characters), description (1 line), button (Learn more · Sign up · Book now · Get offer), plus the brand's `ad_disclaimer` when `claims.json` risk is high.
 5. Test plan (in `post.md`): Meta's native Creative Testing (2–5 ads, same budget, one week), success metric from the goal (cost per lead / per booked call), what to do with the winner.
 
