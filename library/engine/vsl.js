@@ -454,11 +454,13 @@ const ITEM = {
         const c = OB.reduce((s, o) => s + W[o.k] * ov(bx, o.b.map(v => v * u)), 0) + Math.abs(dx) * 4 + ({ top: 0, upper: 0, mid: 400, lower: 800 }[r]) * 10;
         const hb = OB.reduce((s, o) => s + (['head', 'body', 'ui'].includes(o.k) ? ov(bx, o.b.map(v => v * u)) : 0), 0);
         if (!best || c < best.c) best = { c, y: ry, x, r, hb }; }
-      if (best.hb > 0 && t.includes(' ')) {   // touches a face, a body or platform UI: try two lines in a free side column and keep the cheaper   // nothing free: wrap to two lines and try the side columns (thumbnail grammar: subject on one side, words on the other)
-        const w = t.split(' '), h = [...w.keys()].slice(1).reduce((b, i) => Math.abs(w.slice(0, i).join(' ').length - w.slice(i).join(' ').length) < Math.abs(w.slice(0, b).join(' ').length - w.slice(b).join(' ').length) ? i : b, 1), L = [w.slice(0, h).join(' '), w.slice(h).join(' ')], cw = (W1 - Z.side * 2) / 2 - 20 * rs;
+      g.font = `400 ${fs}px "Bungee"`; const over = g.measureText(t).width > W1 - Z.left - Z.right - 60 * rs;   // one line does not fit even at the role's minimum
+      if (over) best.c = Infinity;
+      if ((best.hb > 0 || over) && t.includes(' ')) {   // touches a face, a body or platform UI: try two lines in a free side column and keep the cheaper   // nothing free: wrap to two lines and try the side columns (thumbnail grammar: subject on one side, words on the other)
+        const w = t.split(' '), h = [...w.keys()].slice(1).reduce((b, i) => Math.abs(w.slice(0, i).join(' ').length - w.slice(i).join(' ').length) < Math.abs(w.slice(0, b).join(' ').length - w.slice(b).join(' ').length) ? i : b, 1), L = [w.slice(0, h).join(' '), w.slice(h).join(' ')], cw = (W1 - Z.side * 2) / (over ? 1 : 2) - 20 * rs;
         const f2 = Math.min(fs * 1.15, ...L.map(l => fitFont(l, fs * 1.15, cw - fs * .8, 'Bungee', 400, FORMATS.roles.min * rs))); g.font = `400 ${f2}px "Bungee"`;
-        const p2 = Math.min(cw, Math.max(...L.map(l => g.measureText(l).width)) + f2 * 1.4), h2 = f2 * 1.8 * 2.05;
-        for (const [r, ry] of Object.entries(ROW)) for (const x of [Z.side + p2 / 2, W1 - Z.side - p2 / 2]) { const yy2 = Math.min(Math.max(ry, Z.top + h2 / 2), H1 - Z.bottom - h2 / 2), bx = [x - p2 / 2, yy2 - h2 / 2, x + p2 / 2, yy2 + h2 / 2];
+        const p2 = Math.min(cw, Math.max(...L.map(l => g.measureText(l).width)) + f2 * 1.4), h2 = f2 * 1.8 * 2.05, fits = Math.max(...L.map(l => g.measureText(l).width)) <= p2 - f2 * .5;
+        if (fits) for (const [r, ry] of Object.entries(ROW)) for (const x of [Z.side + p2 / 2, W1 / 2, W1 - Z.side - p2 / 2]) { const yy2 = Math.min(Math.max(ry, Z.top + h2 / 2), H1 - Z.bottom - h2 / 2), bx = [x - p2 / 2, yy2 - h2 / 2, x + p2 / 2, yy2 + h2 / 2];
           const c = OB.reduce((s, o) => s + W[o.k] * ov(bx, o.b.map(v => v * u)), 0) + ({ top: 0, upper: 0, mid: 400, lower: 800 }[r]) * 10;
           if (c < best.c) best = { c, y: yy2, x, r, wrap: L, fs: f2, pw: p2 }; } }
       I._auto = best; }

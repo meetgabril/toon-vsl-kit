@@ -248,7 +248,7 @@ def check_layout(R, pdir, recipe):
         for t in T:
             key = (t['item'].split(':')[0], t['t'][:40]); run = seen_at.get(key)
             run = run if run and run[1] == n - step else [n, n]; run[1] = n; seen_at[key] = run
-            if (n - run[0]) / step >= REST and not t['item'].startswith(IGNORE_ITEMS): rest.append((key, t))
+            if ((n - run[0]) / step >= REST or step >= 9) and not t['item'].startswith(IGNORE_ITEMS): rest.append((key, t))   # sparse captures (preflight) are rest frames by construction
         for key, t in rest:
             if t['px'] < minb - 0.5: add('small', key, n, f'text too small ({t["px"]:.0f}px < {minb}px)')
             if t['x'] < safe.get('left', 0) - 2 or t['y'] < safe.get('top', 0) - 2 or t['x'] + t['w'] > fw - safe.get('right', 0) + 2 or t['y'] + t['h'] > fh - safe.get('bottom', 0) + 2:
@@ -266,7 +266,7 @@ def check_layout(R, pdir, recipe):
                 if ix * iy > 0.12 * min(a['w'] * a['h'], b['w'] * b['h']): add('overlap', (ka[0], f'{ka[1]}" × "{kb[1]}'), n, 'text overlaps text')
         for key, t in rest:
             for pl in PL:
-                if t['item'].startswith('hud:') and t['t'].startswith(pl['item'][11:]): continue
+                if t['item'].startswith('hud:') and t['item'][4:].startswith(pl['item'][11:]): continue   # a text on its own plate (also each line of a wrapped text)
                 ix = max(0, min(t['x'] + t['w'], pl['x'] + pl['w']) - max(t['x'], pl['x'])); iy = max(0, min(t['y'] + t['h'], pl['y'] + pl['h']) - max(t['y'], pl['y']))
                 if ix * iy > 0.12 * t['w'] * t['h']: add('overlap', (key[0], f'{key[1]}" × plate "{pl["item"][11:]}'), n, 'text sits on another text\'s plate')
     hint = {'small': 'use hud role=label at=auto', 'safe': 'use hud at=auto', 'block': 'use hud (stays left of the buttons)', 'overlap': 'move one with at=', 'feed': ''}
