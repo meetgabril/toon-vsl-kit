@@ -7,10 +7,12 @@ Going back (a request for changes) bumps the version automatically. Invalid jump
 ## Records
 `~/buzztorm-studio/brands/<brand>/projects/<title>/project.json` (created by `studio.py new`), plus `script.md`, `story.js`, `post.md` copied by `studio.py package`. `studio.py list <brand>` lists projects. Working files live in `~/studio/<brand>/<title>` and are never committed.
 
+## Before approval
+`bash make.sh ship` (after writing `post.md` in the project folder): final files to `delivery/` with the naming rule, `post.md`, full gate, package, status Ready for approval — one call. Exit 2 = something failed; fix and run it again.
+
 ## After approval
 ```
 python3 studio.py status <brand>/<title> --set Approved
-python3 studio.py package .
 cd ~/buzztorm-studio && git add brands/<brand> && git commit -m "<brand>: <title> v<N> approved" && git pull --rebase && git push
 ```
 Commit only `brands/<brand>/` (and `library/` changes made on purpose). Never media.

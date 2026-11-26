@@ -10,7 +10,7 @@
 
 Environment: STUDIO = repository root (default ~/buzztorm-studio), PROJECTS = working root (default ~/studio).
 """
-import glob, json, os, re, subprocess, sys, datetime
+import glob, json, os, re, shutil, subprocess, sys, datetime
 
 STUDIO = os.path.expanduser(os.environ.get('STUDIO', '~/buzztorm-studio'))
 PROJECTS = os.path.expanduser(os.environ.get('PROJECTS', '~/studio'))
@@ -250,7 +250,7 @@ def check_layout(R, pdir, recipe):
         if z and z.get('canvas') == sid: return zone_of({'id': sid, 'zone': ZN})
         if sid in sizes: return sizes[sid]
         ar = (F.get('canvases', {}).get(sid) or {}).get('ar'); return zone_of({'id': sid, 'zone': F.get('default_zone', {}).get(ar, 'feed')})
-    all_rest = os.path.exists(os.path.join(os.path.dirname(files[0]), 'REST'))   # preflight and stills: every capture is a rest frame by construction
+    all_rest = os.path.exists(os.path.join(os.path.dirname(files[0]), 'REST')) or bool(load(files[0], {}).get('source'))   # preflight, stills, memes and cards: every capture is a rest frame
     fnum = lambda f: int(re.sub(r'\D', '', os.path.basename(f).split('.')[0]) or 0)
     nums = [fnum(f) for f in files]; step = min([b - a for a, b in zip(nums, nums[1:]) if b > a] or [1])
     REST = max(1, round(9 / step))   # pop-in lasts ~0.35 s: judge an item only after 9 frames on screen
@@ -351,6 +351,41 @@ def cmd_package(a):
     print(json.dumps(man))
 
 
+def cmd_ship(a):
+    """studio.py ship <project_dir> — delivery in one step: final files → delivery/ with the naming rule, post.md, full gate, package, status."""
+    pdir = os.path.abspath(os.path.expanduser(a[0])); brand, title, rd, P = find_record(pdir); d = os.path.join(pdir, 'delivery'); out = os.path.join(pdir, 'out')
+    content, v = P.get('recipe') or 'reel', P.get('version', 1); os.makedirs(d, exist_ok=True)
+    SIZE = {(1080, 1920): '9x16', (1080, 1350): '4x5', (1080, 1080): '1x1', (1920, 1080): '16x9'}
+    def size_of(f):
+        if f.endswith('.pdf'): return 'letter'
+        if f.endswith('.mp4'):
+            r = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'v', '-show_entries', 'stream=width,height', '-of', 'csv=p=0', f], capture_output=True, text=True).stdout.strip().split(',')
+            return SIZE.get(tuple(int(x) for x in r[:2])) if len(r) >= 2 else None
+        from PIL import Image
+        return SIZE.get(Image.open(f).size)
+    picks = [f for f in glob.glob(os.path.join(out, '*')) if re.search(r'(_final\.mp4|_\d\d\.png|_letter\.pdf)$', f)]
+    if not picks and not glob.glob(os.path.join(d, f'{brand}_*')): sys.exit('nothing to ship: run make.sh final (video), stills (images), doc (PDF), meme or kinetic first')
+    for f in glob.glob(os.path.join(d, f'{brand}_*_{title}_v*')):   # delivery holds only the current version (memes and remakes write here directly)
+        m = re.search(r'_v(\d+)', os.path.basename(f)[len(brand):])
+        if m and int(m.group(1)) != v: os.remove(f)
+    shipped = []
+    for f in sorted(picks):
+        sz = size_of(f); n = re.search(r'_(\d\d)\.png$', f); ext = f.rsplit('.', 1)[1]
+        name = f"{brand}_{content}_{title}_v{v}" + (f'_{sz}' if sz else '') + (f'_{n.group(1)}' if n else '') + f'.{ext}'
+        shutil.copy(f, os.path.join(d, name)); shipped.append(name)
+    for f in ('post.md', 'message.md'):
+        if os.path.exists(os.path.join(pdir, f)): shutil.copy(os.path.join(pdir, f), d)
+    g = subprocess.run([sys.executable, os.path.abspath(__file__), 'check', pdir, '--stage', 'final'], capture_output=True, text=True); ok = g.returncode == 0
+    if not ok: print('\n'.join(l for l in g.stdout.splitlines() if 'ERROR' in l or l.startswith('QUALITY')))
+    if ok: cmd_package([pdir])
+    if ok and P and P.get('status') != 'Ready for approval':
+        try: cmd_status([f'{brand}/{title}', '--set', 'Ready for approval', '--note', f'v{v} shipped'])
+        except SystemExit as e: print(f'status not moved: {e}')
+    shipped += sorted(f for f in os.listdir(d) if f.startswith(brand + '_') and f not in shipped and not f.endswith('.qa.json'))
+    print(json.dumps({'shipped': shipped, 'gate': 'passed' if ok else 'FAILED (see qa/report_final.json)'}))
+    if not ok: sys.exit(2)
+
+
 def cmd_plan(a):
     brand, week = a[0], a[1]; d = os.path.join(STUDIO, 'brands', brand, 'calendar'); os.makedirs(d, exist_ok=True)
     prof = load(os.path.join(STUDIO, 'brands', brand, 'brand-profile.json'), {}); mix = prof.get('weekly_mix', {'grow': 3, 'teach': 2, 'sell': 1, 'community': 1})
@@ -367,4 +402,4 @@ def cmd_plan(a):
 
 if __name__ == '__main__':
     if len(sys.argv) < 3 and not (len(sys.argv) == 2 and sys.argv[1] in ('-h', '--help')): sys.exit(__doc__)
-    {'new': cmd_new, 'status': cmd_status, 'check': cmd_check, 'package': cmd_package, 'list': cmd_list, 'plan': cmd_plan, 'zone': cmd_zone}.get(sys.argv[1], lambda a: sys.exit(__doc__))(sys.argv[2:])
+    {'new': cmd_new, 'status': cmd_status, 'check': cmd_check, 'package': cmd_package, 'list': cmd_list, 'plan': cmd_plan, 'zone': cmd_zone, 'ship': cmd_ship}.get(sys.argv[1], lambda a: sys.exit(__doc__))(sys.argv[2:])

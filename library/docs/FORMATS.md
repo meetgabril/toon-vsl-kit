@@ -5,19 +5,19 @@ The kit isn't only for VSLs. Everything is drawn by the same engine, cast and st
 ## Canvas formats
 | id | size | how |
 |---|---|---|
-| `916` | 1080×1920 (Reels, TikTok, Shorts, Stories, VSL) | native composition. `node render.mjs frames …` |
-| `45` | 1080×1350 (feed video) | `AR=45 node render.mjs frames45 …` (1400×1750 canvas, downscaled by finish.sh) |
-| `11` | 1080×1080 (square feed) | `AR=11 node render.mjs frames11 …` |
-| `169` | 1920×1080 (YouTube, landing pages, presentations) | `AR=169 node render.mjs frames169 …` |
+| `916` | 1080×1920 (Reels, TikTok, Shorts, Stories, VSL) | native composition. `bash make.sh preview` |
+| `45` | 1080×1350 (feed video) | `AR=45 bash make.sh preview` (1400×1750 canvas, shipped at 1080×1350) |
+| `11` | 1080×1080 (square feed) | `AR=11 bash make.sh preview` |
+| `169` | 1920×1080 (YouTube, landing pages, presentations) | `AR=169 bash make.sh preview` |
 
 `FMT` / `Y0` in vsl.js give each format a window onto the vertical composition. For `11` and `169`, set `Y0['169'][shot]` per shot after a stills check, because titles placed near the top of a vertical layout fall outside a landscape window. See `ref/formats_916_45_11_169.jpg`.
 
 **Landscape-first projects** (16:9 is the main deliverable) should author shots for the window:
-- the visible area at sc .84 is x −600…1680 and y 520…1806 (composition units);
-- spread characters horizontally, and put titles at y ≥ 560;
+- the visible area at sc .84 is x −600…1680 and y 590…1876 (composition units);
+- spread characters horizontally; screen text is `hud … at=auto`;
 - set `FMT['169'].y0` once.
 
-Encode any format with ffmpeg the way finish.sh does (scale `frames11` to 1080×1080, `frames169` to 1920×1080).
+`make.sh` encodes every size (4:5 is downscaled to 1080×1350).
 
 ## Video types
 | type | length | structure | notes |

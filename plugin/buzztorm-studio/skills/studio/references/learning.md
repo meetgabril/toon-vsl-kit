@@ -2,8 +2,9 @@
 
 Branded PDFs made from Markdown with the brand's colors, fonts and characters:
 ```
-python3 build_doc.py doc/<name>.md delivery/<brand>_<format>_<title>_v<N>_letter.pdf
+bash make.sh doc doc/<name>.md        # → out/<title>_letter.pdf, page sheet in work/sheet.jpg, same gate line and exit code as video
 ```
+At delivery, copy the PDF to `delivery/` with the naming rule (`delivery.md`).
 Front matter: `type` (checklist · ebook · playbook · worksheet · cheat-sheet · lesson), `title`, `subtitle`, `cover_image` (a still rendered by the engine, e.g. `stills/cover.png`), `cta_title`, `cta_text` (default: the brand's first active offer).
 Markdown extras: `- [ ] item` (checkbox) · `:::play Title` … `:::` (playbook card, one per page) · `:::tip|warning|example Title` … `:::` (boxes) · `___ Label` (writing line) · `___tall Label` (big box) · `[[pagebreak]]`.
 One-pagers (checklist, worksheet, cheat sheet) shrink to fit one page down to 10 pt; below that the build stops with TOO LONG → cut words, never shrink further. Previews of every page go to `qa/`; look at them before review. Offer an editable version as a Doc when the client needs to edit.

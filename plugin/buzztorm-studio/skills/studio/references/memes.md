@@ -40,7 +40,7 @@ Compose (template mode):
 {"template": "<template-id>", "texts": ["Posting every day at 5 a.m.", "Building a place where followers meet"], "handle": "@brand",
  "out": "delivery/<brand>_meme_<title>_v1_1x1.png"}
 ```
-`python3 meme.py meme.json` — fits the template inside the safe margins (1:1, or 4:5 for tall templates), fits each text to its box (refuses below 40 px: shorten it), writes the layout capture for the gate.
+`bash make.sh meme meme.json` (runs `meme.py`, then the gate) — fits the template inside the safe margins (1:1, or 4:5 for tall templates), fits each text to its box (refuses below 40 px: shorten it), writes the layout capture for the gate.
 
 Drawn formats: render one still per panel with the brand's characters, then `{"format": "reject-prefer", "size": "4x5", "brand": "brand/brand-profile.json", "panels": [{"image": …, "text": …}, …], "out": …}`; layouts single · rows · cols · grid · tier.
 

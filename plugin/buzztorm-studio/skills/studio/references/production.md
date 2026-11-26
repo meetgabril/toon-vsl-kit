@@ -6,17 +6,19 @@ python3 $S/library/tools/studio.py new <brand> <title> <recipe> --goal <goal> [-
 ```
 It copies the engine, the tools, the document templates, `formats.json` and the brand, and writes the project record (status Brief). Move status with `studio.py status <brand>/<title> --set "<Status>" [--note …]` at every step.
 
-## The process (same for Reel, Story, 16:9, 4:5, posts, carousels, thumbnails)
-| Step | Command | Approval |
-|---|---|---|
-| 1. Content | write `script.md` with `{screen text}` (`scripts.md`); `python3 script.py check script.md` and `studio.py check . --stage script` | Script review |
-| 2. First storyboard | `python3 director.py script.md story.js`, then edit 2–3 shots at most (`@ key: value` lines in the script, or story.js) | — |
-| 3. Preview | `SPECULATE=1 bash make.sh preview` (add `AR=` / `ZONE=` for other sizes) → look at `work/sheet.jpg` yourself, send the preview MP4 | Preview review |
-| 4. Changes | edit, then `bash make.sh preview` again, or on the final `bash make.sh shot <n>` (only shot n is re-rendered) | — |
-| 5. Final | `bash make.sh final` (ready at once when the speculative final matches) | Ready for approval |
-| 6. Delivery | copy to `delivery/` with the naming rule, `post.md`, `studio.py check . --stage final`, package (`delivery.md`) | Publication |
+## The process: same steps for every format, adapted per family
+| Step | Video (Reel, Story, 16:9, 4:5, ads) | Stills (post, carousel, thumbnail, cover) | Document (PDF) | Meme · Hook Library | Approval |
+|---|---|---|---|---|---|
+| 1. Content | `script.md` with `{screen text}` | `story.js`, one beat per slide | `doc/<name>.md` | `meme.json` · `kinetic.json` | Script / outline review |
+| 2. Check | `python3 script.py check script.md` and `studio.py check . --stage script` (same for all) | | | | — |
+| 3. Preview | `SPECULATE=1 bash make.sh preview` (storyboard written by `director.py` when missing; edit 2–3 shots at most) | `bash make.sh stills "<frames>"` | `bash make.sh doc doc/<name>.md` | `bash make.sh meme meme.json` · `bash make.sh kinetic kinetic.json` | Preview review |
+| 4. Changes | `make.sh preview` again, or `make.sh shot <n>` on the final | same command | same command | same command | — |
+| 5. Final | `bash make.sh final` (ready at once after SPECULATE) | the stills are final | the PDF is final | the file is final | Ready for approval |
+| 6. Delivery | write `post.md` (`delivery.md`), then `bash make.sh ship`: naming rule, full gate, package, status Ready for approval (same for every family) | | | | Publication |
 
-`make.sh` does in one call, with ≤ 12 lines of output: voice (cached; ElevenLabs when `ELEVENLABS_API_KEY` is set, else the newest `work/voice*` file) → timing → **layout preflight** (one rest frame and one end frame per shot, ~2 s, nothing rendered if a text fails) → render ‖ sound (sfx kit, score, `STYLE` sound, mix; cached) → master −15 LUFS + encode → video QA on the final (frozen/black stretches) → Quality Gate → contact sheet with the zone shaded red (`work/sheet.jpg`) → area map (`work/areas.txt`).
+Every mode prints the same `gate:` line and exits 2 when layout or copy fail (fix before showing anything); look at `work/sheet.jpg` yourself before sending.
+
+`make.sh` does in one call, with ≤ 12 lines of output: voice (cached; ElevenLabs when `ELEVENLABS_API_KEY` is set, else the newest `work/voice*` file) → timing → storyboard (`director.py`, only when story.js is missing or still the template) → **layout preflight** (one rest frame and one end frame per shot, ~2 s, nothing rendered if a text fails) → render ‖ sound (sfx kit, score, `STYLE` sound, mix; cached) → master −15 LUFS + encode → video QA on the final (frozen/black stretches) → Quality Gate → contact sheet with the zone shaded red (`work/sheet.jpg`) → area map (`work/areas.txt`).
 - Sizes: `AR=916` (default) · `45` (ships 1080×1350) · `11` · `169`. The zone comes from the project's recipe for that size (Story → `story`, ads → `ad-vertical`/`ad-feed`/`ad-square`, others `reel`, `feed`, `square`, `wide`); set `ZONE=` only to override (e.g. `thumbnail`). All in `library/engine/formats.json`.
 - Output: one `gate:` line (claims, facts, copy, CTA, layout; delivery files are judged at delivery), then errors and warnings. Exit code 2 when layout or copy fail: fix before showing anything. The preflight stops before rendering when a text fails (~2 s).
 - Preview = half size, 12 fps; final = full size, 24 fps. `SPECULATE=1` starts the final in the background right after the preview; `make.sh final` reuses it when nothing changed. Approvals do not change.

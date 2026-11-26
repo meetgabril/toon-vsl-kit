@@ -1,3 +1,4 @@
+// TEMPLATE story — make.sh replaces it with director.py output from script.md; delete this line once you edit by hand.
 // story.js — the film, one beat per shot. Grammar: docs/STORY.md. Times come from the voiceover words (work/timing.json).
 // This demo restages the first 40 s of the Buzztorm VSL in ~25 lines.
 export const STORY = {

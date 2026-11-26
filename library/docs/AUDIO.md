@@ -81,11 +81,11 @@ Rewrite the cue lists for every new film. The Buzztorm ones are only an example.
 
 It prints the measured levels. Confirm them every time.
 
-## 6. Master and encode (finish.sh)
-`bash finish.sh "Name" both`:
+## 6. Master and encode (make.sh)
+`bash make.sh final` (any size with `AR=`) does it:
 1. One linear gain to **−15 LUFS** integrated, then a limiter (about −1.3 dBFS sample peak, around −1 dBTP).
 2. AAC at 320k.
-3. H.264 CRF 19 (preset veryfast, maxrate 14M), 24 fps. It encodes 9:16 from `frames/` and 4:5 from `frames45/` (scaled to 1080×1350).
-4. QA prints: freezes of 0.6 s or more, black frames, integrated loudness and peak.
+3. H.264 CRF 19 (preset veryfast, maxrate 14M), 24 fps; 4:5 renders at 1400×1750 and ships at 1080×1350.
+4. Prints integrated loudness and peak, and checks the final for freezes of 0.6 s or more and black frames.
 
 When only the picture changed, you can reuse the audio from the previous MP4 (`-map 1:a -c:a copy`).
