@@ -1,0 +1,43 @@
+{
+  "title": "one-week-off-ad",
+  "brand": "buzztorm",
+  "recipe": "reel",
+  "family": "social",
+  "goal": "sell",
+  "offer": "community-build",
+  "status": "Approved",
+  "version": 1,
+  "created": "2026-11-27",
+  "updated": "2026-11-27",
+  "parent": null,
+  "history": [
+    {
+      "date": "2026-11-27",
+      "from": "Brief",
+      "to": "Script review",
+      "version": 1,
+      "note": "passed"
+    },
+    {
+      "date": "2026-11-27",
+      "from": "Script review",
+      "to": "Rendering",
+      "version": 1,
+      "note": "passed"
+    },
+    {
+      "date": "2026-11-27",
+      "from": "Rendering",
+      "to": "Ready for approval",
+      "version": 1,
+      "note": "v1 shipped"
+    },
+    {
+      "date": "2026-11-27",
+      "from": "Ready for approval",
+      "to": "Approved",
+      "version": 1,
+      "note": ""
+    }
+  ]
+}
