@@ -57,10 +57,10 @@ Follow `references/menus.md` exactly, then the reference for the format's family
 | Add brand, characters, backgrounds | `references/brands.md` |
 | Admin, goldens, engine updates | `references/admin.md` |
 
-Engine documentation: `~/buzztorm-studio/library/docs/` (read VIRAL.md, STYLE.md and STORY.md before any script or storyboard).
+Engine documentation: `~/buzztorm-studio/library/docs/`. Read VIRAL.md before writing a script. Read STORY.md only to edit a storyboard by hand (the first one is written by `director.py`), STYLE.md only for new sets, characters or props.
 
-## One process, every format (video, stills, thumbnails)
-Content (script with `{screen text}`) → first storyboard (`director.py`) → `make.sh preview` (layout preflight, render, sound, gate, contact sheet in one call; final starts in the background) → `make.sh final` → delivery. Same commands for every size (`AR=`, `ZONE=`); readable text is always `hud … at=auto` (roles, not pixels); thumbnails are a one-scene story. Details: `references/production.md`.
+## One process, every format
+Content → check → `make.sh` preview → changes → final → `make.sh ship`, the same for every family; only the content file and the mode change: video `preview|final|shot <n>` (storyboard by `director.py` when missing), stills `stills <frames>`, document `doc <md>`, meme `meme <json>`, Hook Library `kinetic|overlay|beatcards <json>`. Every mode prints one `gate:` line and exits 2 when something must be fixed. Sizes with `AR=`; the zone comes from the recipe. Readable text is `hud … at=auto` (roles, not pixels); thumbnails are a one-scene story. Details: `references/production.md`.
 Work lean: one piece per session; independent commands in one turn; short outputs; think hard on idea, hook and script, not on running steps; the ElevenLabs key comes from the environment, never from the chat.
 
 ## Non-negotiable
@@ -74,4 +74,4 @@ Work lean: one piece per session; independent commands in one turn; short output
 - Never mix brands.
 
 ## After each approval
-Update the status with `studio.py status`, package with `studio.py package`, commit and push the brand folder (`references/projects.md`), archive media (Google Drive when connected), deliver files with SendUserFile and the post text in a code block. Keep chat short: what was made, the delivery package, the next menu.
+Set status Approved with `studio.py status` (delivery and packaging were done by `make.sh ship`), commit and push the brand folder (`references/projects.md`), archive media (Google Drive when connected), deliver files with SendUserFile and the post text in a code block. Keep chat short: what was made, the delivery package, the next menu.

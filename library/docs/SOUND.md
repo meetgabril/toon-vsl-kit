@@ -59,7 +59,7 @@ The studio has ONE 16-beat theme (`library/sound/identity.json` → `theme`) in 
 python3 sfx.py kit                               # signature, gags, stings, takes → sfx/ (reports anything missing)
 node events.mjs && python3 audio/autoscore.py   # real-orchestra score in the brand's theme + SFX + sound boil + ladder
 STYLE=<visual style> python3 audio/stylize.py   # the style's sound on music + SFX
-python3 audio/mix.py && bash finish.sh "<name>" 916
+python3 audio/mix.py                             # make.sh runs all of this, cached, in parallel with the render
 ```
 
 ## 8. Public and private library

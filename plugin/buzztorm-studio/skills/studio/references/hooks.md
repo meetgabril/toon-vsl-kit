@@ -11,7 +11,8 @@
 
 ## Using a hook
 - Make something → Reel → screen 5 "Which hook?" shows up to 2 brand-written hooks + up to 2 library hooks that fit the goal ("Library: <name> (<duration>)").
-- Exact remake: in the project folder `cp $S/library/hooks/<id>/source.mp4 work/example.mp4`, copy `remake.json` to `kinetic.json`, write the brand's texts, `python3 kinetic.py kinetic.json`.
+- Exact remake: in the project folder `cp $S/library/hooks/<id>/source.mp4 work/example.mp4`, copy `remake.json` to `kinetic.json`, write the brand's texts, `bash make.sh kinetic kinetic.json`.
+- Exact remake that keeps the original footage and audio for the whole clip (text added on top): `bash make.sh overlay overlay.json` (spec in `overlay.py`). Cards locked to the beat with an optional zoom per card: `bash make.sh beatcards beatcards.json` (spec in `beatcards.py`).
   Text rule: keep each text's length close to the original's (same number of characters ± 2) so sizes match the original; the words in a `group` share one size; question/CTA fit ≤ 0.88 of the width.
 - `script.md` lists every on-screen line (`ON SCREEN: …`) for the gate. Run the gate `--stage final`; also compare 6 frames side by side with the original (same cut frames, same fill) before review.
 

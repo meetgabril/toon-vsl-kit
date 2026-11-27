@@ -687,11 +687,11 @@ export const FMT = {
   '916': { cw: 1080, ch: 1920, sc: 1, y0: 0 },
   '916p': { cw: 540, ch: 960, sc: .5, y0: 0 },
   '45p': { cw: 700, ch: 875, sc: .5, y0: 140 },
-  '169p': { cw: 960, ch: 540, sc: .42, y0: 520 },
+  '169p': { cw: 960, ch: 540, sc: .42, y0: 590 },
   '11p': { cw: 540, ch: 540, sc: .36, y0: 400 },   // previews: half size, same composition
   '45': { cw: 1400, ch: 1750, sc: 1, y0: 140 },
   '11': { cw: 1080, ch: 1080, sc: .72, y0: 400 },
-  '169': { cw: 1920, ch: 1080, sc: .84, y0: 520 },
+  '169': { cw: 1920, ch: 1080, sc: .84, y0: 590 },   // window low enough to keep feet in two-shots
 };
 const Y0 = { '45': { 5: 70, 7: 70, 20: 90, 29: 90 }, '11': {}, '169': {} };
 function applyAspect(i) {

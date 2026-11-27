@@ -31,6 +31,9 @@ def parse(path):
         if m: lines.append((m.group(1), m.group(2).strip())); continue
     return meta, voices, lines
 
+def spoken(t):  # what goes to the voice: emotion [tags] kept for ElevenLabs v3, {on-screen text} removed
+    return re.sub(r'\s+', ' ', re.sub(r'\{[^}]*\}', ' ', t)).strip()
+
 def clean(t):  # what is actually spoken
     t = TAG.sub(' ', t); t = re.sub(r'\{[^}]*\}', ' ', t); t = re.sub(r'\s+', ' ', t).strip(); return t   # [tags] and {on-screen text} are not spoken
 
@@ -45,10 +48,10 @@ def main():
     elif cmd == 'el':
         name = lambda sp: (voices.get(sp, sp).split('—')[0].split('-')[0].strip() or sp)
         with open('work/elevenlabs_dialogue.txt', 'w', encoding='utf-8') as f:
-            for sp, t in lines: f.write(f'{name(sp)}: {t}\n')
+            for sp, t in lines: f.write(f'{name(sp)}: {spoken(t)}\n')
         for sp in sorted(set(s for s, _ in lines)):
             with open(f'work/el_{sp}.txt', 'w', encoding='utf-8') as f:
-                f.write('\n\n'.join(t for s, t in lines if s == sp) + '\n')
+                f.write('\n\n'.join(spoken(t) for s, t in lines if s == sp) + '\n')
         words = sum(len(clean(t).split()) for _, t in lines)
         print(f'{len(lines)} lines · {words} words · ~{words / 2.5:.0f}s at 150 wpm')
         print('work/elevenlabs_dialogue.txt  (paste into ElevenLabs Text-to-Dialogue / Studio, model Eleven v3)')
